@@ -5,12 +5,34 @@ font-family: 'Signika', sans-serif;*/
 
 body {
     font-family: 'Signika', sans-serif;
-    color: #313150;
+    color: #575778;
 }
 
-h1, h2 {
+h1,
+h2 {
     font-family: 'Irish Grover', cursive;
-    color:  #f7faf7;
+    color: #f7faf7;
+}
+
+
+.pass {
+    color: #4abdac;
+}
+
+.retest {
+    color: #fc4a1a;
+}
+
+.fail {
+    color: #f7b733;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-size: 1rem;
 }
 
 .bg--tealdark {
@@ -33,4 +55,59 @@ h1, h2 {
     background-color: #f7faf7;
 }
 
+.bg--trigg {
+    background: url("../images/hi.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
 
+.bg--height1 {
+    height: 65vh;
+}
+
+
+.bg--height2 {
+    height: 15vh;
+}
+
+.bg--height3 {
+    height: 10vh;
+}
+
+.bg--height4 {
+    min-height: 80vh;
+}
+
+
+/*----------MEDIA QUERIES----------*/
+
+@media (min-width: 768px) and (max-width: 991px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    h3 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (min-width: 992px) {
+    h1 {
+        font-size: 3rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    h3 {
+        font-size: 1.8rem;
+    }
+}
+
+/*----------MEDIA QUERIES----------*/
+
+.testr {
+    border: solid red;
+}
