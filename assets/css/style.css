@@ -2,3 +2,35 @@
 
 /*font-family: 'Irish Grover', cursive;
 font-family: 'Signika', sans-serif;*/
+
+body {
+    font-family: 'Signika', sans-serif;
+    color: #313150;
+}
+
+h1, h2 {
+    font-family: 'Irish Grover', cursive;
+    color:  #f7faf7;
+}
+
+.bg--tealdark {
+    background-color: #0c8ea1;
+}
+
+.bg--teallight {
+    background-color: #82cdd2;
+}
+
+.bg--orangedark {
+    background-color: #f58332;
+}
+
+.bg--orangelight {
+    background-color: #eeaa7b;
+}
+
+.bg--offwhite {
+    background-color: #f7faf7;
+}
+
+
