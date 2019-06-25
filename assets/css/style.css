@@ -83,11 +83,32 @@ h2 {
     -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
-
 /* WHERE: Shadow code from https://codepen.io/sdthornton/pen/wBZdXq*/
 
 
+.button-style{
+    background-color: #acacc0;
+}
 
+.button-style:hover {
+    background-color: #82cdd2;
+}
+
+/*.button-style {
+    margin-top: .5rem;
+    margin-bottom: 1.5rem;
+    color: #313150;
+    padding: 6px;
+    border-radius: 10px;
+    font-size: .9rem;
+    border: 3px double #313150;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#f4f4f4), to(#e1e1e1));
+    background-image: -webkit-linear-gradient(#f4f4f4, #e1e1e1);
+    background-image: -o-linear-gradient(#f4f4f4, #e1e1e1);
+    background-image: linear-gradient(#f4f4f4, #e1e1e1);
+    -webkit-box-shadow: 1px 1px 1px rgba(49, 49, 80, 0.3);
+    box-shadow: 1px 1px 1px rgba(49, 49, 80, 0.3);
+}*/
 
 /*----------MEDIA QUERIES----------*/
 

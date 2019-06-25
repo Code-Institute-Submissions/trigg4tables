@@ -62,30 +62,27 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-5 bg--offwhite bg--height4 shade">Sum</div>
-            <div class="col-1 d-none d-lg-block">test5</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            <div class="col-12 col-md-6 col-lg-5 bg--offwhite bg--height4 shade">
+                <!--WHY: Select & 2 buttons wrapped in form element with Bootstrap class form-inline to keep selection on same line as per w3.-->
+                <form class="form-inline justify-content-center">
+                    <!--WHY: Bootstrap form-control class added to select element as per w3-->
+                    <select class="form-control mt-4 mr-4" role="group" id="noSelect">
+                      <option>number</option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                    <div class="btn-group mt-4 mr-4" role="group">
+                        <button type="button" class="btn button-style">+</button>
+                        <button type="button" class="btn button-style">-</button>
+                        <button type="button" class="btn button-style">x</button>
+                        <button type="button" class="btn button-style">/</button>
+                    </div>
+                    <button type="submit" class="btn button-style mt-4">go!</button>
+                </form>
+            </div>
+            <div class="col-1 d-none d-lg-block"></div>
         </div>
     </div>
 
