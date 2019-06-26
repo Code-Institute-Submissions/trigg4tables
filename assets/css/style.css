@@ -90,8 +90,24 @@ h2 {
     background-color: white;
 }
 
+.button-style--checked {
+    background-color: #0c8ea1;
+}
+
 .button-style:hover {
     background-color: #82cdd2;
+}
+
+.button-style:checked {
+    background-color: #0c8ea1;
+}
+
+input:checked {
+    background-color: #0c8ea1!important;
+}
+
+label:checked {
+    background-color: #0c8ea1!important;
 }
 
 #selectNo {

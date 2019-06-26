@@ -1,17 +1,27 @@
-$(document).ready(function(){
- console.log('test'); 
-//WHAT: Get whats selected by user when they press go. 
- $("#selectGo").click(function(){
+$(document).ready(function() {
+    console.log('testd');
+$("label").click(function(){
+    $("label").removeClass("button-style--checked").addClass("button-style");
+    $(this).removeClass("button-style").addClass("button-style--checked");
+    
+});
 
-let first = $("#selectNo").children("option:selected").val(); 
-let operator = $("#selectOperator").find("input:checked").val();
 
-if (first>0 && operator){console.log(first, operator);}
+    //WHAT: Get whats selected by user when they press go. 
 
-else {alert("Please pick a number and operator. Then press go");}
- })
- 
- });
+    $("#selectGo").click(function() {
+
+        let first = $("#selectNo").children("option:selected").val();
+        let operator = $("#selectOperator").find("input:checked").val();
+
+        if (first > 0 && operator) { console.log(first, operator); }
+
+        else { alert("Please pick a number and operator. Then press go"); }
+    })
+
+
+
+});
 
 
 
