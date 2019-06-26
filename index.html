@@ -67,8 +67,8 @@
                 <form class="form-inline justify-content-center">
                     <!--WHY: Bootstrap form-control class added to select element as per w3-->
                     <select class="form-control mr-3 mr-md-5 mt-3 mt-md-5" role="group" id="selectNo">
-                      <option>no.</option>
-                      <option>1</option>
+                        <option disabled="disabled" selected="selected">no.</option>
+                        <option>1</option>
                       <option>2</option>
                       <option>3</option>
                       <option>4</option>
@@ -81,7 +81,8 @@
                       <option>11</option>
                       <option>12</option>
                     </select>
-                    
+                    <!--WHERE: Option no. displayed but disabled from StackOverflow https://stackoverflow.com/questions/15224466/display-optgroup-label-as-initial-option-->
+
                     <!--WHERE: radio style button toggling from https://coreui.io/docs/components/buttons/-->
                     <div class="btn-group btn-group-toggle mr-3 mr-md-5 mt-3 mt-md-5" data-toggle="buttons" id="selectOperator">
                         <label class="btn button-style">

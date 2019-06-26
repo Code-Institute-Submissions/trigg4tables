@@ -1,5 +1,6 @@
 $(document).ready(function(){
  console.log('test'); 
+//WHAT: Get whats selected by user when they press go. 
  $("#selectGo").click(function(){
 var first = $("#selectNo").children("option:selected").val(); 
 var operator = $("#selectOperator").find("input:checked").val(); 
