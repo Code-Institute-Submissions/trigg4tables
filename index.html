@@ -66,7 +66,7 @@
                 <!--WHY: Select & 2 buttons wrapped in form element with Bootstrap class form-inline to keep selection on same line as per w3.-->
                 <form class="form-inline justify-content-center">
                     <!--WHY: Bootstrap form-control class added to select element as per w3-->
-                    <select class="form-control mr-3 mr-md-5 mt-3 mt-md-5" role="group" id="selectNo">
+                    <select class="form-control mr-3 mr-md-5 mt-3 mt-md-5 selector-style" role="group" id="selectNo">
                         <option disabled="disabled" selected="selected">no.</option>
                         <option>1</option>
                       <option>2</option>
@@ -85,20 +85,20 @@
 
                     <!--WHERE: radio style button toggling from https://coreui.io/docs/components/buttons/-->
                     <div class="btn-group btn-group-toggle mr-3 mr-md-5 mt-3 mt-md-5" data-toggle="buttons" id="selectOperator">
-                        <label class="btn button-style">
+                        <label class="btn selector-style">
                             <input type="radio" value="+">+
                             </label>
-                        <label class="btn button-style">
+                        <label class="btn selector-style">
                             <input type="radio" value="-">-
                             </label>
-                        <label class="btn button-style">
+                        <label class="btn selector-style">
                             <input type="radio" value="x">x
                             </label>
-                        <label class="btn button-style">
+                        <label class="btn selector-style">
                             <input type="radio" value="/">/
                             </label>
                     </div>
-                    <button type="button" class="btn button-style mt-3 mt-md-5" id="selectGo">go</button>
+                    <button type="button" class="btn selector-style mt-3 mt-md-5" id="selectGo">go</button>
                 </form>
             </div>
             <div class="col-1 d-none d-lg-block"></div>

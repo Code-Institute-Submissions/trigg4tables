@@ -1,10 +1,18 @@
 $(document).ready(function() {
-    console.log('testd');
-$("label").click(function(){
-    $("label").removeClass("button-style--checked").addClass("button-style");
-    $(this).removeClass("button-style").addClass("button-style--checked");
-    
-});
+    console.log('test a');
+
+
+    //WHAT: Style number selected
+    $("select").click(function() {
+        $(this).removeClass("selector-style").addClass("selector-style--selected");
+    });
+
+
+    //WHAT: Style operator selected
+    $("label").click(function() {
+        $("label").removeClass("selector-style--selected").addClass("selector-style");
+        $(this).removeClass("selector-style").addClass("selector-style--selected");
+    });
 
 
     //WHAT: Get whats selected by user when they press go. 
