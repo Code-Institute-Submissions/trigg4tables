@@ -83,15 +83,19 @@ h2 {
     -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
+
 /* WHERE: Shadow code from https://codepen.io/sdthornton/pen/wBZdXq*/
 
-
-.button-style{
-    background-color: #acacc0;
+.button-style {
+    background-color: white;
 }
 
 .button-style:hover {
     background-color: #82cdd2;
+}
+
+#no-select {
+    width: auto;
 }
 
 /*.button-style {
