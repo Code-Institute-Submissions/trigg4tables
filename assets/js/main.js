@@ -18,7 +18,7 @@ $(document).ready(function() {
     //WHAT: Get whats selected by user when they press go. 
     $("#selectGo").click(function() {
 
-        let first = $("#selectNo").children("option:selected").val();
+        let first = parseInt($("#selectFirst").children("option:selected").val());
         let operator = $("#selectOperator").find("input:checked").val();
 
         if (!(first > 0) || !operator) { alert("Please pick a number and operator. Then press go"); }
@@ -26,12 +26,7 @@ $(document).ready(function() {
         else {
             console.log(first, operator);
 
-
-
-            //console.log(first, operator);
-
-            //WHAT: Create tables 
-
+            //WHAT: Create tables Array
             let tableArray = [];
 
             for (let i = 1; i < 13; i++) {
@@ -57,8 +52,17 @@ $(document).ready(function() {
             }
 
             console.log(tableArray);
+            
+            //WHAT: Create Test Array
             let testArray = tableArray.slice().sort(function(a, b) { return 0.5 - Math.random() }); //random sorting code w3schools https://www.w3schools.com/js/js_array_sort.asp
             console.log(testArray);
+            
+            $("#askFirst").html(testArray[0].key1);
+            $("#askOperator").html(testArray[0].key2);
+            $("#askSecond").html(testArray[0].key3);
+            $("#askAnswer").html(testArray[0].key4);
+            
+            
 
 
         } //end of else
