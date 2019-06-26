@@ -1,9 +1,11 @@
 $(document).ready(function() {
-    console.log('test a');
+    console.log('test c');
 
-    //WHAT: Create table and test Arrays
+    //WHAT: Create arrays
     let tableArray = [];
     let testArray = [];
+    let completeArray = [];
+    let retestArray = [];
 
     //WHAT: Style number selected
     $("select").click(function() {
@@ -56,22 +58,36 @@ $(document).ready(function() {
 
             console.log(tableArray);
 
-            //WHAT: Create Test Array
+            //WHAT: Fill testArray
             testArray = tableArray.slice().sort(function(a, b) { return 0.5 - Math.random() }); //random sorting code w3schools https://www.w3schools.com/js/js_array_sort.asp
             console.log(testArray);
 
+            //WHAT: ask first test
             $("#ask").removeClass("ask-hidden");
             $("#askFirst").html(testArray[0].key1);
             $("#askOperator").html(testArray[0].key2);
             $("#askSecond").html(testArray[0].key3);
             $("#askAnswer").html(testArray[0].key4);
 
-
-
-
-
-        } //end of else
+        } //end of press go else
     }); // end of press go
+
+    $("#askTryCheck").click(function() {
+        //WHY: == used as input value is string
+        if ($("#askTry").val() == testArray[0].key4) {
+            completeArray.push(testArray[0]);
+            testArray.shift();
+            console.log(completeArray);
+            console.log(testArray);
+        }
+        
+
+
+    }); // end askCheck
+
+    //if(testArray.length>0){}
+
+
 
 
 }); // end of get document
