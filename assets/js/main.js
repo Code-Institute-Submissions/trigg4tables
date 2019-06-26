@@ -1,6 +1,9 @@
 $(document).ready(function() {
     console.log('test a');
 
+    //WHAT: Create table and test Arrays
+    let tableArray = [];
+    let testArray = [];
 
     //WHAT: Style number selected
     $("select").click(function() {
@@ -27,8 +30,7 @@ $(document).ready(function() {
         else {
             console.log(first, operator);
 
-            //WHAT: Create tables Array
-            let tableArray = [];
+
 
             for (let i = 1; i < 13; i++) {
                 if (operator === '+') {
@@ -53,19 +55,19 @@ $(document).ready(function() {
             }
 
             console.log(tableArray);
-            
+
             //WHAT: Create Test Array
-            let testArray = tableArray.slice().sort(function(a, b) { return 0.5 - Math.random() }); //random sorting code w3schools https://www.w3schools.com/js/js_array_sort.asp
+            testArray = tableArray.slice().sort(function(a, b) { return 0.5 - Math.random() }); //random sorting code w3schools https://www.w3schools.com/js/js_array_sort.asp
             console.log(testArray);
-            
+
             $("#ask").removeClass("ask-hidden");
             $("#askFirst").html(testArray[0].key1);
             $("#askOperator").html(testArray[0].key2);
             $("#askSecond").html(testArray[0].key3);
             $("#askAnswer").html(testArray[0].key4);
-            
-            
-            
+
+
+
 
 
         } //end of else
