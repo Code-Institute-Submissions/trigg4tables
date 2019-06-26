@@ -2,9 +2,13 @@ $(document).ready(function(){
  console.log('test'); 
 //WHAT: Get whats selected by user when they press go. 
  $("#selectGo").click(function(){
-var first = $("#selectNo").children("option:selected").val(); 
-var operator = $("#selectOperator").find("input:checked").val(); 
-console.log(first, operator);
+
+let first = $("#selectNo").children("option:selected").val(); 
+let operator = $("#selectOperator").find("input:checked").val();
+
+if (first>0 && operator){console.log(first, operator);}
+
+else {alert("Please pick a number and operator. Then press go");}
  })
  
  });
