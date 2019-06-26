@@ -100,11 +100,16 @@
                     </div>
                     <button type="button" class="btn selector-style mt-3 mt-md-5" id="selectGo">go</button>
                 </form>
-                
-                <form>
-                    <span id="askFirst"></span><span id="askOperator"></span><span id="askSecond"></span><span>=</span><input type="number" id="askTry"
-       min="1" max="200"><button type="button" class="btn selector-style" id="askCheck">?</button><span id="askAnswer"></span>
-       <!--WHERE: input type number from Mozilla https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number-->
+
+                <form id="ask" class="ask-hidden">
+                    <span id="askFirst"></span>
+                    <span id="askOperator"></span>
+                    <span id="askSecond"></span>
+                    <span id="askEqual">=</span>
+                    <input type="number" id="askTry" min="1" max="200">
+                    <button type="button" class="btn selector-style" id="askCheck">?</button>
+                    <span id="askAnswer"></span>
+                    <!--WHERE: input type number from Mozilla https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number-->
                 </form>
             </div>
             <div class="col-1 d-none d-lg-block"></div>

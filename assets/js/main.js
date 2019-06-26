@@ -20,6 +20,7 @@ $(document).ready(function() {
 
         let first = parseInt($("#selectFirst").children("option:selected").val());
         let operator = $("#selectOperator").find("input:checked").val();
+        //WHY: parseInt method as option values string by default
 
         if (!(first > 0) || !operator) { alert("Please pick a number and operator. Then press go"); }
 
@@ -57,10 +58,13 @@ $(document).ready(function() {
             let testArray = tableArray.slice().sort(function(a, b) { return 0.5 - Math.random() }); //random sorting code w3schools https://www.w3schools.com/js/js_array_sort.asp
             console.log(testArray);
             
+            $(".ask-hidden").removeClass();
             $("#askFirst").html(testArray[0].key1);
             $("#askOperator").html(testArray[0].key2);
             $("#askSecond").html(testArray[0].key3);
             $("#askAnswer").html(testArray[0].key4);
+            //$("#askEqual").attr("visibility","visible");
+            
             
             
 

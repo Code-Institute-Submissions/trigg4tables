@@ -103,6 +103,12 @@ h2 {
     width: auto;
 }
 
+.ask-hidden {
+    visibility: hidden;
+}
+
+
+
 /*.button-style {
     margin-top: .5rem;
     margin-bottom: 1.5rem;
