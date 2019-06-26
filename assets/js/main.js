@@ -1,4 +1,18 @@
-console.log('test');
+$(document).ready(function(){
+ console.log('test'); 
+ $("#selectGo").click(function(){
+var first = $("#selectNo").children("option:selected").val(); 
+var operator = $("#selectOperator").find("input:checked").val(); 
+console.log(first, operator);
+ })
+ 
+ });
+
+
+
+
+
+/*console.log('test');
 
 var first = 9;
 var operator = 'x';
@@ -29,7 +43,7 @@ for (let i = 1; i < 13; i++) {
 console.log(myArray);
 console.log(myArray[2]["key3"]);
 var myArray2 = myArray.slice().sort(function(a, b){return 0.5 - Math.random()}); //random sorting code w3schools https://www.w3schools.com/js/js_array_sort.asp
-console.log(myArray2);
+console.log(myArray2);*/
 
 
 // canvas
