@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    console.log('test h');
+    console.log('test m');
 
     //WHAT: Create arrays
     let tableArray = [];
@@ -37,22 +37,22 @@ $(document).ready(function() {
             for (let i = 1; i < 13; i++) {
                 if (operator === '+') {
                     let answer = first + i;
-                    tableArray.push({ id: i, key1: first, key2: operator, key3: i, key4: answer });
+                    tableArray.push({ id: i, key1: first, key2: operator, key3: i, key4: answer, askCount: 1 });
                 }
                 else
                 if (operator === 'x') {
                     let answer = first * i;
-                    tableArray.push({ id: i, key1: first, key2: operator, key3: i, key4: answer });
+                    tableArray.push({ id: i, key1: first, key2: operator, key3: i, key4: answer, askCount: 1 });
                 }
                 else
                 if (operator === '-') {
                     let j = first + i;
-                    tableArray.push({ id: i, key1: j, key2: operator, key3: first, key4: i });
+                    tableArray.push({ id: i, key1: j, key2: operator, key3: first, key4: i, askCount: 1 });
                 }
                 else
                 if (operator === '/') {
                     let j = first * i;
-                    tableArray.push({ id: i, key1: j, key2: operator, key3: first, key4: i });
+                    tableArray.push({ id: i, key1: j, key2: operator, key3: first, key4: i, askCount: 1 });
                 }
             }
 
@@ -75,23 +75,38 @@ $(document).ready(function() {
 
     //while (testArray.length > 0) {
     $("#askTryCheck").click(function() {
-        
+        let askTry = $("#askTry").val();
+        let answer = testArray[0].key4;
+
         //STEP1: CHECK ANSWER - IF CORRECT
-        if ($("#askTry").val() == testArray[0].key4) { //WHY: == used as input value is string
+        if (askTry == answer) { //WHY: == used as input value is string
             completeArray.push(testArray[0]);
             testArray.shift();
             //console.log(completeArray);
             //console.log(testArray);
-        } 
-        
-        //STEP2: CHECK ANSWER - IF INCORRECT
-        else{
-            let askTry1 = $("#askTry").val();
-            $("#show").removeClass("ask-hidden");
-            $("#showMessage").html(`Sorry ${askTry1} is incorrect. Have another go`);
-            $("#askTry").val('');
-        
         }
+
+        //STEP2: CHECK ANSWER - IF INCORRECT 1ST ATTEMPT
+        else if (!(askTry == answer) && testArray[0].askCount === 1) {
+            $("#show").removeClass("ask-hidden");
+            $("#showMessage").html(`Sorry ${askTry} is incorrect. Have another go`);
+            $("#askTry").val('');
+            testArray[0].askCount = 2;
+            //console.log(testArray);
+        }
+
+        //STEP3: CHECK ANSWER - INCORRECT 2ND ATTEMPT
+        else if (!(askTry == answer) && testArray[0].askCount === 2) {
+            $("#showMessage").html(`Sorry ${askTry} is incorrect. The correct answer is ${answer}. We will ask this again at the end.`);
+            testArray[0].askCount = 3;
+            completeArray.push(testArray[0]);
+            testArray.push(testArray[0]); // add to end of test so will be asked again
+            testArray.shift(); // line up next sum in index0
+            console.log(testArray);
+            console.log(completeArray);
+        }
+
+
     }); // end askCheck
     //} console.log("complete");// end while loop
     //if(testArray.length>0){}
