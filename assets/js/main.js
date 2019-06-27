@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    console.log('test c');
+    console.log('test h');
 
     //WHAT: Create arrays
     let tableArray = [];
@@ -63,6 +63,7 @@ $(document).ready(function() {
             console.log(testArray);
 
             //WHAT: ask first test
+
             $("#ask").removeClass("ask-hidden");
             $("#askFirst").html(testArray[0].key1);
             $("#askOperator").html(testArray[0].key2);
@@ -72,19 +73,27 @@ $(document).ready(function() {
         } //end of press go else
     }); // end of press go
 
+    //while (testArray.length > 0) {
     $("#askTryCheck").click(function() {
-        //WHY: == used as input value is string
-        if ($("#askTry").val() == testArray[0].key4) {
+        
+        //STEP1: CHECK ANSWER - IF CORRECT
+        if ($("#askTry").val() == testArray[0].key4) { //WHY: == used as input value is string
             completeArray.push(testArray[0]);
             testArray.shift();
-            console.log(completeArray);
-            console.log(testArray);
-        }
+            //console.log(completeArray);
+            //console.log(testArray);
+        } 
         
-
-
+        //STEP2: CHECK ANSWER - IF INCORRECT
+        else{
+            let askTry1 = $("#askTry").val();
+            $("#show").removeClass("ask-hidden");
+            $("#showMessage").html(`Sorry ${askTry1} is incorrect. Have another go`);
+            $("#askTry").val('');
+        
+        }
     }); // end askCheck
-
+    //} console.log("complete");// end while loop
     //if(testArray.length>0){}
 
 
