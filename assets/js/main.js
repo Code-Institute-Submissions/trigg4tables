@@ -1,11 +1,19 @@
 $(document).ready(function() {
-    console.log('test m');
+    console.log('test j');
 
     //WHAT: Create arrays
     let tableArray = [];
     let testArray = [];
     let completeArray = [];
     let retestArray = [];
+
+    //WHAT: Create test function
+    function test() {
+        $("#askFirst").html(testArray[0].key1);
+        $("#askOperator").html(testArray[0].key2);
+        $("#askSecond").html(testArray[0].key3);
+        $("#askAnswer").html(testArray[0].key4);
+    }
 
     //WHAT: Style number selected
     $("select").click(function() {
@@ -65,10 +73,8 @@ $(document).ready(function() {
             //WHAT: ask first test
 
             $("#ask").removeClass("ask-hidden");
-            $("#askFirst").html(testArray[0].key1);
-            $("#askOperator").html(testArray[0].key2);
-            $("#askSecond").html(testArray[0].key3);
-            $("#askAnswer").html(testArray[0].key4);
+            test();
+
 
         } //end of press go else
     }); // end of press go
@@ -105,6 +111,15 @@ $(document).ready(function() {
             console.log(testArray);
             console.log(completeArray);
         }
+        //STEP4: CHECK ANSWER - INCORRECT 3RD ATTEMPT
+        else {
+            $("#showMessage").html(`Sorry ${askTry} is incorrect. The correct answer is ${answer}. `);
+            completeArray.push(testArray[0]);
+            testArray.shift(); // line up next sum in index0
+            console.log(testArray);
+            console.log(completeArray);
+        }
+
 
 
     }); // end askCheck
