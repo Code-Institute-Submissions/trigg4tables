@@ -64,9 +64,9 @@
             </div>
             <div class="col-12 col-md-6 col-lg-5 bg--offwhite bg--height4 shade">
                 <!--WHY: Select & 2 buttons wrapped in form element with Bootstrap class form-inline to keep selection on same line as per w3.-->
-                <form class="form-inline justify-content-center">
+                <form id="pick" class="form-inline justify-content-center">
                     <!--WHY: Bootstrap form-control class added to select element as per w3-->
-                    <select class="form-control mr-3 mr-md-5 mt-3 mt-md-5 selector-style" role="group" id="selectFirst">
+                    <select class="form-control mr-3 mr-md-5 mt-3 mt-md-5 selector-style" role="group" id="pickNo">
                         <option disabled="disabled" selected="selected">no.</option>
                         <option>1</option>
                       <option>2</option>
@@ -84,7 +84,7 @@
                     <!--WHERE: Option no. displayed but disabled from StackOverflow https://stackoverflow.com/questions/15224466/display-optgroup-label-as-initial-option-->
 
                     <!--WHERE: radio style button toggling from https://coreui.io/docs/components/buttons/-->
-                    <div class="btn-group btn-group-toggle mr-3 mr-md-5 mt-3 mt-md-5" data-toggle="buttons" id="selectOperator">
+                    <div class="btn-group btn-group-toggle mr-3 mr-md-5 mt-3 mt-md-5" data-toggle="buttons" id="pickOperator">
                         <label class="btn selector-style">
                             <input type="radio" value="+">+
                             </label>
@@ -98,23 +98,23 @@
                             <input type="radio" value="/">/
                             </label>
                     </div>
-                    <button type="button" class="btn selector-style mt-3 mt-md-5" id="selectGo">go</button>
+                    <button type="button" class="btn selector-style mt-3 mt-md-5" id="pickGo">go</button>
                 </form>
 
-                <form id="ask" class="form-inline justify-content-center ask-hidden mt-3 mt-md=5">
-                    <span id="askFirst" class="mr-3"></span>
-                    <span id="askOperator" class="mr-3"></span>
-                    <span id="askSecond" class="mr-3"></span>
-                    <span id="askEqual" class="mr-3">=</span>
-                    <input type="number" id="askTry" min="1" max="200" class="mr-3">
-                    <button type="button" class="btn selector-style" id="askTryCheck">?</button>
-                    <span id="askAnswer"></span>
+                <form id="sum" class="form-inline justify-content-center mt-3 mt-md=5">
+                    <span id="sumFirst" class="mr-3"></span>
+                    <span id="sumOperator" class="mr-3"></span>
+                    <span id="sumSecond" class="mr-3"></span>
+                    <span id="sumEqual" class="mr-3">=</span>
+                    <input type="number" id="sumAnswer" min="1" max="200" class="mr-3">
+                    <button type="button" class="btn selector-style" id="sumCheck">?</button>
+                    <span id="todoAnswer"></span>
                     <!--WHERE: input type number from Mozilla https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number-->
                 </form>
 
-                <form id="show" class="form-inline justify-content-center ask-hidden mt-3 mt-md=5">
-                    <p id="showMessage"></p>
-                    <button type="button" class="btn selector-style" id="showNext ask-hidden">Next</button>
+                <form id="reply" class="form-inline justify-content-center mt-3 mt-md=5">
+                    <p id="replyMessage"></p>
+                    <button type="button" class="btn selector-style" id="replyNext">Next</button>
                 </form>
             </div>
             <div class="col-1 d-none d-lg-block"></div>
