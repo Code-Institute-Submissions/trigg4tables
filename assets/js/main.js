@@ -1,131 +1,164 @@
 $(document).ready(function() {
-    console.log('test j');
+    console.log('test n');
+    $("#sum").hide();
+    $("#replyNext").hide();
 
-    //WHAT: Create arrays
-    let tableArray = [];
-    let testArray = [];
-    let completeArray = [];
-    let retestArray = [];
+    //GLOBAL ARRAYS
+    let todoArray = [];
+    let doneArray = [];
 
-    //WHAT: Create test function
-    function test() {
-        $("#askFirst").html(testArray[0].key1);
-        $("#askOperator").html(testArray[0].key2);
-        $("#askSecond").html(testArray[0].key3);
-        $("#askAnswer").html(testArray[0].key4);
+    //CHECK VALID PICK
+    function pickValid(no, operator) {
+        if (no === "no." || !operator) {
+            alert("Please pick a number and operator. Then press go");
+        }
+        else {
+            return true;
+        }
     }
 
-    //WHAT: Style number selected
+    //CREATE TABLES ARRAY
+    function tablesArrayCreate(no, operator) {
+        let tablesArray = [];
+        for (let i = 1; i < 13; i++) {
+            if (operator === '+') {
+                let answer = no + i;
+                tablesArray.push({ id: i, count: 0, key1: no, key2: operator, key3: i, key4: answer });
+            }
+            else if (operator === 'x') {
+                let answer = no * i;
+                tablesArray.push({ id: i, count: 0, key1: no, key2: operator, key3: i, key4: answer });
+            }
+            else if (operator === '-') {
+                let j = no + i;
+                tablesArray.push({ id: i, count: 0, key1: j, key2: operator, key3: no, key4: i });
+            }
+            else if (operator === '/') {
+                let j = no * i;
+                tablesArray.push({ id: i, count: 0, key1: j, key2: operator, key3: no, key4: i });
+            }
+        }
+        return tablesArray;
+    }
+
+    //FILL TODO ARRAY  
+    function todoFill(no, operator) {
+        let tables = tablesArrayCreate(no, operator);
+        todoArray = tables.slice().sort(function(a, b) { return 0.5 - Math.random() }); // why would this not be todo
+        return todoArray;
+    } //random sorting code w3schools https://www.w3schools.com/js/js_array_sort.asp
+
+
+    //SET SUM
+    function sumSet(todo) {
+        if (todo.length > 0) {
+            $("#sumAnswer").val('');
+            $("#sumFirst").text(todo[0].key1);
+            $("#sumOperator").text(todo[0].key2);
+            $("#sumSecond").text(todo[0].key3);
+            $("#todoAnswer").text(todo[0].key4); //testing only get rid
+        }
+        else {
+            $("#replyMessage").text(`Well done cat you're all finished!`);
+        }
+    }
+
+
+    //CHECK ANSWER CORRECT
+    function sumCorrect(sumAnswer, answer) {
+        if (sumAnswer == answer) {
+            return true;
+        }
+    }
+
+    //CHECK ANSWER INCORRECT
+    function sumIncorrect(sumAnswer, answer, count) {
+        if (sumAnswer !== answer) {
+            count++;
+            return count;
+        }
+    }
+
+    //MOVE SUM TO DONE
+    function doneMove(done, todo) {
+        done.push(todo[0]);
+        todo.shift();
+    }
+
+
+    //APPEND SUM TO END TODO
+    function todoAdd(todo) {
+        todo.push(todo[0]);
+    }
+
+
+    //CLICK NUMBER
     $("select").click(function() {
         $(this).removeClass("selector-style").addClass("selector-style--selected");
     });
 
 
-    //WHAT: Style operator selected
+    //CLICK OPERATOR
     $("label").click(function() {
         $("label").removeClass("selector-style--selected").addClass("selector-style");
         $(this).removeClass("selector-style").addClass("selector-style--selected");
     });
 
 
-    //WHAT: Get whats selected by user when they press go. 
-    $("#selectGo").click(function() {
-
-        let first = parseInt($("#selectFirst").children("option:selected").val());
-        let operator = $("#selectOperator").find("input:checked").val();
-        //WHY: parseInt method as option values string by default
-
-        if (!(first > 0) || !operator) { alert("Please pick a number and operator. Then press go"); }
-
-        else {
-            console.log(first, operator);
+    //CLICK GO 
+    $("#pickGo").click(function() {
+        let no = parseInt($("#pickNo").children("option:selected").val());
+        let operator = $("#pickOperator").find("input:checked").val();
+        let todo = todoFill(no, operator);
+        sumSet(todo);
+        $("#sum").show();
+        console.log(todoArray);
+    });
 
 
+    //CLICK CHECK 
+    $("#sumCheck").click(function() {
+        let sumAnswer = $("#sumAnswer").val();
+        let answer = todoArray[0].key4;
+        let count = todoArray[0].count;
+        let todo = todoArray;
 
-            for (let i = 1; i < 13; i++) {
-                if (operator === '+') {
-                    let answer = first + i;
-                    tableArray.push({ id: i, key1: first, key2: operator, key3: i, key4: answer, askCount: 1 });
-                }
-                else
-                if (operator === 'x') {
-                    let answer = first * i;
-                    tableArray.push({ id: i, key1: first, key2: operator, key3: i, key4: answer, askCount: 1 });
-                }
-                else
-                if (operator === '-') {
-                    let j = first + i;
-                    tableArray.push({ id: i, key1: j, key2: operator, key3: first, key4: i, askCount: 1 });
-                }
-                else
-                if (operator === '/') {
-                    let j = first * i;
-                    tableArray.push({ id: i, key1: j, key2: operator, key3: first, key4: i, askCount: 1 });
-                }
-            }
-
-            console.log(tableArray);
-
-            //WHAT: Fill testArray
-            testArray = tableArray.slice().sort(function(a, b) { return 0.5 - Math.random() }); //random sorting code w3schools https://www.w3schools.com/js/js_array_sort.asp
-            console.log(testArray);
-
-            //WHAT: ask first test
-
-            $("#ask").removeClass("ask-hidden");
-            test();
-
-
-        } //end of press go else
-    }); // end of press go
-
-    //while (testArray.length > 0) {
-    $("#askTryCheck").click(function() {
-        let askTry = $("#askTry").val();
-        let answer = testArray[0].key4;
-
-        //STEP1: CHECK ANSWER - IF CORRECT
-        if (askTry == answer) { //WHY: == used as input value is string
-            completeArray.push(testArray[0]);
-            testArray.shift();
-            //console.log(completeArray);
-            //console.log(testArray);
+        //STEP1: CHECK ANSWER - CORRECT
+        if (sumCorrect(sumAnswer, answer) === true) {
+            $("#replyMessage").text(`Niceone that's correct. Click next.`);
+            $("#replyNext").show();
         }
 
-        //STEP2: CHECK ANSWER - IF INCORRECT 1ST ATTEMPT
-        else if (!(askTry == answer) && testArray[0].askCount === 1) {
-            $("#show").removeClass("ask-hidden");
-            $("#showMessage").html(`Sorry ${askTry} is incorrect. Have another go`);
-            $("#askTry").val('');
-            testArray[0].askCount = 2;
-            //console.log(testArray);
+        //STEP2: CHECK ANSWER - INCORRECT 1ST ATTEMPT
+        else if (sumIncorrect(sumAnswer, answer, count) === 1) {
+            $("#replyMessage").text(`Sorry ${sumAnswer} is incorrect. Try again.`);
+            $("#sumAnswer").val('');
         }
 
         //STEP3: CHECK ANSWER - INCORRECT 2ND ATTEMPT
-        else if (!(askTry == answer) && testArray[0].askCount === 2) {
-            $("#showMessage").html(`Sorry ${askTry} is incorrect. The correct answer is ${answer}. We will ask this again at the end.`);
-            testArray[0].askCount = 3;
-            completeArray.push(testArray[0]);
-            testArray.push(testArray[0]); // add to end of test so will be asked again
-            testArray.shift(); // line up next sum in index0
-            console.log(testArray);
-            console.log(completeArray);
+        else if (sumIncorrect(sumAnswer, answer, count) === 2) {
+            $("#replyMessage").text(`Sorry ${sumAnswer} is incorrect. The correct answer is ${answer}. We will ask again at the end. Click next.`);
+            $("#replyNext").show();
+            todoAdd(todo[0]);
         }
+
         //STEP4: CHECK ANSWER - INCORRECT 3RD ATTEMPT
         else {
-            $("#showMessage").html(`Sorry ${askTry} is incorrect. The correct answer is ${answer}. `);
-            completeArray.push(testArray[0]);
-            testArray.shift(); // line up next sum in index0
-            console.log(testArray);
-            console.log(completeArray);
+            $("#replyMessage").text(`Sorry ${sumAnswer} is incorrect. The correct answer is ${answer}. Click next.`);
+            $("#replyNext").show();
         }
+    });
 
 
-
-    }); // end askCheck
-    //} console.log("complete");// end while loop
-    //if(testArray.length>0){}
-
+    // CLICK NEXT
+    $("#replyNext").click(function() {
+        let done = doneArray;
+        let todo = todoArray;
+        doneMove(done, todo);
+        sumSet(todo);
+        $("#replyMessage").text('');
+        $("#replyNext").hide();
+    });
 
 
 
