@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    console.log('test g');
+    console.log('test f');
     $("#sum").hide();
     $("#replyNext").hide();
 
@@ -51,20 +51,11 @@ $(document).ready(function() {
 
     //SET SUM
     function sumSet(todo) {
-        console.log(todo.length + "length");
-        if (todo.length !== 0) {
-            $("#sumAnswer").val('');
-            $("#sumFirst").text(todo[0].key1);
-            $("#sumOperator").text(todo[0].key2);
-            $("#sumSecond").text(todo[0].key3);
-            $("#todoAnswer").text(todo[0].key4); //testing only get rid
-        }
-        else {
-            $("#sum").hide();
-            $("#replyMessage").show();
-            $("#replyMessage").text(`Well done cat you're all finished!`);
-
-        }
+        $("#sumAnswer").val('');
+        $("#sumFirst").text(todo[0].key1);
+        $("#sumOperator").text(todo[0].key2);
+        $("#sumSecond").text(todo[0].key3);
+        $("#todoAnswer").text(todo[0].key4); //testing only get rid
     }
 
 
@@ -169,9 +160,18 @@ $(document).ready(function() {
         let done = doneArray;
         let todo = todoArray;
         doneMove(done, todo);
-        sumSet(todo);
-        $("#replyMessage").text('');
         $("#replyNext").hide();
+
+        console.log(todo.length + "length");
+
+        if (todo.length !== 0) {
+            $("#replyMessage").text('');
+            sumSet(todo);
+        }
+        else {
+            $("#sum").hide();
+            $("#replyMessage").text(`Well done cat you're all finished!`);
+        }
     });
 
 
