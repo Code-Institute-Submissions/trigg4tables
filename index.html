@@ -101,21 +101,23 @@
                     <button type="button" class="btn selector-style mt-3 mt-md-5" id="pickGo">go</button>
                 </form>
 
-                <form id="sum" class="form-inline justify-content-center mt-3 mt-md=5">
-                    <span id="sumFirst" class="mr-3"></span>
-                    <span id="sumOperator" class="mr-3"></span>
-                    <span id="sumSecond" class="mr-3"></span>
-                    <span id="sumEqual" class="mr-3">=</span>
-                    <input type="number" id="sumAnswer" min="1" max="200" class="mr-3">
-                    <button type="button" class="btn selector-style" id="sumCheck">check</button>
-                    <button type="button" class="btn selector-style" id="sumNext">next</button>
-                    <span id="todoAnswer"></span>
+                <form id="sumA" class="form-inline justify-content-center mt-3 mt-md=5">
+                    <span id="sumFirst" class="sumA mr-3"></span>
+                    <span id="sumOperator" class="sumA mr-3"></span>
+                    <span id="sumSecond" class="sumA mr-3"></span>
+                    <span id="sumEqual" class="sumA mr-3">=</span>
+                    <input id="sumAnswer" class="sumB mr-3" type="number" min="1" max="200">
+                    <button id="sumCheck" class="sumB btn selector-style" type="button">check</button>
+                    <span id="todoAnswer" class="sumC"></span>
+                    <button id="sumNext" class="sumC btn selector-style" type="button">next</button>
+                    <span id="todoAnswer2" class="sumB"></span>
                     <!--WHERE: input type number from Mozilla https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number-->
                 </form>
 
                 <form id="reply" class="form-inline justify-content-center mt-3 mt-md=5">
                     <p id="replyMessage"></p>
                 </form>
+                <p class="abc" id="testc">test</p>
             </div>
             <div class="col-1 d-none d-lg-block"></div>
         </div>

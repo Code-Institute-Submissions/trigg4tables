@@ -1,7 +1,11 @@
 $(document).ready(function() {
-    console.log('test d');
-    $("#sum").hide();
-    $("#sumNext").hide();
+    console.log('test y');
+    $(".sumA").hide();
+    $(".sumB").hide();
+    $(".sumC").hide();
+    console.log("hidec")
+
+
 
     //GLOBAL ARRAYS
     let todoArray = [];
@@ -55,8 +59,9 @@ $(document).ready(function() {
         $("#sumFirst").text(todo[0].key1);
         $("#sumOperator").text(todo[0].key2);
         $("#sumSecond").text(todo[0].key3);
-        $("#todoAnswer").text(todo[0].key4); //testing only get rid
-        $("#sumCheck").show();
+        $("#todoAnswer").text(todo[0].key4);
+        $("#todoAnswer2").text(todo[0].key4); //testing only get rid
+        $(".sumB").show();
     }
 
 
@@ -112,8 +117,11 @@ $(document).ready(function() {
         let no = parseInt($("#pickNo").children("option:selected").val());
         let operator = $("#pickOperator").find("input:checked").val();
         let todo = todoFill(no, operator);
+        console.log("go");
+        console.log($(".sum"));
         sumSet(todo);
-        $("#sum").show();
+        $(".sumA").show(); //was show
+        $(".sumB").show();
         //console.log(todoArray);
     });
 
@@ -130,8 +138,9 @@ $(document).ready(function() {
         //STEP1: CHECK ANSWER - CORRECT
         if (sumCorrect(sumAnswer, answer) === true) {
             $("#replyMessage").text(`Niceone that's correct. Click next.`);
-            $("#sumCheck").hide();
-            $("#sumNext").show();
+            $(".sumB").hide();
+            $(".sumC").show();
+
         }
 
         //STEP2: CHECK ANSWER - INCORRECT 1ST ATTEMPT
@@ -144,17 +153,18 @@ $(document).ready(function() {
         //STEP3: CHECK ANSWER - INCORRECT 2ND ATTEMPT
         else if (count === 2) {
             $("#replyMessage").text(`Sorry ${sumAnswer} is incorrect. The correct answer is ${answer}. We will ask again at the end. Click next.`);
-            $("#sumCheck").hide();
-            $("#sumNext").show();
             countIncrement(todo);
             todoAdd(todo);
+            $(".sumB").hide();
+            $(".sumC").show();
         }
 
         //STEP4: CHECK ANSWER - INCORRECT 3RD ATTEMPT
         else {
             $("#replyMessage").text(`Sorry ${sumAnswer} is incorrect. The correct answer is ${answer}. Click next.`);
-            $("#sumCheck").hide();
-            $("#sumNext").show();
+            countIncrement(todo);
+            $(".sumB").hide();
+            $(".sumC").show();
         }
     });
 
@@ -164,7 +174,7 @@ $(document).ready(function() {
         let done = doneArray;
         let todo = todoArray;
         doneMove(done, todo);
-        $("#sumNext").hide();
+        $(".sumC").hide();
 
         console.log(todo.length + "length");
 
