@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    console.log('test f');
+    console.log('test d');
     $("#sum").hide();
     $("#replyNext").hide();
 
@@ -56,6 +56,7 @@ $(document).ready(function() {
         $("#sumOperator").text(todo[0].key2);
         $("#sumSecond").text(todo[0].key3);
         $("#todoAnswer").text(todo[0].key4); //testing only get rid
+        $("#sumCheck").show();
     }
 
 
@@ -129,6 +130,7 @@ $(document).ready(function() {
         //STEP1: CHECK ANSWER - CORRECT
         if (sumCorrect(sumAnswer, answer) === true) {
             $("#replyMessage").text(`Niceone that's correct. Click next.`);
+            $("#sumCheck").hide();
             $("#replyNext").show();
         }
 
@@ -142,6 +144,7 @@ $(document).ready(function() {
         //STEP3: CHECK ANSWER - INCORRECT 2ND ATTEMPT
         else if (count === 2) {
             $("#replyMessage").text(`Sorry ${sumAnswer} is incorrect. The correct answer is ${answer}. We will ask again at the end. Click next.`);
+            $("#sumCheck").hide();
             $("#replyNext").show();
             countIncrement(todo);
             todoAdd(todo);
@@ -150,6 +153,7 @@ $(document).ready(function() {
         //STEP4: CHECK ANSWER - INCORRECT 3RD ATTEMPT
         else {
             $("#replyMessage").text(`Sorry ${sumAnswer} is incorrect. The correct answer is ${answer}. Click next.`);
+            $("#sumCheck").hide();
             $("#replyNext").show();
         }
     });
