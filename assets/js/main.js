@@ -1,7 +1,7 @@
 $(document).ready(function() {
     console.log('test d');
     $("#sum").hide();
-    $("#replyNext").hide();
+    $("#sumNext").hide();
 
     //GLOBAL ARRAYS
     let todoArray = [];
@@ -131,7 +131,7 @@ $(document).ready(function() {
         if (sumCorrect(sumAnswer, answer) === true) {
             $("#replyMessage").text(`Niceone that's correct. Click next.`);
             $("#sumCheck").hide();
-            $("#replyNext").show();
+            $("#sumNext").show();
         }
 
         //STEP2: CHECK ANSWER - INCORRECT 1ST ATTEMPT
@@ -145,7 +145,7 @@ $(document).ready(function() {
         else if (count === 2) {
             $("#replyMessage").text(`Sorry ${sumAnswer} is incorrect. The correct answer is ${answer}. We will ask again at the end. Click next.`);
             $("#sumCheck").hide();
-            $("#replyNext").show();
+            $("#sumNext").show();
             countIncrement(todo);
             todoAdd(todo);
         }
@@ -154,17 +154,17 @@ $(document).ready(function() {
         else {
             $("#replyMessage").text(`Sorry ${sumAnswer} is incorrect. The correct answer is ${answer}. Click next.`);
             $("#sumCheck").hide();
-            $("#replyNext").show();
+            $("#sumNext").show();
         }
     });
 
 
     // CLICK NEXT
-    $("#replyNext").click(function() {
+    $("#sumNext").click(function() {
         let done = doneArray;
         let todo = todoArray;
         doneMove(done, todo);
-        $("#replyNext").hide();
+        $("#sumNext").hide();
 
         console.log(todo.length + "length");
 
