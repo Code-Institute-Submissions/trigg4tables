@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    console.log('test n');
+    console.log('test g');
     $("#sum").hide();
     $("#replyNext").hide();
 
@@ -23,19 +23,19 @@ $(document).ready(function() {
         for (let i = 1; i < 13; i++) {
             if (operator === '+') {
                 let answer = no + i;
-                tablesArray.push({ id: i, count: 0, key1: no, key2: operator, key3: i, key4: answer });
+                tablesArray.push({ id: i, count: 1, key1: no, key2: operator, key3: i, key4: answer });
             }
             else if (operator === 'x') {
                 let answer = no * i;
-                tablesArray.push({ id: i, count: 0, key1: no, key2: operator, key3: i, key4: answer });
+                tablesArray.push({ id: i, count: 1, key1: no, key2: operator, key3: i, key4: answer });
             }
             else if (operator === '-') {
                 let j = no + i;
-                tablesArray.push({ id: i, count: 0, key1: j, key2: operator, key3: no, key4: i });
+                tablesArray.push({ id: i, count: 1, key1: j, key2: operator, key3: no, key4: i });
             }
             else if (operator === '/') {
                 let j = no * i;
-                tablesArray.push({ id: i, count: 0, key1: j, key2: operator, key3: no, key4: i });
+                tablesArray.push({ id: i, count: 1, key1: j, key2: operator, key3: no, key4: i });
             }
         }
         return tablesArray;
@@ -51,7 +51,8 @@ $(document).ready(function() {
 
     //SET SUM
     function sumSet(todo) {
-        if (todo.length > 0) {
+        console.log(todo.length + "length");
+        if (todo.length !== 0) {
             $("#sumAnswer").val('');
             $("#sumFirst").text(todo[0].key1);
             $("#sumOperator").text(todo[0].key2);
@@ -59,7 +60,10 @@ $(document).ready(function() {
             $("#todoAnswer").text(todo[0].key4); //testing only get rid
         }
         else {
+            $("#sum").hide();
+            $("#replyMessage").show();
             $("#replyMessage").text(`Well done cat you're all finished!`);
+
         }
     }
 
@@ -74,9 +78,15 @@ $(document).ready(function() {
     //CHECK ANSWER INCORRECT
     function sumIncorrect(sumAnswer, answer, count) {
         if (sumAnswer !== answer) {
-            count++;
             return count;
         }
+    }
+
+    //INCREMENT COUNT
+    function countIncrement(todo) {
+        todo[0].count++;
+        console.log(todo[0].count);
+        return todo[0].count;
     }
 
     //MOVE SUM TO DONE
@@ -112,7 +122,7 @@ $(document).ready(function() {
         let todo = todoFill(no, operator);
         sumSet(todo);
         $("#sum").show();
-        console.log(todoArray);
+        //console.log(todoArray);
     });
 
 
@@ -122,6 +132,8 @@ $(document).ready(function() {
         let answer = todoArray[0].key4;
         let count = todoArray[0].count;
         let todo = todoArray;
+        console.log(todoArray[0].count + "start count");
+        //console.log(doneArray);
 
         //STEP1: CHECK ANSWER - CORRECT
         if (sumCorrect(sumAnswer, answer) === true) {
@@ -130,16 +142,18 @@ $(document).ready(function() {
         }
 
         //STEP2: CHECK ANSWER - INCORRECT 1ST ATTEMPT
-        else if (sumIncorrect(sumAnswer, answer, count) === 1) {
+        else if (count === 1) {
             $("#replyMessage").text(`Sorry ${sumAnswer} is incorrect. Try again.`);
             $("#sumAnswer").val('');
+            countIncrement(todo);
         }
 
         //STEP3: CHECK ANSWER - INCORRECT 2ND ATTEMPT
-        else if (sumIncorrect(sumAnswer, answer, count) === 2) {
+        else if (count === 2) {
             $("#replyMessage").text(`Sorry ${sumAnswer} is incorrect. The correct answer is ${answer}. We will ask again at the end. Click next.`);
             $("#replyNext").show();
-            todoAdd(todo[0]);
+            countIncrement(todo);
+            todoAdd(todo);
         }
 
         //STEP4: CHECK ANSWER - INCORRECT 3RD ATTEMPT
