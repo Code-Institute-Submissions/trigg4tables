@@ -123,6 +123,7 @@ $(document).ready(function() {
         $(".sumA").show(); //was show
         $(".sumB").show();
         //console.log(todoArray);
+        
     });
 
 
@@ -177,6 +178,9 @@ $(document).ready(function() {
         $(".sumC").hide();
 
         console.log(todo.length + "length");
+        $("#progress").attr("style", `width: ${((12-todoArray.length)/12)*100}%`);
+        $("#progress").attr("aria-valuenow",(12-todo.length));
+        console.log(`${(((12-todoArray.length)/12)*100).toFixed(0)}`);
 
         if (todo.length !== 0) {
             $("#replyMessage").text('');
