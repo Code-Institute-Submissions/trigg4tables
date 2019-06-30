@@ -228,17 +228,31 @@ $(document).ready(function() {
 
 
 // canvas
-$('canvas').drawText({
-  fillStyle: '#9cf',
-  strokeStyle: '#25a',
-  strokeWidth: 2,
-  x: 150, y: 100,
-  fontSize: 48,
-  fontFamily: 'Verdana, sans-serif',
-  text: 'Hello'
-});
+var test = [
+  {key5: 4,
+  key6: 'six'},
+  {key5: 7,
+  key6: 'nine'}
+];
 
-
+$('canvas').addLayer({
+  type: 'text',
+  fillStyle: '#006a79',
+  x: 125, y: 16,
+  fontSize: 32,
+  fontFamily: 'Irish Grover, cursive',
+  text: 'Trigg Report'
+})
+.addLayer({
+  type: 'text',
+  fillStyle: '#006a79',
+  x: 125, y: 32,
+  fontSize: 16,
+  fontFamily: 'Signika, sans-serif',
+  text: test[0].key5
+})
+// Redraw layers to ensure correct ordering
+.drawLayers();
 
 
 }); // end of get document
