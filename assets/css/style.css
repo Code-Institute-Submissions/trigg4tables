@@ -36,23 +36,23 @@ h2 {
 }
 
 .bg--tealdark {
-    background-color: #0c8ea1;
+    background-color: #006a79
 }
 
 .bg--teallight {
-    background-color: #82cdd2;
+    background-color: #c1ed7a;
 }
 
 .bg--orangedark {
-    background-color: #f58332;
+    background-color: #5f9aa4
 }
 
 .bg--orangelight {
-    background-color: #eeaa7b;
+    background-color: #7fd77d
 }
 
 .bg--offwhite {
-    background-color: #f7faf7;
+    background-color: white;
 }
 
 .bg--trigg {
@@ -60,6 +60,7 @@ h2 {
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+    background-color: #e6f4f1;
 }
 
 .bg--height1 {
@@ -141,7 +142,7 @@ h2 {
 }
 
 #progress {
-    background-color: #0c8ea1;
+    background-color: #5f9aa4
 }
 
 
