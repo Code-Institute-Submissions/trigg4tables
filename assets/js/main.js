@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  console.log("test 8");
+  console.log("test 9");
   $(".sumA").hide();
   $(".sumB").hide();
   $(".sumC").hide();
@@ -152,7 +152,7 @@ $(document).ready(function() {
     console.log($(".sum"));
     sumSet(todo);
     $("#pick").hide();
-    $(".sumA").show(); 
+    $(".sumA").show();
     $(".sumB").show();
     //console.log(todoArray);
   });
@@ -223,15 +223,22 @@ $(document).ready(function() {
     } else {
       $("#sum").hide();
       $("#replyMessage").text(`Well done cat you're all finished!`);
-    }
+          }
   });
-}); // end of get document
+
 
 // canvas
+$('canvas').drawText({
+  fillStyle: '#9cf',
+  strokeStyle: '#25a',
+  strokeWidth: 2,
+  x: 150, y: 100,
+  fontSize: 48,
+  fontFamily: 'Verdana, sans-serif',
+  text: 'Hello'
+});
 
-/*var canvas = document.getElementById("myCanvas");
-var ctx = canvas.getContext("2d");
-ctx.font = "30px Arial";
-ctx.fillText(`Tables: ${myArray[2]["key1"]} ${myArray[2]["key2"]}`,10,50);
-ctx.fillText(`Time: 02.00`,10,80);
-ctx.fillText(`Revise: 7x4=28`,10,110);*/
+
+
+
+}); // end of get document
