@@ -138,9 +138,16 @@ $(document).ready(function() {
     if (revise.length === 0) {
       noteString = "No tables to revise.";
     } else {
-      noteString = revise.sort().join(' ');
+      noteString = revise.sort().join(" ");
     }
   }
+
+  function dateShort() {
+    let d = new Date();
+    let strD = d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear();
+    return strD;
+  }
+  //WHERE: date short format https://stackoverflow.com/questions/8398897/how-to-get-current-date-in-jquery
 
   //REPORT CANVAS
   function report() {
@@ -164,8 +171,8 @@ $(document).ready(function() {
         ......................
     Tables ${$("#pickNo").val()}${$("#pickOperator")
           .find("input:checked")
-          .val()}
-  Date 23 04 67 Time 00:56`
+          .val()} 
+    Date ${dateShort()}`
       })
       .addLayer({
         type: "text",
