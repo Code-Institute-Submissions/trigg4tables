@@ -24,12 +24,12 @@ body {
 
 h1 {
     font-family: 'Irish Grover', cursive;
-    color: #f7faf7;
+    color: white;
 }
 
 h2 {
     font-family: 'Cherry Cream Soda', cursive;
-    color: #f7faf7;
+    color: white;
 }
 
 select, option, label, input, .sumA {
@@ -57,15 +57,18 @@ h2 {
 }
 
 .bg--tealdark {
-    background-color: #006a79
+    background-color: #b18683;
+    /*background-color: #006a79;*/
 }
 
 .bg--teallight {
-    background-color: #c1ed7a;
+    background-color:#7fa5b5;
+    /*background-color: #c1ed7a;*/
 }
 
 .bg--orangedark {
-    background-color: #5f9aa4
+    background-color:#cfb4b2;
+    /*background-color: #5f9aa4*/
 }
 
 .bg--orangelight {
@@ -86,6 +89,7 @@ h2 {
     background-repeat: no-repeat;
     background-size: contain;
     background-color: #e6f4f1;
+    background-color:#e9f0f2;
 }
 
 .bg--paws {
@@ -121,15 +125,15 @@ h2 {
 /* WHERE: Shadow code from https://codepen.io/sdthornton/pen/wBZdXq*/
 
 .selector-style {
-    background-color: grey;
+    background-color:#7fa5b5;
 }
 
 .selector-style--selected {
-    background-color: #0c8ea1;
+    background-color: #e9f0f2;ack
 }
 
 .selector:hover {
-    background-color: #82cdd2;
+    background-color: #cfb4b2;
 }
 
 
@@ -146,10 +150,10 @@ h2 {
 }
 
 
-/*.button-style {
+/*.selector-style {
     margin-top: .5rem;
     margin-bottom: 1.5rem;
-    color: #313150;
+    color: #3f5057;
     padding: 6px;
     border-radius: 10px;
     font-size: .9rem;
