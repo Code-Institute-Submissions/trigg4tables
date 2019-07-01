@@ -3,11 +3,13 @@ $(document).ready(function() {
   $(".sumA").hide();
   $(".sumB").hide();
   $(".sumC").hide();
+  $("canvas").hide();
   console.log("hidec");
 
   //GLOBAL ARRAYS
   let todoArray = [];
   let doneArray = [];
+  let reviseArray = [];
 
   //CHECK VALID PICK
   function pickValid(no, operator) {
@@ -120,6 +122,40 @@ $(document).ready(function() {
     todo.push(todo[0]);
   }
 
+  //MOVE SUM TO REVISE
+  function reviseAdd(todo, revise) {
+    if(todo[0].count==4){
+    revise.push(todo[0]);}
+  }
+
+  //REPORT CANVAS
+  function report() {
+    $("canvas")
+      .addLayer({
+        type: "image",
+        x: 125,
+        y: 125,
+        width: 250,
+        height: 250,
+        source: "assets/images/paws.png"
+      })
+      .addLayer({
+        type: "text",
+        fillStyle: "red",
+        x: 125,
+        y: 125,
+        fontSize: 20,
+        fontFamily: "Cousine, monospace",
+        text: `TRIGG'S Tables REPORT
+  ......................
+  123456789
+  Tables ${doneArray[0].key1} ${doneArray[0].key2}
+  Date 23 04 67 Time 00:56
+  Revise 7 x 3 = 21`
+      })
+      .drawLayers();
+  }
+
   //CLICK NUMBER
   $("select").click(function() {
     $(this)
@@ -197,8 +233,11 @@ $(document).ready(function() {
         `Sorry ${sumAnswer} is incorrect. The correct answer is ${answer}. Click next.`
       );
       countIncrement(todo);
+      //console.log("count at step4" + count);
+      //reviseAdd(todo);
       $(".sumB").hide();
       $(".sumC").show();
+      //console.log(reviseArray);
     }
   });
 
@@ -206,16 +245,16 @@ $(document).ready(function() {
   $("#sumNext").click(function() {
     let done = doneArray;
     let todo = todoArray;
+    let revise = reviseArray;
+    reviseAdd(todo, revise);
     doneMove(done, todo);
+    //reviseAdd(revise, todo);
     $(".sumC").hide();
-
-    console.log(todo.length + "length");
     $("#progress").attr(
       "style",
       `width: ${((12 - todoArray.length) / 12) * 100}%`
     );
     $("#progress").attr("aria-valuenow", 12 - todo.length);
-    console.log(`${(((12 - todoArray.length) / 12) * 100).toFixed(0)}`);
 
     if (todo.length !== 0) {
       $("#replyMessage").text("");
@@ -223,53 +262,9 @@ $(document).ready(function() {
     } else {
       $("#sum").hide();
       $("#replyMessage").text(`Well done cat you're all finished!`);
-          }
+      $("canvas").show();
+      report();
+      console.log(reviseArray);
+    }
   });
-
-
-// canvas
-var test = [
-  {key5: 4,
-  key6: 'six'},
-  {key5: 7,
-  key6: 'nine'}
-];
-
-$('canvas').addLayer({
-  type: 'image',
-  x: 125, y: 125,
-  width: 250,
-  height: 250,
-  source: 'assets/images/paws.png',
-  
-})
-.addLayer({
-  type: 'text',
-  fillStyle: 'red',
-  x: 125, y: 125,
-  fontSize: 20,
-  //fontFamily:'Wendy One, sans-serif',
-  //fontFamily:'Bowlby One SC, cursive',
-  //fontFamily:'Heebo, sans-serif',
-  //fontFamily:'Space Mono, monospace',
-  fontFamily: 'Cousine, monospace',
-  //text: test[0].key5
-  text: `TRIGG REPORT
-  ......................
-  123456789
-  Time 00:56
-  Tables 7x
-  revise 7 x 3 = 21
-  Date 23 04 67`
-})
-// Redraw layers to ensure correct ordering
-.drawLayers();
-
-/*$('canvas').drawImage({
-  source: 'images/fish.jpg',
-  x: 50, y: 50,
-  width: 80,
-  height: 100,
-  fromCenter: false
-});*/
 }); // end of get document
