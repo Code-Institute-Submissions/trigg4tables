@@ -10,6 +10,7 @@ $(document).ready(function() {
   let todoArray = [];
   let doneArray = [];
   let reviseArray = [];
+  let noteString;
 
   //CHECK VALID PICK
   function pickValid(no, operator) {
@@ -122,10 +123,23 @@ $(document).ready(function() {
     todo.push(todo[0]);
   }
 
-  //MOVE SUM TO REVISE
+  //MOVE SUM TO REVISE ARRAY
   function reviseAdd(todo, revise) {
-    if(todo[0].count==4){
-    revise.push(todo[0]);}
+    if (todo[0].count == 4) {
+      //revise.push(todo[0]);}
+      revise.push(
+        `${todo[0].key1}${todo[0].key2}${todo[0].key3}=${todo[0].key4}`
+      );
+    }
+  }
+
+  //CREATE NOTE for report re revising
+  function noteFill(revise) {
+    if (revise.length === 0) {
+      noteString = "No tables to revise.";
+    } else {
+      noteString = revise.sort().join(' ');
+    }
   }
 
   //REPORT CANVAS
@@ -144,17 +158,36 @@ $(document).ready(function() {
         fillStyle: "red",
         x: 125,
         y: 125,
-        fontSize: 20,
+        fontSize: 18,
         fontFamily: "Cousine, monospace",
         text: `TRIGG'S Tables REPORT
-  ......................
-  123456789
-  Tables ${doneArray[0].key1} ${doneArray[0].key2}
-  Date 23 04 67 Time 00:56
-  Revise 7 x 3 = 21`
+        ......................
+    Tables ${$("#pickNo").val()}${$("#pickOperator")
+          .find("input:checked")
+          .val()}
+  Date 23 04 67 Time 00:56`
+      })
+      .addLayer({
+        type: "text",
+        fillStyle: "red",
+        x: 125,
+        y: 200,
+        fontSize: 16,
+        fontFamily: "Cousine, monospace",
+        maxWidth: 220,
+        text: noteString
       })
       .drawLayers();
   }
+
+  /*${reviseArray}*/
+
+  /*Tables ${doneArray[0].key1} ${doneArray[0].key2}*/
+
+  /*${reviseArray[0]} ${reviseArray[1]} ${reviseArray[2]}
+  ${reviseArray[3]} ${reviseArray[4]} ${reviseArray[5]}
+  ${reviseArray[6]} ${reviseArray[7]} ${reviseArray[8]}
+  ${reviseArray[9]} ${reviseArray[10]} ${reviseArray[11]}*/
 
   //CLICK NUMBER
   $("select").click(function() {
@@ -184,8 +217,7 @@ $(document).ready(function() {
       .find("input:checked")
       .val();
     let todo = todoFill(no, operator);
-    console.log("go");
-    console.log($(".sum"));
+
     sumSet(todo);
     $("#pick").hide();
     $(".sumA").show();
@@ -246,9 +278,9 @@ $(document).ready(function() {
     let done = doneArray;
     let todo = todoArray;
     let revise = reviseArray;
+    //let note = noteString;
     reviseAdd(todo, revise);
     doneMove(done, todo);
-    //reviseAdd(revise, todo);
     $(".sumC").hide();
     $("#progress").attr(
       "style",
@@ -260,11 +292,14 @@ $(document).ready(function() {
       $("#replyMessage").text("");
       sumSet(todo);
     } else {
+      //only do if complete
       $("#sum").hide();
       $("#replyMessage").text(`Well done cat you're all finished!`);
-      $("canvas").show();
-      report();
+      noteFill(revise);
       console.log(reviseArray);
+      console.log(noteString);
+      report();
+      $("canvas").show();
     }
   });
 }); // end of get document
