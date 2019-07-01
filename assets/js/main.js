@@ -236,23 +236,40 @@ var test = [
 ];
 
 $('canvas').addLayer({
-  type: 'text',
-  fillStyle: '#006a79',
-  x: 125, y: 16,
-  fontSize: 32,
-  fontFamily: 'Irish Grover, cursive',
-  text: 'Trigg Report'
+  type: 'image',
+  x: 125, y: 125,
+  width: 250,
+  height: 250,
+  source: 'assets/images/paws.png',
+  
 })
 .addLayer({
   type: 'text',
-  fillStyle: '#006a79',
-  x: 125, y: 32,
-  fontSize: 16,
-  fontFamily: 'Signika, sans-serif',
-  text: test[0].key5
+  fillStyle: 'red',
+  x: 125, y: 125,
+  fontSize: 20,
+  //fontFamily:'Wendy One, sans-serif',
+  //fontFamily:'Bowlby One SC, cursive',
+  //fontFamily:'Heebo, sans-serif',
+  //fontFamily:'Space Mono, monospace',
+  fontFamily: 'Cousine, monospace',
+  //text: test[0].key5
+  text: `TRIGG REPORT
+  ......................
+  123456789
+  Time 00:56
+  Tables 7x
+  revise 7 x 3 = 21
+  Date 23 04 67`
 })
 // Redraw layers to ensure correct ordering
 .drawLayers();
 
-
+/*$('canvas').drawImage({
+  source: 'images/fish.jpg',
+  x: 50, y: 50,
+  width: 80,
+  height: 100,
+  fromCenter: false
+});*/
 }); // end of get document
