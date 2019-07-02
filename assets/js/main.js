@@ -6,6 +6,12 @@ $(document).ready(function() {
   $("canvas").hide();
   console.log("hidec");
 
+  $(document).on('keypress',function(e) {
+    if(e.which == 13) {
+        alert('You pressed enter!');
+    }
+});
+
   //GLOBAL ARRAYS
   let todoArray = [];
   let doneArray = [];
@@ -187,15 +193,6 @@ $(document).ready(function() {
       .drawLayers();
   }
 
-  /*${reviseArray}*/
-
-  /*Tables ${doneArray[0].key1} ${doneArray[0].key2}*/
-
-  /*${reviseArray[0]} ${reviseArray[1]} ${reviseArray[2]}
-  ${reviseArray[3]} ${reviseArray[4]} ${reviseArray[5]}
-  ${reviseArray[6]} ${reviseArray[7]} ${reviseArray[8]}
-  ${reviseArray[9]} ${reviseArray[10]} ${reviseArray[11]}*/
-
   //CLICK NUMBER
   $("select").click(function() {
     $(this)
@@ -224,6 +221,7 @@ $(document).ready(function() {
       .find("input:checked")
       .val();
     let todo = todoFill(no, operator);
+    console.log($("#plus").checked);
 
     sumSet(todo);
     $("#pick").hide();
