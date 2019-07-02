@@ -167,7 +167,27 @@ h2 {
 }
 
 .bg--height5 {
-  min-height: 33vh;
+  min-height: 35vh;
+}
+
+.bg--height6 {
+  min-height: 20vh;
+}
+
+.bg--height7 {
+  min-height: 50vh;
+}
+
+.bg--height12 {
+  min-height: 12vh;
+}
+
+.bg--height24 {
+  min-height: 24vh;
+}
+
+.bg--height36 {
+  min-height: 36vh;
 }
 
 .shade {
