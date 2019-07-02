@@ -6,11 +6,12 @@ $(document).ready(function() {
   $("canvas").hide();
   console.log("hidec");
 
-  $(document).on('keypress',function(e) {
-    if(e.which == 13) {
-        alert('You pressed enter!');
+  $(document).on("keypress", function(e) {
+    if (e.which == 13) {
+      //alert('You pressed enter!');
+      event.preventDefault();
     }
-});
+  });
 
   //GLOBAL ARRAYS
   let todoArray = [];
@@ -110,6 +111,18 @@ $(document).ready(function() {
       return count;
     }
   }
+
+  //CREATE BG CLASS FOR INCORRECT
+  function bg() {
+    let bg = `bg--${Math.floor(Math.random() * 4)}`;
+    return bg;
+  }
+
+  /*function bg() {
+    let bg = `"bg--${Math.floor(Math.random() * 3)}"`;
+    return bg;
+  }*/
+
 
   //INCREMENT COUNT
   function countIncrement(todo) {
@@ -221,7 +234,6 @@ $(document).ready(function() {
       .find("input:checked")
       .val();
     let todo = todoFill(no, operator);
-    console.log($("#plus").checked);
 
     sumSet(todo);
     $("#pick").hide();
@@ -236,11 +248,13 @@ $(document).ready(function() {
     let answer = todoArray[0].key4;
     let count = todoArray[0].count;
     let todo = todoArray;
+    //let bg = bg();
     console.log(todoArray[0].count + "start count");
     //console.log(doneArray);
 
     //STEP1: CHECK ANSWER - CORRECT
     if (sumCorrect(sumAnswer, answer) === true) {
+      $(".trigg").removeClass("bg--hi bg--0 bg--1 bg--2 bg--3").addClass("bg--thumbsup");
       $("#replyMessage").text(`Niceone that's correct. Click next.`);
       $(".sumB").hide();
       $(".sumC").show();
@@ -248,13 +262,18 @@ $(document).ready(function() {
 
     //STEP2: CHECK ANSWER - INCORRECT 1ST ATTEMPT
     else if (count === 1) {
+      $(".trigg").removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3").addClass(bg());
       $("#replyMessage").text(`Sorry ${sumAnswer} is incorrect. Try again.`);
       $("#sumAnswer").val("");
       countIncrement(todo);
+          
+      
+     
     }
 
     //STEP3: CHECK ANSWER - INCORRECT 2ND ATTEMPT
     else if (count === 2) {
+      $(".trigg").removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3").addClass(bg());
       $("#replyMessage").text(
         `Sorry ${sumAnswer} is incorrect. The correct answer is ${answer}. We will ask again at the end. Click next.`
       );
@@ -262,10 +281,12 @@ $(document).ready(function() {
       todoAdd(todo);
       $(".sumB").hide();
       $(".sumC").show();
+      
     }
 
     //STEP4: CHECK ANSWER - INCORRECT 3RD ATTEMPT
     else {
+      $(".trigg").removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3").addClass(bg());
       $("#replyMessage").text(
         `Sorry ${sumAnswer} is incorrect. The correct answer is ${answer}. Click next.`
       );
@@ -284,9 +305,10 @@ $(document).ready(function() {
     let todo = todoArray;
     let revise = reviseArray;
     //let note = noteString;
+    
     reviseAdd(todo, revise);
     doneMove(done, todo);
-    $(".sumC").hide();
+        $(".sumC").hide();
     $("#progress").attr(
       "style",
       `width: ${((12 - todoArray.length) / 12) * 100}%`
@@ -299,6 +321,7 @@ $(document).ready(function() {
     } else {
       //only do if complete
       $("#sum").hide();
+      $(".trigg").removeClass("bg--thumbsup bg--0 bg--1 bg--2 bg--3").addClass("bg--score");
       $("#replyMessage").text(`Well done cat you're all finished!`);
       noteFill(revise);
       console.log(reviseArray);
