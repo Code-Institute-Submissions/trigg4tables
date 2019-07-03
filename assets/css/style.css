@@ -190,6 +190,10 @@ h2 {
   min-height: 36vh;
 }
 
+.bg--height52 {
+  min-height: 52vh;
+}
+
 .shade {
   -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
     0 3px 6px rgba(0, 0, 0, 0.23);
@@ -254,6 +258,19 @@ h2 {
   background-color: #7fa5b5;
 }
 
+/*----------NUMBER KEYPAD----------*/
+.padNum {
+  width: 30px; 
+}
+
+#padClear {
+  width: 90px;
+}
+
+td {
+  padding: 15px;
+  text-align: center;
+}
 /*----------MEDIA QUERIES----------*/
 
 @media (min-width: 768px) and (max-width: 991px) {

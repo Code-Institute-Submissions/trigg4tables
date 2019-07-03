@@ -163,9 +163,6 @@
             </button>
             <span id="todoAnswer2" class="sumB"></span>
             <!--WHERE: input type number from Mozilla https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number-->
-            
-            
-          
           </form>
 
           <form
@@ -175,34 +172,56 @@
             <p id="replyMessage"></p>
           </form>
 
+          <!--NUMBER KEYPAD-->
           <form id="pad">
-<input id="padAnswer" type="text" maxlength="3">
-              <table>
-                <tr>
-                  <td><input id="padClear" type="button" value="C"></td>
-                  <td><input id="pad1" class="padNum" type="button" value="0"></td>
-                </tr>
-                  <tr>
-                      <td><input id="pad1" class="padNum" type="button" value="1"></td>
-                      <td><input id="pad2" class="padNum" type="button" value="2"></td>
-                      <td><input id="pad3" class="padNum" type="button" value="3"></td>
-                  </tr>
-                  <tr>
-                      <td><input id="pad1" class="padNum" type="button" value="4"></td>
-                      <td><input id="pad2" class="padNum" type="button" value="5"></td>
-                      <td><input id="pad3" class="padNum" type="button" value="6"></td>
-                  </tr>
-                  <tr>
-                      <td><input id="pad1" class="padNum" type="button" value="7"></td>
-                      <td><input id="pad2" class="padNum" type="button" value="8"></td>
-                      <td><input id="pad3" class="padNum" type="button" value="9"></td>
-                  </tr>
-                </table>
+            <input id="padAnswer" type="text" maxlength="3" />
+            <table>
+              <tr>
+                <td><input id="padClear" type="button" value="clear" /></td>
+                <td>
+                  <input id="pad1" class="padNum" type="button" value="0" />
+                </td>
+              </tr>
+            </table>
+            <!--WHY: Separate table used to allow width difference-->
+            
+            <table>
+              <tr>
+                <td>
+                  <input id="pad1" class="padNum" type="button" value="1" />
+                </td>
+                <td>
+                  <input id="pad2" class="padNum" type="button" value="2" />
+                </td>
+                <td>
+                  <input id="pad3" class="padNum" type="button" value="3" />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input id="pad1" class="padNum" type="button" value="4" />
+                </td>
+                <td>
+                  <input id="pad2" class="padNum" type="button" value="5" />
+                </td>
+                <td>
+                  <input id="pad3" class="padNum" type="button" value="6" />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input id="pad1" class="padNum" type="button" value="7" />
+                </td>
+                <td>
+                  <input id="pad2" class="padNum" type="button" value="8" />
+                </td>
+                <td>
+                  <input id="pad3" class="padNum" type="button" value="9" />
+                </td>
+              </tr>
+            </table>
           </form>
           <div>
-
-            
-
             <canvas width="250" height="250" class="bg--teallight">
               tables report
             </canvas>
