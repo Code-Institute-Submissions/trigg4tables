@@ -20,19 +20,15 @@ $(document).ready(function() {
   let noteString;
 
 //NUMBER KEYPAD
-/*$("#pad1").click(function(){
-    let concat = $("#padAnswer").val() + '1';
-$("#padAnswer").val(concat);
-});*/
-
 $(".padNum").click(function(){
+  if($("#padAnswer").val().length<3){
    let concat = $("#padAnswer").val() + $(this).val();
-$("#padAnswer").val(concat);
+$("#padAnswer").val(concat);}
 });
+//WHY: maxLength not working if using keypad
 
 $("#padClear").click(function(){
-  //let concat = $("#padAnswer").val() + $(this).val();
-$("#padAnswer").val("");
+  $("#padAnswer").val("");
 });
 
 
