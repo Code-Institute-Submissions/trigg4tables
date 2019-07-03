@@ -21,14 +21,14 @@ $(document).ready(function() {
 
 //NUMBER KEYPAD
 $(".padNum").click(function(){
-  if($("#padAnswer").val().length<3){
-   let concat = $("#padAnswer").val() + $(this).val();
-$("#padAnswer").val(concat);}
+  if($("#sumAnswer").val().length<3){
+   let concat = $("#sumAnswer").val() + $(this).val();
+$("#sumAnswer").val(concat);}
 });
 //WHY: maxLength not working if using keypad
 
 $("#padClear").click(function(){
-  $("#padAnswer").val("");
+  $("#sumAnswer").val("");
 });
 
 
