@@ -75,6 +75,7 @@
           </div>
         </div>
         <div class="col-12 col-md-6 col-lg-5 bg--height52 shade">
+          <!--PROGRESS-->
           <div class="progress mt-3">
             <div
               id="progress"
@@ -86,7 +87,8 @@
               aria-valuemax="12"
             ></div>
           </div>
-
+          <!--MESSAGE-->
+          <p id="replyMessage"></p>
           <!--WHY: Select & 2 buttons wrapped in form element with Bootstrap class form-inline to keep selection on same line as per w3.-->
           <form id="pick" class="form-inline justify-content-center">
             <!--WHY: Bootstrap form-control class added to select element as per w3-->
@@ -147,20 +149,18 @@
             <span id="sumOperator" class="sumA mr-3"></span>
             <span id="sumSecond" class="sumA mr-3"></span>
             <span id="sumEqual" class="sumA mr-3">=</span>
-            <input
-              id="sumAnswer"
+            <!--<input
+              id="sumAnswerX"
               class="sumB mr-3"
               type="number"
               min="1"
               max="200"
-            />
-            <button id="sumCheck" class="sumB btn selector-style" type="button">
-              check
-            </button>
+            />-->
+            
             <span id="todoAnswer" class="sumC"></span>
-            <button id="sumNext" class="sumC btn selector-style" type="button">
+            <!--<button id="sumNextX" class="sumC btn selector-style" type="button">
               next
-            </button>
+            </button>-->
             <span id="todoAnswer2" class="sumB"></span>
             <!--WHERE: input type number from Mozilla https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number-->
           </form>
@@ -169,13 +169,19 @@
             id="reply"
             class="form-inline justify-content-center mt-3 mt-md=5"
           >
-            <p id="replyMessage"></p>
+            
           </form>
 
           <!--NUMBER KEYPAD-->
           <form id="pad">
             
-            <input id="padAnswer" type="text" maxlength="3" />
+            <input id="sumAnswer" type="text" maxlength="3" />
+            <button id="sumCheck" class="sumB btn selector-style" type="button">
+                check
+              </button>
+              <button id="sumNext" class="sumC btn selector-style" type="button">
+                  next
+                </button>
             <table>
               <tr>
                 <td><input id="padClear" type="button" value="clear" /></td>
