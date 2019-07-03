@@ -259,17 +259,39 @@ h2 {
 }
 
 /*----------NUMBER KEYPAD----------*/
+
+#padAnswer {
+  width: 50px;
+  margin-left: 15px;
+  text-align: center;
+}
+
 .padNum {
-  width: 30px; 
+  width: 35px;
+}
+
+.padNum,
+#padClear {
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  background-color: #e9f0f2;
 }
 
 #padClear {
-  width: 90px;
+  width: 100px;
 }
 
 td {
   padding: 15px;
   text-align: center;
+}
+
+#pad {
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: #e9f0f2;
+  padding: 15px;
+  width: 233px; /*65x3+30+8(half borders)?*/
 }
 /*----------MEDIA QUERIES----------*/
 
