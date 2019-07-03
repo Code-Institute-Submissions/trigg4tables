@@ -19,6 +19,28 @@ $(document).ready(function() {
   let reviseArray = [];
   let noteString;
 
+//NUMBER KEYPAD
+/*$("#pad1").click(function(){
+    let concat = $("#padAnswer").val() + '1';
+$("#padAnswer").val(concat);
+});*/
+
+$(".padNum").click(function(){
+   let concat = $("#padAnswer").val() + $(this).val();
+$("#padAnswer").val(concat);
+});
+
+$("#padClear").click(function(){
+  //let concat = $("#padAnswer").val() + $(this).val();
+$("#padAnswer").val("");
+});
+
+
+
+
+
+
+
   //CHECK VALID PICK
   function pickValid(no, operator) {
     if (no === "no." || !operator) {
