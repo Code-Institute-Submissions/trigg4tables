@@ -266,12 +266,12 @@ h2 {
 
 #sumAnswer {
   width: 50px;
-  margin-left: 15px;
+  
   text-align: center;
 }
 
 .padNum {
-  width: 35px;
+  width: 30px;
 }
 
 .padNum,
@@ -282,17 +282,18 @@ h2 {
 }
 
 #padClear {
-  width: 100px;
+  width: 80px;
 }
 
 #sumNext, #sumCheck {
-  width: 85px;
-  margin-left: 30px;
-}
+  width: 50px;
+  /*margin: 10px;*/
+  padding: 0;
+    }
 
 
 td {
-  padding: 15px;
+  padding: 10px;
   text-align: center;
 }
 
@@ -300,8 +301,8 @@ td {
   border: 2px solid #ccc;
   border-radius: 10px;
   background-color: #e9f0f2;
-  padding: 15px;
-  width: 300px; /*65x3+30+8(half borders)?*/
+  padding: 10px;
+  width: 230px; /*65x3+30+8(half borders)?*/
 }
 /*----------MEDIA QUERIES----------*/
 
