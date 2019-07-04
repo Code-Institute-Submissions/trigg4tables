@@ -74,148 +74,176 @@
             </div>
           </div>
         </div>
+        <!--ASK ANSWER COLUMN-->
         <div class="col-12 col-md-6 col-lg-5 bg--height52 shade">
-          <!--PROGRESS-->
-          <div class="progress mt-3">
-            <div
-              id="progress"
-              class="progress-bar progress-bar-striped"
-              role="progressbar"
-              style="width: 0%"
-              aria-valuenow="0"
-              aria-valuemin="0"
-              aria-valuemax="12"
-            ></div>
-          </div>
-          <!--MESSAGE-->
-          <p id="replyMessage"></p>
-          <!--WHY: Select & 2 buttons wrapped in form element with Bootstrap class form-inline to keep selection on same line as per w3.-->
-          <form id="pick" class="form-inline justify-content-center">
-            <!--WHY: Bootstrap form-control class added to select element as per w3-->
-            <select
-              class="form-control mr-3 mr-md-5 mt-3 mt-md-5 selector-style"
-              role="group"
-              id="pickNo"
-            >
-              <option disabled="disabled" selected="selected">no.</option>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-              <option>6</option>
-              <option>7</option>
-              <option>8</option>
-              <option>9</option>
-              <option>10</option>
-              <option>11</option>
-              <option>12</option>
-            </select>
-            <!--WHERE: Option no. displayed but disabled from StackOverflow https://stackoverflow.com/questions/15224466/display-optgroup-label-as-initial-option-->
-
-            <!--WHERE: radio style button toggling from https://coreui.io/docs/components/buttons/-->
-            <div
-              class="btn-group btn-group-toggle mr-3 mr-md-5 mt-3 mt-md-5"
-              data-toggle="buttons"
-              id="pickOperator"
-            >
-              <label class="btn selector-style">
-                <input id="plus" type="radio" name="operator" value="+" />+
-              </label>
-              <label class="btn selector-style">
-                <input id="minus" type="radio" name="operator" value="-" />-
-              </label>
-              <label class="btn selector-style">
-                <input id="multiply" type="radio" name="operator" value="x" />x
-              </label>
-              <label class="btn selector-style">
-                <input id="divide" type="radio" name="operator" value="/" />/
-              </label>
+          <div class="row">
+            <div class="col-12 bg--height3 testr">
+              <!--PROGRESS-->
+              <div class="progress mt-3">
+                <div
+                  id="progress"
+                  class="progress-bar progress-bar-striped"
+                  role="progressbar"
+                  style="width: 0%"
+                  aria-valuenow="0"
+                  aria-valuemin="0"
+                  aria-valuemax="12"
+                ></div>
+              </div>
+              <!--MESSAGE-->
+              <p id="replyMessage"></p>
+              <p id="replyMessage"></p>
             </div>
-            <button
-              type="button"
-              class="btn selector-style mt-3 mt-md-5"
-              id="pickGo"
-            >
-              go
-            </button>
-          </form>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <!--WHY: Select & 2 buttons wrapped in form element with Bootstrap class form-inline to keep selection on same line as per w3.-->
+              <form id="pick" class="form-inline justify-content-center">
+                <!--WHY: Bootstrap form-control class added to select element as per w3-->
+                <select
+                  class="form-control mr-3 mr-md-5 mt-3 mt-md-5 selector-style"
+                  role="group"
+                  id="pickNo"
+                >
+                  <option disabled="disabled" selected="selected">no.</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                  <option>10</option>
+                  <option>11</option>
+                  <option>12</option>
+                </select>
+                <!--WHERE: Option no. displayed but disabled from StackOverflow https://stackoverflow.com/questions/15224466/display-optgroup-label-as-initial-option-->
 
-          <form
-            id="sum"
-            class="form-inline justify-content-center mt-3 mt-md=5"
-          >
-            <span id="sumFirst" class="sumA mr-3"></span>
-            <span id="sumOperator" class="sumA mr-3"></span>
-            <span id="sumSecond" class="sumA mr-3"></span>
-            <span id="sumEqual" class="sumA mr-3">=</span>
-            <span id="todoAnswer" class="sumC"></span>
-            <span id="todoAnswer2" class="sumB"></span>
-            <!--WHERE: input type number from Mozilla https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number-->
-          </form>
+                <!--WHERE: radio style button toggling from https://coreui.io/docs/components/buttons/-->
+                <div
+                  class="btn-group btn-group-toggle mr-3 mr-md-5 mt-3 mt-md-5"
+                  data-toggle="buttons"
+                  id="pickOperator"
+                >
+                  <label class="btn selector-style">
+                    <input id="plus" type="radio" name="operator" value="+" />+
+                  </label>
+                  <label class="btn selector-style">
+                    <input id="minus" type="radio" name="operator" value="-" />-
+                  </label>
+                  <label class="btn selector-style">
+                    <input
+                      id="multiply"
+                      type="radio"
+                      name="operator"
+                      value="x"
+                    />x
+                  </label>
+                  <label class="btn selector-style">
+                    <input
+                      id="divide"
+                      type="radio"
+                      name="operator"
+                      value="/"
+                    />/
+                  </label>
+                </div>
+                <button
+                  type="button"
+                  class="btn selector-style mt-3 mt-md-5"
+                  id="pickGo"
+                >
+                  go
+                </button>
+              </form>
 
-          <!--NUMBER KEYPAD-->
-          <form id="pad">
-            <input id="sumAnswer" type="text" maxlength="3" />
-            <button id="sumCheck" class="sumB btn selector-style" type="button">
-              check
-            </button>
-            <button id="sumNext" class="sumC btn selector-style" type="button">
-              next
-            </button>
+              <form
+                id="sum"
+                class="form-inline justify-content-center mt-3 mt-md=5"
+              >
+                <span id="sumFirst" class="sumA mr-3"></span>
+                <span id="sumOperator" class="sumA mr-3"></span>
+                <span id="sumSecond" class="sumA mr-3"></span>
+                <span id="sumEqual" class="sumA mr-3">=</span>
+                <span id="todoAnswer" class="sumC"></span>
+                <span id="todoAnswer2" class="sumB"></span>
+                <!--WHERE: input type number from Mozilla https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number-->
+              </form>
 
-            <!--<p class="text-center">|</p>-->
-            <table>
-              <tr>
-                <td>
-                  <input id="pad1" class="padNum" type="button" value="1" />
-                </td>
-                <td>
-                  <input id="pad2" class="padNum" type="button" value="2" />
-                </td>
-                <td>
-                  <input id="pad3" class="padNum" type="button" value="3" />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <input id="pad4" class="padNum" type="button" value="4" />
-                </td>
-                <td>
-                  <input id="pad5" class="padNum" type="button" value="5" />
-                </td>
-                <td>
-                  <input id="pad6" class="padNum" type="button" value="6" />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <input id="pad7" class="padNum" type="button" value="7" />
-                </td>
-                <td>
-                  <input id="pad8" class="padNum" type="button" value="8" />
-                </td>
-                <td>
-                  <input id="pad9" class="padNum" type="button" value="9" />
-                </td>
-              </tr>
-            </table>
+              <!--NUMBER KEYPAD-->
+              <form id="pad">
+                <input id="sumAnswer" type="text" maxlength="3" />
+                <button
+                  id="sumCheck"
+                  class="sumB btn selector-style"
+                  type="button"
+                >
+                  check
+                </button>
+                <button
+                  id="sumNext"
+                  class="sumC btn selector-style"
+                  type="button"
+                >
+                  next
+                </button>
 
-            <table>
-              <tr>
-                <td>
-                  <input id="pad1" class="padNum" type="button" value="0" />
-                </td>
-                <td><input id="padClear" type="button" value="clear" /></td>
-              </tr>
-            </table>
+                <!--<p class="text-center">|</p>-->
+                <table>
+                  <tr>
+                    <td>
+                      <input id="pad1" class="padNum" type="button" value="1" />
+                    </td>
+                    <td>
+                      <input id="pad2" class="padNum" type="button" value="2" />
+                    </td>
+                    <td>
+                      <input id="pad3" class="padNum" type="button" value="3" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input id="pad4" class="padNum" type="button" value="4" />
+                    </td>
+                    <td>
+                      <input id="pad5" class="padNum" type="button" value="5" />
+                    </td>
+                    <td>
+                      <input id="pad6" class="padNum" type="button" value="6" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input id="pad7" class="padNum" type="button" value="7" />
+                    </td>
+                    <td>
+                      <input id="pad8" class="padNum" type="button" value="8" />
+                    </td>
+                    <td>
+                      <input id="pad9" class="padNum" type="button" value="9" />
+                    </td>
+                  </tr>
+                </table>
 
-            <!--WHY: Separate table used to allow width difference-->
-          </form>
-          <div>
-            <canvas width="250" height="250" class="bg--teallight">
-              tables report
-            </canvas>
+                <table>
+                  <tr>
+                    <td>
+                      <input id="pad1" class="padNum" type="button" value="0" />
+                    </td>
+                    <td><input id="padClear" type="button" value="clear" /></td>
+                  </tr>
+                </table>
+
+                <!--WHY: Separate table used to allow width difference-->
+              </form>
+              <div>
+                <canvas width="250" height="250" class="bg--teallight">
+                  tables report
+                </canvas>
+              </div>
+            </div>
           </div>
         </div>
         <div class="col-1 d-none d-lg-block"></div>
