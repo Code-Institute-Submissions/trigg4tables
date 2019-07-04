@@ -268,10 +268,14 @@ h2 {
   width: 50px;
   
   text-align: center;
+  -webkit-appearance: none;
+border-radius: 0;
 }
 
 .padNum {
   width: 30px;
+  -webkit-appearance: none;
+border-radius: 0;
 }
 
 .padNum,
@@ -289,12 +293,16 @@ h2 {
   width: 50px;
   /*margin: 10px;*/
   padding: 0;
+  -webkit-appearance: none;
+border-radius: 0;
     }
 
 
 td {
   padding: 10px;
   text-align: center;
+  -webkit-appearance: none;
+border-radius: 0;
 }
 
 #pad {
@@ -302,7 +310,7 @@ td {
   border-radius: 10px;
   background-color: #e9f0f2;
   padding: 10px;
-  width: 230px; /*65x3+30+8(half borders)?*/
+  width: 230px; /*50x4+20+10(half borders)?*/
 }
 /*----------MEDIA QUERIES----------*/
 
