@@ -264,52 +264,52 @@ h2 {
 
 /*----------NUMBER KEYPAD----------*/
 
+#sumAnswer,
+#sumCheck,
+#sumNext,
+.padNum,
+#padClear {
+  height: 40px;
+  margin: 10px;
+  padding: 0px;
+  text-align: center;
+}
+
 #sumAnswer {
   width: 50px;
-  
-  text-align: center;
- 
 }
+
+#sumCheck,
+#sumNext {
+  width: 50px;
+  }
 
 .padNum {
   width: 30px;
-  
-}
-
-.padNum,
-#padClear, #sumNext, #sumCheck {
-  border: 2px solid #ccc;
-  border-radius: 5px;
-  background-color: #e9f0f2;
 }
 
 #padClear {
   width: 80px;
 }
 
-#sumNext, #sumCheck {
-  width: 50px;
-  /*margin: 10px;*/
-  padding: 0;
-  
-    }
-
-
-td {
-  padding: 10px;
-  text-align: center;
- 
+#sumCheck,
+#sumNext,
+.padNum,
+#padClear {
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  background-color: #e9f0f2;
 }
 
-table {
-  width: 208px;
-}
 #pad {
   border: 2px solid #ccc;
   border-radius: 10px;
   background-color: #e9f0f2;
-  padding: 10px;
-  width: 230px; /*50x4+20+10(half borders)?*/
+  width: 215px;
+}
+
+hr{
+  margin:10px;
 }
 /*----------MEDIA QUERIES----------*/
 

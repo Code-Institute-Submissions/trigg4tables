@@ -50,12 +50,10 @@
         <div class="col-12 d-md-none">
           <div class="row goHide">
             <div class="col-6 bg--teallight shade bg--height3">
-                <h2 class="align-self-center">cool cats<br />do maths</h2>
-              
+              <h2 class="align-self-center">cool cats<br />do maths</h2>
             </div>
             <div class="col-6 bg--orangedark text-center shade bg--height3">
-                <h2>Trigg's Tips</h2>
-              
+              <h2>Trigg's Tips</h2>
             </div>
           </div>
           <div class="row">
@@ -70,8 +68,7 @@
                 <div
                   class="col-12 bg--teallight d-flex justify-content-center shade bg--height3"
                 >
-                <span>Clock 00:00</span>  
-                
+                  <span>Clock 00:00</span>
                 </div>
               </div>
             </div>
@@ -99,7 +96,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-12">
+            <div class="col-12 ">
               <!--WHY: Select & 2 buttons wrapped in form element with Bootstrap class form-inline to keep selection on same line as per w3.-->
               <form id="pick" class="form-inline justify-content-center">
                 <!--WHY: Bootstrap form-control class added to select element as per w3-->
@@ -176,73 +173,43 @@
               </form>
 
               <!--NUMBER KEYPAD-->
-              <form id="pad" class="startHide goShow">
-                <div class="d-flex justify-content-between">
-                  <span>144 x 12 =</span>
-                <input id="sumAnswer" type="text" maxlength="3" />
-                <button
-                  id="sumCheck"
-                  class="sumB btn"
-                  type="button"
-                >
-                  check
-                </button>
-                <button
-                  id="sumNext"
-                  class="sumC btn"
-                  type="button"
-                >
-                  next
-                </button>
+              <div class="d-flex justify-content-center">
+                <form id="pad" class="startHide goShow justify-content-center">
+                  <div class="d-flex justify-content-between">
+                    <span>144 x 12 =</span>
+                    <input id="sumAnswer" type="text" maxlength="3" />
+                    <button id="sumCheck" class="sumB btn" type="button">
+                      check
+                    </button>
+                    <button id="sumNext" class="sumC btn" type="button">
+                      next
+                    </button>
+                  </div>
+
+                  <hr />
+                  <input id="pad1" class="padNum" type="button" value="1" />
+                  <input id="pad2" class="padNum" type="button" value="2" />
+                  <input id="pad3" class="padNum" type="button" value="3" />
+                  <input
+                    id="pad4"
+                    class="padNum"
+                    type="button"
+                    value="4"
+                  /><br />
+                  <input id="pad5" class="padNum" type="button" value="5" />
+                  <input id="pad6" class="padNum" type="button" value="6" />
+                  <input id="pad7" class="padNum" type="button" value="7" />
+                  <input
+                    id="pad8"
+                    class="padNum"
+                    type="button"
+                    value="8"
+                  /><br />
+                  <input id="pad9" class="padNum" type="button" value="9" />
+                  <input id="pad1" class="padNum" type="button" value="0" />
+                  <input id="padClear" type="button" value="clear" />
+                </form>
               </div>
-                <hr>
-
-                              <table>
-                  <tr>
-                    <td>
-                      <input id="pad1" class="padNum" type="button" value="1" />
-                    </td>
-                    <td>
-                      <input id="pad2" class="padNum" type="button" value="2" />
-                    </td>
-                    <td>
-                      <input id="pad3" class="padNum" type="button" value="3" />
-                    </td>
-                    <td>
-                      <input id="pad4" class="padNum" type="button" value="4" />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <input id="pad5" class="padNum" type="button" value="5" />
-                    </td>
-                    <td>
-                      <input id="pad6" class="padNum" type="button" value="6" />
-                    </td>
-                    <td>
-                        <input id="pad7" class="padNum" type="button" value="7" />
-                      </td>
-                      <td>
-                        <input id="pad8" class="padNum" type="button" value="8" />
-                      </td>
-                  </tr>
-                  
-                </table>
-
-                <table>
-                  <tr>
-                      <td>
-                          <input id="pad9" class="padNum" type="button" value="9" />
-                        </td>
-                    <td>
-                      <input id="pad1" class="padNum" type="button" value="0" />
-                    </td>
-                    <td><input id="padClear" type="button" value="clear" /></td>
-                  </tr>
-                </table>
-
-                <!--WHY: Separate table used to allow width difference-->
-              </form>
               <div>
                 <canvas width="250" height="250" class="bg--teallight">
                   tables report
