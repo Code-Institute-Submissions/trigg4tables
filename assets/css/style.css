@@ -297,7 +297,7 @@ td {
   border-radius: 10px;
   background-color: #e9f0f2;
   padding: 15px;
-  width: 233px; /*65x3+30+8(half borders)?*/
+  width: 300px; /*65x3+30+8(half borders)?*/
 }
 /*----------MEDIA QUERIES----------*/
 
