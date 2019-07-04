@@ -108,16 +108,17 @@ $("#padClear").click(function(){
   //SET SUM
   function sumSet(todo) {
     $("#sumAnswer").val("");
-    $("#sumFirst").text(todo[0].key1);
+    $("#sumAsk").text(`${todo[0].key1} ${todo[0].key2} ${todo[0].key3}=`);
+    /*$("#sumFirst").text(todo[0].key1);
     $("#sumOperator").text(todo[0].key2);
-    $("#sumSecond").text(todo[0].key3);
+    $("#sumSecond").text(todo[0].key3);*/
     $("#todoAnswer").text(todo[0].key4);
     $("#todoAnswer2").text(todo[0].key4); //testing only get rid
     $(".sumB").show();
     $("#sumAnswer").focus();
   }
 
-  //CHECK ANSWER CORRECT
+    //CHECK ANSWER CORRECT
   function sumCorrect(sumAnswer, answer) {
     if (sumAnswer == answer) {
       return true;
