@@ -268,14 +268,12 @@ h2 {
   width: 50px;
   
   text-align: center;
-  -webkit-appearance: none;
-border-radius: 0;
+ 
 }
 
 .padNum {
   width: 30px;
-  -webkit-appearance: none;
-border-radius: 0;
+  
 }
 
 .padNum,
@@ -293,16 +291,14 @@ border-radius: 0;
   width: 50px;
   /*margin: 10px;*/
   padding: 0;
-  -webkit-appearance: none;
-border-radius: 0;
+  
     }
 
 
 td {
   padding: 10px;
   text-align: center;
-  -webkit-appearance: none;
-border-radius: 0;
+ 
 }
 
 #pad {
@@ -342,4 +338,9 @@ border-radius: 0;
 
 .testr {
   border: solid red;
+}
+
+input {
+  -webkit-appearance: none;
+  border-radius: 0;
 }
