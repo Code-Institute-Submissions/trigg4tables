@@ -1,5 +1,6 @@
 $(document).ready(function() {
   console.log("test 9");
+  $(".startHide").hide();
   $(".sumA").hide();
   $(".sumB").hide();
   $(".sumC").hide();
@@ -254,6 +255,8 @@ $("#padClear").click(function(){
     let todo = todoFill(no, operator);
 
     sumSet(todo);
+    $(".goHide").hide();
+    $(".goShow").show();
     $("#pick").hide();
     $(".sumA").show();
     $(".sumB").show();

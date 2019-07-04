@@ -48,27 +48,30 @@
           </div>
         </div>
         <div class="col-12 d-md-none">
-          <div class="row">
-            <div class="col-6 bg--teallight shade bg--height12">
-              <h2>Trigg's Tips</h2>
+          <div class="row goHide">
+            <div class="col-6 bg--teallight shade bg--height3">
+                <h2 class="align-self-center">cool cats<br />do maths</h2>
+              
             </div>
-            <div class="col-6 bg--orangedark text-center shade bg--height12">
-              <span>Clock 00:00</span>
+            <div class="col-6 bg--orangedark text-center shade bg--height3">
+                <h2>Trigg's Tips</h2>
+              
             </div>
           </div>
           <div class="row">
-            <div class="col-6 trigg shade bg--hi bg--height36"></div>
+            <div class="col-6 trigg shade bg--hi bg--height30"></div>
             <div class="col-6">
               <div class="row ">
                 <div
-                  class="col-12 bg--tealdark d-flex justify-content-center shade bg--height24"
+                  class="col-12 bg--tealdark d-flex justify-content-center shade bg--height6"
                 >
                   <h1 class="align-self-center">Trigg 4<br />Tables</h1>
                 </div>
                 <div
-                  class="col-12 bg--teallight d-flex justify-content-center shade bg--height12"
+                  class="col-12 bg--teallight d-flex justify-content-center shade bg--height3"
                 >
-                  <h2 class="align-self-center">cool cats<br />do maths</h2>
+                <span>Clock 00:00</span>  
+                
                 </div>
               </div>
             </div>
@@ -76,7 +79,7 @@
         </div>
         <!--ASK ANSWER COLUMN-->
         <div class="col-12 col-md-6 col-lg-5 bg--height52 shade">
-          <div class="row">
+          <div class="row startHide goShow">
             <div class="col-12 bg--height3 testr">
               <!--PROGRESS-->
               <div class="progress mt-3">
@@ -173,7 +176,7 @@
               </form>
 
               <!--NUMBER KEYPAD-->
-              <form id="pad">
+              <form id="pad" class="startHide goShow">
                 <input id="sumAnswer" type="text" maxlength="3" />
                 <button
                   id="sumCheck"
@@ -190,8 +193,7 @@
                   next
                 </button>
 
-                <!--<p class="text-center">|</p>-->
-                <table>
+                              <table>
                   <tr>
                     <td>
                       <input id="pad1" class="padNum" type="button" value="1" />
