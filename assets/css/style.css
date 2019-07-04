@@ -301,6 +301,9 @@ td {
  
 }
 
+table {
+  width: 208px;
+}
 #pad {
   border: 2px solid #ccc;
   border-radius: 10px;
