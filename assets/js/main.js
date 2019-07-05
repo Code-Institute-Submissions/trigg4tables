@@ -277,8 +277,8 @@ $("#padClear").click(function(){
     //STEP1: CHECK ANSWER - CORRECT
     if (sumCorrect(sumAnswer, answer) === true) {
       $(".trigg").removeClass("bg--hi bg--0 bg--1 bg--2 bg--3").addClass("bg--thumbsup");
-      $("#noteResult").text(`Niceone that's correct.`);
-      $("#noteInstruct").text(`Click next.`);
+      $(".noteResult").text(`Niceone that's correct.`);
+      $(".noteInstruct").text(`Click next.`);
       $(".sumB").hide();
       $(".sumC").show();
     }
@@ -286,8 +286,8 @@ $("#padClear").click(function(){
     //STEP2: CHECK ANSWER - INCORRECT 1ST ATTEMPT
     else if (count === 1) {
       $(".trigg").removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3").addClass(bg());
-      $("#noteResult").text(`Sorry ${sumAnswer} is incorrect.`);
-      $("#noteInstruct").text(`Try again.`);
+      $(".noteResult").text(`Sorry ${sumAnswer} is incorrect.`);
+      $(".noteInstruct").text(`Try again.`);
       $("#sumAnswer").val("");
       countIncrement(todo);
           
@@ -298,8 +298,8 @@ $("#padClear").click(function(){
     //STEP3: CHECK ANSWER - INCORRECT 2ND ATTEMPT
     else if (count === 2) {
       $(".trigg").removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3").addClass(bg());
-      $("#noteResult").text(`Sorry ${sumAnswer} is incorrect. The correct answer is ${answer}.`);
-      $("#noteInstruct").text(`We will ask again at the end. Click next.`);
+      $(".noteResult").text(`Sorry ${sumAnswer} is incorrect. The correct answer is ${answer}.`);
+      $(".noteInstruct").text(`We will ask again at the end. Click next.`);
       countIncrement(todo);
       todoAdd(todo);
       $(".sumB").hide();
@@ -310,8 +310,8 @@ $("#padClear").click(function(){
     //STEP4: CHECK ANSWER - INCORRECT 3RD ATTEMPT
     else {
       $(".trigg").removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3").addClass(bg());
-      $("#noteResult").text(`Sorry ${sumAnswer} is incorrect. The correct answer is ${answer}.`);
-      $("#noteInstruct").text(`Click next.`);
+      $(".noteResult").text(`Sorry ${sumAnswer} is incorrect. The correct answer is ${answer}.`);
+      $(".noteInstruct").text(`Click next.`);
       countIncrement(todo);
       //console.log("count at step4" + count);
       //reviseAdd(todo);
