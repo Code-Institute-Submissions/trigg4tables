@@ -5,6 +5,7 @@ $(document).ready(function() {
   $(".sumB").hide();
   $(".sumC").hide();
   $("canvas").hide();
+  $(".startHide").hide();
   console.log("hidec");
 
   $(document).on("keypress", function(e) {
@@ -254,10 +255,12 @@ $("#padClear").click(function(){
       .find("input:checked")
       .val();
     let todo = todoFill(no, operator);
+    $(".goHide").hide();
+    $(".goShow").show();
 
     sumSet(todo);
     $(".goHide").hide();
-    $(".goShow").show();
+    
     $("#pick").hide();
     $(".sumA").show();
     $(".sumB").show();
