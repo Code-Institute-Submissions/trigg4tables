@@ -14,12 +14,14 @@ $(document).ready(function() {
       event.preventDefault();
     }
   });
+  //WHY: stop enter key from refreshing page
 
   //GLOBAL ARRAYS
   let todoArray = [];
   let doneArray = [];
   let reviseArray = [];
   let noteString;
+  
 
 //NUMBER KEYPAD
 $(".padNum").click(function(){
@@ -27,7 +29,7 @@ $(".padNum").click(function(){
    let concat = $("#sumAnswer").val() + $(this).val();
 $("#sumAnswer").val(concat);}
 });
-//WHY: maxLength not working if using keypad
+//WHY: maxLength in CSS not working if using keypad so need extra js.
 
 $("#padClear").click(function(){
   $("#sumAnswer").val("");
@@ -132,18 +134,6 @@ $("#padClear").click(function(){
       return count;
     }
   }
-
-  //CREATE BG CLASS FOR INCORRECT
-  function bg() {
-    let bg = `bg--${Math.floor(Math.random() * 4)}`;
-    return bg;
-  }
-
-  /*function bg() {
-    let bg = `"bg--${Math.floor(Math.random() * 3)}"`;
-    return bg;
-  }*/
-
 
   //INCREMENT COUNT
   function countIncrement(todo) {
@@ -273,8 +263,7 @@ $("#padClear").click(function(){
     let answer = todoArray[0].key4;
     let count = todoArray[0].count;
     let todo = todoArray;
-    //let bg = bg();
-    console.log(todoArray[0].count + "start count");
+        console.log(todoArray[0].count + "start count");
     //console.log(doneArray);
 
     //STEP1: CHECK ANSWER - CORRECT
@@ -288,7 +277,7 @@ $("#padClear").click(function(){
 
     //STEP2: CHECK ANSWER - INCORRECT 1ST ATTEMPT
     else if (count === 1) {
-      $(".trigg").removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3").addClass(bg());
+      $(".trigg").removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3").addClass("bg--1");
       $(".noteResult").text(`Sorry ${sumAnswer} is incorrect.`);
       $(".noteInstruct").text(`Try again.`);
       $("#sumAnswer").val("");
@@ -300,7 +289,7 @@ $("#padClear").click(function(){
 
     //STEP3: CHECK ANSWER - INCORRECT 2ND ATTEMPT
     else if (count === 2) {
-      $(".trigg").removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3").addClass(bg());
+      $(".trigg").removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3").addClass("bg--2");
       $(".noteResult").text(`Sorry ${sumAnswer} is incorrect. The correct answer is ${answer}.`);
       $(".noteInstruct").text(`We will ask again at the end. Click next.`);
       countIncrement(todo);
@@ -312,7 +301,7 @@ $("#padClear").click(function(){
 
     //STEP4: CHECK ANSWER - INCORRECT 3RD ATTEMPT
     else {
-      $(".trigg").removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3").addClass(bg());
+      $(".trigg").removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3").addClass("bg--3");
       $(".noteResult").text(`Sorry ${sumAnswer} is incorrect. The correct answer is ${answer}.`);
       $(".noteInstruct").text(`Click next.`);
       countIncrement(todo);

@@ -95,7 +95,7 @@ h2 {
   background-color: #e9f0f2;
 }
 
-.bg--0 {
+.bg--1 {
   background: url("../images/hmm.png");
   background-position: center;
   background-repeat: no-repeat;
@@ -103,16 +103,8 @@ h2 {
   background-color: #e9f0f2;
 }
 
-.bg--1 {
-  background: url("../images/sour.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-color: #e9f0f2;
-}
-
 .bg--2 {
-  background: url("../images/oops.png");
+  background: url("../images/thatway.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -120,7 +112,7 @@ h2 {
 }
 
 .bg--3 {
-  background: url("../images/thatway.png");
+  background: url("../images/oops.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
