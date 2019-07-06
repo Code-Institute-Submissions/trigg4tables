@@ -257,7 +257,7 @@ $(document).ready(function() {
       $(".trigg")
         .removeClass("bg--hi bg--0 bg--1 bg--2 bg--3")
         .addClass("bg--thumbsup");
-      $(".noteResult").text(`Purr-fect.`);
+      $(".noteResult").text(`Purr-fect.`).css("color","#60ee28");
       $(".noteInstruct").text(`Click next.`);
       $("#sumCheck").hide();
       $("#sumNext").show();
@@ -272,7 +272,7 @@ $(document).ready(function() {
       $(".trigg")
         .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3")
         .addClass("bg--1");
-      $(".noteResult").text(`Oops it's not ${sumAnswer}.`);
+      $(".noteResult").text(`Oops it's not ${sumAnswer}.`).css("color","#ac5c47");
       $(".noteInstruct").text(`Try again.`);
       $("#sumAnswer").val("").focus();
       countIncrement(todo);
@@ -283,7 +283,7 @@ $(document).ready(function() {
       $(".trigg")
         .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3")
         .addClass("bg--2");
-      $(".noteResult").text(`Nope it's not ${sumAnswer}.`);
+      $(".noteResult").text(`Nope it's not ${sumAnswer}.`).css("color","#ac5c47");
       $(".noteInstruct").text(`Click next.`);
       countIncrement(todo);
       todoAdd(todo);
@@ -300,7 +300,7 @@ $(document).ready(function() {
       $(".trigg")
         .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3")
         .addClass("bg--3");
-      $(".noteResult").text(`It's not ${sumAnswer}.`);
+      $(".noteResult").text(`It's not ${sumAnswer}.`).css("color","#ac5c47");
       $(".noteInstruct").text(`Click next.`);
       countIncrement(todo);
       //console.log("count at step4" + count);
