@@ -1,11 +1,7 @@
 $(document).ready(function() {
   console.log("test 9");
   $(".startHide").hide();
-  $(".sumA").hide();
-  $(".sumB").hide();
-  $(".sumC").hide();
   $("canvas").hide();
-  $(".startHide").hide();
   console.log("hidec");
 
   $(document).on("keypress", function(e) {
@@ -21,25 +17,19 @@ $(document).ready(function() {
   let doneArray = [];
   let reviseArray = [];
   let noteString;
-  
 
-//NUMBER KEYPAD
-$(".padNum").click(function(){
-  if($("#sumAnswer").val().length<3){
-   let concat = $("#sumAnswer").val() + $(this).val();
-$("#sumAnswer").val(concat);}
-});
-//WHY: maxLength in CSS not working if using keypad so need extra js.
+  //NUMBER KEYPAD
+  $(".padNum").click(function() {
+    if ($("#sumAnswer").val().length < 3) {
+      let concat = $("#sumAnswer").val() + $(this).val();
+      $("#sumAnswer").val(concat);
+    }
+  });
+  //WHY: maxLength in CSS not working if using keypad so need extra js.
 
-$("#padClear").click(function(){
-  $("#sumAnswer").val("");
-});
-
-
-
-
-
-
+  $("#padClear").click(function() {
+    $("#sumAnswer").val("");
+  });
 
   //CHECK VALID PICK
   function pickValid(no, operator) {
@@ -110,18 +100,15 @@ $("#padClear").click(function(){
 
   //SET SUM
   function sumSet(todo) {
-    $("#sumAnswer").val("");
-    $("#sumAsk").text(`${todo[0].key1} ${todo[0].key2} ${todo[0].key3}=`);
-    /*$("#sumFirst").text(todo[0].key1);
-    $("#sumOperator").text(todo[0].key2);
-    $("#sumSecond").text(todo[0].key3);*/
-    $("#todoAnswer").text(todo[0].key4);
-    $("#todoAnswer2").text(todo[0].key4); //testing only get rid
-    $(".sumB").show();
-    $("#sumAnswer").focus();
+    $("#sumAnswer")
+      .val("")
+      .show()
+      .focus();
+    $("#sumAsk").text(`${todo[0].key1} ${todo[0].key2} ${todo[0].key3} =`);
+    $("#sumCheck").show();
   }
 
-    //CHECK ANSWER CORRECT
+  //CHECK ANSWER CORRECT
   function sumCorrect(sumAnswer, answer) {
     if (sumAnswer == answer) {
       return true;
@@ -250,10 +237,9 @@ $("#padClear").click(function(){
 
     sumSet(todo);
     $(".goHide").hide();
-    
+
     $("#pick").hide();
-    $(".sumA").show();
-    $(".sumB").show();
+    $("#sumCheck").show();
     //console.log(todoArray);
   });
 
@@ -263,52 +249,68 @@ $("#padClear").click(function(){
     let answer = todoArray[0].key4;
     let count = todoArray[0].count;
     let todo = todoArray;
-        console.log(todoArray[0].count + "start count");
+    console.log(todoArray[0].count + "start count");
     //console.log(doneArray);
 
     //STEP1: CHECK ANSWER - CORRECT
     if (sumCorrect(sumAnswer, answer) === true) {
-      $(".trigg").removeClass("bg--hi bg--0 bg--1 bg--2 bg--3").addClass("bg--thumbsup");
-      $(".noteResult").text(`Niceone that's correct.`);
+      $(".trigg")
+        .removeClass("bg--hi bg--0 bg--1 bg--2 bg--3")
+        .addClass("bg--thumbsup");
+      $(".noteResult").text(`Purr-fect.`);
       $(".noteInstruct").text(`Click next.`);
-      $(".sumB").hide();
-      $(".sumC").show();
+      $("#sumCheck").hide();
+      $("#sumNext").show();
+      $("#sumAnswer").hide();
+      $("#sumAsk").text(
+        `${todo[0].key1} ${todo[0].key2} ${todo[0].key3} = ${todo[0].key4}`
+      );
     }
 
     //STEP2: CHECK ANSWER - INCORRECT 1ST ATTEMPT
     else if (count === 1) {
-      $(".trigg").removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3").addClass("bg--1");
-      $(".noteResult").text(`Sorry ${sumAnswer} is incorrect.`);
+      $(".trigg")
+        .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3")
+        .addClass("bg--1");
+      $(".noteResult").text(`Oops it's not ${sumAnswer}.`);
       $(".noteInstruct").text(`Try again.`);
-      $("#sumAnswer").val("");
+      $("#sumAnswer").val("").focus();
       countIncrement(todo);
-          
-      
-     
     }
 
     //STEP3: CHECK ANSWER - INCORRECT 2ND ATTEMPT
     else if (count === 2) {
-      $(".trigg").removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3").addClass("bg--2");
-      $(".noteResult").text(`Sorry ${sumAnswer} is incorrect. The correct answer is ${answer}.`);
-      $(".noteInstruct").text(`We will ask again at the end. Click next.`);
+      $(".trigg")
+        .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3")
+        .addClass("bg--2");
+      $(".noteResult").text(`Nope it's not ${sumAnswer}.`);
+      $(".noteInstruct").text(`Click next.`);
       countIncrement(todo);
       todoAdd(todo);
-      $(".sumB").hide();
-      $(".sumC").show();
-      
+      $("#sumCheck").hide();
+      $("#sumNext").show();
+      $("#sumAnswer").hide();
+      $("#sumAsk").text(
+        `${todo[0].key1} ${todo[0].key2} ${todo[0].key3} = ${todo[0].key4}`
+      );
     }
 
     //STEP4: CHECK ANSWER - INCORRECT 3RD ATTEMPT
     else {
-      $(".trigg").removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3").addClass("bg--3");
-      $(".noteResult").text(`Sorry ${sumAnswer} is incorrect. The correct answer is ${answer}.`);
+      $(".trigg")
+        .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3")
+        .addClass("bg--3");
+      $(".noteResult").text(`It's not ${sumAnswer}.`);
       $(".noteInstruct").text(`Click next.`);
       countIncrement(todo);
       //console.log("count at step4" + count);
       //reviseAdd(todo);
-      $(".sumB").hide();
-      $(".sumC").show();
+      $("#sumCheck").hide();
+      $("#sumNext").show();
+      $("#sumAnswer").hide();
+      $("#sumAsk").text(
+        `${todo[0].key1} ${todo[0].key2} ${todo[0].key3} = ${todo[0].key4}`
+      );
       //console.log(reviseArray);
     }
   });
@@ -318,11 +320,10 @@ $("#padClear").click(function(){
     let done = doneArray;
     let todo = todoArray;
     let revise = reviseArray;
-    //let note = noteString;
-    
+
     reviseAdd(todo, revise);
     doneMove(done, todo);
-        $(".sumC").hide();
+    $("#sumNext").hide();
     $("#progress").attr(
       "style",
       `width: ${((12 - todoArray.length) / 12) * 100}%`
@@ -330,13 +331,18 @@ $("#padClear").click(function(){
     $("#progress").attr("aria-valuenow", 12 - todo.length);
 
     if (todo.length !== 0) {
-      $("#replyMessage").text("");
+      $(".noteResult").text("");
+      $(".noteInstruct").text("");
       sumSet(todo);
     } else {
       //only do if complete
       $("#sum").hide();
-      $(".trigg").removeClass("bg--thumbsup bg--0 bg--1 bg--2 bg--3").addClass("bg--score");
-      $("#replyMessage").text(`Well done cat you're all finished!`);
+      $(".trigg")
+        .removeClass("bg--thumbsup bg--0 bg--1 bg--2 bg--3")
+        .addClass("bg--score");
+      $(".noteResult").text(`Well done cat you're all finished!`);
+      $(".noteInstruct").text(`Click share`);
+
       noteFill(revise);
       console.log(reviseArray);
       console.log(noteString);
