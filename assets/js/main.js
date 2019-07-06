@@ -257,8 +257,8 @@ $(document).ready(function() {
       $(".trigg")
         .removeClass("bg--hi bg--0 bg--1 bg--2 bg--3")
         .addClass("bg--thumbsup");
-      $(".noteResult").text(`Purr-fect.`).css("color","#60ee28");
-      $(".noteInstruct").text(`Click next.`);
+      $(".noteResult").text(`Purrfect`).css("color","#60ee28");
+      $(".noteInstruct").text(`Click next`);
       $("#sumCheck").hide();
       $("#sumNext").show();
       $("#sumAnswer").hide();
@@ -272,8 +272,8 @@ $(document).ready(function() {
       $(".trigg")
         .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3")
         .addClass("bg--1");
-      $(".noteResult").text(`Oops it's not ${sumAnswer}.`).css("color","#ac5c47");
-      $(".noteInstruct").text(`Try again.`);
+      $(".noteResult").text(`oops not ${sumAnswer}`).css("color","#d75735");
+      $(".noteInstruct").text(`try again`);
       $("#sumAnswer").val("").focus();
       countIncrement(todo);
     }
@@ -283,8 +283,8 @@ $(document).ready(function() {
       $(".trigg")
         .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3")
         .addClass("bg--2");
-      $(".noteResult").text(`Nope it's not ${sumAnswer}.`).css("color","#ac5c47");
-      $(".noteInstruct").text(`Click next.`);
+      $(".noteResult").text(`nope not ${sumAnswer}`).css("color","#d75735");
+      $(".noteInstruct").text(`try again later`);
       countIncrement(todo);
       todoAdd(todo);
       $("#sumCheck").hide();
@@ -300,7 +300,7 @@ $(document).ready(function() {
       $(".trigg")
         .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3")
         .addClass("bg--3");
-      $(".noteResult").text(`It's not ${sumAnswer}.`).css("color","#ac5c47");
+      $(".noteResult").text(`${sumAnswer} is incorrect`).css("color","#d75735");
       $(".noteInstruct").text(`Click next.`);
       countIncrement(todo);
       //console.log("count at step4" + count);
