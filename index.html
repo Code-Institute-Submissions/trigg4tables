@@ -122,55 +122,55 @@
           <!--MAIN QUESTION ANSWER COLUMN-->
           <div class="row">
             <div class="col-12 ">
-<!--NEW NUMBER PICK-->
-<div class="dmr-3 mr-md-5 mt-3 mt-md-5" data-toggle="buttons"id="pickNumberA">
-<label class="btn selector-style">
-  <input id="pickNo1" type="radio" name="pickNoB" value="1" />1
-</label>
-<label class="btn selector-style">
-    <input id="pickNo2" type="radio" name="pickNoB" value="2" />2
-  </label>
-  <label class="btn selector-style">
-      <input id="pickNo3" type="radio" name="pickNoB" value="3" />3
-    </label>
-    <label class="btn selector-style">
-        <input id="pickNo4" type="radio" name="pickNoB" value="4" />4
-      </label>
-      <label class="btn selector-style">
-          <input id="pickNo5" type="radio" name="pickNoB" value="5" />5
-        </label>
-        <label class="btn selector-style">
-            <input id="pickNo6" type="radio" name="pickNoB" value="6" />6
-          </label>
-          <label class="btn selector-style">
-              <input id="pickNo7" type="radio" name="pickNoB" value="7" />7
-            </label>
-            <label class="btn selector-style">
-                <input id="pickNo8" type="radio" name="pickNoB" value="8" />8
-              </label>
-              <label class="btn selector-style">
-                  <input id="pickNo9" type="radio" name="pickNoB" value="9" />9
-                </label>
-                <label class="btn selector-style">
-                    <input id="pickNo10" type="radio" name="pickNoB" value="10" />10
+              <!--NEW NUMBER PICK-->
+              <p>test</p>
+
+              <form id="pick">
+                <fieldset id="pickNo">
+                  <label class="btn selector-style">
+                    <input type="radio" name="pickNo" value="1" />1
                   </label>
                   <label class="btn selector-style">
-                      <input id="pickNo11" type="radio" name="pickNoB" value="11" />11
-                    </label>
-                    <label class="btn selector-style">
-                        <input id="pickNo12" type="radio" name="pickNoB" value="12" />12
-                      </label>
-
-  </div>
-                    
-                
-                
-
-                
+                    <input type="radio" name="pickNo" value="2" />2
+                  </label>
+                  <label class="btn selector-style">
+                    <input type="radio" name="pickNo" value="3" />3
+                  </label>
+                  <label class="btn selector-style">
+                    <input type="radio" name="pickNo" value="4" />4
+                  </label>
+                  <br />
+                  <label class="btn selector-style">
+                    <input type="radio" name="pickNo" value="5" />5
+                  </label>
+                  <label class="btn selector-style">
+                    <input type="radio" name="pickNo" value="6" />6
+                  </label>
+                  <label class="btn selector-style">
+                    <input type="radio" name="pickNo" value="7" />7
+                  </label>
+                  <label class="btn selector-style">
+                    <input type="radio" name="pickNo" value="8" />8
+                  </label>
+                  <br />
+                  <label class="btn selector-style">
+                    <input type="radio" name="pickNo" value="9" />9
+                  </label>
+                  <label class="btn selector-style">
+                    <input type="radio" name="pickNo" value="10" />10
+                  </label>
+                  <label class="btn selector-style">
+                    <input type="radio" name="pickNo" value="11" />11
+                  </label>
+                  <label class="btn selector-style">
+                    <input type="radio" name="pickNo" value="12" />12
+                  </label>
+                </fieldset>
+              </form>
               <!--WHY: Select & 2 buttons wrapped in form element with Bootstrap class form-inline to keep selection on same line as per w3.-->
-              <form id="pick" class="form-inline justify-content-center">
-                <!--WHY: Bootstrap form-control class added to select element as per w3-->
-                <select
+
+              <!--WHY: Bootstrap form-control class added to select element as per w3-->
+              <!--<select
                   class="form-control mr-3 mr-md-5 mt-3 mt-md-5 selector-style"
                   role="group"
                   id="pickNo"
@@ -188,66 +188,46 @@
                   <option>10</option>
                   <option>11</option>
                   <option>12</option>
-                </select>
-                <!--WHERE: Option no. displayed but disabled from StackOverflow https://stackoverflow.com/questions/15224466/display-optgroup-label-as-initial-option-->
+                </select>-->
+              <!--WHERE: Option no. displayed but disabled from StackOverflow https://stackoverflow.com/questions/15224466/display-optgroup-label-as-initial-option-->
 
-                <!--WHERE: radio style button toggling from https://coreui.io/docs/components/buttons/-->
-                <div
-                  class="dmr-3 mr-md-5 mt-3 mt-md-5"
-                  data-toggle="buttons"
-                  id="pickOperator"
-                >
+              <!--WHERE: radio style button toggling from https://coreui.io/docs/components/buttons/-->
+              <form id="pick" class="">
+                <fieldset class="mt-3" id="pickOperator">
                   <label class="btn selector-style">
-                    <input id="plus" type="radio" name="operator" value="+" />+
+                    <input type="radio" name="operator" value="+" />+
                   </label>
                   <label class="btn selector-style">
-                    <input id="minus" type="radio" name="operator" value="-" />-
+                    <input type="radio" name="operator" value="-" />-
                   </label>
                   <label class="btn selector-style">
-                    <input
-                      id="multiply"
-                      type="radio"
-                      name="operator"
-                      value="x"
-                    />x
+                    <input type="radio" name="operator" value="x" />x
                   </label>
                   <label class="btn selector-style">
-                    <input
-                      id="divide"
-                      type="radio"
-                      name="operator"
-                      value="/"
-                    />÷
+                    <input type="radio" name="operator" value="/" />÷
                   </label>
-                </div>
-                <button
-                  type="button"
-                  class="btn selector-style mt-3 mt-md-5"
-                  id="pickGo"
-                >
-                  go
-                </button>
-              </form>
-
-              <form
-                id="sum"
-                class="form-inline justify-content-center mt-3 mt-md=5"
+                </fieldset>
+              
+              <button
+                type="button"
+                class="btn selector-style mt-3 mt-md-5"
+                id="pickGo"
               >
-                <!--<span id="sumFirst" class="sumA mr-3"></span>
-                <span id="sumOperator" class="sumA mr-3"></span>
-                <span id="sumSecond" class="sumA mr-3"></span>
-                <span id="sumEqual" class="sumA mr-3">=</span>-->
-
-                <!--WHERE: input type number from Mozilla https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number-->
-              </form>
-
+                go
+              </button>
+            </form>
+              <!--WHERE: input type number from Mozilla https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number-->
               <!--NUMBER KEYPAD-->
               <div class="d-flex justify-content-center">
                 <form id="pad" class="startHide goShow justify-content-center">
                   <div class="d-flex justify-content-between">
                     <span id="sumAsk" class="align-self-center"></span>
                     <input id="sumAnswer" class="" type="text" maxlength="3" />
-                    <button id="sumCheck" class="sumB btn align-center" type="button">
+                    <button
+                      id="sumCheck"
+                      class="sumB btn align-center"
+                      type="button"
+                    >
                       check
                     </button>
                     <button
@@ -263,21 +243,12 @@
                   <input id="pad1" class="padNum" type="button" value="1" />
                   <input id="pad2" class="padNum" type="button" value="2" />
                   <input id="pad3" class="padNum" type="button" value="3" />
-                  <input
-                    id="pad4"
-                    class="padNum"
-                    type="button"
-                    value="4"
-                  /><br />
+                  <input id="pad4" class="padNum" type="button" value="4" />
+                  <br />
                   <input id="pad5" class="padNum" type="button" value="5" />
                   <input id="pad6" class="padNum" type="button" value="6" />
                   <input id="pad7" class="padNum" type="button" value="7" />
-                  <input
-                    id="pad8"
-                    class="padNum"
-                    type="button"
-                    value="8"
-                  /><br />
+                  <input id="pad8" class="padNum" type="button" value="8"/ ><br />
                   <input id="pad9" class="padNum" type="button" value="9" />
                   <input id="pad1" class="padNum" type="button" value="0" />
                   <input id="padClear" type="button" value="clear" />
