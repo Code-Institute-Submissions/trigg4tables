@@ -219,6 +219,9 @@ $(document).ready(function() {
     $(this)
       .removeClass("selector-style")
       .addClass("selector-style--selected");
+    console.log("bug"+$("#pickOperator")
+      .find("input:checked")
+      .val());
   });
 
   //CLICK GO
