@@ -128,94 +128,83 @@
               <form id="pick">
                 <fieldset id="pickNo">
                   <label class="btn selector-style">
-                    <input type="radio" name="pickNo" value="1" />1
+                    <input id="pick1" type="radio" name="pickNo" value="1" />1
                   </label>
                   <label class="btn selector-style">
-                    <input type="radio" name="pickNo" value="2" />2
+                    <input id="pick2" type="radio" name="pickNo" value="2" />2
                   </label>
                   <label class="btn selector-style">
-                    <input type="radio" name="pickNo" value="3" />3
+                    <input id="pick3" type="radio" name="pickNo" value="3" />3
                   </label>
                   <label class="btn selector-style">
-                    <input type="radio" name="pickNo" value="4" />4
-                  </label>
-                  <br />
-                  <label class="btn selector-style">
-                    <input type="radio" name="pickNo" value="5" />5
-                  </label>
-                  <label class="btn selector-style">
-                    <input type="radio" name="pickNo" value="6" />6
-                  </label>
-                  <label class="btn selector-style">
-                    <input type="radio" name="pickNo" value="7" />7
-                  </label>
-                  <label class="btn selector-style">
-                    <input type="radio" name="pickNo" value="8" />8
+                    <input id="pick4" type="radio" name="pickNo" value="4" />4
                   </label>
                   <br />
                   <label class="btn selector-style">
-                    <input type="radio" name="pickNo" value="9" />9
+                    <input id="pick5" type="radio" name="pickNo" value="5" />5
                   </label>
                   <label class="btn selector-style">
-                    <input type="radio" name="pickNo" value="10" />10
+                    <input id="pick6" type="radio" name="pickNo" value="6" />6
                   </label>
                   <label class="btn selector-style">
-                    <input type="radio" name="pickNo" value="11" />11
+                    <input id="pick7" type="radio" name="pickNo" value="7" />7
                   </label>
                   <label class="btn selector-style">
-                    <input type="radio" name="pickNo" value="12" />12
+                    <input id="pick8" type="radio" name="pickNo" value="8" />8
+                  </label>
+                  <br />
+                  <label class="btn selector-style">
+                    <input id="pick9" type="radio" name="pickNo" value="9" />9
+                  </label>
+                  <label class="btn selector-style">
+                    <input
+                      id="pick10"
+                      type="radio"
+                      name="pickNo"
+                      value="10"
+                    />10
+                  </label>
+                  <label class="btn selector-style">
+                    <input
+                      id="pick11"
+                      type="radio"
+                      name="pickNo"
+                      value="11"
+                    />11
+                  </label>
+                  <label class="btn selector-style">
+                    <input
+                      id="pick12"
+                      type="radio"
+                      name="pickNo"
+                      value="12"
+                    />12
                   </label>
                 </fieldset>
-              </form>
-              <!--WHY: Select & 2 buttons wrapped in form element with Bootstrap class form-inline to keep selection on same line as per w3.-->
-
-              <!--WHY: Bootstrap form-control class added to select element as per w3-->
-              <!--<select
-                  class="form-control mr-3 mr-md-5 mt-3 mt-md-5 selector-style"
-                  role="group"
-                  id="pickNo"
+                <!--PICK OPERATOR-->
+                <fieldset id="pickOperator">
+                  <label class="btn selector-style">
+                    <input id="pick+" type="radio" name="operator" value="+" />+
+                  </label>
+                  <label class="btn selector-style">
+                    <input id="pick-" type="radio" name="operator" value="-" />-
+                  </label>
+                  <label class="btn selector-style">
+                    <input id="pickx" type="radio" name="operator" value="x" />x
+                  </label>
+                  <label class="btn selector-style">
+                    <input id="pick/" type="radio" name="operator" value="/" />÷
+                  </label>
+                </fieldset>
+                <!--GO BUTTON-->
+                <button
+                  type="button"
+                  class="btn selector-style mt-3 mt-md-5"
+                  id="pickGo"
                 >
-                  <option disabled="disabled" selected="selected">no.</option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                  <option>6</option>
-                  <option>7</option>
-                  <option>8</option>
-                  <option>9</option>
-                  <option>10</option>
-                  <option>11</option>
-                  <option>12</option>
-                </select>-->
-              <!--WHERE: Option no. displayed but disabled from StackOverflow https://stackoverflow.com/questions/15224466/display-optgroup-label-as-initial-option-->
-
-              <!--WHERE: radio style button toggling from https://coreui.io/docs/components/buttons/-->
-              <form id="pick" class="">
-                <fieldset class="mt-3" id="pickOperator">
-                  <label class="btn selector-style">
-                    <input type="radio" name="operator" value="+" />+
-                  </label>
-                  <label class="btn selector-style">
-                    <input type="radio" name="operator" value="-" />-
-                  </label>
-                  <label class="btn selector-style">
-                    <input type="radio" name="operator" value="x" />x
-                  </label>
-                  <label class="btn selector-style">
-                    <input type="radio" name="operator" value="/" />÷
-                  </label>
-                </fieldset>
-              
-              <button
-                type="button"
-                class="btn selector-style mt-3 mt-md-5"
-                id="pickGo"
-              >
-                go
-              </button>
-            </form>
+                  go
+                </button>
+              </form>
               <!--WHERE: input type number from Mozilla https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number-->
               <!--NUMBER KEYPAD-->
               <div class="d-flex justify-content-center">
