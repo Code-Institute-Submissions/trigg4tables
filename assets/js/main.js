@@ -80,7 +80,7 @@ $(document).ready(function() {
           id: i,
           count: 1,
           key1: j,
-          key2: operator,
+          key2: "÷",
           key3: no,
           key4: i
         });
