@@ -277,6 +277,19 @@ h2 {
   background-color: #7fa5b5;
 }
 
+/*----------PICK BUTTONS----------*/
+
+.labelNo, .labelOp, #pickGo {
+  width: 30px;
+  height: 40px;
+  padding: 0px;
+  text-align:center;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+
 /*----------NUMBER KEYPAD----------*/
 
 #sumAnswer,
@@ -343,7 +356,7 @@ color:#b18683;
 }
 
 #sumAsk, #sumCheck, #sumNext{
- font-size:  1.3rem;
+ font-size:  1rem;
 }
 
 #sumAsk {
@@ -398,3 +411,7 @@ input {
   border-radius: 0;
 }
 /*WHERE: https://www.daretothink.co.uk/stop-ios-styling-your-input-fields-and-buttons/*/
+
+/*input[type="radio"]{
+  -webkit-appearance: radio;
+}*/
