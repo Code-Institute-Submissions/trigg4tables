@@ -59,9 +59,8 @@ h2 {
 select,
 option,
 label,
-input,
-.sumA {
-  font-size: 1.5rem;
+input {
+  font-size: 1.3rem;
 }
 
 .pass {
@@ -286,7 +285,7 @@ h2 {
 .padNum,
 #padClear {
   height: 40px;
-  margin: 10px;
+  /*margin: 10px;*/
   padding: 0px;
   text-align: center;
 }
@@ -297,7 +296,7 @@ h2 {
 
 #sumCheck,
 #sumNext {
-  width: 50px;
+  width: 60px;
   }
 
 .padNum {
@@ -329,13 +328,13 @@ h2 {
   /*padding: 10px; causing text to be bottom right of button*/
   vertical-align: top;
   box-shadow: 2px 1px 2px gray;
-  margin: 4px 10px 4px 10px;
+  margin: 8px 10px 8px 10px;
 }
 
 
 .padNum:active, #padClear:active, #sumCheck:active, #sumNext:active {
   box-shadow: 0 0 0 white;
-  margin: 6px 10px 2px 10px;
+  margin: 10px 10px 6px 10px;
 }
 /*WHERE: https://stackoverflow.com/questions/38377062/how-to-make-html-button-look-pressed-in-using-css*/
 
@@ -343,6 +342,20 @@ h2 {
 color:#b18683;
 }
 
+#sumAsk, #sumCheck, #sumNext{
+ font-size:  1.3rem;
+}
+
+#sumAsk {
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+
+#sumAnswer {
+  margin-top:10px;
+  margin-bottom:8px;
+}
 
 
 hr{
