@@ -205,45 +205,40 @@ $(document).ready(function() {
   }
 
   //CLICK NUMBER
-  $("select").click(function() {
+  $(".labelNo").click(function() {
+    $(".labelNo")
+      .removeClass("selector-style--selected")
+      .addClass("selector-style");
     $(this)
       .removeClass("selector-style")
       .addClass("selector-style--selected");
   });
 
   //CLICK OPERATOR
-  $("label").click(function() {
-    $("label")
+  $(".labelOp").click(function() {
+    $(".labelOp")
       .removeClass("selector-style--selected")
       .addClass("selector-style");
     $(this)
       .removeClass("selector-style")
       .addClass("selector-style--selected");
-    console.log("bug"+$("#pickOperator")
-      .find("input:checked")
-      .val());
   });
+  //WHERE: https://stackoverflow.com/questions/8622336/jquery-get-value-of-selected-radio-button
 
   //CLICK GO
   $("#pickGo").click(function() {
-    let no = parseInt(
-      $("#pickNo")
-        .children("option:selected")
-        .val()
-    );
-    let operator = $("#pickOperator")
-      .find("input:checked")
-      .val();
+    let no = parseInt($("input[name='pickNo']:checked").val());
+    let operator = $("input[name='pickOp']:checked").val();
     let todo = todoFill(no, operator);
     $(".goHide").hide();
     $(".goShow").show();
 
     sumSet(todo);
     $(".goHide").hide();
-
-    $("#pick").hide();
     $("#sumCheck").show();
-    //console.log(todoArray);
+
+    console.log("GoOp" + $("input[name='pickOp']:checked").val());
+    console.log("GoNo" + $("input[name='pickNo']:checked").val());
   });
 
   //CLICK CHECK
@@ -260,7 +255,9 @@ $(document).ready(function() {
       $(".trigg")
         .removeClass("bg--hi bg--0 bg--1 bg--2 bg--3")
         .addClass("bg--thumbsup");
-      $(".noteResult").text(`Purrfect`).css("color","#60ee28");
+      $(".noteResult")
+        .text(`Purrfect`)
+        .css("color", "#60ee28");
       $(".noteInstruct").text(`Click next`);
       $("#sumCheck").hide();
       $("#sumNext").show();
@@ -275,9 +272,13 @@ $(document).ready(function() {
       $(".trigg")
         .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3")
         .addClass("bg--1");
-      $(".noteResult").text(`oops not ${sumAnswer}`).css("color","#d75735");
+      $(".noteResult")
+        .text(`oops not ${sumAnswer}`)
+        .css("color", "#d75735");
       $(".noteInstruct").text(`try again`);
-      $("#sumAnswer").val("").focus();
+      $("#sumAnswer")
+        .val("")
+        .focus();
       countIncrement(todo);
     }
 
@@ -286,7 +287,9 @@ $(document).ready(function() {
       $(".trigg")
         .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3")
         .addClass("bg--2");
-      $(".noteResult").text(`nope not ${sumAnswer}`).css("color","#d75735");
+      $(".noteResult")
+        .text(`nope not ${sumAnswer}`)
+        .css("color", "#d75735");
       $(".noteInstruct").text(`try again later`);
       countIncrement(todo);
       todoAdd(todo);
@@ -303,7 +306,9 @@ $(document).ready(function() {
       $(".trigg")
         .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3")
         .addClass("bg--3");
-      $(".noteResult").text(`${sumAnswer} is incorrect`).css("color","#d75735");
+      $(".noteResult")
+        .text(`${sumAnswer} is incorrect`)
+        .css("color", "#d75735");
       $(".noteInstruct").text(`Click next.`);
       countIncrement(todo);
       //console.log("count at step4" + count);
