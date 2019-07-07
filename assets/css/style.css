@@ -412,6 +412,6 @@ input, label {
 }
 /*WHERE: https://www.daretothink.co.uk/stop-ios-styling-your-input-fields-and-buttons/*/
 
-/*input[type="radio"]{
-  -webkit-appearance: radio;
-}*/
+input[type="radio"]{
+  -webkit-appearance: none;
+}
