@@ -287,6 +287,7 @@ h2 {
   border: 2px solid #ccc;
   border-radius: 5px;
   margin: 10px;
+  font-size: 1.3rem;
 }
 
 [type="radio"] {
@@ -298,7 +299,7 @@ h2 {
   position: absolute; 
   width: 1px;
 }
-
+/*WHERE: https://www.sitepoint.com/replacing-radio-buttons-without-replacing-radio-buttons/*/
 
 /*----------NUMBER KEYPAD----------*/
 
