@@ -123,10 +123,10 @@
           <div class="row">
             <div class="col-12 ">
               <!--PICK FORM - NUMBER-->
-              <form id="pick" class="goHide mt-3 mt-md-5 text-center">
-                <span>pick a number</span>
-                <br />
-                  <fieldset class="mb-3 mb-md-5 mx-auto">
+              <form id="pick" class="goHide mt-md-5 text-center">
+                                      <fieldset class="mt-1 mt-md-5 mx-auto">
+                      <span>pick a number</span>
+                      <br/>
                   <label class="labelNo selector-style ">
                     <input type="radio" name="pickNo" value="1" />1
                   </label>
@@ -167,9 +167,9 @@
                   </label>
                 </fieldset>
                 <!--PICK OPERATOR-->
-                <span>pick a symbol</span>
-                <br />
-                <fieldset class="mx-auto">
+                                <fieldset class="mt-1 mt-md-5 mx-auto">
+                    <span>pick a symbol</span>
+                    <br />
                   <label class="labelOp selector-style">
                     <input type="radio" name="pickOp" value="+" />+
                   </label>
@@ -184,14 +184,15 @@
                   </label>
                 </fieldset>
                 <!--GO BUTTON-->
+                <fieldset class="mt-1 mt-md-5 mx-auto">
                 <span>click go :)</span>
                 <button
                   type="button"
-                  class="selector-style mt-3 mt-md-5"
-                  id="pickGo"
-                >
+                  class="selector-style"
+                  id="pickGo">
                   go
                 </button>
+              </fieldset>
               </form>
               <!--WHERE: input type number from Mozilla https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number-->
               <!--NUMBER KEYPAD-->
