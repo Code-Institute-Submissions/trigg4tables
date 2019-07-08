@@ -221,17 +221,6 @@ h2 {
 
 /* WHERE: Shadow code from https://codepen.io/sdthornton/pen/wBZdXq*/
 
-.selector-style {
-  background-color: #7fa5b5;
-}
-
-.selector-style--selected {
-  background-color: #b18683;
-}
-
-.selector:hover {
-  background-color: #cfb4b2;
-}
 
 #selectFirst {
   width: auto;
@@ -288,7 +277,16 @@ h2 {
   border-radius: 5px;
   margin: 10px;
   font-size: 1.3rem;
-  color: white;
+  color:#b18683;
+  
+
+  
+    background-color: white;
+    /*padding: 10px; causing text to be bottom right of button*/
+    vertical-align: top;
+    box-shadow: 2px 1px 2px gray;
+    margin: 8px 10px 8px 10px;
+  }
 }
 
 [type="radio"] {
@@ -307,7 +305,17 @@ fieldset {
   border-radius: 10px;
   background-color: #e9f0f2;
   width: 255px;
+ 
 }
+
+.labelNo:active, .labelOp:active, #pickGo:active {
+  box-shadow: 0 0 0 white;
+  margin: 10px 10px 6px 10px;
+}
+/*WHERE: https://stackoverflow.com/questions/38377062/how-to-make-html-button-look-pressed-in-using-css*/
+
+
+
 
 
 
@@ -435,4 +443,18 @@ input, label {
 
 input[type="radio"]{
   -webkit-appearance: none;
+}
+
+/*.selector-style {
+  background-color: #7fa5b5;
+}*/
+
+.selector-style--selected {
+  background-color: #b18683;
+  color: white;
+  
+}
+
+.selector:hover {
+  background-color: #cfb4b2;
 }
