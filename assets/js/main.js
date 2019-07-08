@@ -108,6 +108,29 @@ $(document).ready(function() {
     $("#sumCheck").show();
   }
 
+  //TIMER
+  let seconds = 0;
+  let minutes = 0;
+
+  function add() {
+    seconds++; //start at 0 and add 1
+    if (seconds >= 60) {
+      seconds = 0;
+      minutes++;
+    }
+    if (seconds < 10) {
+      seconds = "0" + seconds;
+    }
+    $(".timer").text(`${minutes}:${seconds}`); //update text every second
+    timer(); //run timer function - which runs the add function after 1 second - creates the loop
+  }
+
+  function timer() {
+    setTimeout(add, 1000); //setTimeout method
+  }
+//WHERE: Based on https://codepad.co/snippet/javascript-stopwatch-using-javascript-and-css
+ 
+
   //CHECK ANSWER CORRECT
   function sumCorrect(sumAnswer, answer) {
     if (sumAnswer == answer) {
@@ -236,6 +259,7 @@ $(document).ready(function() {
     sumSet(todo);
     $(".goHide").hide();
     $("#sumCheck").show();
+    timer();
 
     console.log("GoOp" + $("input[name='pickOp']:checked").val());
     console.log("GoNo" + $("input[name='pickNo']:checked").val());
