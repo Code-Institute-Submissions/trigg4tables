@@ -38,15 +38,25 @@ body {
   color: #575778;
   }
 
+.color--grey{
+  color: #575778;
+}
+
+.color--darkblue {
+  color: #7fa5b5
+}
+
+h1, h2, p{
+  color:white;
+}
+
 h1 {
   font-family: "Irish Grover", cursive;
-  color: white;
-}
+  }
 
 h2 {
   font-family: "Cherry Cream Soda", cursive;
-  color: white;
-  
+    
 }
 
 .noteResult, .noteInstruct, span {
@@ -268,19 +278,25 @@ h2 {
 }
 
 #progress {
-  background-color: #7fa5b5;
+  background-color: #b18683;
+  
+}
+
+.progress {
+  width: 215px;
+  height: 1.2rem;
 }
 
 /*----------PICK BUTTONS----------*/
 
 .labelNo, .labelOp, #pickGo {
-  width: 35px;
-  height: 35px;
+  width: 32px;
+  height: 32px;
   padding: 0px;
   text-align:center;
   border: 2px solid #ccc;
   border-radius: 5px;
-  margin: 10px;
+
   font-size: 1.3rem;
   color:#b18683;
   
@@ -290,7 +306,7 @@ h2 {
     /*padding: 10px; causing text to be bottom right of button*/
     vertical-align: top;
     box-shadow: 2px 1px 2px gray;
-    margin: 8px 10px 8px 10px;
+    margin: 6px 8px 6px 8px;
   }
 
 
@@ -305,7 +321,7 @@ h2 {
 
 .labelNo:active, .labelOp:active, #pickGo:active {
   box-shadow: 0 0 0 white;
-  margin: 10px 10px 6px 10px;
+  margin: 8px 8px 4px 8px;
 }
 /*WHERE: https://stackoverflow.com/questions/38377062/how-to-make-html-button-look-pressed-in-using-css*/
 
@@ -428,6 +444,10 @@ hr{
 
 .testr {
   border: solid red;
+}
+
+.testg {
+  border: solid green;
 }
 
 input, label {
