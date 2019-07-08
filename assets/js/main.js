@@ -102,8 +102,8 @@ $(document).ready(function() {
   function sumSet(todo) {
     $("#sumAnswer")
       .val("")
-      .show()
-      .focus();
+      .show();
+      //.focus();
     $("#sumAsk").text(`${todo[0].key1} ${todo[0].key2} ${todo[0].key3} =`);
     $("#sumCheck").show();
   }
@@ -114,7 +114,7 @@ $(document).ready(function() {
 
   function add() {
     seconds++; //start at 0 and add 1
-    if (seconds >= 60) {
+    if (seconds >= 60) { //??? why adds mins when take out >
       seconds = 0;
       minutes++;
     }
@@ -301,8 +301,8 @@ $(document).ready(function() {
         .css("color", "#d75735");
       $(".noteInstruct").text(`try again`);
       $("#sumAnswer")
-        .val("")
-        .focus();
+        .val("");
+        //.focus();
       countIncrement(todo);
     }
 
