@@ -292,17 +292,16 @@ h2 {
     box-shadow: 2px 1px 2px gray;
     margin: 8px 10px 8px 10px;
   }
-}
 
 
 
-fieldset {
+/*fieldset {
   border: 2px solid #ccc;
   border-radius: 10px;
   background-color: #e9f0f2;
   width: 255px;
  
-}
+}*/
 
 .labelNo:active, .labelOp:active, #pickGo:active {
   box-shadow: 0 0 0 white;
