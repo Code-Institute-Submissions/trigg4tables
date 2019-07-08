@@ -49,10 +49,10 @@ h2 {
   
 }
 
-.noteResult, .noteInstruct {
+.noteResult, .noteInstruct, span {
   /*font-family: 'Permanent Marker', cursive;*/
   font-family:'Gaegu', cursive;
-  color: white;
+  color: grey;
   font-size: 1.5rem;
 }
 
@@ -226,7 +226,7 @@ h2 {
 }
 
 .selector-style--selected {
-  background-color: #e9f0f2;
+  background-color: #b18683;
 }
 
 .selector:hover {
@@ -280,7 +280,7 @@ h2 {
 /*----------PICK BUTTONS----------*/
 
 .labelNo, .labelOp, #pickGo {
-  width: 30px;
+  width: 40px;
   height: 40px;
   padding: 0px;
   text-align:center;
@@ -288,6 +288,7 @@ h2 {
   border-radius: 5px;
   margin: 10px;
   font-size: 1.3rem;
+  color: white;
 }
 
 [type="radio"] {
@@ -300,6 +301,15 @@ h2 {
   width: 1px;
 }
 /*WHERE: https://www.sitepoint.com/replacing-radio-buttons-without-replacing-radio-buttons/*/
+
+fieldset {
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: #e9f0f2;
+  width: 255px;
+}
+
+
 
 /*----------NUMBER KEYPAD----------*/
 
