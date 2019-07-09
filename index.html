@@ -12,7 +12,7 @@
     />
     <script src="https://kit.fontawesome.com/974d3c9b5a.js"></script>
     <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
-        <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico" />
     <title>Trigg 4 Tables</title>
   </head>
 
@@ -23,7 +23,9 @@
         <div class="col-1 d-none d-lg-block"></div>
         <div class="col-md-6 col-lg-5 d-none d-md-block shade">
           <div class="row bg-height--15">
-            <div class="col-12 bg-color--darkpink d-flex justify-content-center">
+            <div
+              class="col-12 bg-color--darkpink d-flex justify-content-center"
+            >
               <h1 class="align-self-center">
                 Trigg 4 <br class="d-block d-lg-none" />Tables
               </h1>
@@ -33,11 +35,12 @@
             <div class="col-6 bg-color--darkblue d-flex justify-content-center">
               <h2 class="align-self-center">cool cats<br />do maths</h2>
             </div>
-            <div class="col-6 bg-color--lightpink d-flex justify-content-center ">
-              <!--<button class="reload hideStart showGo button-style">exit</button>-->
-              <time class="timer">0:00</time>
-              <i class="fas fa-info-circle"></i>
-              <i class="fas fa-times-circle reload hideStart showGo"></i>
+            <div
+              class="col-6 bg-color--lightpink d-flex justify-content-around "
+            >
+                           <time class="timer align-self-center">0:00</time>
+              <i class="fas fa-info-circle align-self-center"></i>
+              <i class="fas fa-times-circle reload align-self-center"></i>
             </div>
           </div>
           <div class="row bg-height--65">
@@ -72,23 +75,34 @@
             <div class="col-6">
               <!--ROW GO CLOCK-->
               <div class="row showGo hideStart">
-                <div class="col-12 bg-color--darkpink bg-height--10 shade">
-                  <time class="timer">0:00</time>
-                  <i class="fas fa-info-circle"></i>
-                  <i class="fas fa-times-circle reload hideStart showGo"></i>
+                <div
+                  class="col-12 bg-color--darkpink bg-height--10 shade d-flex justify-content-between"
+                >
+                  <time class="timer align-self-center">0:00</time>
+                  <i class="fas fa-info-circle align-self-center"></i>
+                  <i
+                    class="fas fa-times-circle reload hideStart showGo align-self-center"
+                  ></i>
                 </div>
               </div>
               <!--ROW GO NOTE-->
               <div class="row showGo hideStart">
-                <div class="col-12 bg-color--darkblue bg-height--20 shade">
-                  <span class="note noteResult"></span><br />
-                  <span class="note noteInstruct"></span>
+                <div
+                  class="col-12 bg-color--darkblue bg-height--20 shade text-center"
+                >
+                  <p class="note noteResult font-color--white testr mt-3">
+                    enter answer
+                  </p>
+                  <p class="note noteInstruct font-color--white testg">
+                    click check
+                  </p>
+                  <!--WHY: div used to allow Bootstrap alignment on spans-->
                 </div>
               </div>
               <!--ROW START TITLE-->
               <div class="row hideGo">
                 <div
-                  class="col-12 bg-color--darkpink shade bg-height--15 d-flex justify-content-center goHide"
+                  class="col-12 bg-color--darkpink bg-height--15 shade d-flex justify-content-center goHide"
                 >
                   <h1 class="align-self-center">Trigg 4<br />Tables</h1>
                 </div>
@@ -107,12 +121,19 @@
           </div>
         </div>
         <!--ASK ANSWER COLUMN-->
-        <div id="col4" class="col-12 col-md-6 col-lg-5 bg-height--52">
-          <div class="row startHide showGo">
+        <div class="col-12 col-md-6 col-lg-5">
+          <!--MESSAGE ROW-->
+          <div class="row d-none d-md-block testr bg-height--15">
+            <div class="col-12  text-center  testg hideStart showGo">
+              <p class="m-0 noteResult note ">enter number</p>
+              <p class="m-0 noteInstruct note">click check</p>
+            </div>
+          </div>
+          <!--PROGRESS ROW-->
+          <div class="row hideStart showGo hideNextDone">
             <div class="col-12">
-              <!--PROGRESS-->
               <div
-                class="progress mt-3 mt-md-5 mx-auto hideStart showGo hideNextDone"
+                class="progress mt-3 mx-auto"
               >
                 <div
                   id="progress"
@@ -126,19 +147,13 @@
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-12 d-none d-md-block testr text-center">
-              <!--MESSAGE-->
-              <p class="mt-1 noteResult"></p>
-              <p class="mt-1 noteInstruct"></p>
-            </div>
-          </div>
-          <!--MAIN QUESTION ANSWER COLUMN-->
+
+          <!--MAIN QUESTION SUM ROW-->
           <div class="row">
             <div class="col-12 ">
               <!--PICK FORM - NUMBER-->
-              <form id="pick" class="hideGo mt-md-5 text-center">
-                <fieldset class="mt-3 mt-md-5 mx-auto">
+              <form id="pick" class="hideGo text-center">
+                <fieldset class="mt-3 mx-auto">
                   <span class="note">pick number</span>
                   <br />
                   <label class="labelNo selector-style ">
@@ -208,10 +223,7 @@
               <!--WHERE: input type number from Mozilla https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number-->
               <!--NUMBER KEYPAD-->
               <div class="d-flex justify-content-center">
-                <form
-                  id="pad"
-                  class="mt-3 mt-md-5 hideStart showGo hideNextDone"
-                >
+                <form id="pad" class="mt-3 hideStart showGo hideNextDone">
                   <div class="d-flex justify-content-between">
                     <span id="sumAsk" class="align-self-center"></span>
                     <input
