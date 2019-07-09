@@ -260,6 +260,13 @@ $(document).ready(function() {
     console.log("GoNo" + $("input[name='pickNo']:checked").val());
   });
 
+//CLICK RELOAD
+$(".reload").click(function(){
+  location.reload();
+});
+//WHERE: https://stackoverflow.com/questions/5404839/how-can-i-refresh-a-page-with-jquery
+
+
   //CLICK CHECK
   $("#sumCheck").click(function() {
     let sumAnswer = $("#sumAnswer").val();
