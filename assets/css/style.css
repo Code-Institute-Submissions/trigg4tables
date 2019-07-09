@@ -32,51 +32,36 @@ font-family: 'Just Me Again Down Here', cursive;
 font-family: 'Gaegu', cursive;
 font-family: 'East Sea Dokdo', cursive;*/
 
+/*----------FONTS----------*/
 body {
   font-family: "Signika", sans-serif;
-  /*font-family: 'Special Elite', cursive;*/
   color: #575778;
-}
-
-.color--grey {
-  color: #575778;
-}
-
-.color--darkblue {
-  color: #7fa5b5;
-}
-
-h1,
-h2,
-p {
-  color: white;
 }
 
 h1 {
   font-family: "Irish Grover", cursive;
+  font-size: 1.5rem;
+  color: white;
 }
 
 h2 {
   font-family: "Cherry Cream Soda", cursive;
+  font-size: 1rem;
+  color: white;
 }
 
-.noteResult,
-.noteInstruct,
-span {
-  /*font-family: 'Permanent Marker', cursive;*/
-  font-family: "Gaegu", cursive;
-  color: #575778;
-  font-size: 1.5rem;
-  line-height: 1.2rem;
-}
-
-
-select,
-option,
+button, 
+input,
 label,
-input {
-  font-size: 1.3rem;
+span {
+  font-size: 1.2rem;
 }
+
+.note {
+  font-family: "Gaegu", cursive;
+  font-size: 1.4rem;
+  line-height: 1.2rem;
+  }
 
 
 
@@ -92,39 +77,21 @@ input {
   color: #f7b733;
 }
 
-h1 {
-  font-size: 1.5rem;
-}
-
-h2 {
-  font-size: 1rem;
-}
-
-.bg--tealdark {
+/*----------BACKGROUNDS----------*/
+.bg-color--darkpink{
   background-color: #b18683;
-  /*background-color: #006a79;*/
 }
 
-.bg--teallight {
-  background-color: #7fa5b5;
-  /*background-color: #c1ed7a;*/
-}
-
-.bg--orangedark {
+.bg-color--lightpink{
   background-color: #cfb4b2;
-  /*background-color: #5f9aa4*/
 }
 
-.bg--orangelight {
-  background-color: #7fd77d;
+.bg-color--darkblue{
+  background-color: #7fa5b5;
 }
 
-.bg--greenlight {
-  background-color: #e6f4f1;
-}
-
-.bg--offwhite {
-  background-color: white;
+.bg-color--lightblue{
+  background-color: #e9f0f2;
 }
 
 .bg--hi {
@@ -182,57 +149,30 @@ h2 {
   background-size: contain;
 }
 
-.bg--height1 {
-  height: 65vh;
-}
-
-.bg--height2 {
-  height: 15vh;
-}
-
-.bg--height3 {
+.bg-height--10{
   height: 10vh;
 }
 
-.bg--height4 {
-  min-height: 80vh;
+.bg-height--15{
+  height: 15vh;
 }
 
-.bg--height5 {
-  min-height: 35vh;
+.bg-height--20{
+  height: 20vh;
 }
 
-.bg--height6 {
-  min-height: 20vh;
-}
-
-.bg--height7 {
-  min-height: 50vh;
-}
-
-.bg--height12 {
-  min-height: 12vh;
-}
-
-.bg--height24 {
-  min-height: 24vh;
-}
-
-.bg--height36 {
-  min-height: 36vh;
-}
-
-.bg--height52 {
-  min-height: 52vh;
-}
-
-.bg--height30 {
+.bg-height--30 {
   min-height: 30vh;
 }
 
-.bg--height15 {
-  min-height: 15vh;
+.bg-height--52 {
+  min-height: 52vh;
 }
+
+.bg-height--65{
+  height: 65vh;
+}
+
 
 .shade {
   -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
@@ -314,8 +254,7 @@ i:hover, i:active {
   text-align: center;
   border: 2px solid #ccc;
   border-radius: 5px;
-  font-size: 1.3rem;
-  color: #b18683;
+    color: #b18683;
 
   background-color: white;
   /*padding: 10px; causing text to be bottom right of button*/
@@ -353,14 +292,8 @@ i:hover, i:active {
   text-align: center;
 }
 
-#sumAsk, #sumAnswer, #sumCheck, #sumNext {
-  color: #575778;
-  font-family: "Signika", sans-serif;
-
-}
-
 #sumAnswer {
-  width: 50px;
+  width: 42px;
 }
 
 #sumCheck,
@@ -417,11 +350,6 @@ i:hover, i:active {
   color: #b18683;
 }
 
-#sumAsk,
-#sumCheck,
-#sumNext {
-  font-size: 1rem;
-}
 
 #sumAsk {
   margin-left: 5px;
@@ -435,7 +363,7 @@ i:hover, i:active {
 }
 
 hr {
-  margin: 10px;
+  margin: 5px;
 }
 /*----------MEDIA QUERIES----------*/
 
