@@ -65,10 +65,11 @@ h2 {
 span {
   /*font-family: 'Permanent Marker', cursive;*/
   font-family: "Gaegu", cursive;
-  color: grey;
+  color: #575778;
   font-size: 1.5rem;
   line-height: 1.2rem;
 }
+
 
 select,
 option,
@@ -76,6 +77,8 @@ label,
 input {
   font-size: 1.3rem;
 }
+
+
 
 .pass {
   color: #4abdac;
@@ -350,6 +353,12 @@ i:hover, i:active {
   text-align: center;
 }
 
+#sumAsk, #sumAnswer, #sumCheck, #sumNext {
+  color: #575778;
+  font-family: "Signika", sans-serif;
+
+}
+
 #sumAnswer {
   width: 50px;
 }
@@ -415,7 +424,7 @@ i:hover, i:active {
 }
 
 #sumAsk {
-  margin-left: 10px;
+  margin-left: 5px;
   margin-top: 10px;
   margin-bottom: 8px;
 }
