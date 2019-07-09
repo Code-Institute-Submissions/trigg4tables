@@ -106,6 +106,7 @@ $(document).ready(function() {
   //TIMER
   let seconds = 0;
   let minutes = 0;
+  let t;
 
   function add() {
     seconds++; //start at 0 and add 1
@@ -121,7 +122,11 @@ $(document).ready(function() {
   }
 
   function timer() {
-    setTimeout(add, 1000); //setTimeout method
+    t=setTimeout(add, 1000); //setTimeout method
+  }
+
+  function stopTimer(){
+    clearTimeout(t);
   }
   //WHERE: Based on https://codepad.co/snippet/javascript-stopwatch-using-javascript-and-css
 
@@ -355,7 +360,7 @@ $(document).ready(function() {
       sumSet(todo);
     } else {
       //only do if complete
-      $("#sum").hide();
+      //$("#sum").hide();
       $(".trigg")
         .removeClass("bg--thumbsup bg--0 bg--1 bg--2 bg--3")
         .addClass("bg--score");
@@ -368,6 +373,7 @@ $(document).ready(function() {
       report();
       $(".hideNextDone").hide();
       $(".showNextDone").show();
+      stopTimer();
     }
   });
 }); // end of get document
