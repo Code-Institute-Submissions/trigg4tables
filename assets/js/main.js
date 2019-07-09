@@ -282,9 +282,9 @@ $(".reload").click(function(){
         .removeClass("bg--hi bg--0 bg--1 bg--2 bg--3")
         .addClass("bg--thumbsup");
       $(".noteResult")
-        .text(`Purrfect`)
-        .css("color", "#60ee28");
-      $(".noteInstruct").text(`Click next`);
+        .text(`purrfect`)
+        .css("color", "#9df07c");
+      $(".noteInstruct").text(`click next`);
       $(".hideCheck").hide();
       $(".showCheck").show();
       $("#sumAsk").text(
@@ -299,7 +299,7 @@ $(".reload").click(function(){
         .addClass("bg--1");
       $(".noteResult")
         .text(`oops not ${sumAnswer}`)
-        .css("color", "#d75735");
+        .css("color", "#bc4221");
       $(".noteInstruct").text(`try again`);
       $("#sumAnswer").val("");
       //.focus();
@@ -332,7 +332,7 @@ $(".reload").click(function(){
       $(".noteResult")
         .text(`${sumAnswer} is incorrect`)
         .css("color", "#d75735");
-      $(".noteInstruct").text(`Click next.`);
+      $(".noteInstruct").text(`click next.`);
       countIncrement(todo);
       //console.log("count at step4" + count);
       //reviseAdd(todo);
