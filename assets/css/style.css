@@ -58,11 +58,32 @@ time {
   font-size: 1.2rem;
 }
 
+.bg-color--lightpink>time {
+  font-size: 1.6rem;
+}
+
 .note {
   font-family: "Gaegu", cursive;
   font-size: 1.4rem;
   line-height: 1.2rem;
   }
+
+  i {
+    font-size: 1.8rem;
+    }
+  
+  i:hover, i:active {
+    color:white;
+  }
+  
+  time, i {
+    color: #e2d2d0;
+  }
+  
+  .bg-color--lightpink>time, .bg-color--lightpink>i {
+    color: #b18683;
+  }
+
 
 .font-color--white {
   color: white;
@@ -86,7 +107,7 @@ time {
 }
 
 .bg-color--lightpink{
-  background-color: #cfb4b2;
+  background-color: #d8c3c1;
 }
 
 .bg-color--darkblue{
@@ -200,20 +221,7 @@ time {
   height: 1.2rem;
 }
 
-/*----------FONT AWESOME ICONS----------*/
 
-i {
-  font-size: 1.8rem;
-  color: #e2d2d0
-}
-
-i:hover, i:active {
-  color:white;
-}
-
-time {
-  color: #e2d2d0
-}
 /*WHERE: Used to find lighter shade https://www.color-hex.com/color/cfb4b2*/
 
 /*----------PICK BUTTONS----------*/
