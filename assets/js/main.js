@@ -1,8 +1,6 @@
 $(document).ready(function() {
   console.log("test 9");
-  $(".startHide").hide();
-  $("canvas").hide();
-  console.log("hidec");
+  $(".hideStart").hide();
 
   $(document).on("keypress", function(e) {
     if (e.which == 13) {
@@ -100,12 +98,9 @@ $(document).ready(function() {
 
   //SET SUM
   function sumSet(todo) {
-    $("#sumAnswer")
-      .val("")
-      .show();
-      //.focus();
+    $("#sumAnswer").val("");
+    //.focus();
     $("#sumAsk").text(`${todo[0].key1} ${todo[0].key2} ${todo[0].key3} =`);
-    $("#sumCheck").show();
   }
 
   //TIMER
@@ -114,7 +109,7 @@ $(document).ready(function() {
 
   function add() {
     seconds++; //start at 0 and add 1
-    if (seconds >= 60) { //??? why adds mins when take out >
+    if (seconds >= 60) {
       seconds = 0;
       minutes++;
     }
@@ -128,8 +123,7 @@ $(document).ready(function() {
   function timer() {
     setTimeout(add, 1000); //setTimeout method
   }
-//WHERE: Based on https://codepad.co/snippet/javascript-stopwatch-using-javascript-and-css
- 
+  //WHERE: Based on https://codepad.co/snippet/javascript-stopwatch-using-javascript-and-css
 
   //CHECK ANSWER CORRECT
   function sumCorrect(sumAnswer, answer) {
@@ -253,14 +247,10 @@ $(document).ready(function() {
     let no = parseInt($("input[name='pickNo']:checked").val());
     let operator = $("input[name='pickOp']:checked").val();
     let todo = todoFill(no, operator);
-    $(".goHide").hide();
-    $(".goShow").show();
-
+    $(".hideGo").hide();
+    $(".showGo").show();
     sumSet(todo);
-    $(".goHide").hide();
-    $("#sumCheck").show();
     timer();
-
     console.log("GoOp" + $("input[name='pickOp']:checked").val());
     console.log("GoNo" + $("input[name='pickNo']:checked").val());
   });
@@ -283,9 +273,8 @@ $(document).ready(function() {
         .text(`Purrfect`)
         .css("color", "#60ee28");
       $(".noteInstruct").text(`Click next`);
-      $("#sumCheck").hide();
-      $("#sumNext").show();
-      $("#sumAnswer").hide();
+      $(".hideCheck").hide();
+      $(".showCheck").show();
       $("#sumAsk").text(
         `${todo[0].key1} ${todo[0].key2} ${todo[0].key3} = ${todo[0].key4}`
       );
@@ -300,9 +289,8 @@ $(document).ready(function() {
         .text(`oops not ${sumAnswer}`)
         .css("color", "#d75735");
       $(".noteInstruct").text(`try again`);
-      $("#sumAnswer")
-        .val("");
-        //.focus();
+      $("#sumAnswer").val("");
+      //.focus();
       countIncrement(todo);
     }
 
@@ -317,9 +305,8 @@ $(document).ready(function() {
       $(".noteInstruct").text(`try again later`);
       countIncrement(todo);
       todoAdd(todo);
-      $("#sumCheck").hide();
-      $("#sumNext").show();
-      $("#sumAnswer").hide();
+      $(".hideCheck").hide();
+      $(".showCheck").show();
       $("#sumAsk").text(
         `${todo[0].key1} ${todo[0].key2} ${todo[0].key3} = ${todo[0].key4}`
       );
@@ -337,9 +324,8 @@ $(document).ready(function() {
       countIncrement(todo);
       //console.log("count at step4" + count);
       //reviseAdd(todo);
-      $("#sumCheck").hide();
-      $("#sumNext").show();
-      $("#sumAnswer").hide();
+      $(".hideCheck").hide();
+      $(".showCheck").show();
       $("#sumAsk").text(
         `${todo[0].key1} ${todo[0].key2} ${todo[0].key3} = ${todo[0].key4}`
       );
@@ -355,7 +341,8 @@ $(document).ready(function() {
 
     reviseAdd(todo, revise);
     doneMove(done, todo);
-    $("#sumNext").hide();
+    $(".hideNextSum").hide();
+    $(".showNextSum").show();
     $("#progress").attr(
       "style",
       `width: ${((12 - todoArray.length) / 12) * 100}%`
@@ -379,7 +366,8 @@ $(document).ready(function() {
       console.log(reviseArray);
       console.log(noteString);
       report();
-      $("canvas").show();
+      $(".hideNextDone").hide();
+      $(".showNextDone").show();
     }
   });
 }); // end of get document
