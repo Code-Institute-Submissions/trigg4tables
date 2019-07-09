@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Irish+Grover|Signika:600&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Cousine:700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Cherry+Cream+Soda&display=swap");
-@import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Indie+Flower&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Indie+Flower&display=swap");
 
-@import url('https://fonts.googleapis.com/css?family=Gaegu:700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Gaegu:700&display=swap");
 /*font-family: 'Irish Grover', cursive;
 font-family: 'Signika', sans-serif;
 font-family: 'Special Elite', cursive;
@@ -36,32 +36,35 @@ body {
   font-family: "Signika", sans-serif;
   /*font-family: 'Special Elite', cursive;*/
   color: #575778;
-  }
+}
 
-.color--grey{
+.color--grey {
   color: #575778;
 }
 
 .color--darkblue {
-  color: #7fa5b5
+  color: #7fa5b5;
 }
 
-h1, h2, p{
-  color:white;
+h1,
+h2,
+p {
+  color: white;
 }
 
 h1 {
   font-family: "Irish Grover", cursive;
-  }
+}
 
 h2 {
   font-family: "Cherry Cream Soda", cursive;
-    
 }
 
-.noteResult, .noteInstruct, span {
+.noteResult,
+.noteInstruct,
+span {
   /*font-family: 'Permanent Marker', cursive;*/
-  font-family:'Gaegu', cursive;
+  font-family: "Gaegu", cursive;
   color: grey;
   font-size: 1.5rem;
   line-height: 1.2rem;
@@ -236,7 +239,6 @@ h2 {
 
 /* WHERE: Shadow code from https://codepen.io/sdthornton/pen/wBZdXq*/
 
-
 #selectFirst {
   width: auto;
 }
@@ -279,7 +281,6 @@ h2 {
 
 #progress {
   background-color: #b18683;
-  
 }
 
 .progress {
@@ -287,29 +288,38 @@ h2 {
   height: 1.2rem;
 }
 
+/*----------FONT AWESOME ICONS----------*/
+
+i {
+  font-size: 1.8rem;
+  color: #ddcac9;
+}
+
+i:hover, i:active {
+  color:white;
+}
+/*WHERE: Used to find lighter shade https://www.color-hex.com/color/cfb4b2*/
+
 /*----------PICK BUTTONS----------*/
 
-.labelNo, .labelOp, #pickGo {
+.labelNo,
+.labelOp,
+#pickGo {
   width: 32px;
   height: 32px;
   padding: 0px;
-  text-align:center;
+  text-align: center;
   border: 2px solid #ccc;
   border-radius: 5px;
-
   font-size: 1.3rem;
-  color:#b18683;
-  
+  color: #b18683;
 
-  
-    background-color: white;
-    /*padding: 10px; causing text to be bottom right of button*/
-    vertical-align: top;
-    box-shadow: 2px 1px 2px gray;
-    margin: 6px 8px 6px 8px;
-  }
-
-
+  background-color: white;
+  /*padding: 10px; causing text to be bottom right of button*/
+  vertical-align: top;
+  box-shadow: 2px 1px 2px gray;
+  margin: 6px 8px 6px 8px;
+}
 
 /*fieldset {
   border: 2px solid #ccc;
@@ -319,16 +329,13 @@ h2 {
  
 }*/
 
-.labelNo:active, .labelOp:active, #pickGo:active {
+.labelNo:active,
+.labelOp:active,
+#pickGo:active {
   box-shadow: 0 0 0 white;
   margin: 8px 8px 4px 8px;
 }
 /*WHERE: https://stackoverflow.com/questions/38377062/how-to-make-html-button-look-pressed-in-using-css*/
-
-
-
-
-
 
 /*----------NUMBER KEYPAD----------*/
 
@@ -350,7 +357,7 @@ h2 {
 #sumCheck,
 #sumNext {
   width: 60px;
-  }
+}
 
 .padNum {
   width: 30px;
@@ -376,7 +383,10 @@ h2 {
   width: 215px;
 }
 
-.padNum, #padClear, #sumCheck, #sumNext {
+.padNum,
+#padClear,
+#sumCheck,
+#sumNext {
   background-color: white;
   /*padding: 10px; causing text to be bottom right of button*/
   vertical-align: top;
@@ -384,19 +394,24 @@ h2 {
   margin: 8px 10px 8px 10px;
 }
 
-
-.padNum:active, #padClear:active, #sumCheck:active, #sumNext:active {
+.padNum:active,
+#padClear:active,
+#sumCheck:active,
+#sumNext:active {
   box-shadow: 0 0 0 white;
   margin: 10px 10px 6px 10px;
 }
 /*WHERE: https://stackoverflow.com/questions/38377062/how-to-make-html-button-look-pressed-in-using-css*/
 
-.padNum, #padClear {
-color:#b18683;
+.padNum,
+#padClear {
+  color: #b18683;
 }
 
-#sumAsk, #sumCheck, #sumNext{
- font-size:  1rem;
+#sumAsk,
+#sumCheck,
+#sumNext {
+  font-size: 1rem;
 }
 
 #sumAsk {
@@ -406,13 +421,12 @@ color:#b18683;
 }
 
 #sumAnswer {
-  margin-top:10px;
-  margin-bottom:8px;
+  margin-top: 10px;
+  margin-bottom: 8px;
 }
 
-
-hr{
-  margin:10px;
+hr {
+  margin: 10px;
 }
 /*----------MEDIA QUERIES----------*/
 
@@ -450,13 +464,14 @@ hr{
   border: solid green;
 }
 
-input, label {
+input,
+label {
   -webkit-appearance: none;
   border-radius: 0;
 }
 /*WHERE: https://www.daretothink.co.uk/stop-ios-styling-your-input-fields-and-buttons/*/
 
-input[type="radio"]{
+input[type="radio"] {
   -webkit-appearance: none;
 }
 
@@ -467,7 +482,6 @@ input[type="radio"]{
 .selector-style--selected {
   background-color: #b18683;
   color: white;
-  
 }
 
 .selector:hover {
@@ -475,12 +489,13 @@ input[type="radio"]{
 }
 
 [type="radio"] {
-  border: 0; 
-  clip: rect(0 0 0 0); 
-  height: 1px; margin: -1px; 
-  overflow: hidden; 
-  padding: 0; 
-  position: absolute; 
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
   width: 1px;
 }
 /*WHERE: https://www.sitepoint.com/replacing-radio-buttons-without-replacing-radio-buttons/*/
