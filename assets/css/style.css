@@ -53,7 +53,8 @@ h2 {
 button, 
 input,
 label,
-span {
+span,
+time {
   font-size: 1.2rem;
 }
 
@@ -63,7 +64,9 @@ span {
   line-height: 1.2rem;
   }
 
-
+.font-color--white {
+  color: white;
+}
 
 .pass {
   color: #4abdac;
@@ -173,7 +176,6 @@ span {
   height: 65vh;
 }
 
-
 .shade {
   -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
     0 3px 6px rgba(0, 0, 0, 0.23);
@@ -202,11 +204,15 @@ span {
 
 i {
   font-size: 1.8rem;
-  color: #ddcac9;
+  color: #e2d2d0
 }
 
 i:hover, i:active {
   color:white;
+}
+
+time {
+  color: #e2d2d0
 }
 /*WHERE: Used to find lighter shade https://www.color-hex.com/color/cfb4b2*/
 
