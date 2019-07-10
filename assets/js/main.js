@@ -11,6 +11,7 @@ $(document).ready(function() {
   //WHY: stop enter key from refreshing page
 
   //GLOBAL ARRAYS
+  let sound = true;
   let todoArray = [];
   let doneArray = [];
   let reviseArray = [];
@@ -29,6 +30,25 @@ $(document).ready(function() {
   doneAudio.src = "assets/audio/done.mp3"
     
   //WHERE: https://freesound.org/people/adriann/sounds/191718/
+
+ 
+//SOUND ON OFF
+$(".sound").click(function(){
+  if(sound === true){
+    $(".sound").removeClass("fa-volume-mute").addClass("fa-volume-up");
+    sound=false;
+    console.log(sound);
+  } else {
+    $(".sound").removeClass("fa-volume-up").addClass("fa-volume-mute");
+    sound=true;
+    console.log(sound);
+  }
+ });
+
+//
+
+
+ 
 
   //NUMBER KEYPAD
   $(".padNum").click(function() {
