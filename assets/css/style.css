@@ -75,11 +75,7 @@ time {
     font-size: 1.8rem;
     }
   
-  i:hover, i:active {
-    color:white;
-  }
-  
-  time, i {
+    time, i {
     color: #e2d2d0;
   }
   
@@ -87,6 +83,9 @@ time {
     color: #b18683;
   }
 
+  i:hover, i:active {
+    color:white;
+  }
 
 .font-color--white {
   color: white;
