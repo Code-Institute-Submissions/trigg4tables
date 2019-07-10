@@ -45,7 +45,29 @@ $(".sound").click(function(){
   }
  });
 
-//
+function playCorrectAudio(){
+ if(sound===true){
+  correctAudio.play();
+ }
+}
+
+function playIncorrectAudio1(){
+  if(sound===true){
+   incorrectAudio1.play();
+  }
+ }
+
+ function playIncorrectAudio2(){
+  if(sound===true){
+   incorrectAudio2.play();
+  }
+ }
+
+ function playDoneAudio(){
+  if(sound===true){
+   doneAudio.play();
+  }
+ }
 
 
  
@@ -314,7 +336,7 @@ $(".reload").click(function(){
 
     //STEP1: CHECK ANSWER - CORRECT
     if (sumCorrect(sumAnswer, answer) === true) {
-      correctAudio.play();
+      playCorrectAudio();
       $(".trigg")
         .removeClass("bg--hi bg--0 bg--1 bg--2 bg--3")
         .addClass("bg--thumbsup");
@@ -332,7 +354,7 @@ $(".reload").click(function(){
 
     //STEP2: CHECK ANSWER - INCORRECT 1ST ATTEMPT
     else if (count === 1) {
-      incorrectAudio1.play();
+      playIncorrectAudio1();
       $(".trigg")
         .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3")
         .addClass("bg--1");
@@ -347,7 +369,7 @@ $(".reload").click(function(){
 
     //STEP3: CHECK ANSWER - INCORRECT 2ND ATTEMPT
     else if (count === 2) {
-      incorrectAudio2.play();
+      playIncorrectAudio2();
       $(".trigg")
         .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3")
         .addClass("bg--2");
@@ -366,7 +388,7 @@ $(".reload").click(function(){
 
     //STEP4: CHECK ANSWER - INCORRECT 3RD ATTEMPT
     else {
-      incorrectAudio2.play();
+      playIncorrectAudio2();
       $(".trigg")
         .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3")
         .addClass("bg--3");
@@ -409,7 +431,7 @@ $(".reload").click(function(){
     } else {
       //only do if complete
       //$("#sum").hide();
-      doneAudio.play();
+      playDoneAudio();
       $(".trigg")
         .removeClass("bg--thumbsup bg--0 bg--1 bg--2 bg--3")
         .addClass("bg--score");
