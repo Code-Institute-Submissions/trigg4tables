@@ -83,6 +83,11 @@ time {
     color: #b18683;
   }
 
+ .bg-color--darkblue>i {
+    color:#e9f0f2;
+  }
+
+
   i:hover, i:active {
     color:white;
   }
