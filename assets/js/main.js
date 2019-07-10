@@ -15,13 +15,20 @@ $(document).ready(function() {
   let doneArray = [];
   let reviseArray = [];
   let noteString;
+
   const correctAudio = new Audio();
   correctAudio.src = "assets/audio/correct.mp3"
-  const incorrectAudio = new Audio();
-  incorrectAudio.src = "assets/audio/incorrect.mp3"
-  const tadaAudio = new Audio();
-  tadaAudio.src = "assets/audio/tada.mp3"
+
+  const incorrectAudio1 = new Audio();
+  incorrectAudio1.src = "assets/audio/incorrect1.mp3"
+
+  const incorrectAudio2 = new Audio();
+  incorrectAudio2.src = "assets/audio/incorrect2.mp3"
+
+  const doneAudio = new Audio();
+  doneAudio.src = "assets/audio/done.mp3"
     
+  //WHERE: https://freesound.org/people/adriann/sounds/191718/
 
   //NUMBER KEYPAD
   $(".padNum").click(function() {
@@ -305,7 +312,7 @@ $(".reload").click(function(){
 
     //STEP2: CHECK ANSWER - INCORRECT 1ST ATTEMPT
     else if (count === 1) {
-      incorrectAudio.play();
+      incorrectAudio1.play();
       $(".trigg")
         .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3")
         .addClass("bg--1");
@@ -320,7 +327,7 @@ $(".reload").click(function(){
 
     //STEP3: CHECK ANSWER - INCORRECT 2ND ATTEMPT
     else if (count === 2) {
-      incorrectAudio.play();
+      incorrectAudio2.play();
       $(".trigg")
         .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3")
         .addClass("bg--2");
@@ -339,7 +346,7 @@ $(".reload").click(function(){
 
     //STEP4: CHECK ANSWER - INCORRECT 3RD ATTEMPT
     else {
-      incorrectAudio.play();
+      incorrectAudio2.play();
       $(".trigg")
         .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3")
         .addClass("bg--3");
@@ -382,7 +389,7 @@ $(".reload").click(function(){
     } else {
       //only do if complete
       //$("#sum").hide();
-      tadaAudio.play();
+      doneAudio.play();
       $(".trigg")
         .removeClass("bg--thumbsup bg--0 bg--1 bg--2 bg--3")
         .addClass("bg--score");
