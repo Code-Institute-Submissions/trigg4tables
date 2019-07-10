@@ -15,6 +15,13 @@ $(document).ready(function() {
   let doneArray = [];
   let reviseArray = [];
   let noteString;
+  const correctAudio = new Audio();
+  correctAudio.src = "assets/audio/correct.mp3"
+  const incorrectAudio = new Audio();
+  incorrectAudio.src = "assets/audio/incorrect.mp3"
+  const tadaAudio = new Audio();
+  tadaAudio.src = "assets/audio/tada.mp3"
+    
 
   //NUMBER KEYPAD
   $(".padNum").click(function() {
@@ -134,9 +141,11 @@ $(document).ready(function() {
   function sumCorrect(sumAnswer, answer) {
     if (sumAnswer == answer) {
       return true;
+      
     }
   }
 
+  
   //CHECK ANSWER INCORRECT
   function sumIncorrect(sumAnswer, answer, count) {
     if (sumAnswer !== answer) {
@@ -278,6 +287,7 @@ $(".reload").click(function(){
 
     //STEP1: CHECK ANSWER - CORRECT
     if (sumCorrect(sumAnswer, answer) === true) {
+      correctAudio.play();
       $(".trigg")
         .removeClass("bg--hi bg--0 bg--1 bg--2 bg--3")
         .addClass("bg--thumbsup");
@@ -290,10 +300,12 @@ $(".reload").click(function(){
       $("#sumAsk").text(
         `${todo[0].key1} ${todo[0].key2} ${todo[0].key3} = ${todo[0].key4}`
       );
+     
     }
 
     //STEP2: CHECK ANSWER - INCORRECT 1ST ATTEMPT
     else if (count === 1) {
+      incorrectAudio.play();
       $(".trigg")
         .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3")
         .addClass("bg--1");
@@ -308,6 +320,7 @@ $(".reload").click(function(){
 
     //STEP3: CHECK ANSWER - INCORRECT 2ND ATTEMPT
     else if (count === 2) {
+      incorrectAudio.play();
       $(".trigg")
         .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3")
         .addClass("bg--2");
@@ -326,6 +339,7 @@ $(".reload").click(function(){
 
     //STEP4: CHECK ANSWER - INCORRECT 3RD ATTEMPT
     else {
+      incorrectAudio.play();
       $(".trigg")
         .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3")
         .addClass("bg--3");
@@ -368,6 +382,7 @@ $(".reload").click(function(){
     } else {
       //only do if complete
       //$("#sum").hide();
+      tadaAudio.play();
       $(".trigg")
         .removeClass("bg--thumbsup bg--0 bg--1 bg--2 bg--3")
         .addClass("bg--score");
