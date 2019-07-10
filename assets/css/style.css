@@ -50,6 +50,9 @@ h2 {
   color: white;
 }
 
+
+
+
 button, 
 input,
 label,
@@ -89,6 +92,12 @@ time {
   color: white;
 }
 
+h1, h2
+{text-shadow: 1px 2px 3px rgba(0,0,0,0.3);
+}
+/*WHERE: https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_text-shadow_white*/
+
+
 .pass {
   color: #4abdac;
 }
@@ -100,6 +109,15 @@ time {
 .fail {
   color: #f7b733;
 }
+
+.shadow-text--light {
+
+  /*text-shadow: 1px 1px black;*/
+  /*text-shadow: 2px 2px 4px #000000;*/
+  text-shadow: 1px 2px 3px rgba(0,0,0,0.3);
+
+}
+/*WHERE: https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_text-shadow_white*/
 
 /*----------BACKGROUNDS----------*/
 .bg-color--darkpink{
