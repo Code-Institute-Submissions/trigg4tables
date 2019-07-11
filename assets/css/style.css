@@ -32,9 +32,11 @@ input,
 label,
 span,
 strike,
-time {
+time, #sumCheck, #sumNext {
   font-size: 1.2rem;
 }
+
+/*WHY: sumCheck and sumNext included to overwrite Bootstrap btn size.*/
 
 .bg-color--lightpink>time {
   font-size: 1.6rem;
@@ -70,6 +72,12 @@ time {
 .font-color--white {
   color: white;
 }
+
+#sumCheck,
+#sumNext {
+  color: #575778;
+}
+/*WHY: Bootstrap btn class overwriting body colour.*/
 
 h1, h2
 {text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
@@ -327,6 +335,9 @@ span.incorrect, span.correct {
 #padClear {
   color: #b18683;
 }
+
+
+
 
 
 #sumAsk {
