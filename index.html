@@ -36,15 +36,16 @@
             </div>
           </div>
           <div class="row bg-height--10">
-            <div class="col-6 bg-color--darkblue d-flex justify-content-center">
+            <div
+              class="col-6 d-md-none d-lg-block bg-color--darkblue d-flex justify-content-center"
+            >
               <h2 class="align-self-center ">cool cats<br />do maths</h2>
             </div>
             <div
-              class="col-6 bg-color--lightpink d-flex justify-content-around "
+              class="col-md-12 col-lg-6 bg-color--lightpink d-flex justify-content-around "
             >
               <time class="timer align-self-center">0:00</time>
               <i class="sound fas fa-volume-mute align-self-center"></i>
-              <!--<i class="fas fa-volume-up align-self-center"></i>-->
               <i class="fas fa-info-circle align-self-center"></i>
               <i class="fas fa-times-circle reload align-self-center"></i>
             </div>
@@ -98,8 +99,7 @@
                   class="col-12 bg-color--lightpink bg-height--20 shade text-center"
                 >
                   <p class="instruct mt-2">try & check</p>
-                  <span class="incorrect showHideIncorrect hideNext red"
-                  ></span
+                  <span class="incorrect showHideIncorrect hideNext red"></span
                   ><i
                     class="hideStart showHideIncorrect hideNext far fa-thumbs-down red"
                   ></i>
@@ -133,20 +133,7 @@
         <!--ASK ANSWER COLUMN-->
         <div class="col-12 col-md-6 col-lg-5">
           <!--MD LG MESSAGE ROW-->
-          <div class="row d-none d-md-block margin-top--15">
-                       <div class="col-12  text-center hideStart showGo bg-height--10 testg">
-                
-                <span class="incorrect showHideIncorrect hideNext red"
-                ></span
-                ><i
-                  class="hideStart showHideIncorrect hideNext far fa-thumbs-down red"
-                ></i>
-                <i
-                  class="hideStart showHideCorrect hideNext far fa-thumbs-up green"
-                ></i>
-                <p class="instruct mt-2 testr">try & check</p>
-            </div>
-          </div>
+          <div class="row d-none d-md-block margin-top--15"></div>
           <!--PROGRESS ROW-->
           <div class="row hideStart showGo hideNextDone">
             <div class="col-12">
@@ -297,10 +284,20 @@
                 </canvas>
               </div>
             </div>
-                      </div> <!--MAIN ? ROW END-->
-
-
-                      
+          </div>
+          <!--MD LG MESSAGE ROW-->
+          <div class="row d-none d-md-block">
+            <div class="col-12  text-center hideStart showGo mt-3">
+              <span class="incorrect showHideIncorrect hideNext red"></span
+              ><i
+                class="hideStart showHideIncorrect hideNext far fa-thumbs-down red mr-3"
+              ></i>
+              <i
+                class="hideStart showHideCorrect hideNext far fa-thumbs-up green mr-3"
+              ></i>
+              <span class="instruct align-self-baseline">try & check</span>
+            </div>
+          </div>
         </div>
         <div class="col-1 d-none d-lg-block"></div>
       </div>

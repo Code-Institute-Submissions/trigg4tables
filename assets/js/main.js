@@ -346,7 +346,7 @@ $(document).ready(function() {
         .text(
           `${todo[0].key1} ${todo[0].key2} ${todo[0].key3} = ${todo[0].key4}`
         )
-        .css("color", "#3ea041");
+        .css("color", "#83b186");
     }
 
     //STEP2: CHECK ANSWER - INCORRECT 1ST ATTEMPT

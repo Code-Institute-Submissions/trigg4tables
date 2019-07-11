@@ -46,7 +46,7 @@ time, #sumCheck, #sumNext {
   font-size: 1.6rem;
 }
 
-.instruct, .note {
+.instruct, .note, .incorrect {
   font-family: "Gaegu", cursive;
   font-size: 1.4rem;
   line-height: 1.2rem;
@@ -92,11 +92,11 @@ h1, h2
 /*WHERE: https://designshack.net/articles/css/12-fun-css-text-shadows-you-can-copy-and-paste/*/
 
 .green, i.green {
-  color: #3ea041;
+  color: #83b186;
 }
 
 .red, i.red {
-  color: #d83131;
+  color: #b18683;
 }
 
 /*WHY/: i.class added to improve specificty*/
@@ -234,7 +234,7 @@ span.incorrect, span.correct {
 /*----------PROGRESS BAR----------*/
 
 #progress {
-  background-color: #3ea041;
+  background-color: #83b186;
 }
 
 .progress {
