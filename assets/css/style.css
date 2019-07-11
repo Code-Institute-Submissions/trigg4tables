@@ -217,6 +217,10 @@ h1, h2
   min-height: 52vh;
 }
 
+.bg-height--60{
+  height: 60px;
+}
+
 .bg-height--65{
   height: 65vh;
 }
