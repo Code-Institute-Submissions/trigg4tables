@@ -86,7 +86,7 @@
                 >
                   <time class="timer align-self-center">0:00</time>
                   <i class="sound fas fa-volume-mute align-self-center"></i>
-                  
+
                   <i
                     class="fas fa-times-circle reload hideStart showGo align-self-center"
                   ></i>
@@ -95,15 +95,17 @@
               <!--ROW GO NOTE-->
               <div class="row showGo hideStart">
                 <div
-                  class="col-12 bg-color--darkblue bg-height--20 shade text-center"
+                  class="col-12 bg-color--lightpink bg-height--20 shade text-center"
                 >
-                  <p class="note noteResult font-color--white testr mt-3">
-                    enter answer
-                  </p>
-                  <p class="note noteInstruct font-color--white testg">
-                    click check
-                  </p>
-                  <!--WHY: div used to allow Bootstrap alignment on spans-->
+                  <p class="instruct mt-2">try & check</p>
+                  <span class="incorrect showHideIncorrect hideNext red"
+                  ></span
+                  ><i
+                    class="hideStart showHideIncorrect hideNext far fa-thumbs-down red"
+                  ></i>
+                  <i
+                    class="hideStart showHideCorrect hideNext far fa-thumbs-up green"
+                  ></i>
                 </div>
               </div>
               <!--ROW START TITLE-->
@@ -130,11 +132,11 @@
         </div>
         <!--ASK ANSWER COLUMN-->
         <div class="col-12 col-md-6 col-lg-5">
-          <!--MESSAGE ROW-->
+          <!--MD LG MESSAGE ROW-->
           <div class="row d-none d-md-block testr bg-height--15">
             <div class="col-12  text-center  testg hideStart showGo">
-              <p class="m-0 noteResult note ">enter number</p>
-              <p class="m-0 noteInstruct note">click check</p>
+              <p class="m-0 noteResult note ">new sum</p>
+              <p class="m-0 noteInstruct note">try & check</p>
             </div>
           </div>
           <!--PROGRESS ROW-->
@@ -232,22 +234,27 @@
                 <form id="pad" class="mt-3 hideStart showGo hideNextDone">
                   <div class="d-flex justify-content-between bg-height--60">
                     <span id="sumAsk" class="align-self-center"></span>
+                    <i
+                      class="far fa-lightbulb hideStart hideNext align-self-center green"
+                    ></i>
+
                     <input
                       id="sumAnswer"
                       class="showNextSum hideCheck"
                       type="text"
                       maxlength="3"
                     />
+
                     <button
                       id="sumCheck"
-                      class="btn align-center showNextSum hideCheck"
+                      class="btn align-self-center showNextSum hideCheck"
                       type="button"
                     >
                       check
                     </button>
                     <button
                       id="sumNext"
-                      class="btn hideStart showCheck hideNextSum"
+                      class="btn align-self-center hideStart showCheck hideNextSum"
                       type="button"
                     >
                       next
@@ -255,19 +262,21 @@
                   </div>
 
                   <hr />
-                  <input id="pad1" class="padNum" type="button" value="1" />
-                  <input id="pad2" class="padNum" type="button" value="2" />
-                  <input id="pad3" class="padNum" type="button" value="3" />
-                  <input id="pad4" class="padNum" type="button" value="4" />
-                  <br />
-                  <input id="pad5" class="padNum" type="button" value="5" />
-                  <input id="pad6" class="padNum" type="button" value="6" />
-                  <input id="pad7" class="padNum" type="button" value="7" />
-                  <input id="pad8" class="padNum" type="button" value="8" />
-                  <br />
-                  <input id="pad9" class="padNum" type="button" value="9" />
-                  <input id="pad1" class="padNum" type="button" value="0" />
-                  <input id="padClear" type="button" value="clear" />
+                  <div testr>
+                    <input id="pad1" class="padNum" type="button" value="1" />
+                    <input id="pad2" class="padNum" type="button" value="2" />
+                    <input id="pad3" class="padNum" type="button" value="3" />
+                    <input id="pad4" class="padNum" type="button" value="4" />
+                    <br />
+                    <input id="pad5" class="padNum" type="button" value="5" />
+                    <input id="pad6" class="padNum" type="button" value="6" />
+                    <input id="pad7" class="padNum" type="button" value="7" />
+                    <input id="pad8" class="padNum" type="button" value="8" />
+                    <br />
+                    <input id="pad9" class="padNum" type="button" value="9" />
+                    <input id="pad1" class="padNum" type="button" value="0" />
+                    <input id="padClear" type="button" value="clear" />
+                  </div>
                 </form>
               </div>
               <div>

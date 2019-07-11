@@ -18,59 +18,59 @@ $(document).ready(function() {
   let noteString;
 
   const correctAudio = new Audio();
-  correctAudio.src = "assets/audio/correct.mp3"
+  correctAudio.src = "assets/audio/correct.mp3";
 
   const incorrectAudio1 = new Audio();
-  incorrectAudio1.src = "assets/audio/incorrect1.mp3"
+  incorrectAudio1.src = "assets/audio/incorrect1.mp3";
 
   const incorrectAudio2 = new Audio();
-  incorrectAudio2.src = "assets/audio/incorrect2.mp3"
+  incorrectAudio2.src = "assets/audio/incorrect2.mp3";
 
   const doneAudio = new Audio();
-  doneAudio.src = "assets/audio/done.mp3"
-    
+  doneAudio.src = "assets/audio/done.mp3";
+
   //WHERE: https://freesound.org/people/adriann/sounds/191718/
 
- 
-//SOUND ON OFF
-$(".sound").click(function(){
-  if(sound === true){
-    $(".sound").removeClass("fa-volume-mute").addClass("fa-volume-up");
-    sound=false;
-    console.log(sound);
-  } else {
-    $(".sound").removeClass("fa-volume-up").addClass("fa-volume-mute");
-    sound=true;
-    console.log(sound);
+  //SOUND ON OFF
+  $(".sound").click(function() {
+    if (sound === true) {
+      $(".sound")
+        .removeClass("fa-volume-mute")
+        .addClass("fa-volume-up");
+      sound = false;
+      console.log(sound);
+    } else {
+      $(".sound")
+        .removeClass("fa-volume-up")
+        .addClass("fa-volume-mute");
+      sound = true;
+      console.log(sound);
+    }
+  });
+
+  function playCorrectAudio() {
+    if (sound === true) {
+      correctAudio.play();
+    }
   }
- });
 
-function playCorrectAudio(){
- if(sound===true){
-  correctAudio.play();
- }
-}
-
-function playIncorrectAudio1(){
-  if(sound===true){
-   incorrectAudio1.play();
+  function playIncorrectAudio1() {
+    if (sound === true) {
+      incorrectAudio1.play();
+    }
   }
- }
 
- function playIncorrectAudio2(){
-  if(sound===true){
-   incorrectAudio2.play();
+  function playIncorrectAudio2() {
+    if (sound === true) {
+      incorrectAudio2.play();
+    }
   }
- }
 
- function playDoneAudio(){
-  if(sound===true){
-   doneAudio.play();
+  function playDoneAudio() {
+    if (sound === true) {
+      doneAudio.play();
+    }
   }
- }
-
-
- 
 
   //NUMBER KEYPAD
   $(".padNum").click(function() {
@@ -178,10 +178,10 @@ function playIncorrectAudio1(){
   }
 
   function timer() {
-    t=setTimeout(add, 1000); //setTimeout method
+    t = setTimeout(add, 1000); //setTimeout method
   }
 
-  function stopTimer(){
+  function stopTimer() {
     clearTimeout(t);
   }
   //WHERE: Based on https://codepad.co/snippet/javascript-stopwatch-using-javascript-and-css
@@ -190,11 +190,9 @@ function playIncorrectAudio1(){
   function sumCorrect(sumAnswer, answer) {
     if (sumAnswer == answer) {
       return true;
-      
     }
   }
 
-  
   //CHECK ANSWER INCORRECT
   function sumIncorrect(sumAnswer, answer, count) {
     if (sumAnswer !== answer) {
@@ -318,12 +316,11 @@ function playIncorrectAudio1(){
     console.log("GoNo" + $("input[name='pickNo']:checked").val());
   });
 
-//CLICK RELOAD
-$(".reload").click(function(){
-  location.reload();
-});
-//WHERE: https://stackoverflow.com/questions/5404839/how-can-i-refresh-a-page-with-jquery
-
+  //CLICK RELOAD
+  $(".reload").click(function() {
+    location.reload();
+  });
+  //WHERE: https://stackoverflow.com/questions/5404839/how-can-i-refresh-a-page-with-jquery
 
   //CLICK CHECK
   $("#sumCheck").click(function() {
@@ -340,16 +337,16 @@ $(".reload").click(function(){
       $(".trigg")
         .removeClass("bg--hi bg--0 bg--1 bg--2 bg--3")
         .addClass("bg--thumbsup");
-      $(".noteResult")
-        .text(`purrfect`)
-        .css("color", "#9df07c");
-      $(".noteInstruct").text(`click next`);
+      $(".instruct").text(`click next`);
+      $(".showHideIncorrect").hide();
+      $(".showHideCorrect").show();
       $(".hideCheck").hide();
       $(".showCheck").show();
-      $("#sumAsk").text(
-        `${todo[0].key1} ${todo[0].key2} ${todo[0].key3} = ${todo[0].key4}`
-      );
-     
+      $("#sumAsk")
+        .text(
+          `${todo[0].key1} ${todo[0].key2} ${todo[0].key3} = ${todo[0].key4}`
+        )
+        .css("color", "#3ea041");
     }
 
     //STEP2: CHECK ANSWER - INCORRECT 1ST ATTEMPT
@@ -358,10 +355,9 @@ $(".reload").click(function(){
       $(".trigg")
         .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3")
         .addClass("bg--1");
-      $(".noteResult")
-        .text(`oops not ${sumAnswer}`)
-        .css("color", "#bc4221");
-      $(".noteInstruct").text(`try again`);
+      $(".incorrect").text(`${sumAnswer} `);
+      $(".showHideIncorrect").show();
+      $(".instruct").text(`try again & check`);
       $("#sumAnswer").val("");
       //.focus();
       countIncrement(todo);
@@ -373,17 +369,17 @@ $(".reload").click(function(){
       $(".trigg")
         .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3")
         .addClass("bg--2");
-      $(".noteResult")
-        .text(`nope not ${sumAnswer}`)
-        .css("color", "#d75735");
-      $(".noteInstruct").text(`try again later`);
+      $(".incorrect").text(`${sumAnswer} `);
+      $(".instruct").text(`revise & click next`);
+      $(".showHideIncorrect").show();
+      $(".fa-lightbulb").show();
       countIncrement(todo);
       todoAdd(todo);
       $(".hideCheck").hide();
       $(".showCheck").show();
       $("#sumAsk").text(
         `${todo[0].key1} ${todo[0].key2} ${todo[0].key3} = ${todo[0].key4}`
-      );
+      ).css("color", "#3ea041");
     }
 
     //STEP4: CHECK ANSWER - INCORRECT 3RD ATTEMPT
@@ -392,10 +388,13 @@ $(".reload").click(function(){
       $(".trigg")
         .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3")
         .addClass("bg--3");
-      $(".noteResult")
-        .text(`${sumAnswer} is incorrect`)
-        .css("color", "#d75735");
-      $(".noteInstruct").text(`click next.`);
+      $("#incorrect").text(`${sumAnswer} `);
+      //$(".noteResult")
+      //.text(`${sumAnswer} is incorrect`)
+      //.css("color", "#d75735");
+      $(".instruct").text(`revise & click next`);
+      $(".showCheckIncorrect").show();
+      $(".showCheckIncorrect2").show();
       countIncrement(todo);
       //console.log("count at step4" + count);
       //reviseAdd(todo);
@@ -403,7 +402,7 @@ $(".reload").click(function(){
       $(".showCheck").show();
       $("#sumAsk").text(
         `${todo[0].key1} ${todo[0].key2} ${todo[0].key3} = ${todo[0].key4}`
-      );
+      ).css("color", "#3ea041");
       //console.log(reviseArray);
     }
   });
@@ -418,6 +417,7 @@ $(".reload").click(function(){
     doneMove(done, todo);
     $(".hideNextSum").hide();
     $(".showNextSum").show();
+    $(".hideNext").hide();
     $("#progress").attr(
       "style",
       `width: ${((12 - todoArray.length) / 12) * 100}%`
@@ -425,8 +425,7 @@ $(".reload").click(function(){
     $("#progress").attr("aria-valuenow", 12 - todo.length);
 
     if (todo.length !== 0) {
-      $(".noteResult").text("");
-      $(".noteInstruct").text("");
+      $(".instruct").text("try & check");
       sumSet(todo);
     } else {
       //only do if complete
@@ -435,8 +434,7 @@ $(".reload").click(function(){
       $(".trigg")
         .removeClass("bg--thumbsup bg--0 bg--1 bg--2 bg--3")
         .addClass("bg--score");
-      $(".noteResult").text(`Well done cat you're all finished!`);
-      $(".noteInstruct").text(`Click share`);
+      $(".instruct").text(`Well done cat you're all finished!`);
 
       noteFill(revise);
       console.log(reviseArray);

@@ -5,32 +5,6 @@
 @import url("https://fonts.googleapis.com/css?family=Indie+Flower&display=swap");
 
 @import url("https://fonts.googleapis.com/css?family=Gaegu:700&display=swap");
-/*font-family: 'Irish Grover', cursive;
-font-family: 'Signika', sans-serif;
-font-family: 'Special Elite', cursive;
-font-family: 'Space Mono', monospace;
-'Barriecito', cursive;
-font-family: 'Oswald', sans-serif;
-
-font-family: 'Rubik Mono One', sans-serif;
-font-family: 'Heebo', sans-serif;
-font-family: 'Bowlby One SC', cursive;
-font-family: 'Wendy One', sans-serif;
-font-family: 'Cousine', monospace;
-font-family: 'Cherry Cream Soda', cursive;
-
-font-family: 'Amatic SC', cursive;
-font-family: 'Kalam', cursive;
-font-family: 'Caveat', cursive;
-font-family: 'Gloria Hallelujah', cursive;
-font-family: 'Gochi Hand', cursive;
-font-family: 'Nanum Pen Script', cursive;
-font-family: 'Caveat Brush', cursive;
-font-family: 'Nanum Brush Script', cursive;
-font-family: 'Loved by the King', cursive;
-font-family: 'Just Me Again Down Here', cursive;
-font-family: 'Gaegu', cursive;
-font-family: 'East Sea Dokdo', cursive;*/
 
 /*----------FONTS----------*/
 body {
@@ -57,6 +31,7 @@ button,
 input,
 label,
 span,
+strike,
 time {
   font-size: 1.2rem;
 }
@@ -65,7 +40,7 @@ time {
   font-size: 1.6rem;
 }
 
-.note {
+.instruct, .note {
   font-family: "Gaegu", cursive;
   font-size: 1.4rem;
   line-height: 1.2rem;
@@ -76,7 +51,7 @@ time {
     }
   
     time, i {
-    color: #e2d2d0;
+    color: #ebe1e0;
   }
   
   .bg-color--lightpink>time, .bg-color--lightpink>i {
@@ -103,17 +78,18 @@ h1, h2
 }
 /*WHERE: https://designshack.net/articles/css/12-fun-css-text-shadows-you-can-copy-and-paste/*/
 
-
-.pass {
-  color: #4abdac;
+.green, i.green {
+  color: #3ea041;
 }
 
-.retest {
-  color: #fc4a1a;
+.red, i.red {
+  color: #d83131;
 }
 
-.fail {
-  color: #f7b733;
+/*WHY/: i.class added to improve specificty*/
+
+span.incorrect, span.correct {
+  font-size: 1.8rem;
 }
 
 .shadow-text--light {
@@ -131,7 +107,7 @@ h1, h2
 }
 
 .bg-color--lightpink{
-  background-color: #d8c3c1;
+  background-color: #ebe1e0;
 }
 
 .bg-color--darkblue{
@@ -359,7 +335,7 @@ h1, h2
   margin-bottom: 8px;
 }
 
-#sumAnswer {
+#sumAnswer, strike {
   margin-top: 10px;
   margin-bottom: 8px;
 }
