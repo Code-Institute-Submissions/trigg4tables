@@ -214,6 +214,10 @@ span.incorrect, span.correct {
   height: 65vh;
 }
 
+.margin-top--15{
+  margin-top: 15vh;
+}
+
 .shade {
   -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
     0 3px 6px rgba(0, 0, 0, 0.23);
