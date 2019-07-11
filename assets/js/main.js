@@ -156,7 +156,7 @@ $(document).ready(function() {
   function sumSet(todo) {
     $("#sumAnswer").val("");
     //.focus();
-    $("#sumAsk").text(`${todo[0].key1} ${todo[0].key2} ${todo[0].key3} =`);
+    $("#sumAsk").text(`${todo[0].key1} ${todo[0].key2} ${todo[0].key3} =`).css("color", "#575778");
   }
 
   //TIMER
