@@ -458,6 +458,7 @@ if (!sumAnswer){
         .removeClass("bg--thumbsup bg--0 bg--1 bg--2 bg--3")
         .addClass("bg--score");
       $(".instruct").text(`Well done cat you're all finished!`);
+      $(".fa-graduation-cap").show();
 
       noteFill(revise);
       console.log(reviseArray);
