@@ -6,7 +6,7 @@
 
 @import url("https://fonts.googleapis.com/css?family=Gaegu:700&display=swap");
 
-@import url('https://fonts.googleapis.com/css?family=Aladin|Averia+Libre:700|Denk+One|Puritan:700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Aladin|Averia+Libre:700|Denk+One|Puritan:700&display=swap");
 
 /*----------FONTS----------*/
 body {
@@ -26,52 +26,57 @@ h2 {
   color: white;
 }
 
-
 .incorrect {
-  font-family: 'Aladin', cursive;
+  font-family: "Aladin", cursive;
 }
 
-button, 
+button,
 input,
 label,
 span,
 strike,
-time, #sumCheck, #sumNext {
+time,
+#sumCheck,
+#sumNext {
   font-size: 1.2rem;
 }
 
 /*WHY: sumCheck and sumNext included to overwrite Bootstrap btn size.*/
 
-.bg-color--lightpink>time {
+.bg-color--lightpink > time {
   font-size: 1.6rem;
 }
 
-.instruct, .note, .incorrect {
+.instruct,
+.note,
+.incorrect {
   font-family: "Gaegu", cursive;
   font-size: 1.4rem;
   line-height: 1.2rem;
-  }
+}
 
-  i {
-    font-size: 1.8rem;
-    }
-  
-    time, i {
-    color: #ebe1e0;
-  }
-  
-  .bg-color--lightpink>time, .bg-color--lightpink>i {
-    color: #b18683;
-  }
+i {
+  font-size: 1.8rem;
+}
 
- .bg-color--darkblue>i {
-    color:#e9f0f2;
-  }
+time,
+i {
+  color: #ebe1e0;
+}
 
+.bg-color--lightpink > time,
+.bg-color--lightpink > i {
+  color: #b18683;
+}
 
-  i:hover, i:active {
-    color:white;
-  }
+.bg-color--darkblue > i {
+  color: #e9f0f2;
+}
+
+i:hover,
+i:active {
+  color: white;
+}
 
 .font-color--white {
   color: white;
@@ -84,50 +89,51 @@ time, #sumCheck, #sumNext {
 }
 /*WHY: Bootstrap btn class overwriting body colour.*/
 
-h1, h2
-{text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
-  0px 8px 13px rgba(0,0,0,0.1),
-  0px 18px 23px rgba(0,0,0,0.1);
+h1,
+h2 {
+  text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1),
+    0px 18px 23px rgba(0, 0, 0, 0.1);
 }
 /*WHERE: https://designshack.net/articles/css/12-fun-css-text-shadows-you-can-copy-and-paste/*/
 
-.green, i.green {
-  color: #83b186;
+.green,
+i.green {
+  color: #009816;
 }
 
-.red, i.red {
-  color: #b18683;
+.red,
+i.red {
+  color: #980036;
 }
 
 /*WHY/: i.class added to improve specificty*/
 
-span.incorrect, span.correct {
+span.incorrect,
+span.correct {
   font-size: 1.8rem;
 }
 
 .shadow-text--light {
-
   /*text-shadow: 1px 1px black;*/
   /*text-shadow: 2px 2px 4px #000000;*/
-  text-shadow: 1px 2px 3px rgba(0,0,0,0.3);
-
+  text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
 }
 /*WHERE: https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_text-shadow_white*/
 
 /*----------BACKGROUNDS----------*/
-.bg-color--darkpink{
+.bg-color--darkpink {
   background-color: #b18683;
 }
 
-.bg-color--lightpink{
+.bg-color--lightpink {
   background-color: #ebe1e0;
 }
 
-.bg-color--darkblue{
+.bg-color--darkblue {
   background-color: #7fa5b5;
 }
 
-.bg-color--lightblue{
+.bg-color--lightblue {
   background-color: #e9f0f2;
 }
 
@@ -194,15 +200,15 @@ span.incorrect, span.correct {
   background-size: contain;
 }
 
-.bg-height--10{
+.bg-height--10 {
   height: 10vh;
 }
 
-.bg-height--15{
+.bg-height--15 {
   height: 15vh;
 }
 
-.bg-height--20{
+.bg-height--20 {
   height: 20vh;
 }
 
@@ -214,15 +220,15 @@ span.incorrect, span.correct {
   min-height: 52vh;
 }
 
-.bg-height--60{
+.bg-height--60 {
   height: 60px;
 }
 
-.bg-height--65{
+.bg-height--65 {
   height: 65vh;
 }
 
-.margin-top--15{
+.margin-top--15 {
   margin-top: 15vh;
 }
 
@@ -238,18 +244,16 @@ span.incorrect, span.correct {
   background-color: red;
 }
 
-
 /*----------PROGRESS BAR----------*/
 
 #progress {
-  background-color: #83b186;
+  background-color: #009816;
 }
 
 .progress {
   width: 215px;
   height: 1.2rem;
 }
-
 
 /*WHERE: Used to find lighter shade https://www.color-hex.com/color/cfb4b2*/
 
@@ -264,7 +268,7 @@ span.incorrect, span.correct {
   text-align: center;
   border: 2px solid #ccc;
   border-radius: 5px;
-    color: #b18683;
+  color: #b18683;
 
   background-color: white;
   /*padding: 10px; causing text to be bottom right of button*/
@@ -272,7 +276,6 @@ span.incorrect, span.correct {
   box-shadow: 2px 1px 2px gray;
   margin: 6px 8px 6px 8px;
 }
-
 
 .labelNo:active,
 .labelOp:active,
@@ -353,17 +356,14 @@ span.incorrect, span.correct {
   color: #b18683;
 }
 
-
-
-
-
 #sumAsk {
   margin-left: 5px;
   margin-top: 10px;
   margin-bottom: 8px;
 }
 
-#sumAnswer, strike {
+#sumAnswer,
+strike {
   margin-top: 10px;
   margin-bottom: 8px;
 }
