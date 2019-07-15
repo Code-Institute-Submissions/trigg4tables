@@ -198,6 +198,7 @@ $(document).ready(function() {
       return count;
     }
   }
+  //Not used anymore
 
   //BLINK BULB
   /*function startBlink() {
@@ -342,11 +343,20 @@ $(document).ready(function() {
     let todo = todoArray;
     console.log(todoArray[0].count + "start count");
 
+//STEP0: ANSWER ENTERED
+if (!sumAnswer){
+  $(".trigg")
+  .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3")
+  .addClass("bg--sour");
+  $(".instruct").text(`empty answer`);
+  $(".fa-bomb").show();}
+
+
     //STEP1: CHECK ANSWER - CORRECT
-    if (sumCorrect(sumAnswer, answer) === true) {
+    else if (sumCorrect(sumAnswer, answer) === true) {
       playCorrectAudio();
       $(".trigg")
-        .removeClass("bg--hi bg--0 bg--1 bg--2 bg--3")
+        .removeClass("bg--hi bg--0 bg--1 bg--2 bg--3 bg--sour")
         .addClass("bg--thumbsup");
       $(".instruct").text(`click next`);
       $(".showHideIncorrect").hide();
@@ -364,12 +374,13 @@ $(document).ready(function() {
     else if (count === 1) {
       playIncorrectAudio1();
       $(".trigg")
-        .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3")
+        .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3 bg--sour")
         .addClass("bg--1");
       $(".incorrect").text(`${sumAnswer} `);
       $(".showHideIncorrect").show();
       $(".instruct").text(`try again & check`);
       $("#sumAnswer").val("");
+      $(".fa-bomb").hide();
       //$("#bulb").hide();
       //.focus();
       countIncrement(todo);
@@ -379,7 +390,7 @@ $(document).ready(function() {
     else if (count === 2) {
       playIncorrectAudio2();
       $(".trigg")
-        .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3")
+        .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3 bg--sour")
         .addClass("bg--2");
       $(".incorrect").text(`${sumAnswer} `);
       $(".instruct").text(`revise & click next`);
@@ -401,7 +412,7 @@ $(document).ready(function() {
     else {
       playIncorrectAudio2();
       $(".trigg")
-        .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3")
+        .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3 bg--sour")
         .addClass("bg--3");
       $("#incorrect").text(`${sumAnswer} `);
       $(".instruct").text(`revise & click next`);
