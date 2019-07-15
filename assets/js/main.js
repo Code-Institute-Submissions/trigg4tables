@@ -29,6 +29,8 @@ $(document).ready(function() {
   const doneAudio = new Audio();
   doneAudio.src = "assets/audio/done.mp3";
 
+
+
   //WHERE: https://freesound.org/people/adriann/sounds/191718/
 
   //SOUND ON OFF
@@ -156,7 +158,9 @@ $(document).ready(function() {
   function sumSet(todo) {
     $("#sumAnswer").val("");
     //.focus();
-    $("#sumAsk").text(`${todo[0].key1} ${todo[0].key2} ${todo[0].key3} =`).css("color", "#575778");
+    $("#sumAsk")
+      .text(`${todo[0].key1} ${todo[0].key2} ${todo[0].key3} =`)
+      .css("color", "#575778");
   }
 
   //TIMER
@@ -199,6 +203,19 @@ $(document).ready(function() {
       return count;
     }
   }
+
+  //BLINK BULB
+    /*function startBlink() {
+    const blink = setInterval(blinkFunction, 300);
+    function blinkFunction() {
+      if ($("#bulb").hasClass("off")) {
+        clearInterval(blink);
+      } else $("#bulb").fadeOut();
+      $("#bulb").fadeIn();
+    }
+  }*/
+
+   //WHERE: https://www.w3schools.com/jsref/met_win_setinterval.asp
 
   //INCREMENT COUNT
   function countIncrement(todo) {
@@ -359,6 +376,7 @@ $(document).ready(function() {
       $(".showHideIncorrect").show();
       $(".instruct").text(`try again & check`);
       $("#sumAnswer").val("");
+      //$("#bulb").hide();
       //.focus();
       countIncrement(todo);
     }
@@ -372,14 +390,17 @@ $(document).ready(function() {
       $(".incorrect").text(`${sumAnswer} `);
       $(".instruct").text(`revise & click next`);
       $(".showHideIncorrect").show();
-      $(".fa-lightbulb").show();
+      //$("#bulb").removeClass("off").show();
+      //startBlink();
       countIncrement(todo);
       todoAdd(todo);
       $(".hideCheck").hide();
       $(".showCheck").show();
-      $("#sumAsk").text(
-        `${todo[0].key1} ${todo[0].key2} ${todo[0].key3} = ${todo[0].key4}`
-      ).css("color", "#3ea041");
+      $("#sumAsk")
+        .text(
+          `${todo[0].key1} ${todo[0].key2} ${todo[0].key3} = ${todo[0].key4}`
+        )
+        .css("color", "#3ea041");
     }
 
     //STEP4: CHECK ANSWER - INCORRECT 3RD ATTEMPT
@@ -400,9 +421,11 @@ $(document).ready(function() {
       //reviseAdd(todo);
       $(".hideCheck").hide();
       $(".showCheck").show();
-      $("#sumAsk").text(
-        `${todo[0].key1} ${todo[0].key2} ${todo[0].key3} = ${todo[0].key4}`
-      ).css("color", "#3ea041");
+      $("#sumAsk")
+        .text(
+          `${todo[0].key1} ${todo[0].key2} ${todo[0].key3} = ${todo[0].key4}`
+        )
+        .css("color", "#3ea041");
       //console.log(reviseArray);
     }
   });
@@ -415,6 +438,8 @@ $(document).ready(function() {
 
     reviseAdd(todo, revise);
     doneMove(done, todo);
+   //$("#bulb").addClass("off");
+
     $(".hideNextSum").hide();
     $(".showNextSum").show();
     $(".hideNext").hide();
@@ -423,6 +448,7 @@ $(document).ready(function() {
       `width: ${((12 - todoArray.length) / 12) * 100}%`
     );
     $("#progress").attr("aria-valuenow", 12 - todo.length);
+    //$("#bulb").hide();
 
     if (todo.length !== 0) {
       $(".instruct").text("try & check");
