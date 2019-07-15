@@ -2,35 +2,30 @@ $(document).ready(function() {
   console.log("test 9");
   $(".hideStart").hide();
 
+  //STOP ENTER KEY FROM REFRESHING PAGE
   $(document).on("keypress", function(e) {
     if (e.which == 13) {
-      //alert('You pressed enter!');
       event.preventDefault();
     }
   });
-  //WHY: stop enter key from refreshing page
+  //WHERE: ???
 
-  //GLOBAL ARRAYS
+  //GLOBAL VARIABLES
   let sound = true;
   let todoArray = [];
   let doneArray = [];
   let reviseArray = [];
   let noteString;
-
   const correctAudio = new Audio();
-  correctAudio.src = "assets/audio/correct.mp3";
-
   const incorrectAudio1 = new Audio();
-  incorrectAudio1.src = "assets/audio/incorrect1.mp3";
-
   const incorrectAudio2 = new Audio();
-  incorrectAudio2.src = "assets/audio/incorrect2.mp3";
-
   const doneAudio = new Audio();
+
+  //AUDIO
+  correctAudio.src = "assets/audio/correct.mp3";
+  incorrectAudio1.src = "assets/audio/incorrect1.mp3";
+  incorrectAudio2.src = "assets/audio/incorrect2.mp3";
   doneAudio.src = "assets/audio/done.mp3";
-
-
-
   //WHERE: https://freesound.org/people/adriann/sounds/191718/
 
   //SOUND ON OFF
@@ -150,7 +145,7 @@ $(document).ready(function() {
     let tables = tablesArrayCreate(no, operator);
     todoArray = tables.slice().sort(function(a, b) {
       return 0.5 - Math.random();
-    }); // why would this not be todo
+    });
     return todoArray;
   } //random sorting code w3schools https://www.w3schools.com/js/js_array_sort.asp
 
@@ -205,7 +200,7 @@ $(document).ready(function() {
   }
 
   //BLINK BULB
-    /*function startBlink() {
+  /*function startBlink() {
     const blink = setInterval(blinkFunction, 300);
     function blinkFunction() {
       if ($("#bulb").hasClass("off")) {
@@ -215,7 +210,7 @@ $(document).ready(function() {
     }
   }*/
 
-   //WHERE: https://www.w3schools.com/jsref/met_win_setinterval.asp
+  //WHERE: https://www.w3schools.com/jsref/met_win_setinterval.asp
 
   //INCREMENT COUNT
   function countIncrement(todo) {
@@ -346,7 +341,6 @@ $(document).ready(function() {
     let count = todoArray[0].count;
     let todo = todoArray;
     console.log(todoArray[0].count + "start count");
-    //console.log(doneArray);
 
     //STEP1: CHECK ANSWER - CORRECT
     if (sumCorrect(sumAnswer, answer) === true) {
@@ -410,15 +404,10 @@ $(document).ready(function() {
         .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3")
         .addClass("bg--3");
       $("#incorrect").text(`${sumAnswer} `);
-      //$(".noteResult")
-      //.text(`${sumAnswer} is incorrect`)
-      //.css("color", "#d75735");
       $(".instruct").text(`revise & click next`);
       $(".showCheckIncorrect").show();
       $(".showCheckIncorrect2").show();
       countIncrement(todo);
-      //console.log("count at step4" + count);
-      //reviseAdd(todo);
       $(".hideCheck").hide();
       $(".showCheck").show();
       $("#sumAsk")
@@ -426,7 +415,6 @@ $(document).ready(function() {
           `${todo[0].key1} ${todo[0].key2} ${todo[0].key3} = ${todo[0].key4}`
         )
         .css("color", "#3ea041");
-      //console.log(reviseArray);
     }
   });
 
@@ -438,8 +426,7 @@ $(document).ready(function() {
 
     reviseAdd(todo, revise);
     doneMove(done, todo);
-   //$("#bulb").addClass("off");
-
+    //$("#bulb").addClass("off");
     $(".hideNextSum").hide();
     $(".showNextSum").show();
     $(".hideNext").hide();
@@ -455,7 +442,6 @@ $(document).ready(function() {
       sumSet(todo);
     } else {
       //only do if complete
-      //$("#sum").hide();
       playDoneAudio();
       $(".trigg")
         .removeClass("bg--thumbsup bg--0 bg--1 bg--2 bg--3")
