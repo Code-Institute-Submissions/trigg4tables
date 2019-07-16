@@ -277,9 +277,7 @@ $(document).ready(function() {
         fontFamily: "Cousine, monospace",
         text: `TRIGG'S Tables REPORT
         ......................
-    Tables ${$("#pickNo").val()}${$("#pickOperator")
-          .find("input:checked")
-          .val()} 
+    Tables ${$("input[name='pickNo']:checked").val()}${$("input[name='pickOp']:checked").val()}
     Date ${dateShort()}`
       })
       .addLayer({
