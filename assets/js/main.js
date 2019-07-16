@@ -473,14 +473,24 @@ if (!sumAnswer){
   });
 
   
-$("#share").click(function(){
+/*$("#share").click(function(){
   var canvas = $("#canvasReport");
   canvas.toBlob(function(blob) {
       saveAs(blob, "pretty image.png");
        });
   console.log("test share");
-})
+})*/
 
+
+//SHARE CANVAS REPORT
+$('#a').click(save);
+
+function save(ev) {
+  $('#canvas')[0].toBlob((blob) => {
+    saveAs(blob, "untitled.png");
+  });
+}
+//WHERE: https://stackoverflow.com/questions/48054723/saving-canvas-as-blob-and-then-blob-as-file
   
 
 
