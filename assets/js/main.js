@@ -280,41 +280,41 @@ $(document).ready(function() {
       .addLayer({
         type: "text",
         fillStyle: "#575778",
-        x: 125,
+        x: 165,
         y: 60,
-        fontSize: 16,
+        fontSize: 14,
         fontFamily: "Cousine, monospace",
-        maxWidth: 220,
+        maxWidth: 170,
         text: `Date ${dateShort()}`  
       })
       .addLayer({
         type: "text",
         fillStyle: "#575778",
-        x: 125,
+        x: 165,
         y: 80,
-        fontSize: 16,
+        fontSize: 14,
         fontFamily: "Cousine, monospace",
-        maxWidth: 220,
+        maxWidth: 170,
         text: `Time Taken ${$("time").html()}`
       })
       .addLayer({
         type: "text",
         fillStyle: "#575778",
-        x: 125,
-        y: 80,
-        fontSize: 16,
+        x: 165,
+        y: 100,
+        fontSize: 14,
         fontFamily: "Cousine, monospace",
-        maxWidth: 220,
+        maxWidth: 170,
         text: `Tables ${$("input[name='pickNo']:checked").val()}${$("input[name='pickOp']:checked").val()}`
       })
       .addLayer({
         type: "text",
         fillStyle: "#980036",
-        x: 125,
-        y: 100,
-        fontSize: 16,
+        x: 165,
+        y: 120,
+        fontSize: 14,
         fontFamily: "Cousine, monospace",
-        maxWidth: 220,
+        maxWidth: 170,
         text: noteString
       })
       .drawLayers();
