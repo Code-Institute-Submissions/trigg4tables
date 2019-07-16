@@ -266,25 +266,52 @@ $(document).ready(function() {
         y: 125,
         width: 250,
         height: 250,
-        source: "assets/images/paws.png"
+        source: "assets/images/report.png"
       })
-      .addLayer({
+      /*.addLayer({
         type: "text",
-        fillStyle: "red",
+        fillStyle: "#575778",
         x: 125,
-        y: 125,
+        y: 45,
         fontSize: 18,
         fontFamily: "Cousine, monospace",
-        text: `TRIGG'S Tables REPORT
-        ......................
-    Tables ${$("input[name='pickNo']:checked").val()}${$("input[name='pickOp']:checked").val()}
-    Date ${dateShort()}`
+        text:`TRIGG'S Tables REPORT`,
+              })*/
+      .addLayer({
+        type: "text",
+        fillStyle: "#575778",
+        x: 125,
+        y: 60,
+        fontSize: 16,
+        fontFamily: "Cousine, monospace",
+        maxWidth: 220,
+        text: `Date ${dateShort()}`  
       })
       .addLayer({
         type: "text",
-        fillStyle: "red",
+        fillStyle: "#575778",
         x: 125,
-        y: 200,
+        y: 80,
+        fontSize: 16,
+        fontFamily: "Cousine, monospace",
+        maxWidth: 220,
+        text: `Time Taken ${$("time").html()}`
+      })
+      .addLayer({
+        type: "text",
+        fillStyle: "#575778",
+        x: 125,
+        y: 80,
+        fontSize: 16,
+        fontFamily: "Cousine, monospace",
+        maxWidth: 220,
+        text: `Tables ${$("input[name='pickNo']:checked").val()}${$("input[name='pickOp']:checked").val()}`
+      })
+      .addLayer({
+        type: "text",
+        fillStyle: "#980036",
+        x: 125,
+        y: 100,
         fontSize: 16,
         fontFamily: "Cousine, monospace",
         maxWidth: 220,
@@ -292,8 +319,6 @@ $(document).ready(function() {
       })
       .drawLayers();
   }
-
-
 
   //CLICK NUMBER
   $(".labelNo").click(function() {
@@ -343,14 +368,14 @@ $(document).ready(function() {
     let todo = todoArray;
     console.log(todoArray[0].count + "start count");
 
-//STEP0: ANSWER ENTERED
-if (!sumAnswer){
-  $(".trigg")
-  .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3")
-  .addClass("bg--sour");
-  $(".instruct").text(`empty answer`);
-  $(".fa-exclamation-triangle").show();}
-
+    //STEP0: ANSWER ENTERED
+    if (!sumAnswer) {
+      $(".trigg")
+        .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3")
+        .addClass("bg--sour");
+      $(".instruct").text(`empty answer`);
+      $(".fa-exclamation-triangle").show();
+    }
 
     //STEP1: CHECK ANSWER - CORRECT
     else if (sumCorrect(sumAnswer, answer) === true) {
@@ -467,11 +492,13 @@ if (!sumAnswer){
       $(".hideNextDone").hide();
       $(".showNextDone").show();
       stopTimer();
+      console.log("time val" + $("time").val());
+      console.log("time text" + $("time").text());
+      console.log("time html" + $("time").html());
     }
   });
 
-  
-/*$("#share").click(function(){
+  /*$("#share").click(function(){
   var canvas = $("#canvasReport");
   canvas.toBlob(function(blob) {
       saveAs(blob, "pretty image.png");
@@ -479,19 +506,13 @@ if (!sumAnswer){
   console.log("test share");
 })*/
 
+  //SHARE CANVAS REPORT
+  $("#a").click(save);
 
-//SHARE CANVAS REPORT
-$('#a').click(save);
-
-function save(ev) {
-  $('#canvas')[0].toBlob((blob) => {
-    saveAs(blob, "untitled.png");
-  });
-}
-//WHERE: https://stackoverflow.com/questions/48054723/saving-canvas-as-blob-and-then-blob-as-file
-  
-
-
-
-
+  function save(ev) {
+    $("#canvas")[0].toBlob(blob => {
+      saveAs(blob, "untitled.png");
+    });
+  }
+  //WHERE: https://stackoverflow.com/questions/48054723/saving-canvas-as-blob-and-then-blob-as-file
 }); // end of get document
