@@ -295,6 +295,8 @@ $(document).ready(function() {
       .drawLayers();
   }
 
+
+
   //CLICK NUMBER
   $(".labelNo").click(function() {
     $(".labelNo")
@@ -469,4 +471,19 @@ if (!sumAnswer){
       stopTimer();
     }
   });
+
+  
+$("#share").click(function(){
+  var canvas = $("#canvasReport");
+  canvas.toBlob(function(blob) {
+      saveAs(blob, "pretty image.png");
+       });
+  console.log("test share");
+})
+
+  
+
+
+
+
 }); // end of get document
