@@ -349,7 +349,7 @@ if (!sumAnswer){
   .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3")
   .addClass("bg--sour");
   $(".instruct").text(`empty answer`);
-  $(".fa-bomb").show();}
+  $(".fa-exclamation-triangle").show();}
 
 
     //STEP1: CHECK ANSWER - CORRECT
@@ -380,7 +380,7 @@ if (!sumAnswer){
       $(".showHideIncorrect").show();
       $(".instruct").text(`try again & check`);
       $("#sumAnswer").val("");
-      $(".fa-bomb").hide();
+      $(".fa-exclamation-triangle").hide();
       //$("#bulb").hide();
       //.focus();
       countIncrement(todo);
