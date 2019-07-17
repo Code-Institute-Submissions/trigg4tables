@@ -11,7 +11,7 @@ $(document).ready(function() {
   //WHERE: ???
 
   //GLOBAL VARIABLES
-  let sound = true;
+  let sound = false; //reset to true 
   let todoArray = [];
   let doneArray = [];
   let reviseArray = [];
@@ -244,9 +244,9 @@ $(document).ready(function() {
   //CREATE NOTE for report re revising
   function noteFill(revise) {
     if (revise.length === 0) {
-      noteString = "No tables to revise.";
+      noteString = "No Tables To Revise - Well Done!";
     } else {
-      noteString = revise.sort().join(" ");
+      noteString = "Revise " + revise.sort().join(" ");
     }
   }
 
@@ -268,53 +268,50 @@ $(document).ready(function() {
         height: 250,
         source: "assets/images/report.png"
       })
-      /*.addLayer({
-        type: "text",
-        fillStyle: "#575778",
-        x: 125,
-        y: 45,
-        fontSize: 18,
-        fontFamily: "Cousine, monospace",
-        text:`TRIGG'S Tables REPORT`,
-              })*/
       .addLayer({
         type: "text",
         fillStyle: "#575778",
-        x: 165,
+        x: 147,
+        y: 25,
+        fontSize: 22,
+        fontFamily: "Gaegu, cursive",
+        text:`trigg's tables report`,
+              })
+      .addLayer({
+        type: "text",
+        fillStyle: "#7fa5b5",
+        x: 147,
         y: 60,
-        fontSize: 14,
-        fontFamily: "Cousine, monospace",
-        maxWidth: 170,
-        text: `Date ${dateShort()}`  
+        fontSize: 15,
+        fontFamily: "Signika, sans-serif",
+                text: `Date ${dateShort()}`  
       })
       .addLayer({
         type: "text",
-        fillStyle: "#575778",
-        x: 165,
+        fillStyle: "#7fa5b5",
+        x: 147,
         y: 80,
-        fontSize: 14,
-        fontFamily: "Cousine, monospace",
-        maxWidth: 170,
-        text: `Time Taken ${$("time").html()}`
+        fontSize: 15,
+        fontFamily: "Signika, sans-serif",
+                text: `Time Taken ${$("time").html()}`
       })
       .addLayer({
         type: "text",
-        fillStyle: "#575778",
-        x: 165,
+        fillStyle: "#7fa5b5",
+        x: 147,
         y: 100,
-        fontSize: 14,
-        fontFamily: "Cousine, monospace",
-        maxWidth: 170,
-        text: `Tables ${$("input[name='pickNo']:checked").val()}${$("input[name='pickOp']:checked").val()}`
+        fontSize: 15,
+        fontFamily: "Signika, sans-serif",
+                text: `Tables ${$("input[name='pickNo']:checked").val()}${$("input[name='pickOp']:checked").val()}`
       })
       .addLayer({
         type: "text",
-        fillStyle: "#980036",
-        x: 165,
-        y: 120,
-        fontSize: 14,
-        fontFamily: "Cousine, monospace",
-        maxWidth: 170,
+        fillStyle: "#7fa5b5",
+        x: 147,
+        y: 165,
+        fontSize: 15,
+        fontFamily: "Signika, sans-serif",
+        maxWidth: 140,
         text: noteString
       })
       .drawLayers();
@@ -482,7 +479,7 @@ $(document).ready(function() {
       $(".trigg")
         .removeClass("bg--thumbsup bg--0 bg--1 bg--2 bg--3")
         .addClass("bg--score");
-      $(".instruct").text(`Well done cat you're all finished!`);
+      $(".instruct").text(`done`);
       $(".fa-graduation-cap").show();
 
       noteFill(revise);
