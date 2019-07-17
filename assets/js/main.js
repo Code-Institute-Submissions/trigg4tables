@@ -82,12 +82,12 @@ $(document).ready(function() {
     $("#sumAnswer").val("");
   });
 
-  //CHECK VALID PICK
+  //CHECK VALID PICK xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
   function pickValid(no, operator) {
-    if (no === "no." || !operator) {
-      alert("Please pick a number and operator. Then press go");
-    } else {
+    if (!no || !operator) {
       return true;
+    } else {
+      return false;
     }
   }
 
@@ -342,6 +342,9 @@ $(document).ready(function() {
   $("#pickGo").click(function() {
     let no = parseInt($("input[name='pickNo']:checked").val());
     let operator = $("input[name='pickOp']:checked").val();
+    if(pickValid(no, operator)){
+      console.log("pickinvalid");
+    } else {
     let todo = todoFill(no, operator);
     $(".hideGo").hide();
     $(".showGo").show();
@@ -349,6 +352,7 @@ $(document).ready(function() {
     timer();
     console.log("GoOp" + $("input[name='pickOp']:checked").val());
     console.log("GoNo" + $("input[name='pickNo']:checked").val());
+  }; //end of else
   });
 
   //CLICK RELOAD
