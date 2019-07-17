@@ -11,7 +11,7 @@ $(document).ready(function() {
   //WHERE: ???
 
   //GLOBAL VARIABLES
-  let sound = false; //reset to true 
+  let sound = false; //reset to true
   let todoArray = [];
   let doneArray = [];
   let reviseArray = [];
@@ -275,8 +275,8 @@ $(document).ready(function() {
         y: 25,
         fontSize: 22,
         fontFamily: "Gaegu, cursive",
-        text:`trigg's tables report`,
-              })
+        text: `trigg's tables report`
+      })
       .addLayer({
         type: "text",
         fillStyle: "#7fa5b5",
@@ -284,7 +284,7 @@ $(document).ready(function() {
         y: 60,
         fontSize: 15,
         fontFamily: "Signika, sans-serif",
-                text: `Date ${dateShort()}`  
+        text: `Date ${dateShort()}`
       })
       .addLayer({
         type: "text",
@@ -293,7 +293,7 @@ $(document).ready(function() {
         y: 80,
         fontSize: 15,
         fontFamily: "Signika, sans-serif",
-                text: `Time Taken ${$("time").html()}`
+        text: `Time Taken ${$("time").html()}`
       })
       .addLayer({
         type: "text",
@@ -302,7 +302,9 @@ $(document).ready(function() {
         y: 100,
         fontSize: 15,
         fontFamily: "Signika, sans-serif",
-                text: `Tables ${$("input[name='pickNo']:checked").val()}${$("input[name='pickOp']:checked").val()}`
+        text: `Tables ${$("input[name='pickNo']:checked").val()}${$(
+          "input[name='pickOp']:checked"
+        ).val()}`
       })
       .addLayer({
         type: "text",
@@ -342,17 +344,20 @@ $(document).ready(function() {
   $("#pickGo").click(function() {
     let no = parseInt($("input[name='pickNo']:checked").val());
     let operator = $("input[name='pickOp']:checked").val();
-    if(pickValid(no, operator)){
+    if (pickValid(no, operator)) {
+      playIncorrectAudio1();
+      $(".invalid").text("pick number & symbol");
+      $(".fa-exclamation-triangle").show();
       console.log("pickinvalid");
     } else {
-    let todo = todoFill(no, operator);
-    $(".hideGo").hide();
-    $(".showGo").show();
-    sumSet(todo);
-    timer();
-    console.log("GoOp" + $("input[name='pickOp']:checked").val());
-    console.log("GoNo" + $("input[name='pickNo']:checked").val());
-  }; //end of else
+      let todo = todoFill(no, operator);
+      $(".hideGo").hide();
+      $(".showGo").show();
+      sumSet(todo);
+      timer();
+      console.log("GoOp" + $("input[name='pickOp']:checked").val());
+      console.log("GoNo" + $("input[name='pickNo']:checked").val());
+    } //end of else
   });
 
   //CLICK RELOAD
@@ -371,6 +376,7 @@ $(document).ready(function() {
 
     //STEP0: ANSWER ENTERED
     if (!sumAnswer) {
+      playIncorrectAudio1();
       $(".trigg")
         .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3")
         .addClass("bg--sour");
