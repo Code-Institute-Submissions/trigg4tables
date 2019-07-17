@@ -83,11 +83,11 @@ $(document).ready(function() {
   });
 
   //CHECK VALID PICK xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-  function pickValid(no, operator) {
-    if (!no || !operator) {
-      return true;
-    } else {
-      return false;
+  function missingPick(no, operator) {
+    if (!no){
+      return "missingNo";
+    } else if(!operator) {
+      return "missingOp";
     }
   }
 
@@ -344,12 +344,15 @@ $(document).ready(function() {
   $("#pickGo").click(function() {
     let no = parseInt($("input[name='pickNo']:checked").val());
     let operator = $("input[name='pickOp']:checked").val();
-    if (pickValid(no, operator)) {
+    if (missingPick(no, operator)==="missingNo") {
       playIncorrectAudio1();
-      $(".invalid").text("pick number & symbol");
-      $(".fa-exclamation-triangle").show();
-      console.log("pickinvalid");
-    } else {
+      $("#missingNo").show();
+      console.log("missingNo");
+    } else if(missingPick(no, operator)==="missingOp") {
+      playIncorrectAudio1();
+      $("#missingOp").show();
+      console.log("missingOp");
+    } else{
       let todo = todoFill(no, operator);
       $(".hideGo").hide();
       $(".showGo").show();
