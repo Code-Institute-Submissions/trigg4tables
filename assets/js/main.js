@@ -474,7 +474,7 @@ $(document).ready(function() {
       //only do if complete
       playDoneAudio();
       $(".trigg")
-        .removeClass("bg--thumbsup bg--0 bg--1 bg--2 bg--3")
+        .removeClass("bg--thumbsup")
         .addClass("bg--score");
       $(".instruct").text(`well done`);
       $(".fa-graduation-cap").show();
