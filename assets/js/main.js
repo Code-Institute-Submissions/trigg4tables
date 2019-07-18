@@ -225,7 +225,7 @@ $(document).ready(function() {
   //CREATE NOTE for report re revising
   function noteFill(revise) {
     if (revise.length === 0) {
-      noteString = "No Tables To Revise - Well Done!";
+      noteString = "No Tables To Revise Well Done!";
     } else {
       noteString = "Revise " + revise.sort().join(" ");
     }
@@ -238,7 +238,7 @@ $(document).ready(function() {
   }
   //WHERE: date short format https://stackoverflow.com/questions/8398897/how-to-get-current-date-in-jquery
 
-  //REPORT CANVAS
+  //CREATE CANVAS REPORT
   function report() {
     $("canvas")
       .addLayer({
@@ -300,6 +300,14 @@ $(document).ready(function() {
       .drawLayers();
   }
   //WHY: Layers used to allow text breaks and centering.
+
+  //CONVERT CANVAS REPORT TO BLOB & SAVE
+  function save(ev) {
+    $("canvas")[0].toBlob(blob => {
+      saveAs(blob, "trigg4tables.png");
+    });
+  }
+  //WHERE: https://stackoverflow.com/questions/48054723/saving-canvas-as-blob-and-then-blob-as-file
 
   //CLICK NUMBER
   $(".labelNo").click(function() {
@@ -472,7 +480,7 @@ $(document).ready(function() {
       $(".trigg")
         .removeClass("bg--thumbsup bg--0 bg--1 bg--2 bg--3")
         .addClass("bg--score");
-      $(".instruct").text(`done`);
+      $(".instruct").text(`well done`);
       $(".fa-graduation-cap").show();
 
       noteFill(revise);
@@ -485,13 +493,7 @@ $(document).ready(function() {
     }
   });
 
-  //SHARE CANVAS REPORT
-  $("#a").click(save);
+  //CLICK DOWNLOAD REPORT
+  $("#reportDownload").click(save);
 
-  function save(ev) {
-    $("#canvas")[0].toBlob(blob => {
-      saveAs(blob, "untitled.png");
-    });
-  }
-  //WHERE: https://stackoverflow.com/questions/48054723/saving-canvas-as-blob-and-then-blob-as-file
 }); // end of get document
