@@ -28,7 +28,7 @@ h2 {
 }
 
 .incorrect {
-  font-family: "Aladin", cursive;
+  font-family:"Signika", sans-serif;
 }
 
 button,
@@ -49,8 +49,7 @@ time,
 }
 
 .instruct,
-.note,
-.incorrect {
+.note {
   font-family: "Gaegu", cursive;
   font-size: 1.4rem;
   line-height: 1.2rem;
