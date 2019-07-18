@@ -82,11 +82,11 @@ $(document).ready(function() {
     $("#sumAnswer").val("");
   });
 
-  //CHECK VALID PICK xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  //CHECK MISSING NO & OPERATOR
   function missingPick(no, operator) {
-    if (!no){
+    if (!no) {
       return "missingNo";
-    } else if(!operator) {
+    } else if (!operator) {
       return "missingOp";
     }
   }
@@ -191,25 +191,6 @@ $(document).ready(function() {
       return true;
     }
   }
-
-  //CHECK ANSWER INCORRECT
-  function sumIncorrect(sumAnswer, answer, count) {
-    if (sumAnswer !== answer) {
-      return count;
-    }
-  }
-  //Not used anymore
-
-  //BLINK BULB
-  /*function startBlink() {
-    const blink = setInterval(blinkFunction, 300);
-    function blinkFunction() {
-      if ($("#bulb").hasClass("off")) {
-        clearInterval(blink);
-      } else $("#bulb").fadeOut();
-      $("#bulb").fadeIn();
-    }
-  }*/
 
   //WHERE: https://www.w3schools.com/jsref/met_win_setinterval.asp
 
@@ -318,6 +299,7 @@ $(document).ready(function() {
       })
       .drawLayers();
   }
+  //WHY: Layers used to allow text breaks and centering.
 
   //CLICK NUMBER
   $(".labelNo").click(function() {
@@ -344,15 +326,15 @@ $(document).ready(function() {
   $("#pickGo").click(function() {
     let no = parseInt($("input[name='pickNo']:checked").val());
     let operator = $("input[name='pickOp']:checked").val();
-    if (missingPick(no, operator)==="missingNo") {
+    if (missingPick(no, operator) === "missingNo") {
       playIncorrectAudio1();
       $("#missingNo").show();
       console.log("missingNo");
-    } else if(missingPick(no, operator)==="missingOp") {
+    } else if (missingPick(no, operator) === "missingOp") {
       playIncorrectAudio1();
       $("#missingOp").show();
       console.log("missingOp");
-    } else{
+    } else {
       let todo = todoFill(no, operator);
       $(".hideGo").hide();
       $(".showGo").show();
@@ -377,7 +359,7 @@ $(document).ready(function() {
     let todo = todoArray;
     console.log(todoArray[0].count + "start count");
 
-    //STEP0: ANSWER ENTERED
+    //STEP0: CHECK ANSWER - ENTERED
     if (!sumAnswer) {
       playIncorrectAudio1();
       $(".trigg")
@@ -472,7 +454,6 @@ $(document).ready(function() {
 
     reviseAdd(todo, revise);
     doneMove(done, todo);
-    //$("#bulb").addClass("off");
     $(".hideNextSum").hide();
     $(".showNextSum").show();
     $(".hideNext").hide();
@@ -481,7 +462,6 @@ $(document).ready(function() {
       `width: ${((12 - todoArray.length) / 12) * 100}%`
     );
     $("#progress").attr("aria-valuenow", 12 - todo.length);
-    //$("#bulb").hide();
 
     if (todo.length !== 0) {
       $(".instruct").text("try & check");
@@ -502,19 +482,8 @@ $(document).ready(function() {
       $(".hideNextDone").hide();
       $(".showNextDone").show();
       stopTimer();
-      console.log("time val" + $("time").val());
-      console.log("time text" + $("time").text());
-      console.log("time html" + $("time").html());
     }
   });
-
-  /*$("#share").click(function(){
-  var canvas = $("#canvasReport");
-  canvas.toBlob(function(blob) {
-      saveAs(blob, "pretty image.png");
-       });
-  console.log("test share");
-})*/
 
   //SHARE CANVAS REPORT
   $("#a").click(save);

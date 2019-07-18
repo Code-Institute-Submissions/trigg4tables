@@ -7,8 +7,7 @@
 @import url("https://fonts.googleapis.com/css?family=Gaegu:700&display=swap");
 
 @import url("https://fonts.googleapis.com/css?family=Aladin|Averia+Libre:700|Denk+One|Puritan:700&display=swap");
-@import url('https://fonts.googleapis.com/css?family=Allerta|Amaranth|Anaheim|Architects+Daughter|Atma|Bangers|Basic|Biryani|Boogaloo|Caveat+Brush|Flavors|Fontdiner+Swanky|Gochi+Hand|Henny+Penny|Hind+Siliguri|Jockey+One|Kadwa|Mogra|Patrick+Hand+SC|Patua+One|Peralta|Roboto|Sansita|Share|Sigmar+One|Special+Elite|Tauri|Tienne&display=swap');
-
+@import url("https://fonts.googleapis.com/css?family=Allerta|Amaranth|Anaheim|Architects+Daughter|Atma|Bangers|Basic|Biryani|Boogaloo|Caveat+Brush|Flavors|Fontdiner+Swanky|Gochi+Hand|Henny+Penny|Hind+Siliguri|Jockey+One|Kadwa|Mogra|Patrick+Hand+SC|Patua+One|Peralta|Roboto|Sansita|Share|Sigmar+One|Special+Elite|Tauri|Tienne&display=swap");
 
 /*----------FONTS----------*/
 body {
@@ -113,7 +112,7 @@ i.darkpink {
   color: #b18683;
 }
 
-/*WHY/: i.class added to improve specificty*/
+/*WHY: i.class added to improve specificty*/
 
 span.incorrect,
 span.correct {
@@ -298,7 +297,8 @@ span.correct {
 #sumCheck,
 #sumNext,
 .padNum,
-#padClear, #a {
+#padClear,
+#a {
   height: 40px;
   /*margin: 10px;*/
   padding: 0px;
@@ -330,7 +330,8 @@ span.correct {
 #sumCheck,
 #sumNext,
 .padNum,
-#padClear, #a {
+#padClear,
+#a {
   border: 2px solid #ccc;
   border-radius: 5px;
   background-color: #e9f0f2;
@@ -346,7 +347,8 @@ span.correct {
 .padNum,
 #padClear,
 #sumCheck,
-#sumNext, #a {
+#sumNext,
+#a {
   background-color: white;
   /*padding: 10px; causing text to be bottom right of button*/
   vertical-align: top;
@@ -365,7 +367,8 @@ span.correct {
 /*WHERE: https://stackoverflow.com/questions/38377062/how-to-make-html-button-look-pressed-in-using-css*/
 
 .padNum,
-#padClear, #a {
+#padClear,
+#a {
   color: #b18683;
 }
 

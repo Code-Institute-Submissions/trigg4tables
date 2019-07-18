@@ -65,15 +65,6 @@
         </div>
         <!--MOBILE HEADING-->
         <div class="col-12 d-md-none">
-          <!--TOP 2 BOXES-->
-          <!--<div class="row goHide">
-            <div class="col-6 bg--teallight shade bg--height3">
-              <h2 class="align-self-center">cool cats<br />do maths</h2>
-            </div>
-            <div class="col-6 bg--orangedark text-center shade bg--height3">
-              <h2>Trigg's Tips</h2>
-            </div>
-          </div> -->
           <!--TRIGG & SIDE 2 BOXES-->
           <div class="row">
             <!--TRIGG LEFT-->
@@ -161,9 +152,11 @@
               <!--PICK FORM - NUMBER-->
               <form id="pick" class="hideGo text-center">
                 <fieldset class="mt-3 mx-auto">
-                    <i
-                    id="missingNo" class="hideGo hideStart fas fa-exclamation-triangle mr-3 red"
-                  ></i><span class="note">pick number</span>
+                  <i
+                    id="missingNo"
+                    class="hideGo hideStart fas fa-exclamation-triangle mr-3 red"
+                  ></i
+                  ><span class="note">pick number</span>
                   <br />
                   <label class="labelNo selector-style ">
                     <input type="radio" name="pickNo" value="1" />1
@@ -206,9 +199,11 @@
                 </fieldset>
                 <!--PICK OPERATOR-->
                 <fieldset class="mt-4 mt-md-5 mx-auto">
-                    <i
-                    id="missingOp" class="hideGo hideStart fas fa-exclamation-triangle mr-3 red"
-                  ></i><span class="note">pick symbol</span>
+                  <i
+                    id="missingOp"
+                    class="hideGo hideStart fas fa-exclamation-triangle mr-3 red"
+                  ></i
+                  ><span class="note">pick symbol</span>
                   <br />
                   <label class="labelOp selector-style">
                     <input type="radio" name="pickOp" value="+" />+
@@ -229,7 +224,7 @@
                   <button type="button" class="selector-style" id="pickGo">
                     go
                   </button>
-                                  </fieldset>
+                </fieldset>
               </form>
               <!--WHERE: input type number from Mozilla https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number-->
               <!--NUMBER KEYPAD-->
@@ -237,16 +232,12 @@
                 <form id="pad" class="mt-3 hideStart showGo hideNextDone">
                   <div class="d-flex justify-content-between bg-height--60">
                     <span id="sumAsk" class="align-self-center"></span>
-                    <!-- <i id="bulb" class="far fa-lightbulb hideStart hideNext align-self-center green"
-                    ></i>-->
-
                     <input
                       id="sumAnswer"
                       class="showNextSum hideCheck"
                       type="text"
                       maxlength="3"
                     />
-
                     <button
                       id="sumCheck"
                       class="btn align-self-center showNextSum hideCheck"
@@ -288,7 +279,6 @@
                     height="250"
                     class="shade"
                   ></canvas>
-                  <!--<a id="ab" class="" role="button">download report</a>-->
                   <p class="note mt-1 mb-1">download & share</p>
                   <button id="a" class="" type="button">
                     <i class="fas fa-arrow-circle-down darkpink"></i>
@@ -301,7 +291,7 @@
           </div>
           <!--MD LG MESSAGE ROW-->
           <div class="row d-none d-md-block">
-                          <div class="col-12  text-center hideStart showGo mt-3">
+            <div class="col-12  text-center hideStart showGo mt-3">
               <span class="incorrect showHideIncorrect hideNext red"></span
               ><i
                 class="hideStart showHideIncorrect hideNext far fa-thumbs-down red mr-3"
