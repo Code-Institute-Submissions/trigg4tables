@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  console.log("test 9");
+  console.log("test");
   $(".hideStart").hide();
 
   //STOP ENTER KEY FROM REFRESHING PAGE
@@ -11,9 +11,9 @@ $(document).ready(function() {
   //WHERE: ???
 
   //GLOBAL VARIABLES
-  let sound = false; //reset to true
+  let sound = true;
   let todoArray = [];
-    let reviseArray = [];
+  let reviseArray = [];
   let noteString;
   const correctAudio = new Audio();
   const incorrectAudio1 = new Audio();
@@ -44,6 +44,7 @@ $(document).ready(function() {
     }
   });
 
+  //PLAY AUDIO
   function playCorrectAudio() {
     if (sound === true) {
       correctAudio.play();
@@ -68,20 +69,7 @@ $(document).ready(function() {
     }
   }
 
-  //NUMBER KEYPAD
-  $(".padNum").click(function() {
-    if ($("#sumAnswer").val().length < 3) {
-      let concat = $("#sumAnswer").val() + $(this).val();
-      $("#sumAnswer").val(concat);
-    }
-  });
-  //WHY: maxLength in CSS not working if using keypad so need extra js.
-
-  $("#padClear").click(function() {
-    $("#sumAnswer").val("");
-  });
-
-  //CHECK MISSING NO & OPERATOR
+  //CHECK MISSING NO OR OPERATOR
   function missingPick(no, operator) {
     if (!no) {
       return "missingNo";
@@ -146,18 +134,17 @@ $(document).ready(function() {
       return 0.5 - Math.random();
     });
     return todoArray;
-  } //random sorting code w3schools https://www.w3schools.com/js/js_array_sort.asp
+  } //WHERE: Random sorting code w3schools https://www.w3schools.com/js/js_array_sort.asp
 
   //SET SUM
   function sumSet(todo) {
     $("#sumAnswer").val("");
-    //.focus();
     $("#sumAsk")
       .text(`${todo[0].key1} ${todo[0].key2} ${todo[0].key3} =`)
       .css("color", "#575778");
   }
 
-  //TIMER
+  //CREATE TIMER
   let seconds = 0;
   let minutes = 0;
   let t;
@@ -191,18 +178,16 @@ $(document).ready(function() {
     }
   }
 
-  //WHERE: https://www.w3schools.com/jsref/met_win_setinterval.asp
-
-  //INCREMENT COUNT
+  //INCREMENT TODO COUNT
   function countIncrement(todo) {
     todo[0].count++;
     console.log(todo[0].count);
     return todo[0].count;
   }
 
-  //REMOVE SUM FROM TODO START
+  //REMOVE SUM FROM START TODO
   function todoRemove(todo) {
-        todo.shift();
+    todo.shift();
   }
 
   //APPEND SUM TO END TODO
@@ -220,7 +205,7 @@ $(document).ready(function() {
     }
   }
 
-  //CREATE NOTE for report re revising
+  //CREATE REVISE STRING 4 CANVAS REPORT
   function noteFill(revise) {
     if (revise.length === 0) {
       noteString = "No Tables To Revise Well Done!";
@@ -229,6 +214,7 @@ $(document).ready(function() {
     }
   }
 
+  //CREATE DATE 4 CANVAS REPORT
   function dateShort() {
     let d = new Date();
     let strD = d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear();
@@ -348,7 +334,7 @@ $(document).ready(function() {
       timer();
       console.log("GoOp" + $("input[name='pickOp']:checked").val());
       console.log("GoNo" + $("input[name='pickNo']:checked").val());
-    } //end of else
+    }
   });
 
   //CLICK RELOAD
@@ -356,6 +342,20 @@ $(document).ready(function() {
     location.reload();
   });
   //WHERE: https://stackoverflow.com/questions/5404839/how-can-i-refresh-a-page-with-jquery
+
+  //CLICK NUMBER KEYPAD
+  $(".padNum").click(function() {
+    if ($("#sumAnswer").val().length < 3) {
+      let concat = $("#sumAnswer").val() + $(this).val();
+      $("#sumAnswer").val(concat);
+    }
+  });
+  //WHY: maxLength in CSS not working if using keypad so need extra js.
+
+  //CLICK CLEAR NUMBER KEYPAD
+  $("#padClear").click(function() {
+    $("#sumAnswer").val("");
+  });
 
   //CLICK CHECK
   $("#sumCheck").click(function() {
@@ -414,6 +414,9 @@ $(document).ready(function() {
         .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3 bg--sour")
         .addClass("bg--2");
       $(".incorrect").text(`${sumAnswer} `);
+      $(".correct")
+        .text(`${todo[0].key4} `)
+        .show();
       $(".instruct").text(`revise & click next`);
       $("#sumAsk")
         .text(
@@ -422,6 +425,7 @@ $(document).ready(function() {
         .css("color", "#3ea041");
       $(".hideCheck").hide(); //sumAnswer input, sumCheck button & triangle(xs-s & m-l)
       $(".showIncorrect").show(); //thumbs down & incorrect span
+      $(".fa-thumbs-up").show();
       $("#sumNext").show();
       countIncrement(todo);
       todoAdd(todo);
@@ -447,13 +451,12 @@ $(document).ready(function() {
 
   // CLICK NEXT
   $("#sumNext").click(function() {
-       let todo = todoArray;
+    let todo = todoArray;
     let revise = reviseArray;
-
     reviseAdd(todo, revise);
     todoRemove(todo);
     $(".trigg")
-      .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3 bg--sour")
+      .removeClass("bg--thumbsup bg--2")
       .addClass("bg--hi");
     $(".hideNextSum").hide();
     $(".showNextSum").show();
@@ -475,7 +478,6 @@ $(document).ready(function() {
         .addClass("bg--score");
       $(".instruct").text(`well done`);
       $(".fa-graduation-cap").show();
-
       noteFill(revise);
       console.log(reviseArray);
       console.log(noteString);
