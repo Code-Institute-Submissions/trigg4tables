@@ -214,7 +214,7 @@ $(document).ready(function() {
 
   //MOVE SUM TO REVISE ARRAY
   function reviseAdd(todo, revise) {
-    if (todo[0].count == 4) {
+    if (todo[0].count >= 4) {
       //revise.push(todo[0]);}
       revise.push(
         `${todo[0].key1}${todo[0].key2}${todo[0].key3}=${todo[0].key4}`
@@ -384,15 +384,15 @@ $(document).ready(function() {
         .removeClass("bg--hi bg--0 bg--1 bg--2 bg--3 bg--sour")
         .addClass("bg--thumbsup");
       $(".instruct").text(`click next`);
-      $(".showHideIncorrect").hide();
-      $(".showHideCorrect").show();
-      $(".hideCheck").hide();
-      $(".showCheck").show();
       $("#sumAsk")
         .text(
           `${todo[0].key1} ${todo[0].key2} ${todo[0].key3} = ${todo[0].key4}`
         )
         .css("color", "#83b186");
+      $(".hideCheck").hide(); //sumAnswer input, sumCheck button & triangle(xs-s & m-l)
+      $(".showIncorrect").hide(); //from attempt 4
+      $(".fa-thumbs-up").show();
+      $("#sumNext").show();
     }
 
     //STEP2: CHECK ANSWER - INCORRECT 1ST ATTEMPT
@@ -402,12 +402,10 @@ $(document).ready(function() {
         .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3 bg--sour")
         .addClass("bg--1");
       $(".incorrect").text(`${sumAnswer} `);
-      $(".showHideIncorrect").show();
       $(".instruct").text(`try again & check`);
+      $(".showIncorrect").show(); //thumbs down & incorrect span
       $("#sumAnswer").val("");
-      $(".fa-exclamation-triangle").hide();
-      //$("#bulb").hide();
-      //.focus();
+      //$(".fa-exclamation-triangle").hide(); //why would this be here?
       countIncrement(todo);
     }
 
@@ -419,16 +417,16 @@ $(document).ready(function() {
         .addClass("bg--2");
       $(".incorrect").text(`${sumAnswer} `);
       $(".instruct").text(`revise & click next`);
-      $(".showHideIncorrect").show();
-      countIncrement(todo);
-      todoAdd(todo);
-      $(".hideCheck").hide();
-      $(".showCheck").show();
       $("#sumAsk")
         .text(
           `${todo[0].key1} ${todo[0].key2} ${todo[0].key3} = ${todo[0].key4}`
         )
         .css("color", "#3ea041");
+      $(".hideCheck").hide(); //sumAnswer input, sumCheck button & triangle(xs-s & m-l)
+      $(".showIncorrect").show(); //thumbs down & incorrect span
+      $("#sumNext").show();
+      countIncrement(todo);
+      todoAdd(todo);
     }
 
     //STEP4: CHECK ANSWER - INCORRECT 3RD ATTEMPT
@@ -437,18 +435,15 @@ $(document).ready(function() {
       $(".trigg")
         .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3 bg--sour")
         .addClass("bg--3");
-      $("#incorrect").text(`${sumAnswer} `);
-      $(".instruct").text(`revise & click next`);
-      $(".showCheckIncorrect").show();
-      $(".showCheckIncorrect2").show();
+      $(".incorrect").text(`${sumAnswer} `);
+      $(".correct")
+        .text(`${todo[0].key4} `)
+        .show();
+      $(".instruct").text(`try ${todo[0].key4} & check`);
+      $(".fa-thumbs-up").show();
+      $(".showIncorrect").show(); //thumbs down & incorrect span
+      $("#sumAnswer").val("");
       countIncrement(todo);
-      $(".hideCheck").hide();
-      $(".showCheck").show();
-      $("#sumAsk")
-        .text(
-          `${todo[0].key1} ${todo[0].key2} ${todo[0].key3} = ${todo[0].key4}`
-        )
-        .css("color", "#3ea041");
     }
   });
 

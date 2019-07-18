@@ -90,12 +90,13 @@
                   class="col-12 bg-color--lightpink bg-height--20 shade text-center"
                 >
                   <p class="instruct mt-2">try & check</p>
-                  <span class="incorrect showHideIncorrect hideNext red"></span
+                  <span class="incorrect showIncorrect hideNext red"></span
                   ><i
-                    class="hideStart showHideIncorrect hideNext far fa-thumbs-down red"
+                    class="hideStart showIncorrect hideNext far fa-thumbs-down red"
                   ></i>
+                  <span class="correct hideNext green"></span>
                   <i
-                    class="hideStart showHideCorrect hideNext far fa-thumbs-up green"
+                    class="hideStart hideNext far fa-thumbs-up green"
                   ></i>
                   <i
                     class="hideStart hideCheck hideNext fas fa-exclamation-triangle red"
@@ -247,7 +248,7 @@
                     </button>
                     <button
                       id="sumNext"
-                      class="btn align-self-center hideStart showCheck hideNextSum"
+                      class="btn align-self-center hideStart hideNextSum"
                       type="button"
                     >
                       next
@@ -291,18 +292,15 @@
           <!--MD LG MESSAGE ROW-->
           <div class="row d-none d-md-block">
             <div class="col-12  text-center hideStart showGo mt-3">
-              <span class="incorrect showHideIncorrect hideNext red"></span
-              ><i
-                class="hideStart showHideIncorrect hideNext far fa-thumbs-down red mr-3"
-              ></i>
-              <i
-                class="hideStart showHideCorrect hideNext far fa-thumbs-up green mr-3"
-              ></i>
-              <i
-                class="hideStart hideGo hideCheck hideNext fas fa-exclamation-triangle red"
-              ></i>
-              <i class="hideStart fas fa-graduation-cap darkpink"></i>
+              <span class="incorrect showIncorrect hideNext red"></span>
+              <i class="far fa-thumbs-down hideGo showIncorrect hideNext red mr-3"></i>
+              <span class="correct hideNext green"></span>
+              <i class="far fa-thumbs-up hideGo hideNext green mr-3"></i>
+              <i class="fas fa-exclamation-triangle hideGo hideCheck hideNext red"></i>
+              <!--WHY: hideGo class as icon class used in pick missing.-->
+              <i class="fas fa-graduation-cap hideGo darkpink"></i>
               <span class="instruct align-self-baseline">try & check</span>
+              <!--WHY: Instruct viisble from GO to NEXT DONE hence no specific show or hide class.-->
             </div>
           </div>
         </div>

@@ -27,9 +27,6 @@ h2 {
   color: white;
 }
 
-.incorrect {
-  font-family:"Signika", sans-serif;
-}
 
 button,
 input,
@@ -115,6 +112,7 @@ i.darkpink {
 
 span.incorrect,
 span.correct {
+  font-family:"Signika", sans-serif;
   font-size: 1.8rem;
 }
 
