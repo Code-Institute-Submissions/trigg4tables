@@ -13,8 +13,7 @@ $(document).ready(function() {
   //GLOBAL VARIABLES
   let sound = false; //reset to true
   let todoArray = [];
-  let doneArray = [];
-  let reviseArray = [];
+    let reviseArray = [];
   let noteString;
   const correctAudio = new Audio();
   const incorrectAudio1 = new Audio();
@@ -201,10 +200,9 @@ $(document).ready(function() {
     return todo[0].count;
   }
 
-  //MOVE SUM TO DONE
-  function doneMove(done, todo) {
-    done.push(todo[0]);
-    todo.shift();
+  //REMOVE SUM FROM TODO START
+  function doneMove(todo) {
+        todo.shift();
   }
 
   //APPEND SUM TO END TODO
@@ -449,12 +447,11 @@ $(document).ready(function() {
 
   // CLICK NEXT
   $("#sumNext").click(function() {
-    let done = doneArray;
-    let todo = todoArray;
+       let todo = todoArray;
     let revise = reviseArray;
 
     reviseAdd(todo, revise);
-    doneMove(done, todo);
+    doneMove(todo);
     $(".trigg")
       .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3 bg--sour")
       .addClass("bg--hi");
