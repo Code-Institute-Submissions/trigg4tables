@@ -201,7 +201,7 @@ $(document).ready(function() {
   }
 
   //REMOVE SUM FROM TODO START
-  function doneMove(todo) {
+  function todoRemove(todo) {
         todo.shift();
   }
 
@@ -451,7 +451,7 @@ $(document).ready(function() {
     let revise = reviseArray;
 
     reviseAdd(todo, revise);
-    doneMove(todo);
+    todoRemove(todo);
     $(".trigg")
       .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3 bg--sour")
       .addClass("bg--hi");
