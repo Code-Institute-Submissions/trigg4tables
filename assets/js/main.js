@@ -420,8 +420,6 @@ $(document).ready(function() {
       $(".incorrect").text(`${sumAnswer} `);
       $(".instruct").text(`revise & click next`);
       $(".showHideIncorrect").show();
-      //$("#bulb").removeClass("off").show();
-      //startBlink();
       countIncrement(todo);
       todoAdd(todo);
       $(".hideCheck").hide();
@@ -462,6 +460,9 @@ $(document).ready(function() {
 
     reviseAdd(todo, revise);
     doneMove(done, todo);
+    $(".trigg")
+      .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3 bg--sour")
+      .addClass("bg--hi");
     $(".hideNextSum").hide();
     $(".showNextSum").show();
     $(".hideNext").hide();
@@ -495,5 +496,4 @@ $(document).ready(function() {
 
   //CLICK DOWNLOAD REPORT
   $("#reportDownload").click(save);
-
 }); // end of get document
