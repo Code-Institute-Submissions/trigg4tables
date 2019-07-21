@@ -296,6 +296,18 @@ $(document).ready(function() {
   }
   //WHERE: https://stackoverflow.com/questions/48054723/saving-canvas-as-blob-and-then-blob-as-file
 
+//CLICK INFO - OPEN
+$(".fa-info-circle").click(function(){
+  $(".hideInfo").hide();
+  $(".showInfo").show();
+})
+
+//CLICK INFO - CLOSE
+$("#closeInfo").click(function(){
+  $(".showInfo").hide();
+  $(".hideInfo").show();
+ })
+
   //CLICK NUMBER
   $(".labelNo").click(function() {
     $(".labelNo")

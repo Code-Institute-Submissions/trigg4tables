@@ -260,7 +260,7 @@ span.correct {
 
 .labelNo,
 .labelOp,
-#pickGo {
+#pickGo, #closeInfo {
   width: 32px;
   height: 32px;
   padding: 0px;
@@ -268,7 +268,6 @@ span.correct {
   border: 2px solid #ccc;
   border-radius: 5px;
   color: #b18683;
-
   background-color: white;
   /*padding: 10px; causing text to be bottom right of button*/
   vertical-align: top;
@@ -276,9 +275,14 @@ span.correct {
   margin: 6px 8px 6px 8px;
 }
 
+#closeInfo {
+  width: 60px;
+}
+
 .labelNo:active,
 .labelOp:active,
-#pickGo:active {
+#pickGo:active
+#closeInfo:active {
   box-shadow: 0 0 0 white;
   margin: 8px 8px 4px 8px;
 }
