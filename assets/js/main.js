@@ -22,10 +22,13 @@ $(document).ready(function() {
 
   //AUDIO
   correctAudio.src = "assets/audio/correct.mp3";
-  incorrectAudio1.src = "assets/audio/incorrect1.mp3";
-  incorrectAudio2.src = "assets/audio/incorrect2.mp3";
+  incorrectAudio1.src = "assets/audio/incorrectCat.mp3";
+  incorrectAudio2.src = "assets/audio/incorrectCat.mp3";
   doneAudio.src = "assets/audio/done.mp3";
-  //WHERE: https://freesound.org/people/adriann/sounds/191718/
+  //WHERE: https://freesound.org/people/adriann/sounds/191718/ incorrect not using
+  //https://bigsoundbank.com/detail-0494-little-meow-of-a-cat.html incorrect cat
+  //https://freesound.org/people/Wagna/sounds/242207/ done
+  //need correct sound source
 
   //SOUND ON OFF
   $(".sound").click(function() {
@@ -389,7 +392,7 @@ $(document).ready(function() {
         .css("color", "#83b186");
       $(".hideCheck").hide(); //sumAnswer input, sumCheck button & triangle(xs-s & m-l)
       $(".showIncorrect").hide(); //from attempt 4
-      $(".fa-thumbs-up").show();
+      $(".showCorrect").show();
       $("#sumNext").show();
     }
 
@@ -399,7 +402,7 @@ $(document).ready(function() {
       $(".trigg")
         .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3 bg--sour")
         .addClass("bg--1");
-      $(".incorrect").text(`${sumAnswer} `);
+      $(".incorrect").text(`${sumAnswer}`);
       $(".instruct").text(`try again & check`);
       $(".showIncorrect").show(); //thumbs down & incorrect span
       $("#sumAnswer").val("");
@@ -413,10 +416,10 @@ $(document).ready(function() {
       $(".trigg")
         .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3 bg--sour")
         .addClass("bg--2");
-      $(".incorrect").text(`${sumAnswer} `);
-      $(".correct")
+      $(".incorrect").text(`${sumAnswer}`);
+      /*$(".correct")
         .text(`${todo[0].key4} `)
-        .show();
+        .show();*/
       $(".instruct").text(`revise & click next`);
       $("#sumAsk")
         .text(
@@ -425,7 +428,7 @@ $(document).ready(function() {
         .css("color", "#3ea041");
       $(".hideCheck").hide(); //sumAnswer input, sumCheck button & triangle(xs-s & m-l)
       $(".showIncorrect").show(); //thumbs down & incorrect span
-      $(".fa-thumbs-up").show();
+      //$(".showCorrect").show();
       $("#sumNext").show();
       countIncrement(todo);
       todoAdd(todo);
@@ -437,12 +440,12 @@ $(document).ready(function() {
       $(".trigg")
         .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3 bg--sour")
         .addClass("bg--3");
-      $(".incorrect").text(`${sumAnswer} `);
-      $(".correct")
-        .text(`${todo[0].key4} `)
-        .show();
+      $(".incorrect").text(`${sumAnswer}`);
+      /*$(".correct")
+        .text(`  ${todo[0].key4}`)
+        .show();*/
       $(".instruct").text(`try ${todo[0].key4} & check`);
-      $(".fa-thumbs-up").show();
+      //$(".showCorrect").show();
       $(".showIncorrect").show(); //thumbs down & incorrect span
       $("#sumAnswer").val("");
       countIncrement(todo);

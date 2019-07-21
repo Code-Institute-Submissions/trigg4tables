@@ -1,13 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Irish+Grover|Signika:600&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Cousine:700&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Cherry+Cream+Soda&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Indie+Flower&display=swap");
-
-@import url("https://fonts.googleapis.com/css?family=Gaegu:700&display=swap");
-
-@import url("https://fonts.googleapis.com/css?family=Aladin|Averia+Libre:700|Denk+One|Puritan:700&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Allerta|Amaranth|Anaheim|Architects+Daughter|Atma|Bangers|Basic|Biryani|Boogaloo|Caveat+Brush|Flavors|Fontdiner+Swanky|Gochi+Hand|Henny+Penny|Hind+Siliguri|Jockey+One|Kadwa|Mogra|Patrick+Hand+SC|Patua+One|Peralta|Roboto|Sansita|Share|Sigmar+One|Special+Elite|Tauri|Tienne&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Cherry+Cream+Soda|Gaegu:700|Irish+Grover|Signika:600&display=swap');
 
 /*----------FONTS----------*/
 body {
@@ -112,8 +103,9 @@ i.darkpink {
 
 span.incorrect,
 span.correct {
-  font-family:"Signika", sans-serif;
-  font-size: 1.8rem;
+  /*font-family:"Signika", sans-serif;*/
+  font-family: "Gaegu", cursive;
+  font-size: 2.7rem;
 }
 
 .shadow-text--light {
@@ -122,6 +114,10 @@ span.correct {
   text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
 }
 /*WHERE: https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_text-shadow_white*/
+
+.thumb {
+  height: 40px;
+}
 
 /*----------BACKGROUNDS----------*/
 .bg-color--darkpink {
