@@ -89,7 +89,7 @@ $(document).ready(function() {
         let answer = no + i;
         tablesArray.push({
           id: i,
-          count: 1,
+          count: 0,
           key1: no,
           key2: operator,
           key3: i,
@@ -99,7 +99,7 @@ $(document).ready(function() {
         let answer = no * i;
         tablesArray.push({
           id: i,
-          count: 1,
+          count: 0,
           key1: no,
           key2: operator,
           key3: i,
@@ -109,7 +109,7 @@ $(document).ready(function() {
         let j = no + i;
         tablesArray.push({
           id: i,
-          count: 1,
+          count: 0,
           key1: j,
           key2: operator,
           key3: no,
@@ -119,7 +119,7 @@ $(document).ready(function() {
         let j = no * i;
         tablesArray.push({
           id: i,
-          count: 1,
+          count: 0,
           key1: j,
           key2: "÷",
           key3: no,
@@ -200,7 +200,7 @@ $(document).ready(function() {
 
   //MOVE SUM TO REVISE ARRAY
   function reviseAdd(todo, revise) {
-    if (todo[0].count >= 4) {
+    if (todo[0].count >= 3) {
       //revise.push(todo[0]);}
       revise.push(
         `${todo[0].key1}${todo[0].key2}${todo[0].key3}=${todo[0].key4}`
@@ -409,7 +409,7 @@ $("#closeInfo").click(function(){
     }
 
     //STEP2: CHECK ANSWER - INCORRECT 1ST ATTEMPT
-    else if (count === 1) {
+    else if (count === 0) {
       playIncorrectAudio1();
       $(".trigg")
         .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3 bg--sour")
@@ -423,7 +423,7 @@ $("#closeInfo").click(function(){
     }
 
     //STEP3: CHECK ANSWER - INCORRECT 2ND ATTEMPT
-    else if (count === 2) {
+    else if (count === 1) {
       playIncorrectAudio2();
       $(".trigg")
         .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3 bg--sour")
