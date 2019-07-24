@@ -1,4 +1,6 @@
 # Trigg 4 Tables
+
+[![IMAGE ALT TEXT](https://github.com/coderbeez/trigg4tables/blob/master/assets/images/header.png)]
 *Milestone 2: Interactive Frontend Development - Code Institute*
 
 **[Trigg 4 Tables](https://coderbeez.github.io/trigg4tables/)** is a times tables practice site aimed at older children. 
