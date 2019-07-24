@@ -2,18 +2,19 @@
 
 ![IMAGE ALT TEXT](https://github.com/coderbeez/trigg4tables/blob/master/assets/images/header.png)
 
-**[Trigg 4 Tables](https://coderbeez.github.io/trigg4tables/)** a times tables practice site aimed at older children. *Milestone 2: Interactive Frontend Development - Code Institute
+**[Trigg 4 Tables](https://coderbeez.github.io/trigg4tables/)** a times tables practice website aimed at older children. *Milestone 2: Interactive Frontend Development - Code Institute*
 
 
 ## UX
 
-Trigg 4 Tables is aimed at primary school children aged 9 to 12 years, who are often set times tables homework to learn each night. It is designed to address some of the limitations of similar websites and apps.
+Trigg 4 Tables is aimed at primary school children aged 9 to 12 years, who are often set times tables homework to learn each night. It is designed to address some of the limitations of similar websites and apps:
 
 1. **Target Age** Graphics that appeal to preteens verses younger children. 
 
 2. **Tables Set** Ability to practice a full set of times tables. 
 
 3. **Feedback** Detailed feedback to share once practice is complete.
+
 
 
 ### User Stories
@@ -49,28 +50,24 @@ The look and feel of Trigg 4 Tables is designed to appeal to the target audience
 
 4. **Fonts** The heading fonts were chosen to convey a sense of fun. Number and keypad fonts were chosen for legibility. Message fonts were chosen to reflect the handwriting of the target audience. 
 
-6. **Preparation** Balsamiq was used to generate wireframes for various device sizes. The initial proposal document was compiled using Microsoft Powerpoint and Microsoft Publisher was used for the Trigg flow diagram. Testing during development resulted in a number of changes to the original design with a move away from the device keyboard, a reduction in text, and a focus on maintaining a scroll free site even on smaller mobiles.
-[Wireframe](https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/wireframes.pdf) 
-[Initial Proposal](https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/proposal.pdf)
-[Trigg Flow Diagram](https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/triggflow.png) 
+6. **Preparation** Balsamiq was used to generate [wireframes](https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/wireframes.pdf) for various device sizes. The [initial proposal](https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/proposal.pdf) document was compiled using Microsoft Powerpoint and Microsoft Publisher was used for the Trigg images used in this README. Testing during development resulted in several changes to the original design with a move away from the device keyboard, a reduction in text, and a focus on maintaining a scroll free site even on smaller mobiles.
 
 
 ## Features
 
-### Existing Features *Structure & Components*
+### Existing Features *Components*
 
-This single page no-scroll website site 
+![Trig FlowChart](https://github.com/coderbeez/trigg4tables/blob/master/assets/images/features.png)
+*Components of this single page no-scroll website*
 
-![Trig FlowChart](https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/features.png)
 
-
-1. **Trigg Images** Trigg character images from [VectorStock](https://www.vectorstock.com/royalty-free-vectors/vectors-by_Westamult)set the overall look of the website. jQuery is used to add and remove classes alternating Trigg’s expressions and providing feedback for the child.
+1. **Trigg Images** Trigg character images from [VectorStock](https://www.vectorstock.com/royalty-free-vectors/vectors-by_Westamult) set the overall look of the website. jQuery is used to add and remove classes alternating Trigg’s expressions and providing feedback for the child.
 
 ![Trig FlowChart](https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/triggflow.png)
 
 2. **Information Video** Although the website was designed to be as intuitive as possible, an instruction video was created using [Snagit](https://www.techsmith.com/screen-capture.html) with voiceover by an enthusiastic 12 year old. A dedicated YouTube channel was created to host Trigg’s video. Given the target audience, this was deemed to be the most appropriate medium.
 
-![IMAGE ALT TEXT](http://img.youtube.com/vi/EcVam72tyyw/0.jpg)](http://www.youtube.com/watch?v=EcVam72tyyw "Video Title")
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/ EcVam72tyyw/0/0.jpg)](http://www.youtube.com/watch?v= EcVam72tyyw/0 "Video Title")
 
 3. **Keypads** Touch screen keypad functionality and positioning was a serious problem so the initial design was amended to include dedicated static keypads to. jQuery on click functions and JavaScript concat method are used to retrieve values from HTML buttons, radio buttons and input fields. CSS styles including active simulates key pressing and indicates selection.
 
@@ -80,15 +77,15 @@ This single page no-scroll website site
 
 6. **Clear** Using the JavaScript reload method, the website can be refreshed at any stage by clicking the x icon, taking the child back to the start.
 
-7. **Todo & Revise Arrays** Times tables lists are generated, randomised, marked as completed and highlighted as needing revision, using 3 JavaScript arrays, timesArray, todoArray and reviseArray.
+7. **Tables** Times tables lists are generated, randomised, marked as completed and highlighted as needing revision, using 3 JavaScript arrays, timesArray, todoArray and reviseArray.
 
-8. **Feedback** jQuery hide, show, add and remove classes are used to provide text and visual instructions and feedback to the child.
+8. **Feedback** jQuery hide, show, add and remove class methods are used to provide text and visual instructions and feedback to the child.
 
 9. **Progress** jQuery is used to set the attributes for a [Bootstrap](https://getbootstrap.com/docs/4.3/components/progress/) progress bar showing the child how they are progressing.
 
-10. **Report** jCanvas is used to fill and format a HTML canvas element. This canvas acts as a detailed report showing the date, tables, time taken to complete and any tables that need to be revised. 
+10. **Report** [jCanvas](https://projects.calebevans.me/jcanvas/) is used to fill and format a HTML canvas element. This canvas acts as a detailed report showing the date, tables, time taken to complete and any tables that need to be revised. 
 
-11. **Download** Clicking the download button converts the canvas report first to a blob and then to a png fileJa which can be shared. JavaScript libraries [Canvas-toBlob](https://github.com/eligrey/canvas-toBlob.js) and [FileSaver](https://github.com/eligrey/FileSaver.js/) facilitate this.
+11. **Download** Clicking the download button converts the canvas report first to a blob and then to a png file which can be shared. JavaScript libraries [Canvas-toBlob](https://github.com/eligrey/canvas-toBlob.js) and [FileSaver](https://github.com/eligrey/FileSaver.js/) facilitate this.
 
 
 ### Existing Features *Responsiveness*
@@ -99,13 +96,9 @@ The website was designed using a mobile first approach. In order to maintain a n
 
 2. **Viewport Height** CSS percentage of viewport height classes are used to ensure site fills screen, regardless of screen size. 
 
-2. **Element Width & Position** The [Bootstrap](https://getbootstrap.com/docs/4.3/layout/grid/) grid system is also used to change the width and position of elements on small, medium and large screens to better display content. CSS backgrounds…
+3. **Element Width & Position** The [Bootstrap](https://getbootstrap.com/docs/4.3/layout/grid/) grid system is also used to change the width and position of elements on small, medium and large screens to better display content. CSS backgrounds…
 
 4. **Display** Using [Bootstrap](https://getbootstrap.com/docs/4.3/utilities/display/) display classes together with [jQuery]( https://api.jquery.com/show/) hide and show methods:
-   A h1 element with 3 break elements on small screens, is replaced with 2 breaks on medium and large screens.
-   A tagline positioned under the hero images on small screens, is positioned over the hero image on medium and large screens.
-    A floor plan drawing viewed in portrait on small screens, is viewed in landscape on medium and large screens. 
-   A resources aside positioned under the FancyBox lightbox library on small screens, is positioned above and to the right on medium and large screens.
 
 5. **Video** [Bootstrap](https://getbootstrap.com/docs/4.3/utilities/embed/#about) utility of embed-responsive is used to make the embedded iframe responsive.
 
