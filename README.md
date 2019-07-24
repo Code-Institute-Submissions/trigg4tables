@@ -1,19 +1,17 @@
 # Trigg 4 Tables
 
-[![IMAGE ALT TEXT](https://github.com/coderbeez/trigg4tables/blob/master/assets/images/header.png)]
-*Milestone 2: Interactive Frontend Development - Code Institute*
+![IMAGE ALT TEXT](https://github.com/coderbeez/trigg4tables/blob/master/assets/images/header.png)
 
-**[Trigg 4 Tables](https://coderbeez.github.io/trigg4tables/)** is a times tables practice site aimed at older children. 
+**[Trigg 4 Tables](https://coderbeez.github.io/trigg4tables/)** a times tables practice site aimed at older children. *Milestone 2: Interactive Frontend Development - Code Institute
 
-[![IMAGE ALT TEXT](http://img.youtube.com/vi/EcVam72tyyw/0.jpg)](http://www.youtube.com/watch?v=EcVam72tyyw "Video Title")
 
 ## UX
 
 Trigg 4 Tables is aimed at primary school children aged 9 to 12 years, who are often set times tables homework to learn each night. It is designed to address some of the limitations of similar websites and apps.
 
-1. **Age** Graphics that appeal to preteens verses younger children. 
+1. **Target Age** Graphics that appeal to preteens verses younger children. 
 
-2. **Set** Ability to practice a full set of times tables. 
+2. **Tables Set** Ability to practice a full set of times tables. 
 
 3. **Feedback** Detailed feedback to share once practice is complete.
 
@@ -24,19 +22,17 @@ User stories for potential visitors to the website include:
 
 1. **Independent Homework** 
 
-When I get home from school, I quickly complete my times tables homework using Trigg 4 Tables on my phone. I click the *download button* and *WhatsApp* the report to Dad to let him know I’ve started homework already. The first time I used the website I clicked the *i icon* to watch the *YouTube video*, but you only need to watch once, it’s pretty easy to use. My teacher says my tables are improving! I think I was too tired to learn before waiting until Dad finished work.
+When I get home from school, I quickly complete my times tables homework using Trigg 4 Tables on my phone. I click the download button and WhatsApp the report to Dad to let him know I’ve started homework already. The first time I used the website I clicked the i icon to watch the YouTube video, but you only need to watch once, it’s pretty easy to use. My teacher says my tables are improving! I think I was too tired to learn before waiting until Dad finished work.
 
 
 2. **Homework On The Go**
 
-On the car journey home from school, I borrow my Mom’s phone and complete my times tables homework. I usually click the *sound icon* to mute as it annoys my brother. Sometimes I pretend to forget. You can turn the sound off even after you’ve started but he doesn’t know that. When I get to the end, if the *report* says I have sums to revise, I click the *x icon* and try again. My Mom insists on going over any sum the report says to revise when we get home so I try to avoid that. I don’t need to use the *download button* as I leave the site open for Mom.
+On the car journey home from school, I borrow my Mom’s phone and complete my times tables homework. I usually click the sound icon to mute as it annoys my brother. Sometimes I pretend to forget. You can turn the sound off even after you’ve started but he doesn’t know that. When I get to the end, if the report says I have sums to revise, I click the x icon and try again. My Mom insists on going over any sum the report says to revise when we get home so I try to avoid that. I don’t need to use the download button as I leave the site open for Mom.
 
 
 3. **Competition**
 
-I love maths, enjoy practising times tables and am ever so slightly competitive. I visit Trigg 4 Tables using my phone, complete the sums as quickly as I can and *Snapchat* the *report* to my friends to see if I have beat their time. The trick is not to double click check as Trigg will say you have an empty answer for the next sum and that just wastes time.
-
-
+I love maths, enjoy practising times tables and am ever so slightly competitive. I visit Trigg 4 Tables using my phone, complete the sums as quickly as I can and Snapchat the report to my friends to see if I have beat their time. The trick is not to double click check as Trigg will say you have an empty answer for the next sum and that just wastes time.
 
 
 ### Design
@@ -65,27 +61,34 @@ The look and feel of Trigg 4 Tables is designed to appeal to the target audience
 
 This single page no-scroll website site 
 
-1. **Character Images** The character image sourced from [VectorStock](https://getbootstrap.com/docs/4.3/components/navbar/) set the theme for the site. jQuery add and remove classes are used to alter the image depending answer to a sum or progress.
+![Trig FlowChart](https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/features.png)
+
+
+1. **Trigg Images** Trigg character images from [VectorStock](https://www.vectorstock.com/royalty-free-vectors/vectors-by_Westamult)set the overall look of the website. jQuery is used to add and remove classes alternating Trigg’s expressions and providing feedback for the child.
 
 ![Trig FlowChart](https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/triggflow.png)
 
-2. **Info Video** Although the aim is for the site to be as intuitive as possible, an instruction video was created using [Snagit], uploaded to dedicated [TRigg YouTube Channel] and embedded in the site using a [Bootstrap](https://getbootstrap.com/docs/4.3/utilities/embed/) embed utility for iframe. For the target audience this  
+2. **Information Video** Although the website was designed to be as intuitive as possible, an instruction video was created using [Snagit](https://www.techsmith.com/screen-capture.html) with voiceover by an enthusiastic 12 year old. A dedicated YouTube channel was created to host Trigg’s video. Given the target audience, this was deemed to be the most appropriate medium.
 
-3. **Sound** JavaScript play method is used to provide feedback that a sum is correct, incorrect and to indicate that the child has completed all sums using short audio clips. Sound can be turned on or off at any stage by clicking on the sound icon. 
+![IMAGE ALT TEXT](http://img.youtube.com/vi/EcVam72tyyw/0.jpg)](http://www.youtube.com/watch?v=EcVam72tyyw "Video Title")
 
-4. **Timer** Having selected the number and operator and clicking go, the timer starts. The Javascript setTimeout and clearTimeout are used to start the timer. The time taken to complete all sums is indicated on the report canvas. 
+3. **Keypads** Touch screen keypad functionality and positioning was a serious problem so the initial design was amended to include dedicated static keypads to. jQuery on click functions and JavaScript concat method are used to retrieve values from HTML buttons, radio buttons and input fields. CSS styles including active simulates key pressing and indicates selection.
 
-5. **Clear** The [Bootstrap](https://getbootstrap.com/docs/4.3/components/card/) card component is used in both the kitchen and favourites sections, neatly presenting information to users. 
+4. **Timer** JavaScript setTimeout and clearTimeout methods are used to start the timer on go and stop on complete. The time taken to complete is shown on the report canvas. 
 
-6. **Keypad** [Bootstrap](https://getbootstrap.com/docs/4.3/components/modal/) modals allow users view kitchen product reviews without having to scroll or leave the page.
+5. **Sound** JavaScript play methods are used to provide audio feedback when an answer is missing, correct, incorrect or all complete. Sound can be turned on or off at any stage by clicking the sound icon. 
 
-7. **Times Tables Array** [Bootstrap](https://getbootstrap.com/docs/4.3/components/modal/) modals allow users view kitchen product reviews without having to scroll or leave the page.
+6. **Clear** Using the JavaScript reload method, the website can be refreshed at any stage by clicking the x icon, taking the child back to the start.
 
-8. **Progress** The [Bootstrap](https://getbootstrap.com/docs/4.3/components/progress/) progress bar shows component allows kitchen product review information to be represented graphically in the modals.
+7. **Todo & Revise Arrays** Times tables lists are generated, randomised, marked as completed and highlighted as needing revision, using 3 JavaScript arrays, timesArray, todoArray and reviseArray.
 
-9. **Canvas** [Bootstrap](https://getbootstrap.com/docs/4.3/components/modal/) modals allow users view kitchen product reviews without having to scroll or leave the page.
+8. **Feedback** jQuery hide, show, add and remove classes are used to provide text and visual instructions and feedback to the child.
 
-10. **Download** [Bootstrap](https://getbootstrap.com/docs/4.3/components/modal/) modals allow users view kitchen product reviews without having to scroll or leave the page.
+9. **Progress** jQuery is used to set the attributes for a [Bootstrap](https://getbootstrap.com/docs/4.3/components/progress/) progress bar showing the child how they are progressing.
+
+10. **Report** jCanvas is used to fill and format a HTML canvas element. This canvas acts as a detailed report showing the date, tables, time taken to complete and any tables that need to be revised. 
+
+11. **Download** Clicking the download button converts the canvas report first to a blob and then to a png fileJa which can be shared. JavaScript libraries [Canvas-toBlob](https://github.com/eligrey/canvas-toBlob.js) and [FileSaver](https://github.com/eligrey/FileSaver.js/) facilitate this.
 
 
 ### Existing Features *Responsiveness*
@@ -122,27 +125,27 @@ The website was designed using a mobile first approach. In order to maintain a n
 
 ## Technologies Used
 
-1. [Balsamiq](https://balsamiq.com/)  A web based gui mock-up and website wireframe building application, Balsamiq was used to develop wireframes for the website.
-2. [Microsoft Powerpoint]( https://office.live.com/start/PowerPoint.aspx) A presentation programme, Microsoft PowerPoint was used to develop the initial proposal.
-3. [Microsoft Publisher]( https://www.microsoft.com/en-ie/p/publisher/cfq7ttc0k7c3?=&OCID=AID737190_SEM_et3dNWB5&MarinID=set3dNWB5|340720498529|microsoft+publisher|e|c||62634787164|aud-312771920869:kwd-11150981&lnkd=Google_O365SMB_Mixed&gclid=EAIaIQobChMIrN6k04Kh4gIVxrDtCh0N7QGzEAAYASAAEgJqDfD_BwE&activetab=pivot%3Aoverviewtab) A desktop publishing application, Microsoft Publisher was used to create the flow diagram.
-4. [Affinity Designer]( https://affinity.serif.com/en-gb/) A vector graphics editor, Affinity Designer was used to edit images and identify hex colours for icons and backgrounds.
+1. [Balsamiq](https://balsamiq.com/) A web based gui mock-up and website wireframe building application, Balsamiq was used to develop wireframes for the website.
+2. [Microsoft Powerpoint](https://office.live.com/start/PowerPoint.aspx) A presentation programme, Microsoft PowerPoint was used to develop the initial proposal.
+3. [Microsoft Publisher](https://www.microsoft.com/en-ie/p/publisher/cfq7ttc0k7c3?=&OCID=AID737190_SEM_et3dNWB5&MarinID=set3dNWB5|340720498529|microsoft+publisher|e|c||62634787164|aud-312771920869:kwd-11150981&lnkd=Google_O365SMB_Mixed&gclid=EAIaIQobChMIrN6k04Kh4gIVxrDtCh0N7QGzEAAYASAAEgJqDfD_BwE&activetab=pivot%3Aoverviewtab) A desktop publishing application, Microsoft Publisher was used to create the README header image and flow diagram.
+4. [Affinity Designer](https://affinity.serif.com/en-gb/) A vector graphics editor, Affinity Designer was used to edit images and identify hex colours for icons and backgrounds.
 5. [Snagit](https://www.techsmith.com/screen-capture.html) A screenshot program that captures video display and audio output, Snagit was used to create the instruction video.
-6. [Google Fonts](https://fonts.google.com/) A library of free licensed fonts, Google Fonts is used for all fonts.
-7. [Font Awesome](https://fontawesome.com/) A font and icon toolkit, Font Awesome is used to source icons.
-8. [Visual Studio Code]( https://code.visualstudio.com/) A source-code editor, Visual Studio Code was the IDE used.  
+6. [Google Fonts](https://fonts.google.com/) A library of free licensed fonts, Google Fonts was used for all fonts.
+7. [Font Awesome](https://fontawesome.com/) A font and icon toolkit, Font Awesome was used to source all icons.
+8. [Visual Studio Code](https://code.visualstudio.com/) A source-code editor, Visual Studio Code was the IDE used.
 9. [Git](https://git-scm.com/) A distributed version-control system for tracking changes in code during development, Git was used to track changes in Visual Studio Code.
 10. [GitHub](https://github.com/) A web-based hosting service for version control using Git, GitHub was used to host the version control system and website content.
 11. [HTML5](https://www.w3.org/) A document mark-up language, HTML was the language used.
 12. [CSS3](https://www.w3.org/) A style sheet language, CSS was the style sheet used.
-13. [JavaScript]( http://www.ecma-international.org/) A high-level, interpreted programming language that conforms to the ECMAScript specification, Javascript was used to provide interactivity.
+13. [JavaScript](http://www.ecma-international.org/) A high-level, interpreted programming language that conforms to the ECMAScript specification, Javascript was used to provide interactivity.
 14. [Bootstrap4](https://getbootstrap.com/) A CSS framework directed at responsive, mobile-first front-end web development, Bootstrap was used primarily for layout and styling.
 15. [jQuery](https://jquery.com/) A JavaScript library designed to manipulate HTML documents, JQuery was used here by Bootstrap, jCanvas and to manipulate the DOM.
-16. [jPopper](https://popper.js.org/) A JavaScript library designed to display content from HTML documents, JPopper is used by Bootstrap on this site.
-17. [jCanvas]( https://projects.calebevans.me/jcanvas/) A JavaScript library for jQuery that wraps around the HTML5 canvas API, jCanvas was used to format the canvas report.
+16. [jPopper](https://popper.js.org/) A JavaScript library designed to display content from HTML documents, JPopper was used by Bootstrap on this site.???
+17. [jCanvas](https://projects.calebevans.me/jcanvas/) A JavaScript library for jQuery that wraps around the HTML5 canvas API, jCanvas was used to format the canvas report.
 18. [FileSaver](https://github.com/eligrey/FileSaver.js/) A HTML5 saveAs() FileSaver implementation, FileSaver.js was used to allow the canvas report blob to be saved as a png file.
 19. [Canvas-toBlob](https://github.com/eligrey/canvas-toBlob.js) A JavaScript library that implements the standard HTML5 canvas.toBlob() and canvas.toBlobHD() methods in browsers that do not natively support, Canvas-toBlob was used to overcome problems with some browsers e.g. Microsoft Edge.
 
-**Technology explanations from [Wikipedia](https://en.wikipedia.org/wiki/Main_Page)** or technology’s own site.
+*Technology explanations from [Wikipedia](https://en.wikipedia.org/wiki/Main_Page)** or technology’s own site.*
 
 
 ## Testing
@@ -309,42 +312,42 @@ The following instructions were taken from [GitHib Help]( https://help.github.co
 
 ### Media
 
-  * Trigg images by Westamult purchased from [VectorStock]( https://www.vectorstock.com/royalty-free-vectors/vectors-by_Westamult)
+* Trigg images by Westamult, purchased from [VectorStock]( https://www.vectorstock.com/royalty-free-vectors/vectors-by_Westamult).
 
-* Paw print background by Tentacula purchased from [VectorStock](https://www.vectorstock.com/royalty-free-vectors/vectors-by_tentacula)
+* Paw print background by Tentacula, purchased from [VectorStock](https://www.vectorstock.com/royalty-free-vectors/vectors-by_tentacula).
 
-* Favicon image from [Pixabay](https://pixabay.com/users/Elionas-2345468/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1314467)
+* Favicon image from [Pixabay](https://pixabay.com/users/Elionas-2345468/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1314467).
 
-* Audio correct clip from
+* Audio correct clip from ???.
 
-* Audio incorrect clip from [bigsoundbank](https://bigsoundbank.com/detail-0494-little-meow-of-a-cat.html)
+* Audio incorrect clip from [bigsoundbank](https://bigsoundbank.com/detail-0494-little-meow-of-a-cat.html).
 
-* Audio done clip from [freesound](https://freesound.org/people/Wagna/sounds/242207/)
+* Audio done clip from [freesound](https://freesound.org/people/Wagna/sounds/242207/).
  
 * Embedded YouTube video voiceover by Jack.
 
 
 ### Code
-  * JS Stop reloading page with enter key from [stackoverflow]( https://stackoverflow.com/questions/8866053/stop-reloading-page-with-enter-key)
+* JS stop reloading page with enter key from [stackoverflow](https://stackoverflow.com/questions/8866053/stop-reloading-page-with-enter-key).
 
-* JS Random array sorting from [w3schools](Random sorting code w3schools https://www.w3schools.com/js/js_array_sort.asp)
+* JS random array sorting from [w3schools](https://www.w3schools.com/js/js_array_sort.asp).
 
-* JS Timer based on code from [Codepad](https://codepad.co/snippet/javascript-stopwatch-using-javascript-and-css)
+* JS timer based on code from [Codepad](https://codepad.co/snippet/javascript-stopwatch-using-javascript-and-css).
 
-* JS Short date format from [stackoverflow](https://stackoverflow.com/questions/8398897/how-to-get-current-date-in-jquery)
+* JS short date format from [stackoverflow](https://stackoverflow.com/questions/8398897/how-to-get-current-date-in-jquery).
 
-* JS Canvas to blob and blob to png from [stackoverflow](https://stackoverflow.com/questions/48054723/saving-canvas-as-blob-and-then-blob-as-file)
+* JS canvas to blob and blob to png from [stackoverflow](https://stackoverflow.com/questions/48054723/saving-canvas-as-blob-and-then-blob-as-file).
 
-* JS Value from selected radio button from [stackoverflow](https://stackoverflow.com/questions/8622336/jquery-get-value-of-selected-radio-button)
+* JS value from selected radio button from [stackoverflow](https://stackoverflow.com/questions/8622336/jquery-get-value-of-selected-radio-button).
 
-* JS Refresh page from [stackoverflow](https://stackoverflow.com/questions/5404839/how-can-i-refresh-a-page-with-jquery)
-* CSS text shadow from [designshack](https://designshack.net/articles/css/12-fun-css-text-shadows-you-can-copy-and-paste/)
-* CSS box shadow from [codepen](https://codepen.io/sdthornton/pen/wBZdXq)
-* CSS colours from [color hex](https://www.color-hex.com/color/cfb4b2)
-* CSS button press formatting [stackoverflow](https://stackoverflow.com/questions/38377062/how-to-make-html-button-look-pressed-in-using-css)
-* CSS iOS styling inputs [daretothink](https://www.daretothink.co.uk/stop-ios-styling-your-input-fields-and-buttons/)
-* CSS iOS styling radio buttons fix [sitepoint](https://www.sitepoint.com/replacing-radio-buttons-without-replacing-radio-buttons/)
-*README embed YouTube [stackoverflow](https://stackoverflow.com/questions/11804820/embed-a-youtube-video)
+* JS refresh page from [stackoverflow](https://stackoverflow.com/questions/5404839/how-can-i-refresh-a-page-with-jquery).
+* CSS text shadow from [designshack](https://designshack.net/articles/css/12-fun-css-text-shadows-you-can-copy-and-paste/).
+* CSS box shadow from [codepen](https://codepen.io/sdthornton/pen/wBZdXq).
+* CSS colours from [color hex](https://www.color-hex.com/color/cfb4b2).
+* CSS button press formatting [stackoverflow](https://stackoverflow.com/questions/38377062/how-to-make-html-button-look-pressed-in-using-css).
+* CSS iOS styling input field fix from [daretothink](https://www.daretothink.co.uk/stop-ios-styling-your-input-fields-and-buttons).
+* CSS iOS styling radio buttons fix from [sitepoint](https://www.sitepoint.com/replacing-radio-buttons-without-replacing-radio-buttons/).
+*README embed YouTube video from [stackoverflow](https://stackoverflow.com/questions/11804820/embed-a-youtube-video).
 
 
 ### Acknowledgements
