@@ -2,29 +2,27 @@ $(document).ready(function() {
   console.log("test");
   $(".hideStart").hide();
 
-  //STOP ENTER KEY FROM REFRESHING PAGE
+    //STOP ENTER KEY FROM REFRESHING PAGE
   $(document).on("keypress", function(e) {
     if (e.which == 13) {
       event.preventDefault();
     }
   });
-  //WHERE: ???
+  //WHERE:https://stackoverflow.com/questions/8866053/stop-reloading-page-with-enter-key
 
   //GLOBAL VARIABLES
   let sound = true;
   let todoArray = [];
   let reviseArray = [];
   let noteString;
-  const correctAudio = new Audio();
-  const incorrectAudio1 = new Audio();
-  const incorrectAudio2 = new Audio();
-  const doneAudio = new Audio();
+  const audioCorrect = new Audio();
+  const audioIncorrect = new Audio();
+  const audioDone = new Audio();
 
   //AUDIO
-  correctAudio.src = "assets/audio/correct.mp3";
-  incorrectAudio1.src = "assets/audio/incorrectCat.mp3";
-  incorrectAudio2.src = "assets/audio/incorrectCat.mp3";
-  doneAudio.src = "assets/audio/done.mp3";
+  audioCorrect.src = "assets/audio/correct.mp3";
+  audioIncorrect.src = "assets/audio/incorrectCat.mp3";
+  audioDone.src = "assets/audio/done.mp3";
   //WHERE: https://freesound.org/people/adriann/sounds/191718/ incorrect not using
   //https://bigsoundbank.com/detail-0494-little-meow-of-a-cat.html incorrect cat
   //https://freesound.org/people/Wagna/sounds/242207/ done
@@ -48,27 +46,9 @@ $(document).ready(function() {
   });
 
   //PLAY AUDIO
-  function playCorrectAudio() {
+   function playAudio(audio) {
     if (sound === true) {
-      correctAudio.play();
-    }
-  }
-
-  function playIncorrectAudio1() {
-    if (sound === true) {
-      incorrectAudio1.play();
-    }
-  }
-
-  function playIncorrectAudio2() {
-    if (sound === true) {
-      incorrectAudio2.play();
-    }
-  }
-
-  function playDoneAudio() {
-    if (sound === true) {
-      doneAudio.play();
+      audio.play();
     }
   }
 
@@ -296,17 +276,17 @@ $(document).ready(function() {
   }
   //WHERE: https://stackoverflow.com/questions/48054723/saving-canvas-as-blob-and-then-blob-as-file
 
-//CLICK INFO - OPEN
-$(".fa-info-circle").click(function(){
-  $(".hideInfo").hide();
-  $(".showInfo").show();
-})
+  //CLICK INFO - OPEN
+  $(".fa-info-circle").click(function() {
+    $(".hideInfo").hide();
+    $(".showInfo").show();
+  });
 
-//CLICK INFO - CLOSE
-$("#closeInfo").click(function(){
-  $(".showInfo").hide();
-  $(".hideInfo").show();
- })
+  //CLICK INFO - CLOSE
+  $("#closeInfo").click(function() {
+    $(".showInfo").hide();
+    $(".hideInfo").show();
+  });
 
   //CLICK NUMBER
   $(".labelNo").click(function() {
@@ -327,18 +307,17 @@ $("#closeInfo").click(function(){
       .removeClass("selector-style")
       .addClass("selector-style--selected");
   });
-  //WHERE: https://stackoverflow.com/questions/8622336/jquery-get-value-of-selected-radio-button
 
   //CLICK GO
   $("#pickGo").click(function() {
     let no = parseInt($("input[name='pickNo']:checked").val());
     let operator = $("input[name='pickOp']:checked").val();
     if (missingPick(no, operator) === "missingNo") {
-      playIncorrectAudio1();
+      playAudio(audioIncorrect);
       $("#missingNo").show();
       console.log("missingNo");
     } else if (missingPick(no, operator) === "missingOp") {
-      playIncorrectAudio1();
+      playAudio(audioCorrect);
       $("#missingOp").show();
       console.log("missingOp");
     } else {
@@ -351,6 +330,7 @@ $("#closeInfo").click(function(){
       console.log("GoNo" + $("input[name='pickNo']:checked").val());
     }
   });
+  //WHERE: https://stackoverflow.com/questions/8622336/jquery-get-value-of-selected-radio-button
 
   //CLICK RELOAD
   $(".reload").click(function() {
@@ -382,7 +362,7 @@ $("#closeInfo").click(function(){
 
     //STEP0: CHECK ANSWER - ENTERED
     if (!sumAnswer) {
-      playIncorrectAudio1();
+      playAudio(audioIncorrect);
       $(".trigg")
         .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3")
         .addClass("bg--sour");
@@ -392,7 +372,7 @@ $("#closeInfo").click(function(){
 
     //STEP1: CHECK ANSWER - CORRECT
     else if (sumCorrect(sumAnswer, answer) === true) {
-      playCorrectAudio();
+      playAudio(audioCorrect);
       $(".trigg")
         .removeClass("bg--hi bg--0 bg--1 bg--2 bg--3 bg--sour")
         .addClass("bg--thumbsup");
@@ -410,7 +390,7 @@ $("#closeInfo").click(function(){
 
     //STEP2: CHECK ANSWER - INCORRECT 1ST ATTEMPT
     else if (count === 0) {
-      playIncorrectAudio1();
+      playAudio(audioIncorrect);
       $(".trigg")
         .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3 bg--sour")
         .addClass("bg--1");
@@ -418,20 +398,16 @@ $("#closeInfo").click(function(){
       $(".instruct").text(`try again & check`);
       $(".showIncorrect").show(); //thumbs down & incorrect span
       $("#sumAnswer").val("");
-      //$(".fa-exclamation-triangle").hide(); //why would this be here?
       countIncrement(todo);
     }
 
     //STEP3: CHECK ANSWER - INCORRECT 2ND ATTEMPT
     else if (count === 1) {
-      playIncorrectAudio2();
+      playAudio(audioIncorrect);
       $(".trigg")
         .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3 bg--sour")
         .addClass("bg--2");
       $(".incorrect").text(`${sumAnswer}`);
-      /*$(".correct")
-        .text(`${todo[0].key4} `)
-        .show();*/
       $(".instruct").text(`revise & click next`);
       $("#sumAsk")
         .text(
@@ -440,7 +416,6 @@ $("#closeInfo").click(function(){
         .css("color", "#3ea041");
       $(".hideCheck").hide(); //sumAnswer input, sumCheck button & triangle(xs-s & m-l)
       $(".showIncorrect").show(); //thumbs down & incorrect span
-      //$(".showCorrect").show();
       $("#sumNext").show();
       countIncrement(todo);
       todoAdd(todo);
@@ -448,16 +423,12 @@ $("#closeInfo").click(function(){
 
     //STEP4: CHECK ANSWER - INCORRECT 3RD ATTEMPT
     else {
-      playIncorrectAudio2();
+      playAudio(audioIncorrect);
       $(".trigg")
         .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3 bg--sour")
         .addClass("bg--3");
       $(".incorrect").text(`${sumAnswer}`);
-      /*$(".correct")
-        .text(`  ${todo[0].key4}`)
-        .show();*/
       $(".instruct").text(`try ${todo[0].key4} & check`);
-      //$(".showCorrect").show();
       $(".showIncorrect").show(); //thumbs down & incorrect span
       $("#sumAnswer").val("");
       countIncrement(todo);
@@ -487,15 +458,13 @@ $("#closeInfo").click(function(){
       sumSet(todo);
     } else {
       //only do if complete
-      playDoneAudio();
+      playAudio(audioDone);
       $(".trigg")
         .removeClass("bg--thumbsup")
         .addClass("bg--score");
       $(".instruct").text(`well done`);
       $(".fa-graduation-cap").show();
       noteFill(revise);
-      console.log(reviseArray);
-      console.log(noteString);
       report();
       $(".hideNextDone").hide();
       $(".showNextDone").show();
