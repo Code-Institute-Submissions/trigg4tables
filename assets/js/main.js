@@ -13,6 +13,8 @@ $(document).ready(function() {
   const sumAskElement = $("[data-sum=ask]");
   const sumAnswerElement = $("[data-sum=answer]");
   const timeElement = $("time");
+  const keypadNumberElement = $("[data-keypad=number]");
+  const keypadClearElement = $("[data-keypad=clear]");
   
 
   //STOP ENTER KEY FROM REFRESHING PAGE
@@ -295,7 +297,7 @@ $(document).ready(function() {
     $(".hideInfo").show();
   });
 
-  //CLICK NUMBER OR OPERATOR
+  //CLICK NUMBER OR OPERATOR - APPLY SELECT STYLE
   pickLabel.click(function() {
     $(this)
       .siblings()
@@ -334,7 +336,7 @@ $(document).ready(function() {
   //WHERE: https://stackoverflow.com/questions/5404839/how-can-i-refresh-a-page-with-jquery
 
   //CLICK NUMBER KEYPAD
-  $(".padNum").click(function() {
+  keypadNumberElement.click(function() {
     if (sumAnswerElement.val().length < 3) {
       let concat = sumAnswerElement.val() + $(this).val();
       sumAnswerElement.val(concat);
@@ -343,7 +345,7 @@ $(document).ready(function() {
   //WHY: maxLength in CSS not working if using keypad so need extra js.
   
   //CLICK CLEAR NUMBER KEYPAD
-  $("#padClear").click(function() {
+  keypadClearElement.click(function() {
     sumAnswerElement.val("");
   });
 
