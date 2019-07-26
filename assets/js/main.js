@@ -8,6 +8,7 @@ $(document).ready(function() {
   const iconWarn = $("[data-icon=warn]"); //show warn instead of iconwarn?
   const iconHat = $("[data-icon=hat]"); //show done instead of iconHat?
   const iconDownload = $("[data-icon=download]"); //show done instead of iconDownload?
+  const pickLabel = $("[data-pickLabel]");
 
   //STOP ENTER KEY FROM REFRESHING PAGE
   $(document).on("keypress", function(e) {
@@ -290,24 +291,12 @@ $(document).ready(function() {
     $(".hideInfo").show();
   });
 
-  //CLICK NUMBER
-  $(".labelNo").click(function() {
-    $(".labelNo")
-      .removeClass("selector-style--selected")
-      .addClass("selector-style");
+  //CLICK NUMBER OR OPERATOR
+  pickLabel.click(function() {
     $(this)
-      .removeClass("selector-style")
-      .addClass("selector-style--selected");
-  });
-
-  //CLICK OPERATOR
-  $(".labelOp").click(function() {
-    $(".labelOp")
-      .removeClass("selector-style--selected")
-      .addClass("selector-style");
-    $(this)
-      .removeClass("selector-style")
-      .addClass("selector-style--selected");
+      .siblings()
+      .removeClass("selector-style--selected");
+    $(this).addClass("selector-style--selected");
   });
 
   //CLICK GO
