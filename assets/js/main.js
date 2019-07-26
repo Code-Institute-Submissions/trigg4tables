@@ -2,7 +2,14 @@ $(document).ready(function() {
   console.log("test");
   $(".hideStart").hide();
 
-    //STOP ENTER KEY FROM REFRESHING PAGE
+  const iconSound = $("[data-icon=sound]");
+  const iconInfo = $("[data-icon=info]");
+  const iconReload = $("[data-icon=reload]");
+  const iconWarn = $("[data-icon=warn]"); //show warn instead of iconwarn?
+  const iconHat = $("[data-icon=hat]"); //show done instead of iconHat?
+  const iconDownload = $("[data-icon=download]"); //show done instead of iconDownload?
+
+  //STOP ENTER KEY FROM REFRESHING PAGE
   $(document).on("keypress", function(e) {
     if (e.which == 13) {
       event.preventDefault();
@@ -29,24 +36,20 @@ $(document).ready(function() {
   //need correct sound source
 
   //SOUND ON OFF
-  $(".sound").click(function() {
+  iconSound.click(function() {
     if (sound === true) {
-      $(".sound")
-        .removeClass("fa-volume-mute")
-        .addClass("fa-volume-up");
+      iconSound.removeClass("fa-volume-mute").addClass("fa-volume-up"); //can I use font awesome classes here?
       sound = false;
       console.log(sound);
     } else {
-      $(".sound")
-        .removeClass("fa-volume-up")
-        .addClass("fa-volume-mute");
+      iconSound.removeClass("fa-volume-up").addClass("fa-volume-mute");
       sound = true;
       console.log(sound);
     }
   });
 
   //PLAY AUDIO
-   function playAudio(audio) {
+  function playAudio(audio) {
     if (sound === true) {
       audio.play();
     }
@@ -181,7 +184,6 @@ $(document).ready(function() {
   //MOVE SUM TO REVISE ARRAY
   function reviseAdd(todo, revise) {
     if (todo[0].count >= 3) {
-      //revise.push(todo[0]);}
       revise.push(
         `${todo[0].key1}${todo[0].key2}${todo[0].key3}=${todo[0].key4}`
       );
@@ -277,7 +279,7 @@ $(document).ready(function() {
   //WHERE: https://stackoverflow.com/questions/48054723/saving-canvas-as-blob-and-then-blob-as-file
 
   //CLICK INFO - OPEN
-  $(".fa-info-circle").click(function() {
+  iconInfo.click(function() {
     $(".hideInfo").hide();
     $(".showInfo").show();
   });
@@ -317,7 +319,7 @@ $(document).ready(function() {
       $("#missingNo").show();
       console.log("missingNo");
     } else if (missingPick(no, operator) === "missingOp") {
-      playAudio(audioCorrect);
+      playAudio(audioIncorrect);
       $("#missingOp").show();
       console.log("missingOp");
     } else {
@@ -333,7 +335,7 @@ $(document).ready(function() {
   //WHERE: https://stackoverflow.com/questions/8622336/jquery-get-value-of-selected-radio-button
 
   //CLICK RELOAD
-  $(".reload").click(function() {
+  iconReload.click(function() {
     location.reload();
   });
   //WHERE: https://stackoverflow.com/questions/5404839/how-can-i-refresh-a-page-with-jquery
@@ -463,7 +465,7 @@ $(document).ready(function() {
         .removeClass("bg--thumbsup")
         .addClass("bg--score");
       $(".instruct").text(`well done`);
-      $(".fa-graduation-cap").show();
+      iconCap.show();
       noteFill(revise);
       report();
       $(".hideNextDone").hide();

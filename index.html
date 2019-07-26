@@ -47,9 +47,9 @@
               class="col-md-12 col-lg-6 bg-color--lightpink d-flex justify-content-around "
             >
               <time class="timer align-self-center">0:00</time>
-              <i class="sound fas fa-volume-mute align-self-center"></i>
-              <i class="fas fa-info-circle align-self-center"></i>
-              <i class="fas fa-times-circle reload align-self-center"></i>
+              <i class="sound fas fa-volume-mute align-self-center" data-icon="sound"></i>
+              <i class="fas fa-info-circle align-self-center" data-icon="info"></i>
+              <i class="fas fa-times-circle reload align-self-center" data-icon="reload"></i>
             </div>
           </div>
           <div class="row bg-height--65">
@@ -78,10 +78,10 @@
                   class="col-12 bg-color--darkpink bg-height--10 shade d-flex justify-content-between"
                 >
                   <time class="timer align-self-center">0:00</time>
-                  <i class="sound fas fa-volume-mute align-self-center"></i>
+                  <i class="sound fas fa-volume-mute align-self-center" data-icon="sound"></i>
 
                   <i
-                    class="fas fa-times-circle reload hideStart showGo align-self-center"
+                    class="fas fa-times-circle reload hideStart showGo align-self-center" data-icon="reload"
                   ></i>
                 </div>
               </div>
@@ -104,7 +104,7 @@
                   <i
                     class="hideStart hideCheck hideNext fas fa-exclamation-triangle red"
                   ></i>
-                  <i class="hideStart fas fa-graduation-cap darkpink"></i>
+                  <i class="hideStart fas fa-graduation-cap darkpink" data-icon="cap"></i>
                 </div>
               </div>
               <!--BOX TITLE VISIBLE ON START-->
@@ -123,7 +123,7 @@
                   <p class="align-self-center m-0 font-color--white">
                     Times Tables Practice
                   </p>
-                  <i class="fas fa-info-circle align-self-center"></i>
+                  <i class="fas fa-info-circle align-self-center" data-icon="info"></i>
                 </div>
               </div>
             </div>
@@ -155,10 +155,10 @@
               <!--PICK FORM-->
               <form id="pick" class="hideGo hideInfo text-center">
                 <!--PICK NUMBER-->
-                <fieldset class="mt-3 mx-auto">
+                <fieldset class="mt-3 mx-auto"><!--mx?-->
                   <i
                     id="missingNo"
-                    class="hideGo hideStart fas fa-exclamation-triangle mr-3 red"
+                    class="hideGo hideStart fas fa-exclamation-triangle mr-3 red" data-icon="warn"
                   ></i
                   ><span class="note">pick number</span>
                   <br />
@@ -280,7 +280,7 @@
                   <canvas width="250" height="250" class="shade"></canvas>
                   <p class="note mt-1 mb-1">download to share</p>
                   <button id="reportDownload" class="" type="button">
-                    <i class="fas fa-arrow-circle-down darkpink"></i>
+                    <i class="fas fa-arrow-circle-down darkpink" data-icon="download"></i>
                   </button>
                 </div>
               </div>
@@ -303,7 +303,7 @@
                 class="fas fa-exclamation-triangle hideGo hideCheck hideNext red"
               ></i>
               <!--WHY: hideGo class as icon class used in pick missing.-->
-              <i class="fas fa-graduation-cap hideGo darkpink"></i>
+              <i class="fas fa-graduation-cap hideGo darkpink" data-icon="hat"></i>
               <span class="instruct align-self-baseline">try & check</span>
               <!--WHY: Instruct viisble from GO to NEXT DONE hence no specific show or hide class.-->
             </div>
