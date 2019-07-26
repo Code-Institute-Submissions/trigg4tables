@@ -2,6 +2,7 @@ $(document).ready(function() {
   console.log("test");
   $(".hideStart").hide();
 
+  //POINT TO DOM PLACES
   const iconSound = $("[data-icon=sound]");
   const iconInfo = $("[data-icon=info]");
   const iconReload = $("[data-icon=reload]");
@@ -9,6 +10,9 @@ $(document).ready(function() {
   const iconHat = $("[data-icon=hat]"); //show done instead of iconHat?
   const iconDownload = $("[data-icon=download]"); //show done instead of iconDownload?
   const pickLabel = $("[data-pickLabel]");
+  const sumAskElement = $("[data-sum=ask]");
+  const sumAnswerElement = $("[data-sum=answer]");
+  
 
   //STOP ENTER KEY FROM REFRESHING PAGE
   $(document).on("keypress", function(e) {
@@ -125,9 +129,8 @@ $(document).ready(function() {
 
   //SET SUM
   function sumSet(todo) {
-    $("#sumAnswer").val("");
-    $("#sumAsk")
-      .text(`${todo[0].key1} ${todo[0].key2} ${todo[0].key3} =`)
+    sumAnswerElement.val("");
+    sumAskElement.text(`${todo[0].key1} ${todo[0].key2} ${todo[0].key3} =`)
       .css("color", "#575778");
   }
 
@@ -331,21 +334,21 @@ $(document).ready(function() {
 
   //CLICK NUMBER KEYPAD
   $(".padNum").click(function() {
-    if ($("#sumAnswer").val().length < 3) {
-      let concat = $("#sumAnswer").val() + $(this).val();
-      $("#sumAnswer").val(concat);
+    if (sumAnswerElement.val().length < 3) {
+      let concat = sumAnswerElement.val() + $(this).val();
+      sumAnswerElement.val(concat);
     }
   });
   //WHY: maxLength in CSS not working if using keypad so need extra js.
-
+  
   //CLICK CLEAR NUMBER KEYPAD
   $("#padClear").click(function() {
-    $("#sumAnswer").val("");
+    sumAnswerElement.val("");
   });
 
   //CLICK CHECK
   $("#sumCheck").click(function() {
-    let sumAnswer = $("#sumAnswer").val();
+    let sumAnswer = sumAnswerElement.val();
     let answer = todoArray[0].key4;
     let count = todoArray[0].count;
     let todo = todoArray;
@@ -368,8 +371,7 @@ $(document).ready(function() {
         .removeClass("bg--hi bg--0 bg--1 bg--2 bg--3 bg--sour")
         .addClass("bg--thumbsup");
       $(".instruct").text(`click next`);
-      $("#sumAsk")
-        .text(
+      sumAskElement.text(
           `${todo[0].key1} ${todo[0].key2} ${todo[0].key3} = ${todo[0].key4}`
         )
         .css("color", "#83b186");
@@ -388,7 +390,7 @@ $(document).ready(function() {
       $(".incorrect").text(`${sumAnswer}`);
       $(".instruct").text(`try again & check`);
       $(".showIncorrect").show(); //thumbs down & incorrect span
-      $("#sumAnswer").val("");
+      sumAnswerElement.val("");
       countIncrement(todo);
     }
 
@@ -400,8 +402,7 @@ $(document).ready(function() {
         .addClass("bg--2");
       $(".incorrect").text(`${sumAnswer}`);
       $(".instruct").text(`revise & click next`);
-      $("#sumAsk")
-        .text(
+      sumAskElement.text(
           `${todo[0].key1} ${todo[0].key2} ${todo[0].key3} = ${todo[0].key4}`
         )
         .css("color", "#3ea041");
@@ -421,7 +422,7 @@ $(document).ready(function() {
       $(".incorrect").text(`${sumAnswer}`);
       $(".instruct").text(`try ${todo[0].key4} & check`);
       $(".showIncorrect").show(); //thumbs down & incorrect span
-      $("#sumAnswer").val("");
+      sumAnswerElement.val("");
       countIncrement(todo);
     }
   });
@@ -454,7 +455,7 @@ $(document).ready(function() {
         .removeClass("bg--thumbsup")
         .addClass("bg--score");
       $(".instruct").text(`well done`);
-      iconCap.show();
+      iconHat.show();
       noteFill(revise);
       report();
       $(".hideNextDone").hide();
