@@ -12,6 +12,7 @@ $(document).ready(function() {
   const pickLabel = $("[data-pickLabel]");
   const sumAskElement = $("[data-sum=ask]");
   const sumAnswerElement = $("[data-sum=answer]");
+  const timeElement = $("time");
   
 
   //STOP ENTER KEY FROM REFRESHING PAGE
@@ -148,7 +149,7 @@ $(document).ready(function() {
     if (seconds < 10) {
       seconds = "0" + seconds;
     }
-    $(".timer").text(`${minutes}:${seconds}`); //update text every second
+    timeElement.text(`${minutes}:${seconds}`); //update text every second
     timer(); //run timer function - which runs the add function after 1 second - creates the loop
   }
 
@@ -247,7 +248,7 @@ $(document).ready(function() {
         y: 80,
         fontSize: 15,
         fontFamily: "Signika, sans-serif",
-        text: `Time Taken ${$("time").html()}`
+        text: `Time Taken ${timeElement.html()}`
       })
       .addLayer({
         type: "text",
@@ -276,7 +277,7 @@ $(document).ready(function() {
 
   //CONVERT CANVAS REPORT TO BLOB & SAVE
   function save(ev) {
-    $("canvas")[0].toBlob(blob => {
+    $("canvas")[0].toBlob(blob => { //don't use this element multiple times so no cache?
       saveAs(blob, "trigg4tables.png");
     });
   }
