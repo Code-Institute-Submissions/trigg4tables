@@ -11,13 +11,13 @@ $(document).ready(function() {
   const iconDownload = $("[data-icon=download]"); //show done instead of iconDownload?
   const pickLabel = $("[data-pickLabel]");
   const sumAskElement = $("[data-sum=ask]");
-  const sumAnswerElement = $("[data-sum=answer]");
+  const sumTryElement = $("[data-sum=try]");
   const timeElement = $("time");
   const keypadNumberElement = $("[data-keypad=number]");
   const keypadClearElement = $("[data-keypad=clear]");
   
 
-  //STOP ENTER KEY FROM REFRESHING PAGE
+  //STOP ENTER KEY FROM REFRESHING PAGE RF
   $(document).on("keypress", function(e) {
     if (e.which == 13) {
       event.preventDefault();
@@ -34,7 +34,7 @@ $(document).ready(function() {
   const audioIncorrect = new Audio();
   const audioDone = new Audio();
 
-  //AUDIO
+  //AUDIO --------
   audioCorrect.src = "assets/audio/correct.mp3";
   audioIncorrect.src = "assets/audio/incorrectCat.mp3";
   audioDone.src = "assets/audio/done.mp3";
@@ -43,7 +43,7 @@ $(document).ready(function() {
   //https://freesound.org/people/Wagna/sounds/242207/ done
   //need correct sound source
 
-  //SOUND ON OFF
+  //SOUND ON OFF -----------
   iconSound.click(function() {
     if (sound === true) {
       iconSound.removeClass("fa-volume-mute").addClass("fa-volume-up"); //can I use font awesome classes here?
@@ -56,7 +56,7 @@ $(document).ready(function() {
     }
   });
 
-  //PLAY AUDIO
+  //PLAY AUDIO ---------------
   function playAudio(audio) {
     if (sound === true) {
       audio.play();
@@ -72,7 +72,7 @@ $(document).ready(function() {
     }
   }
 
-  //CREATE TABLES ARRAY
+  //CREATE TABLES ARRAY -----------------
   function tablesArrayCreate(no, operator) {
     let tablesArray = [];
     for (let i = 1; i < 13; i++) {
@@ -121,7 +121,7 @@ $(document).ready(function() {
     return tablesArray;
   }
 
-  //FILL TODO ARRAY
+  //FILL TODO ARRAY ---------------
   function todoFill(no, operator) {
     let tables = tablesArrayCreate(no, operator);
     todoArray = tables.slice().sort(function(a, b) {
@@ -130,9 +130,9 @@ $(document).ready(function() {
     return todoArray;
   } //WHERE: Random sorting code w3schools https://www.w3schools.com/js/js_array_sort.asp
 
-  //SET SUM
+  //SET SUM -------------
   function sumSet(todo) {
-    sumAnswerElement.val("");
+    sumTryElement.val("");
     sumAskElement.text(`${todo[0].key1} ${todo[0].key2} ${todo[0].key3} =`)
       .css("color", "#575778");
   }
@@ -165,8 +165,8 @@ $(document).ready(function() {
   //WHERE: Based on https://codepad.co/snippet/javascript-stopwatch-using-javascript-and-css
 
   //CHECK ANSWER CORRECT
-  function sumCorrect(sumAnswer, answer) {
-    if (sumAnswer == answer) {
+  function sumCorrect(sumTry, answer) {
+    if (sumTry == answer) {
       return true;
     }
   }
@@ -337,28 +337,29 @@ $(document).ready(function() {
 
   //CLICK NUMBER KEYPAD
   keypadNumberElement.click(function() {
-    if (sumAnswerElement.val().length < 3) {
-      let concat = sumAnswerElement.val() + $(this).val();
-      sumAnswerElement.val(concat);
+    if (sumTryElement.val().length < 3) {
+      let concat = sumTryElement.val() + $(this).val();
+      sumTryElement.val(concat);
     }
   });
   //WHY: maxLength in CSS not working if using keypad so need extra js.
   
   //CLICK CLEAR NUMBER KEYPAD
   keypadClearElement.click(function() {
-    sumAnswerElement.val("");
+    sumTryElement.val("");
   });
 
   //CLICK CHECK
   $("#sumCheck").click(function() {
-    let sumAnswer = sumAnswerElement.val();
+    let sumTry = sumTryElement.val();
     let answer = todoArray[0].key4;
     let count = todoArray[0].count;
     let todo = todoArray;
+    let sumAskAnswer = `${todo[0].key1} ${todo[0].key2} ${todo[0].key3} = ${todo[0].key4}`;
     console.log(todoArray[0].count + "start count");
 
     //STEP0: CHECK ANSWER - ENTERED
-    if (!sumAnswer) {
+    if (!sumTry) {
       playAudio(audioIncorrect);
       $(".trigg")
         .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3")
@@ -368,17 +369,14 @@ $(document).ready(function() {
     }
 
     //STEP1: CHECK ANSWER - CORRECT
-    else if (sumCorrect(sumAnswer, answer) === true) {
+    else if (sumCorrect(sumTry, answer) === true) {
       playAudio(audioCorrect);
       $(".trigg")
         .removeClass("bg--hi bg--0 bg--1 bg--2 bg--3 bg--sour")
         .addClass("bg--thumbsup");
       $(".instruct").text(`click next`);
-      sumAskElement.text(
-          `${todo[0].key1} ${todo[0].key2} ${todo[0].key3} = ${todo[0].key4}`
-        )
-        .css("color", "#83b186");
-      $(".hideCheck").hide(); //sumAnswer input, sumCheck button & triangle(xs-s & m-l)
+      sumAskElement.text(`${sumAskAnswer}`).css("color", "#83b186");
+      $(".hideCheck").hide(); //sumTry input, sumCheck button & triangle(xs-s & m-l)
       $(".showIncorrect").hide(); //from attempt 4
       $(".showCorrect").show();
       $("#sumNext").show();
@@ -390,10 +388,10 @@ $(document).ready(function() {
       $(".trigg")
         .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3 bg--sour")
         .addClass("bg--1");
-      $(".incorrect").text(`${sumAnswer}`);
+      $(".incorrect").text(`${sumTry}`);
       $(".instruct").text(`try again & check`);
       $(".showIncorrect").show(); //thumbs down & incorrect span
-      sumAnswerElement.val("");
+      sumTryElement.val("");
       countIncrement(todo);
     }
 
@@ -403,13 +401,10 @@ $(document).ready(function() {
       $(".trigg")
         .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3 bg--sour")
         .addClass("bg--2");
-      $(".incorrect").text(`${sumAnswer}`);
+      $(".incorrect").text(`${sumTry}`);
       $(".instruct").text(`revise & click next`);
-      sumAskElement.text(
-          `${todo[0].key1} ${todo[0].key2} ${todo[0].key3} = ${todo[0].key4}`
-        )
-        .css("color", "#3ea041");
-      $(".hideCheck").hide(); //sumAnswer input, sumCheck button & triangle(xs-s & m-l)
+      sumAskElement.text(`${sumAskAnswer}`).css("color", "#3ea041");
+      $(".hideCheck").hide(); //sumTRy input, sumCheck button & triangle(xs-s & m-l)
       $(".showIncorrect").show(); //thumbs down & incorrect span
       $("#sumNext").show();
       countIncrement(todo);
@@ -422,10 +417,10 @@ $(document).ready(function() {
       $(".trigg")
         .removeClass("bg--hi bg--thumbsup bg--0 bg--1 bg--2 bg--3 bg--sour")
         .addClass("bg--3");
-      $(".incorrect").text(`${sumAnswer}`);
-      $(".instruct").text(`try ${todo[0].key4} & check`);
+      $(".incorrect").text(`${sumTry}`);
+      $(".instruct").text(`try ${answer} & check`);
       $(".showIncorrect").show(); //thumbs down & incorrect span
-      sumAnswerElement.val("");
+      sumTryElement.val("");
       countIncrement(todo);
     }
   });
