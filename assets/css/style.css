@@ -137,55 +137,6 @@ span.correct {
 }
 
 .bg--hi {
-  background-image: url("../images/hi.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-color: #e9f0f2;
-}
-
-.bg--1 {
-  background: url("../images/hmm.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-color: #e9f0f2;
-}
-
-.bg--2 {
-  background: url("../images/thatway.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-color: #e9f0f2;
-}
-
-.bg--3 {
-  background: url("../images/oops.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-color: #e9f0f2;
-}
-
-.bg--sour {
-  background: url("../images/sour.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-color: #e9f0f2;
-}
-
-.bg--thumbsup {
-  background-image: url("../images/thumbsup.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-color: #e9f0f2;
-}
-
-.bg--score {
-  background-image: url("../images/score.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
