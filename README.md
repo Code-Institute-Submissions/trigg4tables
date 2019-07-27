@@ -2,18 +2,21 @@
 
 ![IMAGE ALT TEXT](https://github.com/coderbeez/trigg4tables/blob/master/assets/images/header.png)
 
-**[Trigg 4 Tables](https://coderbeez.github.io/trigg4tables/)** a times tables practice website aimed at older children. *Milestone 2: Interactive Frontend Development - Code Institute*
+**[Trigg 4 Tables](https://coderbeez.github.io/trigg4tables/)** a times tables practice website aimed at older children.
+*Developed for Code Institute Milestone 2: Interactive Frontend Developement.*
 
 
 ## UX
 
-Trigg 4 Tables is aimed at primary school children aged 9 to 12 years, who are often set times tables homework to learn each night. It is designed to address some of the limitations of similar websites and apps:
+Trigg 4 Tables is aimed at primary school children aged 9 to 12 years, who are often set times tables homework to learn each night. The website allows children to select the times tables they want to practice. Trigg the cat, guides them through the practice presenting sums, confirming answers and helping out when needed. Once complete, a detailed report is generated which can be downloaded as a png file to facilitate easy sharing via text, snapchat, WhatsApp etc. The report acts as confirmation that homework has been completed and highlights sums a child struggled with.
 
-1. **Target Age** Graphics that appeal to preteens verses younger children. 
+Trigg 4 Tables has been designed to address some of the limitations of similar websites and apps:
 
-2. **Tables Set** Ability to practice a full set of times tables. 
+1. **Target Age** Graphics designed to appeal to an older child. 
 
-3. **Feedback** Detailed feedback to share once practice is complete.
+2. **Homework Tool** Practice that reflects homework where a single set of times tables is selected. 
+
+3. **Feedback** Detailed feedback available to share once practice is complete. 
 
 
 
@@ -28,7 +31,7 @@ When I get home from school, I quickly complete my times tables homework using T
 
 2. **Homework On The Go**
 
-On the car journey home from school, I borrow my Mom’s phone and complete my times tables homework. I usually click the sound icon to mute as it annoys my brother. Sometimes I pretend to forget. You can turn the sound off even after you’ve started but he doesn’t know that. When I get to the end, if the report says I have sums to revise, I click the x icon and try again. My Mom insists on going over any sum the report says to revise when we get home so I try to avoid that. I don’t need to use the download button as I leave the site open for Mom.
+On the car journey home from school, I borrow my Mom’s phone and complete my times tables homework. I usually click the sound icon to mute as it annoys my brother. Sometimes I pretend to forget. You can turn the sound off even after you’ve started but he doesn’t know that. When I get to the end, if the report says I have sums to revise, I click the x icon to start again. My Mom insists on going over any sum the report says to revise when we get home so I try to avoid that. I don’t need to use the download button as I leave the site open for Mom.
 
 
 3. **Competition**
@@ -36,21 +39,26 @@ On the car journey home from school, I borrow my Mom’s phone and complete my t
 I love maths, enjoy practising times tables and am ever so slightly competitive. I visit Trigg 4 Tables using my phone, complete the sums as quickly as I can and Snapchat the report to my friends to see if I have beat their time. The trick is not to double click check as Trigg will say you have an empty answer for the next sum and that just wastes time.
 
 
+3. **Teacher**
+
+Not every child in my class has someone that can help them with homework. Having canvased their parents, my students are now using Trigg 4 Tables each night to practice the assigned times tables. Students WhatsApp their reports to me. I have noticed a marked improvement in our Friday maths test scores especially amongst students who had been struggling. Other teachers have started to ask about Trigg.
+
+
 ### Design
 
-The look and feel of Trigg 4 Tables is designed to appeal to the target audience of 9 to 12 year olds. 
+The look and feel of Trigg 4 Tables was designed to appeal to the target audience of 9 to 12 year olds. 
 
-1. **Mobile First** This single page website was designed primarily to be viewed on a mobile phone without the need to scroll.
+1. **Mobile First** Given the target audience, the website was designed to be primarily viewed on a mobile phone.
 
-2. **Trigg Character** The series of Trigg character images were chosen to inject some fun without appearing too childish. Trigg’s different expressions also provide feedback.
+2. **Trigg Character** The series of Trigg character images were chosen to inject some fun without appearing too childish. Trigg guides the child through the practice and his different expressions provide feedback.
 
-3. **Colour Palette** A very limited colour palette is used with colours taken from Trigg’s images or chosen to complement them. Equal amounts of blue and pink are used to ensure a gender-neutral site. Red and green are used to convey meaning.
+3. **Colour Palette** A very limited colour palette was used with colours taken from Trigg’s images or chosen to complement them. Equal amounts of blue and pink ensure a gender-neutral site. Red and green convey meaning.
 
-5. **Text** Given the target audience, text was purposely kept to a minimum on this website. Icons, images, colours, audio and video are used to provide direction and feedback whenever possible.
+4. **Text** Text was purposely kept to a minimum on this website. Icons, images, colours, audio and video are used to provide direction and feedback.
 
-4. **Fonts** The heading fonts were chosen to convey a sense of fun. Number and keypad fonts were chosen for legibility. Message fonts were chosen to reflect the handwriting of the target audience. 
+5. **Fonts** The heading fonts were chosen to convey a sense of fun. Number and keypad fonts were chosen for legibility. Message fonts were chosen to reflect the handwriting of the target audience. 
 
-6. **Preparation** Balsamiq was used to generate [wireframes](https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/wireframes.pdf) for various device sizes. The [initial proposal](https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/proposal.pdf) document was compiled using Microsoft Powerpoint and Microsoft Publisher was used for the Trigg images used in this README. Testing during development resulted in several changes to the original design with a move away from the device keyboard, a reduction in text, and a focus on maintaining a scroll free site even on smaller mobiles.
+6. **Preparation** Balsamiq was used to generate [wireframes](https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/wireframes.pdf) for various device sizes. The [initial proposal](https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/proposal.pdf) document was compiled using Microsoft Powerpoint. Testing during development resulted in several changes to the original design with a move away from device keypads, a reduction in text, and a focus on maintaining a scroll free site even on smaller mobiles. 
 
 
 ## Features
@@ -346,3 +354,4 @@ The following instructions were taken from [GitHib Help]( https://help.github.co
 ### Acknowledgements
   * This project has been brought to you by Slack. Thanks to all my fellow Slack students.  
   * A special thanks to Jack for all his advice, enthusiasm and of course his voiceover. 
+ 
