@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Cherry+Cream+Soda|Gaegu:700|Irish+Grover|Signika:600&display=swap');
 
+
+.hideStart {
+  display: none;
+}
+/*WHY: Used to prevent flicker when first loaded when jQuery hide() used to hide elements at start.
+Bootstrap not working with */
+
+
 /*----------FONTS----------*/
 body {
   font-family: "Signika", sans-serif;

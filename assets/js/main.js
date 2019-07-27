@@ -1,7 +1,6 @@
 $(document).ready(function() {
   console.log("test");
-  $(".hideStart").hide();
-
+  
   //POINT TO DOM ELEMENTS
   const iconSound = $("[data-icon=sound]");
   const iconInfo = $("[data-icon=info]");
@@ -325,6 +324,7 @@ triggElement.css('background-image', "url('assets/images/hi.png')"); //starting 
       let todo = todoFill(no, operator);
       $(".hideGo").hide();
       $(".showGo").show();
+      //$("[data-show=go]").css()
       sumSet(todo);
       timer();
       console.log("GoOp" + $("input[name='pickOp']:checked").val());
