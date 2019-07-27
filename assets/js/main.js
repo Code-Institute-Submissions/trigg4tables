@@ -2,7 +2,7 @@ $(document).ready(function() {
   console.log("test");
   $(".hideStart").hide();
 
-  //POINT TO DOM PLACES
+  //POINT TO DOM ELEMENTS
   const iconSound = $("[data-icon=sound]");
   const iconInfo = $("[data-icon=info]");
   const iconReload = $("[data-icon=reload]");
@@ -16,11 +16,12 @@ $(document).ready(function() {
   const keypadNumberElement = $("[data-keypad=number]");
   const keypadClearElement = $("[data-keypad=clear]");
   const triggElement = $("[data-trigg]");
+  const sumNextElement = $("[data-sum=next]");
   
 
 triggElement.css('background-image', "url('assets/images/hi.png')"); //starting image
 
-  //STOP ENTER KEY FROM REFRESHING PAGE RF
+  //STOP ENTER KEY FROM REFRESHING PAGE
   $(document).on("keypress", function(e) {
     if (e.which == 13) {
       event.preventDefault();
@@ -37,7 +38,7 @@ triggElement.css('background-image', "url('assets/images/hi.png')"); //starting 
   const audioIncorrect = new Audio();
   const audioDone = new Audio();
 
-  //AUDIO --------
+  //AUDIO
   audioCorrect.src = "assets/audio/correct.mp3";
   audioIncorrect.src = "assets/audio/incorrectCat.mp3";
   audioDone.src = "assets/audio/done.mp3";
@@ -46,7 +47,7 @@ triggElement.css('background-image', "url('assets/images/hi.png')"); //starting 
   //https://freesound.org/people/Wagna/sounds/242207/ done
   //need correct sound source
 
-  //SOUND ON OFF -----------
+  //SOUND ON OFF
   iconSound.click(function() {
     if (sound === true) {
       iconSound.removeClass("fa-volume-mute").addClass("fa-volume-up"); //can I use font awesome classes here?
@@ -59,7 +60,7 @@ triggElement.css('background-image', "url('assets/images/hi.png')"); //starting 
     }
   });
 
-  //PLAY AUDIO ---------------
+  //PLAY AUDIO
   function playAudio(audio) {
     if (sound === true) {
       audio.play();
@@ -75,7 +76,7 @@ triggElement.css('background-image', "url('assets/images/hi.png')"); //starting 
     }
   }
 
-  //CREATE TABLES ARRAY -----------------
+  //CREATE TABLES ARRAY
   function tablesArrayCreate(no, operator) {
     let tablesArray = [];
     for (let i = 1; i < 13; i++) {
@@ -124,7 +125,7 @@ triggElement.css('background-image', "url('assets/images/hi.png')"); //starting 
     return tablesArray;
   }
 
-  //FILL TODO ARRAY ---------------
+  //FILL TODO ARRAY
   function todoFill(no, operator) {
     let tables = tablesArrayCreate(no, operator);
     todoArray = tables.slice().sort(function(a, b) {
@@ -133,7 +134,7 @@ triggElement.css('background-image', "url('assets/images/hi.png')"); //starting 
     return todoArray;
   } //WHERE: Random sorting code w3schools https://www.w3schools.com/js/js_array_sort.asp
 
-  //SET SUM -------------
+  //SET SUM
   function sumSet(todo) {
     sumTryElement.val("");
     sumAskElement.text(`${todo[0].key1} ${todo[0].key2} ${todo[0].key3} =`)
@@ -309,7 +310,7 @@ triggElement.css('background-image', "url('assets/images/hi.png')"); //starting 
   });
 
   //CLICK GO
-  $("#pickGo").click(function() {
+    $("[data-pick=go").click(function() { //go button typically only clicked once
     let no = parseInt($("input[name='pickNo']:checked").val());
     let operator = $("input[name='pickOp']:checked").val();
     if (missingPick(no, operator) === "missingNo") {
@@ -378,7 +379,7 @@ triggElement.css('background-image', "url('assets/images/hi.png')"); //starting 
       $(".hideCheck").hide(); //sumTry input, sumCheck button & triangle(xs-s & m-l)
       $(".showIncorrect").hide(); //from attempt 4
       $(".showCorrect").show();
-      $("#sumNext").show();
+      sumNextElement.show();
     }
 
     //STEP2: CHECK ANSWER - INCORRECT 1ST ATTEMPT
@@ -401,9 +402,10 @@ triggElement.css('background-image', "url('assets/images/hi.png')"); //starting 
       sumAskElement.text(`${sumAskAnswer}`).css("color", "#3ea041");
       $(".hideCheck").hide(); //sumTRy input, sumCheck button & triangle(xs-s & m-l)
       $(".showIncorrect").show(); //thumbs down & incorrect span
-      $("#sumNext").show();
+      sumNextElement.show();
       countIncrement(todo);
       todoAdd(todo);
+
     }
 
     //STEP4: CHECK ANSWER - INCORRECT 3RD ATTEMPT
@@ -419,7 +421,7 @@ triggElement.css('background-image', "url('assets/images/hi.png')"); //starting 
   });
 
   // CLICK NEXT
-  $("#sumNext").click(function() {
+  sumNextElement.click(function() {
     let todo = todoArray;
     let revise = reviseArray;
     reviseAdd(todo, revise);
