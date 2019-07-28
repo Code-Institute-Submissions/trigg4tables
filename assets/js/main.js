@@ -3,8 +3,8 @@ $(document).ready(function() {
   
   //POINT TO DOM ELEMENTS
   const iconSound = $("[data-icon=sound]");
-  const iconInfo = $("[data-icon=info]");
-  const iconReload = $("[data-icon=reload]");
+  const iconInfo = $("[data-icon=info]"); //used once
+  const iconReload = $("[data-icon=reload]");  //referred to once in code???
   const iconWarn = $("[data-icon=warn]"); //show warn instead of iconwarn?
   const iconHat = $("[data-icon=hat]"); //show done instead of iconHat?
   const iconDownload = $("[data-icon=download]"); //show done instead of iconDownload?
@@ -17,9 +17,6 @@ $(document).ready(function() {
   const triggElement = $("[data-trigg]");
   const sumNextElement = $("[data-sum=next]");
   
-
-triggElement.css('background-image', "url('assets/images/hi.png')"); //starting image
-
   //STOP ENTER KEY FROM REFRESHING PAGE
   $(document).on("keypress", function(e) {
     if (e.which == 13) {

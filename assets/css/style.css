@@ -149,7 +149,8 @@ span.correct {
   background-repeat: no-repeat;
   background-size: contain;
   background-color: #e9f0f2;
-}
+  background-image: url("../images/hi.png");
+  }
 
 .bg--paws {
   background: url("../images/paws3.png");
