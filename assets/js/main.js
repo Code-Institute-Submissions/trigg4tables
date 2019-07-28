@@ -2,16 +2,15 @@ $(document).ready(function() {
   console.log("test");
   
   //POINT TO DOM ELEMENTS
-  const iconSound = $("[data-icon=sound]");
-  const iconInfo = $("[data-icon=info]"); //used once
-  const iconReload = $("[data-icon=reload]");  //referred to once in code???
+  //const iconSound = $("[data-icon=sound]");
+  //const iconReload = $("[data-icon=reload]");  //referred to once in code???
   const iconWarn = $("[data-icon=warn]"); //show warn instead of iconwarn?
   const iconHat = $("[data-icon=hat]"); //show done instead of iconHat?
   const iconDownload = $("[data-icon=download]"); //show done instead of iconDownload?
-  const pickLabel = $("[data-pickLabel]");
+  //const pickLabel = $("[data-pickLabel]");
   const sumAskElement = $("[data-sum=ask]");
   const sumTryElement = $("[data-sum=try]");
-  const timeElement = $("time");
+  const timeElement = $("time"); //referred to more than once in code
   const keypadNumberElement = $("[data-keypad=number]");
   const keypadClearElement = $("[data-keypad=clear]");
   const triggElement = $("[data-trigg]");
@@ -44,13 +43,13 @@ $(document).ready(function() {
   //need correct sound source
 
   //SOUND ON OFF
-  iconSound.click(function() {
+  $("[data-icon=sound]").click(function() {
     if (sound === true) {
-      iconSound.removeClass("fa-volume-mute").addClass("fa-volume-up"); //can I use font awesome classes here?
+      $(this).removeClass("fa-volume-mute").addClass("fa-volume-up"); //can I use font awesome classes here?
       sound = false;
       console.log(sound);
     } else {
-      iconSound.removeClass("fa-volume-up").addClass("fa-volume-mute");
+      $(this).removeClass("fa-volume-up").addClass("fa-volume-mute");
       sound = true;
       console.log(sound);
     }
@@ -279,29 +278,29 @@ $(document).ready(function() {
 
   //CONVERT CANVAS REPORT TO BLOB & SAVE
   function save(ev) {
-    $("canvas")[0].toBlob(blob => { //don't use this element multiple times so no cache?
+    $("canvas")[0].toBlob(blob => {
       saveAs(blob, "trigg4tables.png");
     });
   }
   //WHERE: https://stackoverflow.com/questions/48054723/saving-canvas-as-blob-and-then-blob-as-file
 
   //CLICK INFO - OPEN
-  iconInfo.click(function() {
+  $("[data-info=open]").click(function() {
     $(".hideInfo").hide();
     $(".showInfo").show();
   });
 
   //CLICK INFO - CLOSE
-  $("#closeInfo").click(function() {
+  $("[data-info=close]").click(function() {
     $(".showInfo").hide();
     $(".hideInfo").show();
-    $("[data-info=video").attr("src","https://www.youtube.com/embed/EcVam72tyyw")
+    $("iframe").attr("src","https://www.youtube.com/embed/EcVam72tyyw")
   });
   //WHERE: https://stackoverflow.com/questions/2128535/stop-a-youtube-video-with-jquery
-  //WHY: Resetting src for video to stop it playing when press close button.
+  //WHY: Resetting src for video to stop it playing when press close buton data-info=close click.
 
   //CLICK NUMBER OR OPERATOR - APPLY SELECT STYLE
-  pickLabel.click(function() {
+  $("[data-pickLabel]").click(function() {
     $(this)
       .siblings()
       .removeClass("selector-style--selected");
@@ -334,7 +333,7 @@ $(document).ready(function() {
   //WHERE: https://stackoverflow.com/questions/8622336/jquery-get-value-of-selected-radio-button
 
   //CLICK RELOAD
-  iconReload.click(function() {
+  $("[data-icon=reload]").click(function() {
     location.reload();
   });
   //WHERE: https://stackoverflow.com/questions/5404839/how-can-i-refresh-a-page-with-jquery
