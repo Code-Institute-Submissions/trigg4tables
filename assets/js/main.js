@@ -298,7 +298,10 @@ triggElement.css('background-image', "url('assets/images/hi.png')"); //starting 
   $("#closeInfo").click(function() {
     $(".showInfo").hide();
     $(".hideInfo").show();
+    $("[data-info=video").attr("src","https://www.youtube.com/embed/EcVam72tyyw")
   });
+  //WHERE: https://stackoverflow.com/questions/2128535/stop-a-youtube-video-with-jquery
+  //WHY: Resetting src for video to stop it playing when press close button.
 
   //CLICK NUMBER OR OPERATOR - APPLY SELECT STYLE
   pickLabel.click(function() {
