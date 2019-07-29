@@ -11,117 +11,90 @@ Bootstrap not working with */
 /*----------FONTS----------*/
 body {
   font-family: "Signika", sans-serif;
+  font-size: 1.2rem;
   color: #575778;
-}
+  }
 
 h1 {
   font-family: "Irish Grover", cursive;
   font-size: 1.5rem;
-  color: white;
-}
+  }
 
 h2 {
   font-family: "Cherry Cream Soda", cursive;
   font-size: 1rem;
+  }
+
+h1,
+h2 {
   color: white;
+  text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1),
+    0px 18px 23px rgba(0, 0, 0, 0.1);
 }
+/*WHERE: https://designshack.net/articles/css/12-fun-css-text-shadows-you-can-copy-and-paste/*/
 
-
-button,
-input,
-label,
-span,
-strike,
-time,
 #sumCheck,
 #sumNext {
   font-size: 1.2rem;
 }
-
 /*WHY: sumCheck and sumNext included to overwrite Bootstrap btn size.*/
 
-.bg-color--lightpink > time {
-  font-size: 1.6rem;
-}
-
-.instruct,
-.note {
+.message {
   font-family: "Gaegu", cursive;
   font-size: 1.4rem;
   line-height: 1.2rem;
 }
 
+.message.red{
+    font-size: 2.7rem;
+}
+/*WHY: Incorrect answer shown next to thumb image.*/
+
+.bg-color--darkblue > p {
+  color:#f6f9f9;
+    font-size: 1.1rem;
+}
+/*WHY: Improves legibility on dark background.*/
+
+.green {
+  color: #009816;
+}
+
+.red{
+  color: #980036;
+}
+
+/*----------TIMER & ICONS----------*/
+
 i {
   font-size: 1.8rem;
 }
 
+.bg-color--lightpink > time {
+  font-size: 1.6rem;
+}
+/*WHY: Bg--lightpink md & lg screens.*/
+
 time,
 i {
-  color: #ebe1e0;
-}
-
-.bg-color--lightpink > time,
-.bg-color--lightpink > i {
   color: #b18683;
 }
 
 .bg-color--darkblue > i {
   color: #e9f0f2;
 }
+/*WHY: No time just i displayed on bg--darkblue.*/
+
+.bg-color--darkpink > time,
+.bg-color--darkpink > i {
+  color: #ebe1e0;
+}
 
 i:hover,
 i:active {
   color: white;
 }
-
-.font-color--white {
-  color: white;
-}
-
-#sumAnswer,
-#sumCheck,
-#sumNext {
-  color: #575778;
-}
-/*WHY: Bootstrap btn class overwriting body colour.*/
-
-h1,
-h2 {
-  text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1),
-    0px 18px 23px rgba(0, 0, 0, 0.1);
-}
-/*WHERE: https://designshack.net/articles/css/12-fun-css-text-shadows-you-can-copy-and-paste/*/
-
-.green,
-i.green {
-  color: #009816;
-}
-
-.red,
-i.red {
-  color: #980036;
-}
-
-.darkpink,
-i.darkpink {
-  color: #b18683;
-}
-
-/*WHY: i.class added to improve specificty*/
-
-span.incorrect,
-span.correct {
-  /*font-family:"Signika", sans-serif;*/
-  font-family: "Gaegu", cursive;
-  font-size: 2.7rem;
-}
-
-.shadow-text--light {
-  /*text-shadow: 1px 1px black;*/
-  /*text-shadow: 2px 2px 4px #000000;*/
-  text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
-}
-/*WHERE: https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_text-shadow_white*/
+/*WHY: Placed below other colour css to ensure overwrites.*/
 
 .thumb {
   height: 40px;
@@ -144,20 +117,13 @@ span.correct {
   background-color: #e9f0f2;
 }
 
-.bg--hi {
+.bg--trigg {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
   background-color: #e9f0f2;
   background-image: url("../images/hi.png");
   }
-
-.bg--paws {
-  background: url("../images/paws3.png");
-  background-position: center;
-  background-repeat: repeat;
-  background-size: contain;
-}
 
 .bg-height--10 {
   height: 10vh;
@@ -196,12 +162,7 @@ span.correct {
     0 3px 6px rgba(0, 0, 0, 0.23);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
-
 /* WHERE: Shadow code from https://codepen.io/sdthornton/pen/wBZdXq*/
-
-.test {
-  background-color: red;
-}
 
 /*----------PROGRESS BAR----------*/
 
@@ -214,66 +175,73 @@ span.correct {
   height: 1.2rem;
 }
 
-/*WHERE: Used to find lighter shade https://www.color-hex.com/color/cfb4b2*/
+/*----------BUTTONS----------*/
 
-/*----------PICK BUTTONS----------*/
-
-.labelNo,
-.labelOp,
-#pickGo, #closeInfo {
-  width: 32px;
-  height: 32px;
+.button-style{
   padding: 0px;
   text-align: center;
   border: 2px solid #ccc;
   border-radius: 5px;
   color: #b18683;
   background-color: white;
-  /*padding: 10px; causing text to be bottom right of button*/
   vertical-align: top;
   box-shadow: 2px 1px 2px gray;
-  margin: 6px 8px 6px 8px;
+  margin: 8px 10px 8px 10px;
 }
 
-#closeInfo {
-  width: 60px;
-}
-
-.labelNo:active,
-.labelOp:active,
-#pickGo:active
-#closeInfo:active {
-  box-shadow: 0 0 0 white;
-  margin: 8px 8px 4px 8px;
+.button-style:active{
+    box-shadow: 0 0 0 white;
+    margin: 10px 10px 6px 10px;
 }
 /*WHERE: https://stackoverflow.com/questions/38377062/how-to-make-html-button-look-pressed-in-using-css*/
 
-/*----------NUMBER KEYPAD & REPORT DOWNLOAD----------*/
+.button-style--selected {
+  background-color: #b18683;
+  color: white;
+}
 
 #sumAnswer,
 #sumCheck,
-#sumNext,
-.padNum,
-#padClear,
-#reportDownload {
-  height: 40px;
-  /*margin: 10px;*/
-  padding: 0px;
-  text-align: center;
+#sumNext {
+  color: #575778;
+}
+/*WHY: Bootstrap btn class overwriting body colour.*/
+
+#closeInfo {
+  width: 60px;
+  height: 32px;
 }
 
-#reportDownload {
-  height: 45px;
-  width: 40px;
+#pick * label,
+#pick * button{
+  width: 32px;
+  height: 32px;
+}
+
+#pad * [type="button"] {
+  height: 40px;
+}
+
+#sumAsk {
+  margin-left: 5px;
+  margin-top: 10px;
+  margin-bottom: 8px;
 }
 
 #sumAnswer {
+  margin-top: 10px;
+  margin-bottom: 8px;
   width: 42px;
+  height: 40px;
 }
 
 #sumCheck,
 #sumNext {
   width: 60px;
+}
+
+hr {
+  margin: 5px;
 }
 
 .padNum {
@@ -284,66 +252,18 @@ span.correct {
   width: 80px;
 }
 
-#sumCheck,
-#sumNext,
-.padNum,
-#padClear,
-#reportDownload {
-  border: 2px solid #ccc;
-  border-radius: 5px;
-  background-color: #e9f0f2;
-}
-
 #pad {
   border: 2px solid #ccc;
   border-radius: 10px;
   background-color: #e9f0f2;
-  width: 215px;
+  width: 217px;
 }
 
-.padNum,
-#padClear,
-#sumCheck,
-#sumNext,
 #reportDownload {
-  background-color: white;
-  /*padding: 10px; causing text to be bottom right of button*/
-  vertical-align: top;
-  box-shadow: 2px 1px 2px gray;
-  margin: 8px 10px 8px 10px;
+  height: 45px;
+  width: 40px;
 }
 
-.padNum:active,
-#padClear:active,
-#sumCheck:active,
-#sumNext:active,
-#reportDownload:active {
-  box-shadow: 0 0 0 white;
-  margin: 10px 10px 6px 10px;
-}
-/*WHERE: https://stackoverflow.com/questions/38377062/how-to-make-html-button-look-pressed-in-using-css*/
-
-.padNum,
-#padClear,
-#reportDownload {
-  color: #b18683;
-}
-
-#sumAsk {
-  margin-left: 5px;
-  margin-top: 10px;
-  margin-bottom: 8px;
-}
-
-#sumAnswer,
-strike {
-  margin-top: 10px;
-  margin-bottom: 8px;
-}
-
-hr {
-  margin: 5px;
-}
 /*----------MEDIA QUERIES----------*/
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -353,10 +273,7 @@ hr {
   h2 {
     font-size: 1.5rem;
   }
-  h3 {
-    font-size: 1.6rem;
-  }
-}
+ }
 
 @media (min-width: 992px) {
   h1 {
@@ -365,20 +282,10 @@ hr {
   h2 {
     font-size: 1.5rem;
   }
-  h3 {
-    font-size: 1.8rem;
-  }
 }
 
-/*----------MEDIA QUERIES----------*/
+/*----------BUG FIXES----------*/
 
-.testr {
-  border: solid red;
-}
-
-.testg {
-  border: solid green;
-}
 
 input,
 label {
@@ -389,15 +296,6 @@ label {
 
 input[type="radio"] {
   -webkit-appearance: none;
-}
-
-.selector-style--selected {
-  background-color: #b18683;
-  color: white;
-}
-
-.selector:hover {
-  background-color: #cfb4b2;
 }
 
 [type="radio"] {
