@@ -15,6 +15,8 @@ $(document).ready(function() {
   const keypadClearElement = $("[data-keypad=clear]");
   const triggElement = $("[data-trigg]");
   const sumNextElement = $("[data-sum=next]");
+  const incorrectMessageElement = $("[data-incorrect=message]");
+  const messageElement = $("[data-message]");
   
   //STOP ENTER KEY FROM REFRESHING PAGE
   $(document).on("keypress", function(e) {
@@ -365,7 +367,7 @@ $(document).ready(function() {
     if (!sumTry) {
       playAudio(audioIncorrect);
       triggElement.css('background-image', "url('assets/images/sour.png')");
-      $(".instruct").text(`empty answer`);
+      messageElement.text(`empty answer`);
       $(".fa-exclamation-triangle").show();
     }
 
@@ -373,7 +375,7 @@ $(document).ready(function() {
     else if (sumCorrect(sumTry, answer) === true) {
       playAudio(audioCorrect);
       triggElement.css('background-image', "url('assets/images/thumbsup.png')");
-      $(".instruct").text(`click next`);
+      messageElement.text(`click next`);
       sumAskElement.text(`${sumAskAnswer}`).css("color", "#83b186");
       $(".hideCheck").hide(); //sumTry input, sumCheck button & triangle(xs-s & m-l)
       $(".showIncorrect").hide(); //from attempt 4
@@ -385,8 +387,8 @@ $(document).ready(function() {
     else if (count === 0) {
       playAudio(audioIncorrect);
       triggElement.css('background-image', "url('assets/images/hmm.png')");
-      $(".incorrect").text(`${sumTry}`);
-      $(".instruct").text(`try again & check`);
+      incorrectMessageElement.text(`${sumTry}`);
+      messageElement.text(`try again & check`);
       $(".showIncorrect").show(); //thumbs down & incorrect span
       sumTryElement.val("");
       countIncrement(todo);
@@ -396,8 +398,8 @@ $(document).ready(function() {
     else if (count === 1) {
       playAudio(audioIncorrect);
       triggElement.css('background-image', "url('assets/images/thatway.png')");
-      $(".incorrect").text(`${sumTry}`);
-      $(".instruct").text(`revise & click next`);
+      incorrectMessageElement.text(`${sumTry}`);
+      messageElement.text(`revise & click next`);
       sumAskElement.text(`${sumAskAnswer}`).css("color", "#3ea041");
       $(".hideCheck").hide(); //sumTRy input, sumCheck button & triangle(xs-s & m-l)
       $(".showIncorrect").show(); //thumbs down & incorrect span
@@ -411,8 +413,8 @@ $(document).ready(function() {
     else {
       playAudio(audioIncorrect);
       triggElement.css('background-image', "url('assets/images/oops.png')");
-      $(".incorrect").text(`${sumTry}`);
-      $(".instruct").text(`try ${answer} & check`);
+      incorrectMessageElement.text(`${sumTry}`);
+      messageElement.text(`try ${answer} & check`);
       $(".showIncorrect").show(); //thumbs down & incorrect span
       sumTryElement.val("");
       countIncrement(todo);
@@ -436,13 +438,13 @@ $(document).ready(function() {
     $("#progress").attr("aria-valuenow", 12 - todo.length);
 
     if (todo.length !== 0) {
-      $(".instruct").text("try & check");
+      messageElement.text("try & check");
       sumSet(todo);
     } else {
       //only do if complete
       playAudio(audioDone);
       triggElement.css('background-image', "url('assets/images/hi.score')");
-      $(".instruct").text(`well done`);
+      messageElement.text(`well done`);
       iconHat.show();
       noteFill(revise);
       report();
