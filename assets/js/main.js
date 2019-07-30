@@ -69,15 +69,6 @@ $(document).ready(function() {
     }
   }
 
-  //CHECK MISSING NO OR OPERATOR
-  function missingPick(no, operator) {
-    if (!no) {
-      return "missingNo";
-    } else if (!operator) {
-      return "missingOp";
-    }
-  }
-
   //CREATE TABLES ARRAY
   function tablesArrayCreate(no, operator) {
     let tablesArray = [];
@@ -311,23 +302,30 @@ $(document).ready(function() {
   //WHERE: https://stackoverflow.com/questions/2128535/stop-a-youtube-video-with-jquery
   //WHY: Resetting src for video to stop it playing when press close buton data-info=close click.
 
-  //CLICK NUMBER OR OPERATOR - APPLY SELECT STYLE
-  $("fieldset").children("label").click(function() {
-    $(this)
-      .siblings()
-      .removeClass("button-style--selected");
-    $(this).addClass("button-style--selected");
-  });
+  //CLICK NUMBER OR OPERATOR - APPLY SELECT STYLE & HIDE WARN ICON
+  $("fieldset")
+    .children("label")
+    .click(function() {
+      $(this).siblings().removeClass("button-style--selected");
+      $(this).siblings("i").hide();
+      $(this).addClass("button-style--selected");
+
+    });
 
   //CLICK GO
-  $("[data-pick=go]").click(function() {
+  $("[data-button=go]").click(function() {
     let no = parseInt($("input[name='pickNo']:checked").val());
     let operator = $("input[name='pickOp']:checked").val();
-    if (missingPick(no, operator) === "missingNo") {
-      $("[data-pick=missNo]").show();
-    } else if (missingPick(no, operator) === "missingOp") {
-      $("[data-pick=missOp]").show();
-    } else {
+
+    if (!no) {
+      $("[data-icon=missingNo]").show();
+    }
+
+    if (!operator) {
+      $("[data-icon=missingOp]").show();
+    }
+
+    if ((no, operator)) {
       let todo = todoFill(no, operator);
       $(".hideGo").hide();
       $(".showGo").show();
