@@ -1,6 +1,6 @@
 $(document).ready(function() {
   console.log("test");
-  
+
   //POINT TO DOM ELEMENTS
   //const iconSound = $("[data-icon=sound]");
   //const iconReload = $("[data-icon=reload]");  //referred to once in code???
@@ -17,7 +17,7 @@ $(document).ready(function() {
   const sumNextElement = $("[data-sum=next]");
   const incorrectMessageElement = $("[data-incorrect=message]");
   const messageElement = $("[data-message]");
-  
+
   //STOP ENTER KEY FROM REFRESHING PAGE
   $(document).on("keypress", function(e) {
     if (e.which == 13) {
@@ -28,6 +28,7 @@ $(document).ready(function() {
 
   //GLOBAL VARIABLES
   let sound = true;
+  let tableSet;
   let todoArray = [];
   let reviseArray = [];
   let noteString;
@@ -47,11 +48,15 @@ $(document).ready(function() {
   //SOUND ON OFF
   $("[data-icon=sound]").click(function() {
     if (sound === true) {
-      $(this).removeClass("fa-volume-mute").addClass("fa-volume-up"); //can I use font awesome classes here?
+      $(this)
+        .removeClass("fa-volume-mute")
+        .addClass("fa-volume-up"); //can I use font awesome classes here?
       sound = false;
       console.log(sound);
     } else {
-      $(this).removeClass("fa-volume-up").addClass("fa-volume-mute");
+      $(this)
+        .removeClass("fa-volume-up")
+        .addClass("fa-volume-mute");
       sound = true;
       console.log(sound);
     }
@@ -75,6 +80,7 @@ $(document).ready(function() {
 
   //CREATE TABLES ARRAY
   function tablesArrayCreate(no, operator) {
+    
     let tablesArray = [];
     for (let i = 1; i < 13; i++) {
       if (operator === "+") {
@@ -87,6 +93,7 @@ $(document).ready(function() {
           key3: i,
           key4: answer
         });
+        tableSet = no + "+";
       } else if (operator === "x") {
         let answer = no * i;
         tablesArray.push({
@@ -97,6 +104,7 @@ $(document).ready(function() {
           key3: i,
           key4: answer
         });
+        tableSet = no + "x";
       } else if (operator === "-") {
         let j = no + i;
         tablesArray.push({
@@ -107,6 +115,7 @@ $(document).ready(function() {
           key3: no,
           key4: i
         });
+        tableSet = no + "-";
       } else if (operator === "/") {
         let j = no * i;
         tablesArray.push({
@@ -117,10 +126,12 @@ $(document).ready(function() {
           key3: no,
           key4: i
         });
+        tableSet = no + "÷";
       }
     }
     return tablesArray;
   }
+//tableSet used in report. operator not used as * and / 
 
   //FILL TODO ARRAY
   function todoFill(no, operator) {
@@ -134,7 +145,8 @@ $(document).ready(function() {
   //SET SUM
   function sumSet(todo) {
     sumTryElement.val("");
-    sumAskElement.text(`${todo[0].key1} ${todo[0].key2} ${todo[0].key3} =`)
+    sumAskElement
+      .text(`${todo[0].key1} ${todo[0].key2} ${todo[0].key3} =`)
       .css("color", "#575778");
   }
 
@@ -260,10 +272,9 @@ $(document).ready(function() {
         y: 100,
         fontSize: 15,
         fontFamily: "Signika, sans-serif",
-        text: `Tables ${$("input[name='pickNo']:checked").val()}${$(
-          "input[name='pickOp']:checked"
-        ).val()}`
+        text: `Tables ${tableSet}`
       })
+      //tablesArray used as pickOperator = / for divide ${$("input[name='pickNo']:checked").val()}${tablesArray[0].key2}     })
       .addLayer({
         type: "text",
         fillStyle: "#7fa5b5",
@@ -296,7 +307,7 @@ $(document).ready(function() {
   $("[data-info=close]").click(function() {
     $(".showInfo").hide();
     $(".hideInfo").show();
-    $("iframe").attr("src","https://www.youtube.com/embed/EcVam72tyyw")
+    $("iframe").attr("src", "https://www.youtube.com/embed/EcVam72tyyw");
   });
   //WHERE: https://stackoverflow.com/questions/2128535/stop-a-youtube-video-with-jquery
   //WHY: Resetting src for video to stop it playing when press close buton data-info=close click.
@@ -305,12 +316,13 @@ $(document).ready(function() {
   $("[data-pickLabel]").click(function() {
     $(this)
       .siblings()
-      .removeClass("selector-style--selected");
-    $(this).addClass("selector-style--selected");
+      .removeClass("button-style--selected");
+    $(this).addClass("button-style--selected");
   });
 
   //CLICK GO
-    $("[data-pick=go").click(function() { //go button typically only clicked once
+  $("[data-pick=go").click(function() {
+    //go button typically only clicked once
     let no = parseInt($("input[name='pickNo']:checked").val());
     let operator = $("input[name='pickOp']:checked").val();
     if (missingPick(no, operator) === "missingNo") {
@@ -348,7 +360,7 @@ $(document).ready(function() {
     }
   });
   //WHY: maxLength in CSS not working if using keypad so need extra js.
-  
+
   //CLICK CLEAR NUMBER KEYPAD
   keypadClearElement.click(function() {
     sumTryElement.val("");
@@ -360,13 +372,15 @@ $(document).ready(function() {
     let answer = todoArray[0].key4;
     let count = todoArray[0].count;
     let todo = todoArray;
-    let sumAskAnswer = `${todo[0].key1} ${todo[0].key2} ${todo[0].key3} = ${todo[0].key4}`;
+    let sumAskAnswer = `${todo[0].key1} ${todo[0].key2} ${todo[0].key3} = ${
+      todo[0].key4
+    }`;
     console.log(todoArray[0].count + "start count");
 
     //STEP0: CHECK ANSWER - ENTERED
     if (!sumTry) {
       playAudio(audioIncorrect);
-      triggElement.css('background-image', "url('assets/images/sour.png')");
+      triggElement.css("background-image", "url('assets/images/sour.png')");
       messageElement.text(`empty answer`);
       $(".fa-exclamation-triangle").show();
     }
@@ -374,7 +388,7 @@ $(document).ready(function() {
     //STEP1: CHECK ANSWER - CORRECT
     else if (sumCorrect(sumTry, answer) === true) {
       playAudio(audioCorrect);
-      triggElement.css('background-image', "url('assets/images/thumbsup.png')");
+      triggElement.css("background-image", "url('assets/images/thumbsup.png')");
       messageElement.text(`click next`);
       sumAskElement.text(`${sumAskAnswer}`).css("color", "#83b186");
       $(".hideCheck").hide(); //sumTry input, sumCheck button & triangle(xs-s & m-l)
@@ -386,7 +400,7 @@ $(document).ready(function() {
     //STEP2: CHECK ANSWER - INCORRECT 1ST ATTEMPT
     else if (count === 0) {
       playAudio(audioIncorrect);
-      triggElement.css('background-image', "url('assets/images/hmm.png')");
+      triggElement.css("background-image", "url('assets/images/hmm.png')");
       incorrectMessageElement.text(`${sumTry}`);
       messageElement.text(`try again & check`);
       $(".showIncorrect").show(); //thumbs down & incorrect span
@@ -397,7 +411,7 @@ $(document).ready(function() {
     //STEP3: CHECK ANSWER - INCORRECT 2ND ATTEMPT
     else if (count === 1) {
       playAudio(audioIncorrect);
-      triggElement.css('background-image', "url('assets/images/thatway.png')");
+      triggElement.css("background-image", "url('assets/images/thatway.png')");
       incorrectMessageElement.text(`${sumTry}`);
       messageElement.text(`revise & click next`);
       sumAskElement.text(`${sumAskAnswer}`).css("color", "#3ea041");
@@ -406,13 +420,12 @@ $(document).ready(function() {
       sumNextElement.show();
       countIncrement(todo);
       todoAdd(todo);
-
     }
 
     //STEP4: CHECK ANSWER - INCORRECT 3RD ATTEMPT
     else {
       playAudio(audioIncorrect);
-      triggElement.css('background-image', "url('assets/images/oops.png')");
+      triggElement.css("background-image", "url('assets/images/oops.png')");
       incorrectMessageElement.text(`${sumTry}`);
       messageElement.text(`try ${answer} & check`);
       $(".showIncorrect").show(); //thumbs down & incorrect span
@@ -427,7 +440,7 @@ $(document).ready(function() {
     let revise = reviseArray;
     reviseAdd(todo, revise);
     todoRemove(todo);
-    triggElement.css('background-image', "url('assets/images/hi.png')");
+    triggElement.css("background-image", "url('assets/images/hi.png')");
     $(".hideNextSum").hide();
     $(".showNextSum").show();
     $(".hideNext").hide();
@@ -443,7 +456,7 @@ $(document).ready(function() {
     } else {
       //only do if complete
       playAudio(audioDone);
-      triggElement.css('background-image', "url('assets/images/hi.score')");
+      triggElement.css("background-image", "url('assets/images/score.png')");
       messageElement.text(`well done`);
       iconHat.show();
       noteFill(revise);
