@@ -4,9 +4,9 @@ $(document).ready(function() {
   //POINT TO DOM ELEMENTS
   //const iconSound = $("[data-icon=sound]");
   //const iconReload = $("[data-icon=reload]");  //referred to once in code???
-  const iconWarn = $("[data-icon=warn]"); //show warn instead of iconwarn?
-  const iconHat = $("[data-icon=hat]"); //show done instead of iconHat?
-  const iconDownload = $("[data-icon=download]"); //show done instead of iconDownload?
+  //const iconWarn = $("[data-icon=warn]"); //show warn instead of iconwarn?
+  //const iconHat = $("[data-icon=hat]"); //show done instead of iconHat?
+  //const iconDownload = $("[data-icon=download]"); //show done instead of iconDownload?
   //const pickLabel = $("[data-pickLabel]");
   const sumAskElement = $("[data-sum=ask]");
   const sumTryElement = $("[data-sum=try]");
@@ -14,7 +14,8 @@ $(document).ready(function() {
   const keypadNumberElement = $("[data-keypad=number]");
   const keypadClearElement = $("[data-keypad=clear]");
   const triggElement = $("[data-trigg]");
-  const sumNextElement = $("[data-sum=next]");
+  const sumNextButton = $("[data-button=sumNext]");
+  const sumCheckButton = $("[data-button=sumCheck]"); // only used once???
   const incorrectMessageElement = $("[data-incorrect=message]");
   const messageElement = $("[data-message]");
 
@@ -306,10 +307,13 @@ $(document).ready(function() {
   $("fieldset")
     .children("label")
     .click(function() {
-      $(this).siblings().removeClass("button-style--selected");
-      $(this).siblings("i").hide();
+      $(this)
+        .siblings()
+        .removeClass("button-style--selected");
+      $(this)
+        .siblings("i")
+        .hide();
       $(this).addClass("button-style--selected");
-
     });
 
   //CLICK GO
@@ -327,8 +331,8 @@ $(document).ready(function() {
 
     if ((no, operator)) {
       let todo = todoFill(no, operator);
-      $(".hideGo").hide();
-      $(".showGo").show();
+      $("[data-hide~=go]").hide();
+      $("[data-show~=go]").show();
       sumSet(todo);
       timer();
     }
@@ -356,7 +360,7 @@ $(document).ready(function() {
   });
 
   //CLICK CHECK
-  $("#sumCheck").click(function() {
+  sumCheckButton.click(function() {
     let sumTry = sumTryElement.val();
     let answer = todoArray[0].key4;
     let count = todoArray[0].count;
@@ -364,6 +368,7 @@ $(document).ready(function() {
     let sumAskAnswer = `${todo[0].key1} ${todo[0].key2} ${todo[0].key3} = ${
       todo[0].key4
     }`;
+    
     console.log(todoArray[0].count + "start count");
 
     //STEP0: CHECK ANSWER - ENTERED
@@ -371,7 +376,7 @@ $(document).ready(function() {
       playAudio(audioIncorrect);
       triggElement.css("background-image", "url('assets/images/sour.png')");
       messageElement.text(`empty answer`);
-      $(".fa-exclamation-triangle").show();
+      $("[data-show=warn]").show();
     }
 
     //STEP1: CHECK ANSWER - CORRECT
@@ -380,10 +385,10 @@ $(document).ready(function() {
       triggElement.css("background-image", "url('assets/images/thumbsup.png')");
       messageElement.text(`click next`);
       sumAskElement.text(`${sumAskAnswer}`).css("color", "#83b186");
-      $(".hideCheck").hide(); //sumTry input, sumCheck button & triangle(xs-s & m-l)
-      $(".showIncorrect").hide(); //from attempt 4
-      $(".showCorrect").show();
-      sumNextElement.show();
+      $("[data-hide~=sumCheck]").hide(); //sumTry input, sumCheck button & triangle(xs-s & m-l)
+      $("[data-hide~=correct]").hide(); //from attempt 4
+      $("[data-show~=correct]").show();
+      sumNextButton.show();
     }
 
     //STEP2: CHECK ANSWER - INCORRECT 1ST ATTEMPT
@@ -392,7 +397,7 @@ $(document).ready(function() {
       triggElement.css("background-image", "url('assets/images/hmm.png')");
       incorrectMessageElement.text(`${sumTry}`);
       messageElement.text(`try again & check`);
-      $(".showIncorrect").show(); //thumbs down & incorrect span
+      $("[data-show~=incorrect]").show(); //thumbs down & incorrect span
       sumTryElement.val("");
       countIncrement(todo);
     }
@@ -404,9 +409,9 @@ $(document).ready(function() {
       incorrectMessageElement.text(`${sumTry}`);
       messageElement.text(`revise & click next`);
       sumAskElement.text(`${sumAskAnswer}`).css("color", "#3ea041");
-      $(".hideCheck").hide(); //sumTRy input, sumCheck button & triangle(xs-s & m-l)
-      $(".showIncorrect").show(); //thumbs down & incorrect span
-      sumNextElement.show();
+      $("[data-hide~=sumCheck]").hide(); //sumTRy input, sumCheck button & triangle(xs-s & m-l)
+      $("[data-show~=incorrect]").show(); //thumbs down & incorrect span
+      sumNextButton.show();
       countIncrement(todo);
       todoAdd(todo);
     }
@@ -417,45 +422,49 @@ $(document).ready(function() {
       triggElement.css("background-image", "url('assets/images/oops.png')");
       incorrectMessageElement.text(`${sumTry}`);
       messageElement.text(`try ${answer} & check`);
-      $(".showIncorrect").show(); //thumbs down & incorrect span
+      $("[data-show~=incorrect]").show(); //thumbs down & incorrect span
       sumTryElement.val("");
       countIncrement(todo);
     }
   });
 
   // CLICK NEXT
-  sumNextElement.click(function() {
+  sumNextButton.click(function() {
     let todo = todoArray;
     let revise = reviseArray;
-    reviseAdd(todo, revise);
-    todoRemove(todo);
-    triggElement.css("background-image", "url('assets/images/hi.png')");
-    $(".hideNextSum").hide();
-    $(".showNextSum").show();
-    $(".hideNext").hide();
-    $("#progress").attr(
+    const progressBar = $("[role=progressbar]"); //only used in this function
+
+    //last sum
+    progressBar.attr(
       "style",
       `width: ${((12 - todoArray.length) / 12) * 100}%`
     );
-    $("#progress").attr("aria-valuenow", 12 - todo.length);
+    progressBar.attr("aria-valuenow", 12 - todo.length);
+    reviseAdd(todo, revise);
+    todoRemove(todo);
+    $("[data-hide~=sumNext]").hide();
 
+    //next sum
     if (todo.length !== 0) {
-      messageElement.text("try & check");
       sumSet(todo);
-    } else {
-      //only do if complete
+      triggElement.css("background-image", "url('assets/images/hi.png')");
+      messageElement.text("try & check");
+      $("[data-show~=sumNext]").show();
+    }
+
+    //all sums done
+    else {
+      stopTimer();
+      noteFill(revise);
+      report();
       playAudio(audioDone);
       triggElement.css("background-image", "url('assets/images/score.png')");
       messageElement.text(`well done`);
-      iconHat.show();
-      noteFill(revise);
-      report();
-      $(".hideNextDone").hide();
-      $(".showNextDone").show();
-      stopTimer();
+      $("[data-hide~=done]").hide();
+      $("[data-show~=done]").show();
     }
   });
 
   //CLICK DOWNLOAD REPORT
-  $("#reportDownload").click(save);
+  $("[data-button=download]").click(save);
 }); // end of get document
