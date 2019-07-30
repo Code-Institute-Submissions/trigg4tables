@@ -46,14 +46,14 @@
             <div
               class="col-md-12 col-lg-6 bg-color--lightpink d-flex justify-content-around "
             >
-              <time class="timer align-self-center">0:00</time>
-              <i class="sound fas fa-volume-mute align-self-center" data-icon="sound"></i>
-              <i class="fas fa-info-circle align-self-center" data-info="open"></i>
-              <i class="fas fa-times-circle reload align-self-center" data-icon="reload"></i>
+              <time class="align-self-center">0:00</time>
+              <i class="fas fa-volume-mute align-self-center" data-icon="sound"></i>
+              <i class="fas fa-info-circle align-self-center" data-icon="infoOpen"></i>
+              <i class="fas fa-times-circle align-self-center" data-icon="reload"></i>
             </div>
           </div>
           <div class="row bg-height--65">
-            <div class="col-12 trigg bg--hi" data-trigg></div>
+            <div class="col-12 bg--trigg" data-trigg></div>
           </div>
           <div class="row bg-height--10">
             <div class="col-12 bg-color--darkblue d-flex">
@@ -69,7 +69,7 @@
         <div class="col-12 d-md-none">
           <div class="row">
             <!--TRIGG-->
-            <div class="col-6 trigg shade bg--hi bg-height--30" data-trigg></div>
+            <div class="col-6 shade bg--trigg bg-height--30" data-trigg></div>
             <!--RIGHT HEADER BOXES-->
             <div class="col-6">
               <!--BOX CLOCK VISIBLE ON GO-->
@@ -77,11 +77,11 @@
                 <div
                   class="col-12 bg-color--darkpink bg-height--10 shade d-flex justify-content-between"
                 >
-                  <time class="timer align-self-center">0:00</time>
-                  <i class="sound fas fa-volume-mute align-self-center" data-icon="sound"></i>
+                  <time class="align-self-center">0:00</time>
+                  <i class="fas fa-volume-mute align-self-center" data-icon="sound"></i>
 
                   <i
-                    class="fas fa-times-circle reload hideStart showGo align-self-center" data-icon="reload"
+                    class="fas fa-times-circle hideStart showGo align-self-center" data-icon="reload"
                   ></i>
                 </div>
               </div>
@@ -90,13 +90,13 @@
                 <div
                   class="col-12 bg-color--lightpink bg-height--20 shade text-center"
                 >
-                  <p class="instruct">try & check</p>
-                  <span class="incorrect showIncorrect hideNext red"></span>
+                  <p class="message" data-message>try & check</p>
+                  <span class="message incorrect showIncorrect hideNext red" data-incorrect="message"></span>
                   <img
                     src="assets/images/down.png"
                     class="thumb hideStart showIncorrect hideNext"
                   />
-                  <span class="correct hideNext green"></span>
+                  <!--<span class="message correct hideNext green" data-correct="message"></span>-->
                   <img
                     src="assets/images/up.png"
                     class="thumb hideStart showCorrect hideNext"
@@ -104,7 +104,7 @@
                   <i
                     class="hideStart hideCheck hideNext fas fa-exclamation-triangle red"
                   ></i>
-                  <i class="hideStart fas fa-graduation-cap darkpink" data-icon="cap"></i>
+                  <i class="hideStart fas fa-graduation-cap" data-icon="cap"></i>
                 </div>
               </div>
               <!--BOX TITLE VISIBLE ON START-->
@@ -120,10 +120,10 @@
                 <div
                   class="col-12 bg-color--darkblue  shade bg-height--15 d-flex justify-content-center text-center"
                 >
-                  <p class="align-self-center m-0 font-color--white">
+                  <p class="align-self-center m-0">
                     Times Tables Practice
                   </p>
-                  <i class="fas fa-info-circle align-self-center" data-info="open"></i>
+                  <i class="fas fa-info-circle align-self-center" data-icon="infoOpen"></i>
                 </div>
               </div>
             </div>
@@ -153,79 +153,75 @@
           <div class="row">
             <div class="col-12 ">
               <!--PICK FORM-->
-              <form id="pick" class="hideGo hideInfo text-center">
+              <form id="pick" class="hideGo hideInfo text-center" data-hide="go infoOpen" data-show="infoClose">
                 <!--PICK NUMBER-->
                 <fieldset class="mt-3 mx-auto"><!--mx?-->
-                  <i
-                    id="missingNo"
-                    class="hideGo hideStart fas fa-exclamation-triangle mr-3 red" data-icon="warn"
+                  <i class="hideGo hideStart fas fa-exclamation-triangle mr-3 red" data-pick="missNo"
                   ></i
-                  ><span class="note">pick number</span>
+                  ><span class="message">pick number</span>
                   <br />
-                  <label class="labelNo selector-style" data-pickLabel="number">
+                  <label class="button-style">
                     <input type="radio" name="pickNo" value="1" />1
                   </label>
-                  <label class="labelNo selector-style" data-pickLabel="number">
+                  <label class="button-style">
                     <input type="radio" name="pickNo" value="2" />2
                   </label>
-                  <label class="labelNo selector-style" data-pickLabel="number">
+                  <label class="button-style">
                     <input type="radio" name="pickNo" value="3" />3
                   </label>
-                  <label class="labelNo selector-style" data-pickLabel="number">
+                  <label class="button-style">
                     <input type="radio" name="pickNo" value="4" />4
                   </label>
                   <br />
-                  <label class="labelNo selector-style" data-pickLabel="number">
+                  <label class="button-style">
                     <input type="radio" name="pickNo" value="5" />5
                   </label>
-                  <label class="labelNo selector-style" data-pickLabel="number">
+                  <label class="button-style">
                     <input type="radio" name="pickNo" value="6" />6
                   </label>
-                  <label class="labelNo selector-style" data-pickLabel="number">
+                  <label class="button-style">
                     <input type="radio" name="pickNo" value="7" />7
                   </label>
-                  <label class="labelNo selector-style" data-pickLabel="number">
+                  <label class="button-style">
                     <input type="radio" name="pickNo" value="8" />8
                   </label>
                   <br />
-                  <label class="labelNo selector-style" data-pickLabel="number">
+                  <label class="button-style">
                     <input type="radio" name="pickNo" value="9" />9
                   </label>
-                  <label class="labelNo selector-style" data-pickLabel="number">
+                  <label class="button-style">
                     <input type="radio" name="pickNo" value="10" />10
                   </label>
-                  <label class="labelNo selector-style" data-pickLabel="number">
+                  <label class="button-style">
                     <input type="radio" name="pickNo" value="11" />11
                   </label>
-                  <label class="labelNo selector-style" data-pickLabel="number">
+                  <label class="button-style">
                     <input type="radio" name="pickNo" value="12" />12
                   </label>
                 </fieldset>
                 <!--PICK OPERATOR-->
                 <fieldset class="mt-4 mt-md-5 mx-auto">
-                  <i
-                    id="missingOp"
-                    class="hideGo hideStart fas fa-exclamation-triangle mr-3 red"
+                  <i class="hideGo hideStart fas fa-exclamation-triangle mr-3 red" data-pick="missOp"
                   ></i
-                  ><span class="note">pick symbol</span>
+                  ><span class="message">pick symbol</span>
                   <br />
-                  <label class="labelOp selector-style" data-pickLabel="operator">
+                  <label class="button-style">
                     <input type="radio" name="pickOp" value="+" />+
                   </label>
-                  <label class="labelOp selector-style" data-pickLabel="operator">
+                  <label class="button-style">
                     <input type="radio" name="pickOp" value="-" />-
                   </label>
-                  <label class="labelOp selector-style" data-pickLabel="operator">
+                  <label class="button-style">
                     <input type="radio" name="pickOp" value="x" />x
                   </label>
-                  <label class="labelOp selector-style" data-pickLabel="operator">
+                  <label class="button-style">
                     <input type="radio" name="pickOp" value="/" />÷
                   </label>
                 </fieldset>
                 <!--GO BUTTON-->
                 <fieldset class="mt-3 mt-md-5 mx-auto">
-                  <span class="d-inline-block mt-3 note">lets</span>
-                  <button type="button" class="selector-style" id="pickGo" data-pick="go">
+                  <span class="d-inline-block mt-3 message">lets</span>
+                  <button type="button" class="selector-style button-style" id="pickGo" data-pick="go">
                     go
                   </button>
                 </fieldset>
@@ -245,14 +241,14 @@
                     />
                     <button
                       id="sumCheck"
-                      class="btn align-self-center showNextSum hideCheck"
+                      class="btn align-self-center showNextSum hideCheck button-style"
                       type="button"
                     >
                       check
                     </button>
                     <button
                       id="sumNext"
-                      class="btn align-self-center hideStart hideNextSum"
+                      class="btn align-self-center hideStart hideNextSum button-style"
                       type="button"
                       data-sum="next"
                     >
@@ -261,28 +257,28 @@
                   </div>
 
                   <hr />
-                  <div testr>
-                    <input id="pad1" class="padNum" type="button" value="1" data-keypad="number"/>
-                    <input id="pad2" class="padNum" type="button" value="2" data-keypad="number"/>
-                    <input id="pad3" class="padNum" type="button" value="3" data-keypad="number"/>
-                    <input id="pad4" class="padNum" type="button" value="4" data-keypad="number"/>
+                  <div>
+                    <input id="pad1" class="padNum button-style" type="button" value="1" data-keypad="number"/>
+                    <input id="pad2" class="padNum button-style" type="button" value="2" data-keypad="number"/>
+                    <input id="pad3" class="padNum button-style" type="button" value="3" data-keypad="number"/>
+                    <input id="pad4" class="padNum button-style" type="button" value="4" data-keypad="number"/>
                     <br />
-                    <input id="pad5" class="padNum" type="button" value="5" data-keypad="number"/>
-                    <input id="pad6" class="padNum" type="button" value="6" data-keypad="number"/>
-                    <input id="pad7" class="padNum" type="button" value="7" data-keypad="number"/>
-                    <input id="pad8" class="padNum" type="button" value="8" data-keypad="number"/>
+                    <input id="pad5" class="padNum button-style" type="button" value="5" data-keypad="number"/>
+                    <input id="pad6" class="padNum button-style" type="button" value="6" data-keypad="number"/>
+                    <input id="pad7" class="padNum button-style" type="button" value="7" data-keypad="number"/>
+                    <input id="pad8" class="padNum button-style" type="button" value="8" data-keypad="number"/>
                     <br />
-                    <input id="pad9" class="padNum" type="button" value="9" data-keypad="number"/>
-                    <input id="pad1" class="padNum" type="button" value="0" data-keypad="number"/>
-                    <input id="padClear" type="button" value="clear" data-keypad="clear"/>
+                    <input id="pad9" class="padNum button-style" type="button" value="9" data-keypad="number"/>
+                    <input id="pad1" class="padNum button-style" type="button" value="0" data-keypad="number"/>
+                    <input id="padClear" class="button-style" type="button" value="clear" data-keypad="clear"/>
                   </div>
                 </form>
 
                 <div class="hideStart showNextDone text-center mt-3">
                   <canvas width="250" height="250" class="shade"></canvas>
-                  <p class="note mt-1 mb-1">download to share</p>
-                  <button id="reportDownload" class="" type="button">
-                    <i class="fas fa-arrow-circle-down darkpink" data-icon="download"></i>
+                  <p class="message mt-1 mb-1">download to share</p>
+                  <button id="reportDownload" class="button-style" type="button">
+                    <i class="fas fa-arrow-circle-down" data-icon="download"></i>
                   </button>
                 </div>
               </div>
@@ -291,35 +287,35 @@
           <!--MD & LG MESSAGE-->
           <div class="row d-none d-md-block">
             <div class="col-12  text-center hideStart showGo mt-3">
-              <span class="incorrect showIncorrect hideNext red"></span>
+              <span class="message incorrect showIncorrect hideNext red" data-incorrect="message"></span>
               <img
                 src="assets/images/down.png"
                 class="thumb hideStart showIncorrect hideNext"
               />
-              <span class="correct hideNext green"></span>
+              <!--<span class="message correct hideNext green" data-correct="message"></span>-->
               <img
                 src="assets/images/up.png"
                 class="thumb hideStart showCorrect hideNext"
               />
               <i
-                class="fas fa-exclamation-triangle hideGo hideCheck hideNext red"
+                class="fas fa-exclamation-triangle hideGo hideCheck hideNext red" data-icon="warn"
               ></i>
               <!--WHY: hideGo class as icon class used in pick missing.-->
-              <i class="fas fa-graduation-cap hideGo darkpink" data-icon="hat"></i>
-              <span class="instruct align-self-baseline">try & check</span>
+              <i class="fas fa-graduation-cap hideGo" data-icon="hat"></i>
+              <span class="message align-self-baseline" data-message>try & check</span>
               <!--WHY: Instruct viisble from GO to NEXT DONE hence no specific show or hide class.-->
             </div>
           </div>
           <!--ALL SCREENS INFO-->
           <div class="row">
-            <div class="col-12 hideStart showInfo text-center mt-3">
+            <div class="col-12 hideStart showInfo text-center mt-3" data-hide="start infoClose" data-show="infoOpen">
               <div class="embed-responsive embed-responsive-16by9">
                 <iframe
                   class="embed-responsive-item"
                   src="https://www.youtube.com/embed/EcVam72tyyw"
                                   ></iframe>
               </div>
-              <button type="button" id="closeInfo" data-info="close">
+              <button type="button" class="button-style" id="closeInfo" data-button="infoClose">
                 start
               </button>
             </div>

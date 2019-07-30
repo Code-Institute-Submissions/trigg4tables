@@ -80,7 +80,6 @@ $(document).ready(function() {
 
   //CREATE TABLES ARRAY
   function tablesArrayCreate(no, operator) {
-    
     let tablesArray = [];
     for (let i = 1; i < 13; i++) {
       if (operator === "+") {
@@ -131,7 +130,7 @@ $(document).ready(function() {
     }
     return tablesArray;
   }
-//tableSet used in report. operator not used as * and / 
+  //tableSet used in report. operator not used /
 
   //FILL TODO ARRAY
   function todoFill(no, operator) {
@@ -274,7 +273,6 @@ $(document).ready(function() {
         fontFamily: "Signika, sans-serif",
         text: `Tables ${tableSet}`
       })
-      //tablesArray used as pickOperator = / for divide ${$("input[name='pickNo']:checked").val()}${tablesArray[0].key2}     })
       .addLayer({
         type: "text",
         fillStyle: "#7fa5b5",
@@ -287,7 +285,7 @@ $(document).ready(function() {
       })
       .drawLayers();
   }
-  //WHY: Layers used to allow text breaks and centering.
+  //WHY: Layers used to allow varying fonts, text breaks and centering.
 
   //CONVERT CANVAS REPORT TO BLOB & SAVE
   function save(ev) {
@@ -298,22 +296,23 @@ $(document).ready(function() {
   //WHERE: https://stackoverflow.com/questions/48054723/saving-canvas-as-blob-and-then-blob-as-file
 
   //CLICK INFO - OPEN
-  $("[data-info=open]").click(function() {
-    $(".hideInfo").hide();
-    $(".showInfo").show();
+  $("[data-icon=infoOpen]").click(function() {
+    $("[data-hide~=infoOpen]").hide();
+    $("[data-show~=infoOpen]").show();
   });
+  //WHERE: https://stackoverflow.com/questions/34455085/can-i-have-multiple-values-in-one-html-data-element
 
   //CLICK INFO - CLOSE
-  $("[data-info=close]").click(function() {
-    $(".showInfo").hide();
-    $(".hideInfo").show();
+  $("[data-button=infoClose]").click(function() {
+    $("[data-hide~=infoClose]").hide();
+    $("[data-show~=infoClose]").show();
     $("iframe").attr("src", "https://www.youtube.com/embed/EcVam72tyyw");
   });
   //WHERE: https://stackoverflow.com/questions/2128535/stop-a-youtube-video-with-jquery
   //WHY: Resetting src for video to stop it playing when press close buton data-info=close click.
 
   //CLICK NUMBER OR OPERATOR - APPLY SELECT STYLE
-  $("[data-pickLabel]").click(function() {
+  $("fieldset").children("label").click(function() {
     $(this)
       .siblings()
       .removeClass("button-style--selected");
@@ -321,27 +320,19 @@ $(document).ready(function() {
   });
 
   //CLICK GO
-  $("[data-pick=go").click(function() {
-    //go button typically only clicked once
+  $("[data-pick=go]").click(function() {
     let no = parseInt($("input[name='pickNo']:checked").val());
     let operator = $("input[name='pickOp']:checked").val();
     if (missingPick(no, operator) === "missingNo") {
-      playAudio(audioIncorrect);
-      $("#missingNo").show();
-      console.log("missingNo");
+      $("[data-pick=missNo]").show();
     } else if (missingPick(no, operator) === "missingOp") {
-      playAudio(audioIncorrect);
-      $("#missingOp").show();
-      console.log("missingOp");
+      $("[data-pick=missOp]").show();
     } else {
       let todo = todoFill(no, operator);
       $(".hideGo").hide();
       $(".showGo").show();
-      //$("[data-show=go]").css()
       sumSet(todo);
       timer();
-      console.log("GoOp" + $("input[name='pickOp']:checked").val());
-      console.log("GoNo" + $("input[name='pickNo']:checked").val());
     }
   });
   //WHERE: https://stackoverflow.com/questions/8622336/jquery-get-value-of-selected-radio-button
