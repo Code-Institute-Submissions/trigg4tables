@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description" content="A times tables practice website aimed at older children.">
+    <meta name="keywords" content="Maths, Sums, Homework, Times, Tables, Practice, Report, Download">
+    <meta name="author" content="coderbeez">
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -72,14 +75,16 @@
             </div>
           </div>
           <div class="row bg-height--65">
-            <div class="col-12 bg--trigg" data-trigg></div>
+            <div class="col-12 d-flex align-items-end bg--trigg" data-trigg>
+              <a href="https://github.com/coderbeez" target="_blank">site by coderbeez</a>
+            </div>
             <!--WHY: Image inserted as background resulting in resposnive image on all screens. -->
             <!--WHY: Class verses id used to style as dupiclate style applied later for sm and md screens.-->
           </div>
           <div class="row bg-height--10">
             <div class="col-12 d-flex bg-color--darkblue">
               <p class="align-self-center">
-                Let Trigg help you practice your times tables. Press i for
+                Practice Times Tables with Trigg. Press i for
                 instruction video.
               </p>
               <!--FLEX NOT WORKING-->
@@ -158,9 +163,13 @@
               <!--BOX TITLE VISIBLE ON START-->
               <div class="row" data-hide="go">
                 <div
-                  class="col-12 d-flex justify-content-center bg-height--15 bg-color--darkpink shade"
+                  class="col-12 text-center d-flex justify-content-center bg-height--15 bg-color--darkpink shade"
                 >
-                  <h1 class="align-self-center">Trigg 4<br />Tables</h1>
+                  <div class="align-self-center">
+                    <h1 class="mb-0">Trigg 4<br />Tables</h1>
+                  <a href="https://github.com/coderbeez" target="_blank">by coderbeez</a>
+                  </div>
+                  <!--WHY: Wrapping div used to center h1 & a vertically.-->
                 </div>
               </div>
               <!--BOX INFO VISIBLE ON START-->
@@ -175,7 +184,7 @@
                     class="fas fa-info-circle align-self-center"
                     data-icon="infoOpen"
                   ></i>
-                </div>
+                                  </div>
               </div>
             </div>
           </div>
@@ -191,7 +200,7 @@
             data-hide="done"
           >
                         <div class="col-12">
-              <div class="progress mt-3 mx-auto">
+                                          <div class="progress mt-3 mx-auto">
                 <div
                   id="progress"
                   class="progress-bar progress-bar-striped"
@@ -500,7 +509,7 @@
                 start
               </button>
             </div>
-          </div>
+                      </div>
         </div>
         <!--COL5 LG BORDER-->
         <div class="col-1 d-none d-lg-block"></div>

@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Cherry+Cream+Soda|Gaegu:700|Irish+Grover|Signika:600&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Special+Elite&display=swap');
 
 .hide-start {
   display: none;
@@ -8,16 +8,17 @@
 Bootstrap not working with */
 
 
-/*----------FONTS----------*/
+/*----------MAIN FONTS----------*/
 body {
   font-family: "Signika", sans-serif;
   font-size: 1.2rem;
   color: #575778;
-  }
+    }
 
 h1 {
   font-family: "Irish Grover", cursive;
   font-size: 1.5rem;
+  line-height: 1.5rem;
   }
 
 h2 {
@@ -51,8 +52,9 @@ h2 {
 /*WHY: Incorrect answer shown next to thumb image.*/
 
 .bg-color--darkblue > p {
-  color:#f6f9f9;
-    font-size: 1.1rem;
+  color:#e9f0f2;
+  font-size: 1rem;
+  line-height: 1rem;
 }
 /*WHY: Improves legibility on dark background.*/
 
@@ -62,6 +64,26 @@ h2 {
 
 .red{
   color: #980036;
+}
+
+/*----------LINKS----------*/
+a {
+  font-family: 'Special Elite', cursive;
+  font-size: .8rem;
+  line-height: .8rem;
+  }
+
+.bg--trigg>a{
+  color: #7fa5b5;
+}
+
+.bg-color--darkpink * a{
+  color: #ebe1e0;
+}
+
+.bg--trigg>a:hover {
+  color: #b18683;
+  text-decoration: none;
 }
 
 /*----------TIMER & ICONS----------*/
@@ -282,19 +304,29 @@ hr {
 
 @media (min-width: 768px) and (max-width: 991px) {
   h1 {
-    font-size: 2.5rem;
+    font-size: 2.75rem;
+    line-height: 2.75rem;
   }
   h2 {
     font-size: 1.5rem;
+  }
+  a {
+    font-size: 1rem;
+    line-height: 1rem;
   }
  }
 
 @media (min-width: 992px) {
   h1 {
     font-size: 3rem;
+    line-height: 3rem;
   }
   h2 {
     font-size: 1.5rem;
+  }
+  a {
+    font-size: 1rem;
+    line-height: 1rem;
   }
 }
 
