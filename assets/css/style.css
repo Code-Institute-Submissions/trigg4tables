@@ -101,13 +101,16 @@ i {
 }
 /*WHY: Placed below other colour css to ensure overwrites. ??? took off active*/ 
 
+.disable, .disable:hover{
+  color:  #b18683 !important;
+  opacity: 0.3;
+}
+/*WHY: Important used to overwrite bg-color--lightpink>i hover.*/
+
 .thumb-height {
   height: 40px;
 }
 
-.warn-height {
-  height: 22.4px;
-}
 
 /*----------BACKGROUNDS----------*/
 .bg-color--darkpink {

@@ -18,6 +18,7 @@ $(document).ready(function() {
   const sumCheckButton = $("[data-button=sumCheck]"); // only used once???
   const incorrectMessageElement = $("[data-message=incorrect]");
   const messageElement = $("[data-message=all]");
+  const infoOpenIcon = $("[data-icon=infoOpen]");
 
   //STOP ENTER KEY FROM REFRESHING PAGE
   $(document).on("keypress", function(e) {
@@ -287,12 +288,15 @@ $(document).ready(function() {
   }
   //WHERE: https://stackoverflow.com/questions/48054723/saving-canvas-as-blob-and-then-blob-as-file
 
-  //CLICK INFO - OPEN
-  $("[data-icon=infoOpen]").click(function() {
+  //CLICK INFO - OPEN IF NOT DISABLED
+  infoOpenIcon.click(function() {
+    if (!$(this).hasClass("disable")) {
     $("[data-hide~=infoOpen]").hide();
     $("[data-show~=infoOpen]").show();
+    }
   });
   //WHERE: https://stackoverflow.com/questions/34455085/can-i-have-multiple-values-in-one-html-data-element
+  //WHERE: https://stackoverflow.com/questions/7841048/how-to-check-if-an-element-does-not-have-a-specific-class
 
   //CLICK INFO - CLOSE
   $("[data-button=infoClose]").click(function() {
@@ -335,6 +339,7 @@ $(document).ready(function() {
       $("[data-show~=go]").show();
       sumSet(todo);
       timer();
+      infoOpenIcon.addClass("disable");
     }
   });
   //WHERE: https://stackoverflow.com/questions/8622336/jquery-get-value-of-selected-radio-button
@@ -342,8 +347,10 @@ $(document).ready(function() {
   //CLICK RELOAD
   $("[data-icon=reload]").click(function() {
     location.reload();
+    infoOpenIcon.removeClass("disable");
   });
   //WHERE: https://stackoverflow.com/questions/5404839/how-can-i-refresh-a-page-with-jquery
+  //WHY: infoOpenIcon enabled on start, disabled on go and enabled on page reload.
 
   //CLICK NUMBER KEYPAD
   keypadNumberElement.click(function() {
