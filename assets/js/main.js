@@ -16,8 +16,8 @@ $(document).ready(function() {
   const triggElement = $("[data-trigg]");
   const sumNextButton = $("[data-button=sumNext]");
   const sumCheckButton = $("[data-button=sumCheck]"); // only used once???
-  const incorrectMessageElement = $("[data-incorrect=message]");
-  const messageElement = $("[data-message]");
+  const incorrectMessageElement = $("[data-message=incorrect]");
+  const messageElement = $("[data-message=all]");
 
   //STOP ENTER KEY FROM REFRESHING PAGE
   $(document).on("keypress", function(e) {
@@ -329,7 +329,7 @@ $(document).ready(function() {
       $("[data-icon=missingOp]").show();
     }
 
-    if ((no, operator)) {
+    if (no && operator) {
       let todo = todoFill(no, operator);
       $("[data-hide~=go]").hide();
       $("[data-show~=go]").show();
