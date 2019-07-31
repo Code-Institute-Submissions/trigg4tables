@@ -26,42 +26,63 @@
       <div class="row">
         <!--COL1 LG BORDER-->
         <div class="col-1 d-none d-lg-block"></div>
+        <!--WHY: Bootstrap col used as a spacer for large screens.
+          Bootstrap display classes used to ensure only applies to large screens.-->
         <!--COL2 MD & LG IMAGE & HEADERS-->
         <div class="col-md-6 col-lg-5 d-none d-md-block shade">
           <div class="row bg-height--15">
+            <!--WHAT: Bg height class is % of viewport height.-->
             <div
-              class="col-12 bg-color--darkpink d-flex justify-content-center"
+              class="col-12 d-flex justify-content-center bg-color--darkpink"
             >
+              <!--WHY: Bootstrp flex class used to make div flex box and allow content to be centered vertically.-->
               <h1 class="align-self-center">
                 Trigg 4 <br class="d-block d-lg-none" />Tables
               </h1>
+              <!--WHY: Bootstrap align class used to center h1 vertically.-->
+              <!--WHY: Br used to improve text position on md screens.-->
             </div>
           </div>
           <div class="row bg-height--10">
-            <div class="col-6 d-md-none d-lg-block bg-color--darkblue d-flex">
+            <div class="col-6 d-md-none d-lg-block d-flex bg-color--darkblue">
+              <!--FLEX NOT WORKING-->
               <div class="align-self-center text-center">
                 <h2 class="">cool cats do maths</h2>
               </div>
+              <!--IS DIV NEEDED????-->
             </div>
             <div
-              class="col-md-12 col-lg-6 bg-color--lightpink d-flex justify-content-around "
+              class="col-md-12 col-lg-6 d-flex justify-content-around bg-color--lightpink"
             >
+              <!--WHY: Bootstrap justify class used to space icons and timer equally.-->
               <time class="align-self-center">0:00</time>
-              <i class="fas fa-volume-mute align-self-center" data-icon="sound"></i>
-              <i class="fas fa-info-circle align-self-center" data-icon="infoOpen"></i>
-              <i class="fas fa-times-circle align-self-center" data-icon="reload"></i>
+              <i
+                class="fas fa-volume-mute align-self-center"
+                data-icon="sound"
+              ></i>
+              <!--WHY: Data attributes used throught page to target js. Classes and IDs used to style.-->
+              <i
+                class="fas fa-info-circle align-self-center"
+                data-icon="infoOpen"
+              ></i>
+              <i
+                class="fas fa-times-circle align-self-center"
+                data-icon="reload"
+              ></i>
             </div>
           </div>
           <div class="row bg-height--65">
             <div class="col-12 bg--trigg" data-trigg></div>
+            <!--WHY: Image inserted as background resulting in resposnive image on all screens. -->
+            <!--WHY: Class verses id used to style as dupiclate style applied later for sm and md screens.-->
           </div>
           <div class="row bg-height--10">
-            <div class="col-12 bg-color--darkblue d-flex">
+            <div class="col-12 d-flex bg-color--darkblue">
               <p class="align-self-center">
-                Trigg was Lorem ipsum dolor sit amet, consectetur adipisicing
-                elit. Veniam dolores aut deserunt, nulla saepe ullam officia quo
-                quos voluptate nam!
+                Let Trigg help you practice your times tables. Press i for
+                instruction video.
               </p>
+              <!--FLEX NOT WORKING-->
             </div>
           </div>
         </div>
@@ -69,60 +90,91 @@
         <div class="col-12 d-md-none">
           <div class="row">
             <!--TRIGG-->
-            <div class="col-6 shade bg--trigg bg-height--30" data-trigg></div>
+            <div class="col-6 bg-height--30 shade bg--trigg" data-trigg></div>
             <!--RIGHT HEADER BOXES-->
             <div class="col-6">
               <!--BOX CLOCK VISIBLE ON GO-->
-              <div class="row showGo hideStart" data-show="go" >
+              <div class="row hide-start" data-show="go">
+                <!--WHY: hide-start class used to apply display none to elements on load.
+                Own class used verses Bootstrap to work with jQuery show method.
+                Display css used verses jQuery hide method to avoid flicker on load.-->
                 <div
-                  class="col-12 bg-color--darkpink bg-height--10 shade d-flex justify-content-between"
+                  class="col-12 d-flex justify-content-between bg-height--10 bg-color--darkpink shade "
                 >
                   <time class="align-self-center">0:00</time>
-                  <i class="fas fa-volume-mute align-self-center" data-icon="sound"></i>
+                  <i
+                    class="fas fa-volume-mute align-self-center"
+                    data-icon="sound"
+                  ></i>
 
                   <i
-                    class="fas fa-times-circle hideStart showGo align-self-center" data-icon="reload" data-show="go"
+                    class="fas fa-times-circle align-self-center hide-start"
+                    data-icon="reload"
+                    data-show="go"
                   ></i>
                 </div>
               </div>
               <!--BOX MESSAGE VISIBLE ON GO-->
-              <div class="row showGo hideStart" data-show="go">
+              <div class="row hide-start" data-show="go">
+                <!--WHY: Both row and contained elemenets given hide-start class as most elements are not visible
+                  on go but containing row is.-->
                 <div
-                  class="col-12 bg-color--lightpink bg-height--20 shade text-center"
+                  class="col-12 text-center bg-height--20 bg-color--lightpink shade"
                 >
-                  <p class="message" data-message>try & check</p>
-                  <span class="message incorrect showIncorrect hideNext red" data-incorrect="message" data-hide="sumNext correct" data-show="incorrect"></span>
+                  <p class="message" data-message="all">try & check</p>
+                  <!--WHY: Class message used to style. Data attribute message used to target in js.-->
+                  <!--WHY: P used instead of span???????????-->
+                  <!--WHY: hide-start class not required as p always visible from go.-->
+                  <span
+                    class="message red"
+                    data-message="incorrect"
+                    data-hide="sumNext correct"
+                    data-show="incorrect"
+                  ></span>
+                  <!--WHY: hide-start class not required as span is empty until incorrect.-->
                   <img
                     src="assets/images/down.png"
-                    class="thumb hideStart showIncorrect hideNext" data-hide="sumNext correct" data-show="incorrect"
+                    class="thumb-height hide-start"
+                    data-hide="sumNext correct"
+                    data-show="incorrect"
                   />
-                                    <img
+                  <img
                     src="assets/images/up.png"
-                    class="thumb hideStart showCorrect hideNext" data-hide="sumNext" data-show="correct"
+                    class="thumb-height hide-start"
+                    data-hide="sumNext"
+                    data-show="correct"
                   />
                   <i
-                    class="hideStart hideCheck hideNext fas fa-exclamation-triangle red" data-hide="sumNext sumCheck" data-show="warn"
+                    class="fas fa-exclamation-triangle red hide-start"
+                    data-hide="sumNext sumCheck"
+                    data-show="warn"
                   ></i>
-                  <i class="hideStart fas fa-graduation-cap" data-show="done"></i>
+                  <i
+                    class="fas fa-graduation-cap hide-start "
+                    data-show="done"
+                  ></i>
                 </div>
               </div>
               <!--BOX TITLE VISIBLE ON START-->
-              <div class="row hideGo" data-hide="go">
+              <div class="row" data-hide="go">
                 <div
-                  class="col-12 bg-color--darkpink bg-height--15 shade d-flex justify-content-center"
+                  class="col-12 d-flex justify-content-center bg-height--15 bg-color--darkpink shade"
                 >
                   <h1 class="align-self-center">Trigg 4<br />Tables</h1>
                 </div>
               </div>
               <!--BOX INFO VISIBLE ON START-->
-              <div class="row hideGo" data-hide="go">
+              <div class="row" data-hide="go">
                 <div
-                  class="col-12 bg-color--darkblue  shade bg-height--15 d-flex justify-content-center text-center"
+                  class="col-12 d-flex justify-content-center text-center bg-height--15 bg-color--darkblue shade"
                 >
                   <p class="align-self-center m-0">
-                    Times Tables Practice
+                    Times Tables Instructions
                   </p>
-                  <i class="fas fa-info-circle align-self-center" data-icon="infoOpen"></i>
+                  <i
+                    class="fas fa-info-circle align-self-center"
+                    data-icon="infoOpen"
+                  ></i>
                 </div>
               </div>
             </div>
@@ -130,11 +182,15 @@
         </div>
         <!--COL4 ALL SCREENS ASK ANSWER-->
         <div class="col-12 col-md-6 col-lg-5">
-          <!--MD & LG SPACING (is it valid to do this?)-->
           <div class="row d-none d-md-block margin-top--15"></div>
+          <!--WHY: Row used to ensure where content start on md lg screens. IS THIS OK???-->
           <!--PROGRESS BAR-->
-          <div class="row showGo hideStart hideNextDone" data-show="go" data-hide="done"><!--hideStart taken out-->
-            <div class="col-12">
+          <div
+            class="row hide-start"
+            data-show="go"
+            data-hide="done"
+          >
+                        <div class="col-12">
               <div class="progress mt-3 mx-auto">
                 <div
                   id="progress"
@@ -152,10 +208,18 @@
           <div class="row">
             <div class="col-12 ">
               <!--PICK FORM-->
-              <form id="pick" class="hideGo hideInfo text-center" data-hide="go infoOpen" data-show="infoClose">
+              <form
+                id="pick"
+                class="text-center"
+                data-hide="go infoOpen"
+                data-show="infoClose"
+              >
                 <!--PICK NUMBER-->
-                <fieldset class="mt-3 mx-auto"><!--mx?-->
-                  <i class="hideStart fas fa-exclamation-triangle mr-3 red" data-icon="missingNo"
+                <fieldset class="mt-3 mx-auto">
+                  <!--mx?-->
+                  <i
+                    class="fas fa-exclamation-triangle mr-3 red missing hide-start"
+                    data-icon="missingNo"
                   ></i
                   ><span class="message">pick number</span>
                   <br />
@@ -200,7 +264,9 @@
                 </fieldset>
                 <!--PICK OPERATOR-->
                 <fieldset class="mt-4 mt-md-5 mx-auto">
-                  <i class="hideStart fas fa-exclamation-triangle mr-3 red" data-icon="missingOp"
+                  <i
+                    class="fas fa-exclamation-triangle mr-3 red missing hide-start"
+                    data-icon="missingOp"
                   ></i
                   ><span class="message">pick symbol</span>
                   <br />
@@ -220,7 +286,11 @@
                 <!--GO BUTTON-->
                 <fieldset class="mt-3 mt-md-5 mx-auto">
                   <span class="d-inline-block mt-3 message">lets</span>
-                  <button type="button" class="selector-style button-style" id="pickGo" data-button="go">
+                  <button
+                    type="button"
+                    class="button-style"
+                    data-button="go"
+                  >
                     go
                   </button>
                 </fieldset>
@@ -228,12 +298,20 @@
               <!--WHERE: input type number from Mozilla https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number-->
               <!--NUMBER KEYPAD-->
               <div class="d-flex justify-content-center">
-                <form id="pad" class="mt-3 hideStart showGo hideNextDone" data-hide="done" data-show="go">
+                <form
+                  id="pad"
+                  class="mt-3 hide-start"
+                  data-hide="done"
+                  data-show="go"
+                >
                   <div class="d-flex justify-content-between bg-height--60">
-                    <span id="sumAsk" class="align-self-center" data-sum="ask"></span>
+                    <span
+                      id="sum-ask"
+                      class="align-self-center"
+                      data-sum="ask"
+                    ></span>
                     <input
-                      id="sumAnswer"
-                      class="showNextSum hideCheck"
+                      id="sum-try"
                       type="text"
                       maxlength="3"
                       data-sum="try"
@@ -241,8 +319,8 @@
                       data-show="sumNext"
                     />
                     <button
-                      id="sumCheck"
-                      class="btn align-self-center showNextSum hideCheck button-style"
+                      id="sum-check"
+                      class="btn button-style align-self-center "
                       type="button"
                       data-button="sumCheck"
                       data-hide="sumCheck"
@@ -251,8 +329,8 @@
                       check
                     </button>
                     <button
-                      id="sumNext"
-                      class="btn align-self-center hideStart hideNextSum button-style"
+                      id="sum-next"
+                      class="btn button-style align-self-center hide-start"
                       type="button"
                       data-button="sumNext"
                       data-hide="sumNext"
@@ -263,27 +341,101 @@
 
                   <hr />
                   <div>
-                    <input id="pad1" class="padNum button-style" type="button" value="1" data-keypad="number"/>
-                    <input id="pad2" class="padNum button-style" type="button" value="2" data-keypad="number"/>
-                    <input id="pad3" class="padNum button-style" type="button" value="3" data-keypad="number"/>
-                    <input id="pad4" class="padNum button-style" type="button" value="4" data-keypad="number"/>
+                    <input
+                      id="pad1"
+                      class="pad-num button-style"
+                      type="button"
+                      value="1"
+                      data-keypad="number"
+                    />
+                    <input
+                      id="pad2"
+                      class="pad-num button-style"
+                      type="button"
+                      value="2"
+                      data-keypad="number"
+                    />
+                    <input
+                      id="pad3"
+                      class="pad-num button-style"
+                      type="button"
+                      value="3"
+                      data-keypad="number"
+                    />
+                    <input
+                      id="pad4"
+                      class="pad-num button-style"
+                      type="button"
+                      value="4"
+                      data-keypad="number"
+                    />
                     <br />
-                    <input id="pad5" class="padNum button-style" type="button" value="5" data-keypad="number"/>
-                    <input id="pad6" class="padNum button-style" type="button" value="6" data-keypad="number"/>
-                    <input id="pad7" class="padNum button-style" type="button" value="7" data-keypad="number"/>
-                    <input id="pad8" class="padNum button-style" type="button" value="8" data-keypad="number"/>
+                    <input
+                      id="pad5"
+                      class="pad-num button-style"
+                      type="button"
+                      value="5"
+                      data-keypad="number"
+                    />
+                    <input
+                      id="pad6"
+                      class="pad-num button-style"
+                      type="button"
+                      value="6"
+                      data-keypad="number"
+                    />
+                    <input
+                      id="pad7"
+                      class="pad-num button-style"
+                      type="button"
+                      value="7"
+                      data-keypad="number"
+                    />
+                    <input
+                      id="pad8"
+                      class="pad-num button-style"
+                      type="button"
+                      value="8"
+                      data-keypad="number"
+                    />
                     <br />
-                    <input id="pad9" class="padNum button-style" type="button" value="9" data-keypad="number"/>
-                    <input id="pad1" class="padNum button-style" type="button" value="0" data-keypad="number"/>
-                    <input id="padClear" class="button-style" type="button" value="clear" data-keypad="clear"/>
+                    <input
+                      id="pad9"
+                      class="pad-num button-style"
+                      type="button"
+                      value="9"
+                      data-keypad="number"
+                    />
+                    <input
+                      id="pad1"
+                      class="pad-num button-style"
+                      type="button"
+                      value="0"
+                      data-keypad="number"
+                    />
+                    <input
+                      id="pad-clear"
+                      class="button-style"
+                      type="button"
+                      value="clear"
+                      data-keypad="clear"
+                    />
                   </div>
                 </form>
 
-                <div class="hideStart showNextDone text-center mt-3" data-show="done"> 
+                <div
+                  class="text-center mt-3 hide-start"
+                  data-show="done"
+                >
                   <canvas width="250" height="250" class="shade"></canvas>
                   <p class="message mt-1 mb-1">download to share</p>
-                  <button id="reportDownload" class="button-style" type="button" data-button="download">
-                    <i class="fas fa-arrow-circle-down" ></i>
+                  <button
+                    id="report-download"
+                    class="button-style"
+                    type="button"
+                    data-button="download"
+                  >
+                    <i class="fas fa-arrow-circle-down"></i>
                   </button>
                 </div>
               </div>
@@ -291,34 +443,60 @@
           </div>
           <!--MD & LG MESSAGE-->
           <div class="row d-none d-md-block">
-            <div class="col-12  text-center mt-3">
-              <span class="hideStart message incorrect showIncorrect hideNext red" data-incorrect="message" data-hide="sumNext correct" data-show="incorrect"></span>
+            <div class="col-12 text-center mt-3">
+              <span
+                class="message incorrect red"
+                data-message="incorrect"
+                data-hide="sumNext correct"
+                data-show="incorrect"
+              ></span>
+              <!--Hide start taken off-->
               <img
                 src="assets/images/down.png"
-                class="hideStart thumb showIncorrect hideNext" data-hide="sumNext correct" data-show="incorrect"
+                class="thumb-height hide-start"
+                data-hide="sumNext correct"
+                data-show="incorrect"
               />
               <img
                 src="assets/images/up.png"
-                class="hideStart thumb showCorrect hideNext" data-hide="sumNext" data-show="correct"
+                class="thumb-height hide-start"
+                data-hide="sumNext"
+                data-show="correct"
               />
               <i
-                class="hideStart fas fa-exclamation-triangle hideCheck hideNext red" data-show="warn" data-hide="sumNext sumCheck" 
-              ></i>
-             <i class="hideStart fas fa-graduation-cap" data-show="done"></i>
-              <span class="hideStart message align-self-baseline" data-message data-show="go">try & check</span>
-              <!--WHY: Instruct viisble from GO to NEXT DONE hence no specific show or hide class.-->
+                class="fas fa-exclamation-triangle red hide-start "
+                data-hide="sumNext sumCheck"
+                data-show="warn"
+                              ></i>
+              <i class="fas fa-graduation-cap hide-start" data-show="done"></i>
+              <span
+                class="message align-self-baseline hide-start"
+                data-message="all"
+                data-show="go"
+                >try & check</span
+              >
+              <!--WHY: Instruct viisble from GO.-->
             </div>
           </div>
           <!--ALL SCREENS INFO-->
           <div class="row">
-            <div class="col-12 hideStart showInfo text-center mt-3" data-hide="infoClose" data-show="infoOpen">
+            <div
+              class="col-12 text-center mt-3 hide-start"
+              data-hide="infoClose"
+              data-show="infoOpen"
+            >
               <div class="embed-responsive embed-responsive-16by9">
                 <iframe
                   class="embed-responsive-item"
                   src="https://www.youtube.com/embed/EcVam72tyyw"
-                                  ></iframe>
+                ></iframe>
               </div>
-              <button type="button" class="button-style" id="closeInfo" data-button="infoClose">
+              <button
+                type="button"
+                class="button-style"
+                id="info-close"
+                data-button="infoClose"
+              >
                 start
               </button>
             </div>

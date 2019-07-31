@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Cherry+Cream+Soda|Gaegu:700|Irish+Grover|Signika:600&display=swap');
 
 
-.hideStart {
+.hide-start {
   display: none;
 }
 /*WHY: Used to prevent flicker when first loaded when jQuery hide() used to hide elements at start.
@@ -33,8 +33,8 @@ h2 {
 }
 /*WHERE: https://designshack.net/articles/css/12-fun-css-text-shadows-you-can-copy-and-paste/*/
 
-#sumCheck,
-#sumNext {
+#sum-check,
+#sum-next {
   font-size: 1.2rem;
 }
 /*WHY: sumCheck and sumNext included to overwrite Bootstrap btn size.*/
@@ -70,6 +70,11 @@ i {
   font-size: 1.8rem;
 }
 
+i.missing {
+  font-size: 1.4rem;
+}
+/*WHY: Reduce i font size to span size when missing operator or number to stop buttons from moving.*/
+
 .bg-color--lightpink > time {
   font-size: 1.6rem;
 }
@@ -96,8 +101,12 @@ i {
 }
 /*WHY: Placed below other colour css to ensure overwrites. ??? took off active*/ 
 
-.thumb {
+.thumb-height {
   height: 40px;
+}
+
+.warn-height {
+  height: 22.4px;
 }
 
 /*----------BACKGROUNDS----------*/
@@ -202,14 +211,14 @@ i {
   color: white;
 }
 
-#sumAnswer,
-#sumCheck,
-#sumNext {
+#sum-try,
+#sum-check,
+#sum-next {
   color: #575778;
 }
 /*WHY: Bootstrap btn class overwriting body colour.*/
 
-#closeInfo {
+#info-close {
   width: 60px;
   height: 32px;
 }
@@ -224,21 +233,21 @@ i {
   height: 40px;
 }
 
-#sumAsk {
+#sum-ask {
   margin-left: 5px;
   margin-top: 10px;
   margin-bottom: 8px;
 }
 
-#sumAnswer {
+#sum-try {
   margin-top: 10px;
   margin-bottom: 8px;
   width: 42px;
   height: 40px;
 }
 
-#sumCheck,
-#sumNext {
+#sum-check,
+#sum-next {
   width: 60px;
 }
 
@@ -246,11 +255,11 @@ hr {
   margin: 5px;
 }
 
-.padNum {
+.pad-num {
   width: 30px;
 }
 
-#padClear {
+#pad-clear {
   width: 80px;
 }
 
@@ -261,7 +270,7 @@ hr {
   width: 217px;
 }
 
-#reportDownload {
+#report-download {
   height: 45px;
   width: 40px;
 }
