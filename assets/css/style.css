@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Cherry+Cream+Soda|Gaegu:700|Irish+Grover|Signika:600&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Special+Elite&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Cherry+Cream+Soda|Gaegu:700|Irish+Grover|Signika:600&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Special+Elite&display=swap");
 
 .hide-start {
   display: none;
@@ -7,32 +7,35 @@
 /*WHY: Used to prevent flicker when first loaded when jQuery hide() used to hide elements at start.
 Bootstrap not working with */
 
-
 /*----------MAIN FONTS----------*/
 body {
   font-family: "Signika", sans-serif;
   font-size: 1.2rem;
   color: #575778;
-    }
+}
 
 h1 {
   font-family: "Irish Grover", cursive;
-  font-size: 1.5rem;
-  line-height: 1.5rem;
-  }
-
-h2 {
-  font-family: "Cherry Cream Soda", cursive;
-  font-size: 1rem;
-  }
-
-h1,
-h2 {
+  font-size: 1.8rem;
+  line-height: 1.8rem;
   color: white;
   text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1),
     0px 18px 23px rgba(0, 0, 0, 0.1);
 }
 /*WHERE: https://designshack.net/articles/css/12-fun-css-text-shadows-you-can-copy-and-paste/*/
+
+h2,
+#instruct--mdlg {
+  font-family: "Cherry Cream Soda", cursive;
+  font-size: 1.1rem;
+  color: #e9f0f2;
+}
+
+#instruct--xssm {
+  font-family: "Irish Grover", cursive;
+  font-size: 1.1rem;
+  color: #e9f0f2;
+}
 
 #sum-check,
 #sum-next {
@@ -46,42 +49,36 @@ h2 {
   line-height: 1.2rem;
 }
 
-.message.red{
-    font-size: 2.7rem;
+.message.red {
+  font-size: 2.7rem;
 }
 /*WHY: Incorrect answer shown next to thumb image.*/
-
-.bg-color--darkblue > p {
-  color:#e9f0f2;
-  font-size: 1rem;
-  line-height: 1rem;
-}
-/*WHY: Improves legibility on dark background.*/
 
 .green {
   color: #009816;
 }
 
-.red{
+.red {
   color: #980036;
 }
 
 /*----------LINKS----------*/
 a {
-  font-family: 'Special Elite', cursive;
-  font-size: .8rem;
-  line-height: .8rem;
-  }
+  font-family: "Special Elite", cursive;
+  font-size: 0.8rem;
+  line-height: 0.8rem;
+}
+/*WHAT: Font size & line height increase for md lg screens in media queries.*/
 
-.bg--trigg>a{
+.bg--trigg > a {
   color: #7fa5b5;
 }
 
-.bg-color--darkpink * a{
+.bg-color--darkpink * a {
   color: #ebe1e0;
 }
 
-.bg--trigg>a:hover {
+.bg--trigg > a:hover {
   color: #b18683;
   text-decoration: none;
 }
@@ -117,14 +114,15 @@ i {
   color: #ebe1e0;
 }
 
-.bg-color--darkpink>i:hover ,
-.bg-color--lightpink>i:hover {
+.bg-color--darkpink > i:hover,
+.bg-color--lightpink > i:hover {
   color: white;
 }
-/*WHY: Placed below other colour css to ensure overwrites. ??? took off active*/ 
+/*WHY: Placed below other colour css to ensure overwrites. ??? took off active*/
 
-.disable, .disable:hover{
-  color:  #b18683 !important;
+.disable,
+.disable:hover {
+  color: #b18683 !important;
   opacity: 0.3;
 }
 /*WHY: Important used to overwrite bg-color--lightpink>i hover.*/
@@ -133,73 +131,6 @@ i {
   height: 40px;
 }
 
-
-/*----------BACKGROUNDS----------*/
-.bg-color--darkpink {
-  background-color: #b18683;
-}
-
-.bg-color--lightpink {
-  background-color: #ebe1e0;
-}
-
-.bg-color--darkblue {
-  background-color: #7fa5b5;
-}
-
-.bg-color--lightblue {
-  background-color: #e9f0f2;
-}
-
-.bg--trigg {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-color: #e9f0f2;
-  background-image: url("../images/hi.png");
-  }
-
-.bg-height--10 {
-  height: 10vh;
-}
-
-/*WHY: vh used so site fits in viewport and limits need for scrolling.*/
-
-.bg-height--15 {
-  height: 15vh;
-}
-
-.bg-height--20 {
-  height: 20vh;
-}
-
-.bg-height--30 {
-  min-height: 30vh;
-}
-
-.bg-height--52 {
-  min-height: 52vh;
-}
-
-.bg-height--60 {
-  height: 60px;
-}
-
-.bg-height--65 {
-  height: 65vh;
-}
-
-.margin-top--15 {
-  margin-top: 15vh;
-}
-
-.shade {
-  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
-    0 3px 6px rgba(0, 0, 0, 0.23);
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-}
-/* WHERE: Shadow code from https://codepen.io/sdthornton/pen/wBZdXq*/
-
 /*----------PROGRESS BAR----------*/
 
 #progress {
@@ -207,13 +138,14 @@ i {
 }
 
 .progress {
-  width: 215px;
+  width: 217px;
   height: 1.2rem;
 }
+/*WHY: Width matches pad width.*/
 
 /*----------BUTTONS----------*/
 
-.button-style{
+.button-style {
   padding: 0px;
   text-align: center;
   border: 2px solid #ccc;
@@ -225,9 +157,9 @@ i {
   margin: 8px 10px 8px 10px;
 }
 
-.button-style:active{
-    box-shadow: 0 0 0 white;
-    margin: 10px 10px 6px 10px;
+.button-style:active {
+  box-shadow: 0 0 0 white;
+  margin: 10px 10px 6px 10px;
 }
 /*WHERE: https://stackoverflow.com/questions/38377062/how-to-make-html-button-look-pressed-in-using-css*/
 
@@ -249,7 +181,7 @@ i {
 }
 
 #pick * label,
-#pick * button{
+#pick * button {
   width: 32px;
   height: 32px;
 }
@@ -300,6 +232,67 @@ hr {
   width: 40px;
 }
 
+/*----------BACKGROUNDS----------*/
+.bg-color--darkpink {
+  background-color: #b18683;
+}
+
+.bg-color--lightpink {
+  background-color: #ebe1e0;
+}
+
+.bg-color--darkblue {
+  background-color: #7fa5b5;
+}
+
+.bg-color--lightblue {
+  background-color: #e9f0f2;
+}
+
+.bg--trigg {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: #e9f0f2;
+  background-image: url("../images/hi.png");
+}
+
+.bg-height--10 {
+  height: 10vh;
+}
+/*WHY: vh used so site fits in viewport and limits need for scrolling.*/
+
+.bg-height--15 {
+  height: 15vh;
+}
+
+.bg-height--20 {
+  height: 20vh;
+}
+
+.bg-height--30 {
+  min-height: 30vh;
+}
+
+.bg-height--65 {
+  height: 65vh;
+}
+
+.margin-top--15 {
+  margin-top: 15vh;
+}
+
+.bg-height--60px {
+  height: 60px;
+}
+
+.shade {
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+    0 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+/* WHERE: Shadow code from https://codepen.io/sdthornton/pen/wBZdXq*/
+
 /*----------MEDIA QUERIES----------*/
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -314,7 +307,7 @@ hr {
     font-size: 1rem;
     line-height: 1rem;
   }
- }
+}
 
 @media (min-width: 992px) {
   h1 {
