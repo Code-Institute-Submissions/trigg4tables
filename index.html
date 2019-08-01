@@ -31,7 +31,7 @@
 
   <body>
     <!--WHERE:Favicon Image by <a href="https://pixabay.com/users/Elionas-2345468/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1314467">Elias Schäfer</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1314467">Pixabay</a>-->
-    <div class="container-fluid">
+    <main class="container-fluid">
       <div class="row">
         <!--COL1 LG SCREENS - BORDER-->
         <div class="col-1 d-none d-lg-block"></div>
@@ -64,7 +64,8 @@
               class="col-md-12 col-lg-6 d-flex justify-content-around bg-color--lightpink"
             >
               <!--WHY: Bootstrap justify class used to space icons and timer equally.-->
-              <time class="align-self-center">0:00</time>
+              <span class="time align-self-center">0:00</span>
+              <!--WHY: Span used verses time element to allow 0:00 verses 00:00 time format.-->
               <i
                 class="fas fa-volume-mute align-self-center"
                 data-icon="sound"
@@ -113,7 +114,7 @@
                 <div
                   class="col-12 d-flex justify-content-between bg-height--10 bg-color--darkpink shade "
                 >
-                  <time class="align-self-center">0:00</time>
+                  <span class="time align-self-center">0:00</span>
                   <i
                     class="fas fa-volume-mute align-self-center"
                     data-icon="sound"
@@ -146,12 +147,14 @@
                   <!--WHY: hide-start class not required as span is empty until incorrect.-->
                   <img
                     src="assets/images/down.png"
+                    alt="thumbs down"
                     class="thumb-height hide-start"
                     data-hide="sumNext correct"
                     data-show="incorrect"
                   />
                   <img
                     src="assets/images/up.png"
+                    alt="thumbs up"
                     class="thumb-height hide-start"
                     data-hide="sumNext"
                     data-show="correct"
@@ -418,7 +421,7 @@
                       data-keypad="number"
                     />
                     <input
-                      id="pad1"
+                      id="pad0"
                       class="pad-num button-style"
                       type="button"
                       value="0"
@@ -460,12 +463,14 @@
               ></span>
                             <img
                 src="assets/images/down.png"
+                alt="thumbs down"
                 class="thumb-height hide-start"
                 data-hide="sumNext correct"
                 data-show="incorrect"
               />
               <img
                 src="assets/images/up.png"
+                alt="thumbs up"
                 class="thumb-height hide-start"
                 data-hide="sumNext"
                 data-show="correct"
@@ -512,7 +517,7 @@
         <!--COL5 LG SCREENS - BORDER-->
         <div class="col-1 d-none d-lg-block"></div>
       </div>
-    </div>
+    </main>
 
     <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
     <script
@@ -543,6 +548,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <script type="text/javascript" src="assets/js/main.js"></script>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>

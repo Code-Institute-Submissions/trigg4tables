@@ -94,12 +94,12 @@ i.missing {
 }
 /*WHY: Reduce i font size to span size when missing operator or number to stop buttons from moving.*/
 
-.bg-color--lightpink > time {
+.bg-color--lightpink > .time {
   font-size: 1.6rem;
 }
 /*WHY: Bg--lightpink md & lg screens.*/
 
-time,
+.time,
 i {
   color: #b18683;
 }
@@ -109,7 +109,7 @@ i {
 }
 /*WHY: No time just i displayed on bg--darkblue.*/
 
-.bg-color--darkpink > time,
+.bg-color--darkpink > .time,
 .bg-color--darkpink > i {
   color: #ebe1e0;
 }

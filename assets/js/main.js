@@ -10,7 +10,7 @@ $(document).ready(function() {
   //const pickLabel = $("[data-pickLabel]");
   const sumAskElement = $("[data-sum=ask]");
   const sumTryElement = $("[data-sum=try]");
-  const timeElement = $("time"); //referred to more than once in code
+  const timeElement = $(".time"); //referred to more than once in code
   const keypadNumberElement = $("[data-keypad=number]");
   const keypadClearElement = $("[data-keypad=clear]");
   const triggElement = $("[data-trigg]");
