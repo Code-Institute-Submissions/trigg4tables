@@ -254,7 +254,7 @@ hr {
   background-repeat: no-repeat;
   background-size: contain;
   background-color: #e9f0f2;
-  background-image: url("../images/hi.png");
+  background-image: url("../images/hi.svg");
 }
 
 .bg-height--10 {
@@ -278,12 +278,12 @@ hr {
   height: 65vh;
 }
 
-.margin-top--15 {
-  margin-top: 15vh;
-}
-
 .bg-height--60px {
   height: 60px;
+}
+
+.margin-top--15 {
+  margin-top: 15vh;
 }
 
 .shade {

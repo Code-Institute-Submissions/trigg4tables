@@ -48,13 +48,13 @@ $(document).ready(function() {
   //need correct sound source
 
   //IMAGES
-  const startImage = "url('assets/images/hi.png')";
-  const emptyImage = "url('assets/images/sour.png')";
-  const correctImage = "url('assets/images/thumbsup.png')";
-  const incorrect1Image = "url('assets/images/hmm.png')";
-  const incorrect2Image = "url('assets/images/thatway.png')";
-  const incorrect3Image = "url('assets/images/oops.png')";
-  const doneImage = "url('assets/images/score.png')";
+  const startImage = "url('assets/images/hi.svg')";
+  const emptyImage = "url('assets/images/sour.svg')";
+  const correctImage = "url('assets/images/thumbsup.svg')";
+  const incorrect1Image = "url('assets/images/hmm.svg')";
+  const incorrect2Image = "url('assets/images/thatway.svg')";
+  const incorrect3Image = "url('assets/images/oops.svg')";
+  const doneImage = "url('assets/images/score.svg')";
 //WHY: Image source declare to improve 
 
 
