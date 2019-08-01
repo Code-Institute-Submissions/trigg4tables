@@ -47,6 +47,17 @@ $(document).ready(function() {
   //https://freesound.org/people/Wagna/sounds/242207/ done
   //need correct sound source
 
+  //IMAGES
+  const startImage = "url('assets/images/hi.png')";
+  const emptyImage = "url('assets/images/sour.png')";
+  const correctImage = "url('assets/images/thumbsup.png')";
+  const incorrect1Image = "url('assets/images/hmm.png')";
+  const incorrect2Image = "url('assets/images/thatway.png')";
+  const incorrect3Image = "url('assets/images/oops.png')";
+  const doneImage = "url('assets/images/score.png')";
+//WHY: Image source declare to improve 
+
+
   //SOUND ON OFF
   $("[data-icon=sound]").click(function() {
     if (sound === true) {
@@ -381,7 +392,7 @@ $(document).ready(function() {
     //STEP0: CHECK ANSWER - ENTERED
     if (!sumTry) {
       playAudio(audioIncorrect);
-      triggElement.css("background-image", "url('assets/images/sour.png')");
+      triggElement.css("background-image", emptyImage);
       messageElement.text(`empty answer`);
       $("[data-show=warn]").show();
     }
@@ -389,7 +400,7 @@ $(document).ready(function() {
     //STEP1: CHECK ANSWER - CORRECT
     else if (sumCorrect(sumTry, answer) === true) {
       playAudio(audioCorrect);
-      triggElement.css("background-image", "url('assets/images/thumbsup.png')");
+      triggElement.css("background-image", correctImage);
       messageElement.text(`click next`);
       sumAskElement.text(`${sumAskAnswer}`).css("color", "#83b186");
       $("[data-hide~=sumCheck]").hide(); //sumTry input, sumCheck button & triangle(xs-s & m-l)
@@ -401,7 +412,7 @@ $(document).ready(function() {
     //STEP2: CHECK ANSWER - INCORRECT 1ST ATTEMPT
     else if (count === 0) {
       playAudio(audioIncorrect);
-      triggElement.css("background-image", "url('assets/images/hmm.png')");
+      triggElement.css("background-image", incorrect1Image);
       incorrectMessageElement.text(`${sumTry}`);
       messageElement.text(`try again & check`);
       $("[data-show~=incorrect]").show(); //thumbs down & incorrect span
@@ -412,7 +423,7 @@ $(document).ready(function() {
     //STEP3: CHECK ANSWER - INCORRECT 2ND ATTEMPT
     else if (count === 1) {
       playAudio(audioIncorrect);
-      triggElement.css("background-image", "url('assets/images/thatway.png')");
+      triggElement.css("background-image", incorrect2Image);
       incorrectMessageElement.text(`${sumTry}`);
       messageElement.text(`revise & click next`);
       sumAskElement.text(`${sumAskAnswer}`).css("color", "#3ea041");
@@ -426,7 +437,7 @@ $(document).ready(function() {
     //STEP4: CHECK ANSWER - INCORRECT 3RD ATTEMPT
     else {
       playAudio(audioIncorrect);
-      triggElement.css("background-image", "url('assets/images/oops.png')");
+      triggElement.css("background-image", incorrect3Image);
       incorrectMessageElement.text(`${sumTry}`);
       messageElement.text(`try ${answer} & check`);
       $("[data-show~=incorrect]").show(); //thumbs down & incorrect span
@@ -454,7 +465,7 @@ $(document).ready(function() {
     //next sum
     if (todo.length !== 0) {
       sumSet(todo);
-      triggElement.css("background-image", "url('assets/images/hi.png')");
+      triggElement.css("background-image", startImage);
       messageElement.text("try & check");
       $("[data-show~=sumNext]").show();
     }
@@ -465,7 +476,7 @@ $(document).ready(function() {
       noteFill(revise);
       report();
       playAudio(audioDone);
-      triggElement.css("background-image", "url('assets/images/score.png')");
+      triggElement.css("background-image", doneImage);
       messageElement.text(`well done`);
       $("[data-hide~=done]").hide();
       $("[data-show~=done]").show();
