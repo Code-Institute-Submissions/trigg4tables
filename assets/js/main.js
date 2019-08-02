@@ -1,6 +1,24 @@
 $(document).ready(function() {
   console.log("test");
 
+	
+    const startImage = new Image();
+        const emptyImage = new Image();
+    const correctImage = new Image();
+    const incorrect1Image = new Image();
+    const incorrect2Image = new Image();
+    const incorrect3Image = new Image();
+    const doneImage = new Image();
+
+  startImage.src = "url('assets/images/hi.svg')";
+  emptyImage.src = "url('assets/images/sour.svg')";
+  correctImage.src = "url('assets/images/thumbsup.svg')";
+  incorrect1Image.src = "url('assets/images/hmm.svg')";
+  incorrect2Image.src = "url('assets/images/thatway.svg')";
+  incorrect3Image.src = "url('assets/images/oops.svg')";
+  doneImage.src = "url('assets/images/score.svg')";
+  //WHERE: https://www.thonky.com/javascript-and-css-guide/javascript-image-preload
+
   //POINT TO DOM ELEMENTS
   //const iconSound = $("[data-icon=sound]");
   //const iconReload = $("[data-icon=reload]");  //referred to once in code???
@@ -392,7 +410,7 @@ $(document).ready(function() {
     //STEP0: CHECK ANSWER - ENTERED
     if (!sumTry) {
       playAudio(audioIncorrect);
-      triggElement.css("background-image", "url('assets/images/sour.svg')");
+      triggElement.css("background-image", emptyImage);
       messageElement.text(`empty answer`);
       $("[data-show=warn]").show();
     }
@@ -400,7 +418,7 @@ $(document).ready(function() {
     //STEP1: CHECK ANSWER - CORRECT
     else if (sumCorrect(sumTry, answer) === true) {
       playAudio(audioCorrect);
-      triggElement.css("background-image", "url('assets/images/thumbsup.svg')");
+      triggElement.css("background-image", correctImage);
       messageElement.text(`click next`);
       sumAskElement.text(`${sumAskAnswer}`).css("color", "#83b186");
       $("[data-hide~=sumCheck]").hide(); //sumTry input, sumCheck button & triangle(xs-s & m-l)
@@ -412,7 +430,7 @@ $(document).ready(function() {
     //STEP2: CHECK ANSWER - INCORRECT 1ST ATTEMPT
     else if (count === 0) {
       playAudio(audioIncorrect);
-      triggElement.css("background-image", "url('assets/images/hmm.svg')");
+      triggElement.css("background-image", incorrect1Image);
       incorrectMessageElement.text(`${sumTry}`);
       messageElement.text(`try again & check`);
       $("[data-show~=incorrect]").show(); //thumbs down & incorrect span
@@ -423,7 +441,7 @@ $(document).ready(function() {
     //STEP3: CHECK ANSWER - INCORRECT 2ND ATTEMPT
     else if (count === 1) {
       playAudio(audioIncorrect);
-      triggElement.css("background-image", "url('assets/images/thatway.svg')");
+      triggElement.css("background-image", incorrect2Image);
       incorrectMessageElement.text(`${sumTry}`);
       messageElement.text(`revise & click next`);
       sumAskElement.text(`${sumAskAnswer}`).css("color", "#3ea041");
@@ -437,7 +455,7 @@ $(document).ready(function() {
     //STEP4: CHECK ANSWER - INCORRECT 3RD ATTEMPT
     else {
       playAudio(audioIncorrect);
-      triggElement.css("background-image", "url('assets/images/oops.svg')");
+      triggElement.css("background-image", incorrect3Image);
       incorrectMessageElement.text(`${sumTry}`);
       messageElement.text(`try ${answer} & check`);
       $("[data-show~=incorrect]").show(); //thumbs down & incorrect span
@@ -465,7 +483,7 @@ $(document).ready(function() {
     //next sum
     if (todo.length !== 0) {
       sumSet(todo);
-      triggElement.css("background-image", "url('assets/images/hi.svg')");
+      triggElement.css("background-image", startImage);
       messageElement.text("try & check");
       $("[data-show~=sumNext]").show();
     }
@@ -476,7 +494,7 @@ $(document).ready(function() {
       noteFill(revise);
       report();
       playAudio(audioDone);
-      triggElement.css("background-image", "url('assets/images/score.svg')");
+      triggElement.css("background-image", doneImage);
       messageElement.text(`well done`);
       $("[data-hide~=done]").hide();
       $("[data-show~=done]").show();
