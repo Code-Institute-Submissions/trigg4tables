@@ -10,13 +10,21 @@ $(document).ready(function() {
     const incorrect3Image = new Image();
     const doneImage = new Image();
 
-  startImage.src = "url('assets/images/hi.svg')";
+  startImage.src = "assets/images/hi.svg";
+  emptyImage.src = "assets/images/sour.svg";
+  correctImage.src = "assets/images/thumbsup.svg";
+  incorrect1Image.src = "assets/images/hmm.svg";
+  incorrect2Image.src = "assets/images/thatway.svg";
+  incorrect3Image.src = "assets/images/oops.svg";
+  doneImage.src = "assets/images/score.svg";
+
+  /*startImage.src = "url('assets/images/hi.svg')";
   emptyImage.src = "url('assets/images/sour.svg')";
   correctImage.src = "url('assets/images/thumbsup.svg')";
   incorrect1Image.src = "url('assets/images/hmm.svg')";
   incorrect2Image.src = "url('assets/images/thatway.svg')";
   incorrect3Image.src = "url('assets/images/oops.svg')";
-  doneImage.src = "url('assets/images/score.svg')";
+  doneImage.src = "url('assets/images/score.svg')";*/
   //WHERE: https://www.thonky.com/javascript-and-css-guide/javascript-image-preload
 
   //POINT TO DOM ELEMENTS
@@ -410,7 +418,7 @@ $(document).ready(function() {
     //STEP0: CHECK ANSWER - ENTERED
     if (!sumTry) {
       playAudio(audioIncorrect);
-      triggElement.css("background-image", emptyImage);
+      triggElement.css("background-image", "url('assets/images/sour.svg')");
       messageElement.text(`empty answer`);
       $("[data-show=warn]").show();
     }
@@ -418,7 +426,7 @@ $(document).ready(function() {
     //STEP1: CHECK ANSWER - CORRECT
     else if (sumCorrect(sumTry, answer) === true) {
       playAudio(audioCorrect);
-      triggElement.css("background-image", correctImage);
+      triggElement.css("background-image", "url('assets/images/thumbsup.svg')");
       messageElement.text(`click next`);
       sumAskElement.text(`${sumAskAnswer}`).css("color", "#83b186");
       $("[data-hide~=sumCheck]").hide(); //sumTry input, sumCheck button & triangle(xs-s & m-l)
@@ -430,7 +438,7 @@ $(document).ready(function() {
     //STEP2: CHECK ANSWER - INCORRECT 1ST ATTEMPT
     else if (count === 0) {
       playAudio(audioIncorrect);
-      triggElement.css("background-image", incorrect1Image);
+      triggElement.css("background-image", "url('assets/images/hmm.svg')");
       incorrectMessageElement.text(`${sumTry}`);
       messageElement.text(`try again & check`);
       $("[data-show~=incorrect]").show(); //thumbs down & incorrect span
@@ -441,7 +449,7 @@ $(document).ready(function() {
     //STEP3: CHECK ANSWER - INCORRECT 2ND ATTEMPT
     else if (count === 1) {
       playAudio(audioIncorrect);
-      triggElement.css("background-image", incorrect2Image);
+      triggElement.css("background-image", "url('assets/images/thatway.svg')");
       incorrectMessageElement.text(`${sumTry}`);
       messageElement.text(`revise & click next`);
       sumAskElement.text(`${sumAskAnswer}`).css("color", "#3ea041");
@@ -455,7 +463,7 @@ $(document).ready(function() {
     //STEP4: CHECK ANSWER - INCORRECT 3RD ATTEMPT
     else {
       playAudio(audioIncorrect);
-      triggElement.css("background-image", incorrect3Image);
+      triggElement.css("background-image", "url('assets/images/oops.svg')");
       incorrectMessageElement.text(`${sumTry}`);
       messageElement.text(`try ${answer} & check`);
       $("[data-show~=incorrect]").show(); //thumbs down & incorrect span
@@ -483,7 +491,7 @@ $(document).ready(function() {
     //next sum
     if (todo.length !== 0) {
       sumSet(todo);
-      triggElement.css("background-image", startImage);
+      triggElement.css("background-image", "url('assets/images/hi.svg')");
       messageElement.text("try & check");
       $("[data-show~=sumNext]").show();
     }
@@ -494,7 +502,7 @@ $(document).ready(function() {
       noteFill(revise);
       report();
       playAudio(audioDone);
-      triggElement.css("background-image", doneImage);
+      triggElement.css("background-image", "url('assets/images/score.svg')");
       messageElement.text(`well done`);
       $("[data-hide~=done]").hide();
       $("[data-show~=done]").show();
