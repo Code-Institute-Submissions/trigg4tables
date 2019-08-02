@@ -10,7 +10,7 @@
     />
     <meta
       name="keywords"
-      content="Maths, Sums, Homework, Times, Tables, Practice, Report, Download"
+      content="Maths, Sums, Homework, Times, Tables, Practice, Report"
     />
     <meta name="author" content="coderbeez" />
     <link
@@ -19,7 +19,6 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <!--<script src="https://kit.fontawesome.com/974d3c9b5a.js"></script>-->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
@@ -33,44 +32,50 @@
     <!--WHERE:Favicon Image by <a href="https://pixabay.com/users/Elionas-2345468/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1314467">Elias Schäfer</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1314467">Pixabay</a>-->
     <main class="container-fluid">
       <div class="row">
-        <!--COL1 LG SCREENS - BORDER-->
+
+        <!--COLUMN A: LG SCREENS-->
         <div class="col-1 d-none d-lg-block"></div>
-        <!--WHY: Bootstrap col used as a spacer for large screens.
-          Bootstrap display classes used to ensure only applies to large screens.-->
-        <!--COL2 MD & LG SCREENS - TITLE ICONS TRIGG-->
+        <!--WHAT: Bootstrap display classes used to ensure only applies to large screens.-->
+        <!--WHY: Bootstrap col used as a spacer for large screens.-->
+
+        <!--COLUMN B: MD & LG SCREENS-->
         <div class="col-md-6 col-lg-5 d-none d-md-block shade">
           <div class="row bg-height--15">
-            <!--WHAT: Bg height class is % of viewport height.-->
+            <!--WHAT: Number in bg-height class is % of viewport height.-->
+            <!--WHY: Viewport height used to allow site to fit screen.-->
             <div
               class="col-12 d-flex justify-content-center bg-color--darkpink"
             >
-              <!--WHY: Bootstrp flex class used to make div flex box and allow content to be centered vertically.-->
+              <!--WHY: Bootstrp flex class used to make div a flex box and allow content be centered vertically.-->
               <h1 class="align-self-center">
                 Trigg 4 <br class="d-block d-lg-none" />Tables
               </h1>
-              <!--WHY: Bootstrap align class used to center h1 vertically.-->
-              <!--WHY: Br used to improve text position on md screens.-->
+              <!--WHY: Bootstrap align class used to center h1 vertically in div.-->
+              <!--WHY: Bootstrap display classes and br used to improve text position on md screens.-->
             </div>
           </div>
           <div class="row bg-height--10">
-            <div
-              class="col-6 d-md-none d-lg-block bg-color--darkblue"
-            >
-            <div class="d-flex justify-content-center text-center bg-height--10">
-              <h2 class="align-self-center">cool cats do maths</h2>
-            </div>
+            <div class="col-6 d-md-none d-lg-block bg-color--darkblue">
+              <div
+                class="d-flex justify-content-center text-center bg-height--10"
+              >
+                <h2 class="align-self-center">cool cats do maths</h2>
+              </div>
+              <!--WHY: Wrapping div used to position h2.-->
+              <!--WHY: Bootstrap justify-content-center class used to center h2 on screens where h2 doesn't wrap.-->
+              <!--WHY: Bootstrap text-center class used to center h2 on screens where wraps.-->
             </div>
             <div
               class="col-md-12 col-lg-6 d-flex justify-content-around bg-color--lightpink"
             >
-              <!--WHY: Bootstrap justify class used to space icons and timer equally.-->
+              <!--WHY: Bootstrap justify-content-around class used to space icons and timer equally horizontally.-->
               <span class="time align-self-center">0:00</span>
               <!--WHY: Span used verses time element to allow 0:00 verses 00:00 time format.-->
               <i
                 class="fas fa-volume-mute align-self-center"
                 data-icon="sound"
               ></i>
-              <!--WHY: Data attributes used throught page to target js. Classes and IDs used to style.-->
+              <!--WHY: Data attributes used throughout html page to allow targeting in js. Classes and IDs used to style only.-->
               <i
                 class="fas fa-info-circle align-self-center"
                 data-icon="infoOpen"
@@ -83,12 +88,16 @@
           </div>
           <div class="row bg-height--65">
             <div class="col-12 d-flex align-items-end bg--trigg" data-trigg>
-              <a href="https://github.com/coderbeez" target="_blank" class="mb-1"
+              <a
+                href="https://github.com/coderbeez"
+                target="_blank"
+                rel="noopener"
+                class="mb-1"
                 >site by coderbeez</a
               >
             </div>
-            <!--WHY: Image inserted as background resulting in resposnive image on all screens. -->
-            <!--WHY: Class verses id used to style as dupiclate style applied later for sm and md screens.-->
+            <!--WHY: Image inserted as background to ensure responsive sizing on all screens. -->
+            <!--WHY: Class verses ID used for css styles as duplicate styles applied later for sm and md screens.-->
           </div>
           <div class="row">
             <div
@@ -100,12 +109,13 @@
             </div>
           </div>
         </div>
-        <!--COL3 XS & SM SCREENS - TITLE TRIGG ICONS MESSAGE-->
+
+        <!--COLUMN C: XS & SM SCREENS-->
         <div class="col-12 d-md-none">
           <div class="row">
             <!--XS & SM SCREENS - TRIGG always visible-->
             <div class="col-6 bg-height--30 shade bg--trigg" data-trigg></div>
-                        <div class="col-6">
+            <div class="col-6">
               <!--XS & SM SCREENS - ICONS visible on go-->
               <div class="row hide-start" data-show="go">
                 <!--WHY: hide-start class used to apply display none to elements on load.
@@ -127,7 +137,7 @@
                   ></i>
                 </div>
               </div>
-              <!--XS & SM SCREENS - MESSAGE visible on go-->
+              <!--MESSAGE visible on go-->
               <div class="row hide-start" data-show="go">
                 <!--WHY: Both row and contained elemenets given hide-start class as most elements are not visible
                   on go but containing row is.-->
@@ -170,27 +180,30 @@
                   ></i>
                 </div>
               </div>
-              <!--XS & SM SCREENS - TITLE visible on load-->
+              <!--TITLE visible on load-->
               <div class="row" data-hide="go">
                 <div
                   class="col-12 text-center d-flex justify-content-center bg-height--20 bg-color--darkpink shade"
                 >
                   <div class="align-self-center">
                     <h1 class="mb-0">Trigg 4<br />Tables</h1>
-                    <a href="https://github.com/coderbeez" target="_blank"
+                    <a
+                      href="https://github.com/coderbeez"
+                      target="_blank"
+                      rel="noopener"
                       >by coderbeez</a
                     >
                   </div>
                   <!--WHY: Wrapping div used to center h1 & a vertically.-->
                 </div>
               </div>
-              <!--XS & SM SCREENS - INFO visible on load-->
+              <!--INFO visible on load-->
               <div class="row" data-hide="go">
                 <div
                   class="col-12 d-flex justify-content-center text-center bg-height--10 bg-color--darkblue shade"
                 >
                   <p id="instruct--xssm" class="align-self-center m-0 mr-2">
-                  instructions
+                    instructions
                   </p>
                   <!--WHY: Used id verses class for styling as not repeated.-->
                   <i
@@ -202,7 +215,8 @@
             </div>
           </div>
         </div>
-        <!--COL4 ALL SCREENS ASK ANSWER-->
+
+        <!--COLUMN D: ALL SCREENS-->
         <div class="col-12 col-md-6 col-lg-5">
           <div class="row d-none d-md-block margin-top--15"></div>
           <!--WHY: Row used to ensure where content start on md lg screens. IS THIS OK???-->
@@ -222,17 +236,16 @@
               </div>
             </div>
           </div>
-          <!--ALL SCREENS - PICK PAD REPORT ROW-->
+          <!--ROW: PICK PAD REPORT-->
           <div class="row">
             <div class="col-12 ">
-              <!--PICK FORM-->
+              <!--PICK NUMBER & OPERATOR-->
               <form
                 id="pick"
                 class="text-center"
                 data-hide="go infoOpen"
                 data-show="infoClose"
               >
-                <!--PICK NUMBER-->
                 <fieldset class="mt-3 mx-auto">
                   <!--mx?-->
                   <i
@@ -280,7 +293,6 @@
                     <input type="radio" name="pickNo" value="12" />12
                   </label>
                 </fieldset>
-                <!--PICK OPERATOR-->
                 <fieldset class="mt-4 mt-md-5 mx-auto">
                   <i
                     class="fas fa-exclamation-triangle mr-3 red missing hide-start"
@@ -301,7 +313,6 @@
                     <input type="radio" name="pickOp" value="/" />÷
                   </label>
                 </fieldset>
-                <!--GO BUTTON-->
                 <fieldset class="mt-3 mt-md-5 mx-auto">
                   <span class="d-inline-block mt-3 message">lets</span>
                   <button type="button" class="button-style" data-button="go">
@@ -436,7 +447,7 @@
                     />
                   </div>
                 </form>
-<!--ALL SCREENS - REPORT-->
+                <!--REPORT-->
                 <div class="text-center mt-3 hide-start" data-show="done">
                   <canvas width="250" height="250" class="shade"></canvas>
                   <p class="message mt-1 mb-1">download to share</p>
@@ -452,7 +463,7 @@
               </div>
             </div>
           </div>
-          <!--MD & LG SCREENS - MESSAGE-->
+          <!--ROW MD & LG SCREENS: MESSAGE-->
           <div class="row d-none d-md-block">
             <div class="col-12 text-center mt-3">
               <span
@@ -461,7 +472,7 @@
                 data-hide="sumNext correct"
                 data-show="incorrect"
               ></span>
-                            <img
+              <img
                 src="assets/images/down.svg"
                 alt="thumbs down"
                 class="thumb-height hide-start"
@@ -490,7 +501,7 @@
               <!--WHY: Instruct viisble from GO.-->
             </div>
           </div>
-          <!--ALL SCREENS - INFO-->
+          <!--ROW: INFO-->
           <div class="row">
             <div
               class="col-12 text-center mt-3 hide-start"
@@ -514,7 +525,8 @@
             </div>
           </div>
         </div>
-        <!--COL5 LG SCREENS - BORDER-->
+
+        <!--COLUMN E: LG SCREENS-->
         <div class="col-1 d-none d-lg-block"></div>
       </div>
     </main>
