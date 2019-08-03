@@ -154,7 +154,7 @@ $(document).ready(function() {
 
   //SET SUM
   function sumSet(todo) {
-    sumTryElement.val("");
+    sumTryElement.text("");
     sumAskElement
       .text(`${todo[0].key1} ${todo[0].key2} ${todo[0].key3} =`)
       .css("color", "#575778");
@@ -372,21 +372,22 @@ $(document).ready(function() {
 
   //CLICK NUMBER KEYPAD
   $("[data-keypad=number]").click(function() {
-    if (sumTryElement.val().length < 3) {
-      let concat = sumTryElement.val() + $(this).val();
-      sumTryElement.val(concat);
+    if (sumTryElement.text().length < 3) {
+      let concat = sumTryElement.text() + $(this).val(); 
+      sumTryElement.text(concat);
     }
   });
   //WHY: maxLength in CSS not working if using keypad so need extra js.
+  //WHY:sumTry text as label while data-keypad input so val
 
   //CLICK CLEAR NUMBER KEYPAD
   $("[data-keypad=clear]").click(function() {
-    sumTryElement.val("");
+    sumTryElement.text("");
   });
 
   //CLICK CHECK
   $("[data-button=sumCheck]").click(function() {
-    let sumTry = sumTryElement.val();
+    let sumTry = sumTryElement.text();
     let answer = todoArray[0].key4;
     let count = todoArray[0].count;
     let todo = todoArray;
@@ -425,7 +426,7 @@ $(document).ready(function() {
       messageElement.text(`try again & check`);
       $("[data-show~=incorrect]").show(); //thumbs down & incorrect span
       $("[data-icon=warn]").hide();
-      sumTryElement.val("");
+      sumTryElement.text("");
       countIncrement(todo);
     }
 
@@ -450,7 +451,7 @@ $(document).ready(function() {
       incorrectMessageElement.text(`${sumTry}`);
       messageElement.text(`try ${answer} & check`);
       $("[data-show~=incorrect]").show(); //thumbs down & incorrect span
-      sumTryElement.val("");
+      sumTryElement.text("");
       countIncrement(todo);
     }
   });

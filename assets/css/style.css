@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Cherry+Cream+Soda|Gaegu:700|Irish+Grover|Signika:600&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Special+Elite&display=swap");
 
-
 .hide-start {
   display: none;
 }
@@ -55,15 +54,15 @@ h2,
 }
 /*WHY: Incorrect answer shown next to thumb image.*/
 
- dt, dd { 
+dt,
+dd {
   font-family: "Special Elite", cursive;
-   font-size: .9rem;
-   font-weight: bold;
-   color: #7fa5b5;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #7fa5b5;
 }
 
-dt{
-  
+dt {
   color: #b18683;
 }
 
@@ -212,8 +211,11 @@ i {
 #sum-try {
   margin-top: 10px;
   margin-bottom: 8px;
+  padding-top: 5px;
   width: 42px;
   height: 40px;
+  border: solid 1px #ccccd6;
+  background-color: white;
 }
 
 #sum-check,
@@ -328,7 +330,7 @@ hr {
     line-height: 3rem;
   }
   h2 {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
   }
   a {
     font-size: 1rem;
