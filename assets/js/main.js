@@ -401,7 +401,7 @@ $(document).ready(function() {
     if (!sumTry) {
       playAudio(audioIncorrect);
       triggBackground.css("background-image", "url('assets/images/sour.svg')");
-      messageElement.text(`empty answer`);
+      messageElement.text(`blank answer`);
       $("[data-show=warn]").show();
     }
 
