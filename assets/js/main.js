@@ -86,6 +86,7 @@ $(document).ready(function() {
   function playAudio(audio) {
     if (sound === true) {
       audio.play();
+      console.log("hear");
     }
   }
 
@@ -394,7 +395,10 @@ $(document).ready(function() {
     let sumAskAnswer = `${todo[0].key1} ${todo[0].key2} ${todo[0].key3} = ${
       todo[0].key4
     }`;
-    const incorrectMessageElement = $("[data-message=incorrect]"); //declared here as only used in this function
+    const warnIcon = $("[data-icon=warn]"); 
+    const sumCheckHide  = $("[data-hide~=sumCheck]");
+    const incorrectMessageElement = $("[data-message=incorrect]");
+    const incorrectShow = $("[data-show~=incorrect]");
 
     console.log(todoArray[0].count + "start count");
 
@@ -403,7 +407,7 @@ $(document).ready(function() {
       playAudio(audioIncorrect);
       triggBackground.css("background-image", "url('assets/images/sour.svg')");
       messageElement.text(`blank answer`);
-      $("[data-icon=warn]").show();
+      warnIcon.show();
     }
 
     //STEP1: CHECK ANSWER - CORRECT
@@ -412,7 +416,7 @@ $(document).ready(function() {
       triggBackground.css("background-image", "url('assets/images/thumbsup.svg')");
       messageElement.text(`click next`);
       sumAskElement.text(`${sumAskAnswer}`).css("color", "#83b186");
-      $("[data-hide~=sumCheck]").hide(); //sumTry input, sumCheck button & triangle(xs-s & m-l)
+      sumCheckHide.hide(); //sumTry input, sumCheck button & triangle(xs-s & m-l)
       $("[data-hide~=correct]").hide(); //from attempt 4
       $("[data-show~=correct]").show();
       sumNextButton.show();
@@ -424,8 +428,8 @@ $(document).ready(function() {
       triggBackground.css("background-image", "url('assets/images/hmm.svg')");
       incorrectMessageElement.text(`${sumTry}`);
       messageElement.text(`try again & check`);
-      $("[data-show~=incorrect]").show(); //thumbs down & incorrect span
-      $("[data-icon=warn]").hide();
+      incorrectShow.show(); //thumbs down & incorrect span
+      warnIcon.hide();
       sumTryElement.text("");
       countIncrement(todo);
     }
@@ -437,8 +441,8 @@ $(document).ready(function() {
       incorrectMessageElement.text(`${sumTry}`);
       messageElement.text(`revise & click next`);
       sumAskElement.text(`${sumAskAnswer}`).css("color", "#3ea041");
-      $("[data-hide~=sumCheck]").hide(); //sumTRy input, sumCheck button & triangle(xs-s & m-l)
-      $("[data-show~=incorrect]").show(); //thumbs down & incorrect span
+      sumCheckHide.hide(); //sumTRy input, sumCheck button & triangle(xs-s & m-l)
+      incorrectShow.show(); //thumbs down & incorrect span
       sumNextButton.show();
       countIncrement(todo);
       todoAdd(todo);
@@ -450,7 +454,7 @@ $(document).ready(function() {
       triggBackground.css("background-image", "url('assets/images/oops.svg')");
       incorrectMessageElement.text(`${sumTry}`);
       messageElement.text(`try ${answer} & check`);
-      $("[data-show~=incorrect]").show(); //thumbs down & incorrect span
+      incorrectShow.show(); //thumbs down & incorrect span
       sumTryElement.text("");
       countIncrement(todo);
     }
