@@ -321,7 +321,7 @@ $(document).ready(function() {
   $("[data-button=infoClose]").click(function() {
     $("[data-hide~=infoClose]").hide();
     $("[data-show~=infoClose]").show();
-    $("iframe").attr("src", "https://www.youtube.com/embed/EcVam72tyyw");
+    $("iframe").attr("src", "https://www.youtube.com/embed/QnvT6_Fp1B4?rel=0");
   });
   //WHERE: https://stackoverflow.com/questions/2128535/stop-a-youtube-video-with-jquery
   //WHY: Resetting src for video to stop it playing when press close buton data-info=close click.
