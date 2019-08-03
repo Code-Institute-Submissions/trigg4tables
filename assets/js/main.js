@@ -1,50 +1,61 @@
 $(document).ready(function() {
   console.log("test");
 
-	
-    const startImage = new Image();
-        const emptyImage = new Image();
-    const correctImage = new Image();
-    const incorrect1Image = new Image();
-    const incorrect2Image = new Image();
-    const incorrect3Image = new Image();
-    const doneImage = new Image();
-
+  //PRELOAD IMAGES
+  const startImage = new Image();
   startImage.src = "assets/images/hi.svg";
+
+  const emptyImage = new Image();
   emptyImage.src = "assets/images/sour.svg";
+
+  const correctImage = new Image();
   correctImage.src = "assets/images/thumbsup.svg";
+
+  const incorrect1Image = new Image();
   incorrect1Image.src = "assets/images/hmm.svg";
+
+  const incorrect2Image = new Image();
   incorrect2Image.src = "assets/images/thatway.svg";
+
+  const incorrect3Image = new Image();
   incorrect3Image.src = "assets/images/oops.svg";
+
+  const doneImage = new Image();
   doneImage.src = "assets/images/score.svg";
 
-  /*startImage.src = "url('assets/images/hi.svg')";
-  emptyImage.src = "url('assets/images/sour.svg')";
-  correctImage.src = "url('assets/images/thumbsup.svg')";
-  incorrect1Image.src = "url('assets/images/hmm.svg')";
-  incorrect2Image.src = "url('assets/images/thatway.svg')";
-  incorrect3Image.src = "url('assets/images/oops.svg')";
-  doneImage.src = "url('assets/images/score.svg')";*/
+  //WHY: Images preloaded to fix bug on iOS where....
   //WHERE: https://www.thonky.com/javascript-and-css-guide/javascript-image-preload
 
+  //PRELOAD AUDIO
+  const audioCorrect = new Audio();
+  audioCorrect.src = "assets/audio/correct.mp3";
+
+  const audioIncorrect = new Audio();
+  audioIncorrect.src = "assets/audio/incorrectCat.mp3";
+
+  const audioDone = new Audio();
+  audioDone.src = "assets/audio/done.mp3";
+  //WHERE: https://freesound.org/people/adriann/sounds/191718/ incorrect not using
+  //https://bigsoundbank.com/detail-0494-little-meow-of-a-cat.html incorrect cat
+  //https://freesound.org/people/Wagna/sounds/242207/ done
+  //need correct sound source
+
   //POINT TO DOM ELEMENTS
-  //const iconSound = $("[data-icon=sound]");
-  //const iconReload = $("[data-icon=reload]");  //referred to once in code???
-  //const iconWarn = $("[data-icon=warn]"); //show warn instead of iconwarn?
-  //const iconHat = $("[data-icon=hat]"); //show done instead of iconHat?
-  //const iconDownload = $("[data-icon=download]"); //show done instead of iconDownload?
-  //const pickLabel = $("[data-pickLabel]");
   const sumAskElement = $("[data-sum=ask]");
   const sumTryElement = $("[data-sum=try]");
-  const timeElement = $(".time"); //referred to more than once in code
-  const keypadNumberElement = $("[data-keypad=number]");
-  const keypadClearElement = $("[data-keypad=clear]");
-  const triggElement = $("[data-trigg]");
+  const timeElement = $(".time");
+  const triggBackground = $("[data-bg=trigg]");
   const sumNextButton = $("[data-button=sumNext]");
-  const sumCheckButton = $("[data-button=sumCheck]"); // only used once???
-  const incorrectMessageElement = $("[data-message=incorrect]");
   const messageElement = $("[data-message=all]");
   const infoOpenIcon = $("[data-icon=infoOpen]");
+  //WHY: DOM elements used across functions.
+
+  //GLOBAL VARIABLES
+  let sound = true;
+  let tableSet;
+  let todoArray = [];
+  let reviseArray = [];
+  let noteString;
 
   //STOP ENTER KEY FROM REFRESHING PAGE
   $(document).on("keypress", function(e) {
@@ -53,36 +64,6 @@ $(document).ready(function() {
     }
   });
   //WHERE:https://stackoverflow.com/questions/8866053/stop-reloading-page-with-enter-key
-
-  //GLOBAL VARIABLES
-  let sound = true;
-  let tableSet;
-  let todoArray = [];
-  let reviseArray = [];
-  let noteString;
-  const audioCorrect = new Audio();
-  const audioIncorrect = new Audio();
-  const audioDone = new Audio();
-
-  //AUDIO
-  audioCorrect.src = "assets/audio/correct.mp3";
-  audioIncorrect.src = "assets/audio/incorrectCat.mp3";
-  audioDone.src = "assets/audio/done.mp3";
-  //WHERE: https://freesound.org/people/adriann/sounds/191718/ incorrect not using
-  //https://bigsoundbank.com/detail-0494-little-meow-of-a-cat.html incorrect cat
-  //https://freesound.org/people/Wagna/sounds/242207/ done
-  //need correct sound source
-
-  //IMAGES
-  /*const startImage = "url('assets/images/hi.svg')";
-  const emptyImage = "url('assets/images/sour.svg')";
-  const correctImage = "url('assets/images/thumbsup.svg')";
-  const incorrect1Image = "url('assets/images/hmm.svg')";
-  const incorrect2Image = "url('assets/images/thatway.svg')";
-  const incorrect3Image = "url('assets/images/oops.svg')";
-  const doneImage = "url('assets/images/score.svg')";*/
-//WHY: Image source declare to improve 
-
 
   //SOUND ON OFF
   $("[data-icon=sound]").click(function() {
@@ -328,8 +309,8 @@ $(document).ready(function() {
   //CLICK INFO - OPEN IF NOT DISABLED
   infoOpenIcon.click(function() {
     if (!$(this).hasClass("disable")) {
-    $("[data-hide~=infoOpen]").hide();
-    $("[data-show~=infoOpen]").show();
+      $("[data-hide~=infoOpen]").hide();
+      $("[data-show~=infoOpen]").show();
     }
   });
   //WHERE: https://stackoverflow.com/questions/34455085/can-i-have-multiple-values-in-one-html-data-element
@@ -390,7 +371,7 @@ $(document).ready(function() {
   //WHY: infoOpenIcon enabled on start, disabled on go and enabled on page reload.
 
   //CLICK NUMBER KEYPAD
-  keypadNumberElement.click(function() {
+  $("[data-keypad=number]").click(function() {
     if (sumTryElement.val().length < 3) {
       let concat = sumTryElement.val() + $(this).val();
       sumTryElement.val(concat);
@@ -399,12 +380,12 @@ $(document).ready(function() {
   //WHY: maxLength in CSS not working if using keypad so need extra js.
 
   //CLICK CLEAR NUMBER KEYPAD
-  keypadClearElement.click(function() {
+  $("[data-keypad=clear]").click(function() {
     sumTryElement.val("");
   });
 
   //CLICK CHECK
-  sumCheckButton.click(function() {
+  $("[data-button=sumCheck]").click(function() {
     let sumTry = sumTryElement.val();
     let answer = todoArray[0].key4;
     let count = todoArray[0].count;
@@ -412,13 +393,14 @@ $(document).ready(function() {
     let sumAskAnswer = `${todo[0].key1} ${todo[0].key2} ${todo[0].key3} = ${
       todo[0].key4
     }`;
-    
+    const incorrectMessageElement = $("[data-message=incorrect]"); //declared here as only used in this function
+
     console.log(todoArray[0].count + "start count");
 
     //STEP0: CHECK ANSWER - ENTERED
     if (!sumTry) {
       playAudio(audioIncorrect);
-      triggElement.css("background-image", "url('assets/images/sour.svg')");
+      triggBackground.css("background-image", "url('assets/images/sour.svg')");
       messageElement.text(`empty answer`);
       $("[data-show=warn]").show();
     }
@@ -426,7 +408,7 @@ $(document).ready(function() {
     //STEP1: CHECK ANSWER - CORRECT
     else if (sumCorrect(sumTry, answer) === true) {
       playAudio(audioCorrect);
-      triggElement.css("background-image", "url('assets/images/thumbsup.svg')");
+      triggBackground.css("background-image", "url('assets/images/thumbsup.svg')");
       messageElement.text(`click next`);
       sumAskElement.text(`${sumAskAnswer}`).css("color", "#83b186");
       $("[data-hide~=sumCheck]").hide(); //sumTry input, sumCheck button & triangle(xs-s & m-l)
@@ -438,7 +420,7 @@ $(document).ready(function() {
     //STEP2: CHECK ANSWER - INCORRECT 1ST ATTEMPT
     else if (count === 0) {
       playAudio(audioIncorrect);
-      triggElement.css("background-image", "url('assets/images/hmm.svg')");
+      triggBackground.css("background-image", "url('assets/images/hmm.svg')");
       incorrectMessageElement.text(`${sumTry}`);
       messageElement.text(`try again & check`);
       $("[data-show~=incorrect]").show(); //thumbs down & incorrect span
@@ -449,7 +431,7 @@ $(document).ready(function() {
     //STEP3: CHECK ANSWER - INCORRECT 2ND ATTEMPT
     else if (count === 1) {
       playAudio(audioIncorrect);
-      triggElement.css("background-image", "url('assets/images/thatway.svg')");
+      triggBackground.css("background-image", "url('assets/images/thatway.svg')");
       incorrectMessageElement.text(`${sumTry}`);
       messageElement.text(`revise & click next`);
       sumAskElement.text(`${sumAskAnswer}`).css("color", "#3ea041");
@@ -463,7 +445,7 @@ $(document).ready(function() {
     //STEP4: CHECK ANSWER - INCORRECT 3RD ATTEMPT
     else {
       playAudio(audioIncorrect);
-      triggElement.css("background-image", "url('assets/images/oops.svg')");
+      triggBackground.css("background-image", "url('assets/images/oops.svg')");
       incorrectMessageElement.text(`${sumTry}`);
       messageElement.text(`try ${answer} & check`);
       $("[data-show~=incorrect]").show(); //thumbs down & incorrect span
@@ -491,7 +473,7 @@ $(document).ready(function() {
     //next sum
     if (todo.length !== 0) {
       sumSet(todo);
-      triggElement.css("background-image", "url('assets/images/hi.svg')");
+      triggBackground.css("background-image", "url('assets/images/hi.svg')");
       messageElement.text("try & check");
       $("[data-show~=sumNext]").show();
     }
@@ -502,7 +484,7 @@ $(document).ready(function() {
       noteFill(revise);
       report();
       playAudio(audioDone);
-      triggElement.css("background-image", "url('assets/images/score.svg')");
+      triggBackground.css("background-image", "url('assets/images/score.svg')");
       messageElement.text(`well done`);
       $("[data-hide~=done]").hide();
       $("[data-show~=done]").show();
