@@ -402,7 +402,7 @@ $(document).ready(function() {
       playAudio(audioIncorrect);
       triggBackground.css("background-image", "url('assets/images/sour.svg')");
       messageElement.text(`blank answer`);
-      $("[data-show=warn]").show();
+      $("[data-icon=warn]").show();
     }
 
     //STEP1: CHECK ANSWER - CORRECT
@@ -424,6 +424,7 @@ $(document).ready(function() {
       incorrectMessageElement.text(`${sumTry}`);
       messageElement.text(`try again & check`);
       $("[data-show~=incorrect]").show(); //thumbs down & incorrect span
+      $("[data-icon=warn]").hide();
       sumTryElement.val("");
       countIncrement(todo);
     }
