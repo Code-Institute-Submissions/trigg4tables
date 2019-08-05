@@ -65,23 +65,6 @@ $(document).ready(function() {
   });
   //WHERE:https://stackoverflow.com/questions/8866053/stop-reloading-page-with-enter-key
 
-  //SOUND ON OFF
-  $("[data-icon=sound]").click(function() {
-    if (sound === true) {
-      $(this)
-        .removeClass("fa-volume-mute")
-        .addClass("fa-volume-up"); //can I use font awesome classes here?
-      sound = false;
-      console.log(sound);
-    } else {
-      $(this)
-        .removeClass("fa-volume-up")
-        .addClass("fa-volume-mute");
-      sound = true;
-      console.log(sound);
-    }
-  });
-
   //PLAY AUDIO
   function playAudio(audio) {
     if (sound === true) {
@@ -192,24 +175,27 @@ $(document).ready(function() {
   function sumCorrect(sumTry, answer) {
     if (sumTry == answer) {
       return true;
+    } else {
+      return false;
     }
   }
 
   //INCREMENT TODO COUNT
   function countIncrement(todo) {
     todo[0].count++;
-    console.log(todo[0].count);
     return todo[0].count;
   }
 
   //REMOVE SUM FROM START TODO
   function todoRemove(todo) {
     todo.shift();
+    return todo;
   }
 
   //APPEND SUM TO END TODO
   function todoAdd(todo) {
     todo.push(todo[0]);
+    return todo; 
   }
 
   //MOVE SUM TO REVISE ARRAY
@@ -219,6 +205,7 @@ $(document).ready(function() {
         `${todo[0].key1}${todo[0].key2}${todo[0].key3}=${todo[0].key4}`
       );
     }
+    return revise;
   }
 
   //CREATE REVISE STRING 4 CANVAS REPORT
@@ -228,6 +215,7 @@ $(document).ready(function() {
     } else {
       noteString = "Revise " + revise.sort().join(" ");
     }
+    return noteString; 
   }
 
   //CREATE DATE 4 CANVAS REPORT
@@ -307,6 +295,23 @@ $(document).ready(function() {
   }
   //WHERE: https://stackoverflow.com/questions/48054723/saving-canvas-as-blob-and-then-blob-as-file
 
+  //SOUND ON OFF
+  $("[data-icon=sound]").click(function() {
+    if (sound === true) {
+      $(this)
+        .removeClass("fa-volume-mute")
+        .addClass("fa-volume-up"); //can I use font awesome classes here?
+      sound = false;
+      console.log(sound);
+    } else {
+      $(this)
+        .removeClass("fa-volume-up")
+        .addClass("fa-volume-mute");
+      sound = true;
+      console.log(sound);
+    }
+  });
+
   //CLICK INFO - OPEN IF NOT DISABLED
   infoOpenIcon.click(function() {
     if (!$(this).hasClass("disable")) {
@@ -374,7 +379,7 @@ $(document).ready(function() {
   //CLICK NUMBER KEYPAD
   $("[data-keypad=number]").click(function() {
     if (sumTryElement.text().length < 3) {
-      let concat = sumTryElement.text() + $(this).val(); 
+      let concat = sumTryElement.text() + $(this).val();
       sumTryElement.text(concat);
     }
   });
@@ -395,8 +400,8 @@ $(document).ready(function() {
     let sumAskAnswer = `${todo[0].key1} ${todo[0].key2} ${todo[0].key3} = ${
       todo[0].key4
     }`;
-    const warnIcon = $("[data-icon=warn]"); 
-    const sumCheckHide  = $("[data-hide~=sumCheck]");
+    const warnIcon = $("[data-icon=warn]");
+    const sumCheckHide = $("[data-hide~=sumCheck]");
     const incorrectMessageElement = $("[data-message=incorrect]");
     const incorrectShow = $("[data-show~=incorrect]");
 
@@ -413,7 +418,10 @@ $(document).ready(function() {
     //STEP1: CHECK ANSWER - CORRECT
     else if (sumCorrect(sumTry, answer) === true) {
       playAudio(audioCorrect);
-      triggBackground.css("background-image", "url('assets/images/thumbsup.svg')");
+      triggBackground.css(
+        "background-image",
+        "url('assets/images/thumbsup.svg')"
+      );
       messageElement.text(`click next`);
       sumAskElement.text(`${sumAskAnswer}`).css("color", "#83b186");
       sumCheckHide.hide(); //sumTry input, sumCheck button & triangle(xs-s & m-l)
@@ -437,7 +445,10 @@ $(document).ready(function() {
     //STEP3: CHECK ANSWER - INCORRECT 2ND ATTEMPT
     else if (count === 1) {
       playAudio(audioIncorrect);
-      triggBackground.css("background-image", "url('assets/images/thatway.svg')");
+      triggBackground.css(
+        "background-image",
+        "url('assets/images/thatway.svg')"
+      );
       incorrectMessageElement.text(`${sumTry}`);
       messageElement.text(`revise & click next`);
       sumAskElement.text(`${sumAskAnswer}`).css("color", "#3ea041");
