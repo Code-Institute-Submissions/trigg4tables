@@ -2,14 +2,14 @@
 
 ![IMAGE ALT TEXT](https://github.com/coderbeez/trigg4tables/blob/master/assets/images/header.png)
 
-**[Trigg 4 Tables](https://coderbeez.github.io/trigg4tables/)** a times tables practice website aimed at older children.
+**[Trigg 4 Tables](https://coderbeez.github.io/trigg4tables/)** is a times tables practice website aimed at older children.
+
 *Developed for Code Institute Milestone 2: Interactive Frontend Developement.*
 
 
 ## UX
 
-Trigg 4 Tables is aimed at primary school children aged 9 to 12 years, who are often set times tables homework to learn each night. The website allows children to select the times tables they want to practice. Trigg the cat, guides them through the practice presenting sums, confirming answers and helping out when needed. Once complete, a detailed report is generated which can be downloaded as a png file to facilitate easy sharing via text, snapchat, WhatsApp etc. The report acts as confirmation that homework has been completed and highlights sums a child struggled with.
-
+Trigg 4 Tables is aimed at primary school children aged 9 to 12 years, who are often set times tables homework. The website allows children to select what they want to practice. Trigg the cat then guides them presenting sums, confirming answers and helping out when needed. Once complete, a detailed report is generated which can be downloaded as a png file to facilitate easy sharing via text, snapchat, WhatsApp etc. The report acts as confirmation that homework has been completed and highlights any sum the child struggled with.
 Trigg 4 Tables has been designed to address some of the limitations of similar websites and apps:
 
 1. **Target Age** Graphics designed to appeal to an older child. 
@@ -39,7 +39,7 @@ On the car journey home from school, I borrow my Mom’s phone and complete my t
 I love maths, enjoy practising times tables and am ever so slightly competitive. I visit Trigg 4 Tables using my phone, complete the sums as quickly as I can and Snapchat the report to my friends to see if I have beat their time. The trick is not to double click check as Trigg will say you have an empty answer for the next sum and that just wastes time.
 
 
-3. **Teacher**
+4. **Teacher**
 
 Not every child in my class has someone that can help them with homework. Having canvased their parents, my students are now using Trigg 4 Tables each night to practice the assigned times tables. Students WhatsApp their reports to me. I have noticed a marked improvement in our Friday maths test scores especially amongst students who had been struggling. Other teachers have started to ask about Trigg.
 
@@ -58,7 +58,7 @@ The look and feel of Trigg 4 Tables was designed to appeal to the target audienc
 
 5. **Fonts** The heading fonts were chosen to convey a sense of fun. Number and keypad fonts were chosen for legibility. Message fonts were chosen to reflect the handwriting of the target audience. 
 
-6. **Preparation** Balsamiq was used to generate [wireframes](https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/wireframes.pdf) for various device sizes. The [initial proposal](https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/proposal.pdf) document was compiled using Microsoft Powerpoint. Testing during development resulted in several changes to the original design with a move away from device keypads, a reduction in text, and a focus on maintaining a scroll free site even on smaller mobiles. 
+6. **Preparation** Balsamiq was used to generate [wireframes](https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/wireframes.pdf) for various device sizes. The [initial proposal](https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/proposal.pdf) document and [Bootstrap plan(https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/bootstrap.PNG) were completed using Microsoft Powerpoint. Testing during development resulted in several changes to the original design with a move away from device keypads, a reduction in text, and a focus on maintaining a scroll free site even on smaller mobiles. 
 
 
 ## Features
@@ -73,9 +73,7 @@ The look and feel of Trigg 4 Tables was designed to appeal to the target audienc
 
 ![Trig FlowChart](https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/triggflow.png)
 
-2. **Information Video** Although the website was designed to be as intuitive as possible, an instruction video was created using [Snagit](https://www.techsmith.com/screen-capture.html) with voiceover by an enthusiastic 12 year old. A dedicated YouTube channel was created to host Trigg’s video. Given the target audience, this was deemed to be the most appropriate medium.
-
-[![IMAGE ALT TEXT](http://img.youtube.com/vi/ EcVam72tyyw/0/0.jpg)](http://www.youtube.com/watch?v= EcVam72tyyw/0 "Video Title")
+2. **Information Video** Although the website was designed to be as intuitive as possible, an instruction video was created using [Snagit](https://www.techsmith.com/screen-capture.html) with voiceover by an enthusiastic 12 year old. A dedicated YouTube channel was created to host Trigg’s video. Given the target audience, this was deemed to be the most appropriate medium. Text instructions were also included for improved accessibility.
 
 3. **Keypads** Touch screen keypad functionality and positioning was a serious problem so the initial design was amended to include dedicated static keypads to. jQuery on click functions and JavaScript concat method are used to retrieve values from HTML buttons, radio buttons and input fields. CSS styles including active simulates key pressing and indicates selection.
 
@@ -99,6 +97,9 @@ The look and feel of Trigg 4 Tables was designed to appeal to the target audienc
 ### Existing Features *Responsiveness*
 
 The website was designed using a mobile first approach. In order to maintain a non-scrolling site, the order, position and visibility of elements changes depending on screen size. CSS attributes and media queries, Bootstrap grid system and display classes, and jQuery methods are used to facilitate this responsiveness.
+
+![Trig FlowChart]( https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/bootstrap.PNG)
+
 
 1. **Viewport Width** Using the [Bootstrap](https://getbootstrap.com/docs/4.3/layout/grid/) grid system, the percentage of viewport width used to display content varies from 100% on small and medium screens to 83% (10 Bootstrap columns) on large screens.
 
@@ -141,10 +142,11 @@ The website was designed using a mobile first approach. In order to maintain a n
 13. [JavaScript](http://www.ecma-international.org/) A high-level, interpreted programming language that conforms to the ECMAScript specification, Javascript was used to provide interactivity.
 14. [Bootstrap4](https://getbootstrap.com/) A CSS framework directed at responsive, mobile-first front-end web development, Bootstrap was used primarily for layout and styling.
 15. [jQuery](https://jquery.com/) A JavaScript library designed to manipulate HTML documents, JQuery was used here by Bootstrap, jCanvas and to manipulate the DOM.
-16. [jPopper](https://popper.js.org/) A JavaScript library designed to display content from HTML documents, JPopper was used by Bootstrap on this site.???
-17. [jCanvas](https://projects.calebevans.me/jcanvas/) A JavaScript library for jQuery that wraps around the HTML5 canvas API, jCanvas was used to format the canvas report.
-18. [FileSaver](https://github.com/eligrey/FileSaver.js/) A HTML5 saveAs() FileSaver implementation, FileSaver.js was used to allow the canvas report blob to be saved as a png file.
-19. [Canvas-toBlob](https://github.com/eligrey/canvas-toBlob.js) A JavaScript library that implements the standard HTML5 canvas.toBlob() and canvas.toBlobHD() methods in browsers that do not natively support, Canvas-toBlob was used to overcome problems with some browsers e.g. Microsoft Edge.
+16. [jCanvas](https://projects.calebevans.me/jcanvas/) A JavaScript library for jQuery that wraps around the HTML5 canvas API, jCanvas was used to format the canvas report.
+17. [FileSaver](https://github.com/eligrey/FileSaver.js/) A HTML5 saveAs() FileSaver implementation, FileSaver.js was used to allow the canvas report blob to be saved as a png file.
+18. [Canvas-toBlob](https://github.com/eligrey/canvas-toBlob.js) A JavaScript library that implements the standard HTML5 canvas.toBlob() and canvas.toBlobHD() methods in browsers that do not natively support, Canvas-toBlob was used to overcome problems with some browsers e.g. Microsoft Edge.
+19. [Jasmine](https://jasmine.github.io/index.html) An open source testing framework for JavaScript, Jasmine was used to complete automated function testing.
+
 
 *Technology explanations from [Wikipedia](https://en.wikipedia.org/wiki/Main_Page)** or technology’s own site.*
 
@@ -162,7 +164,7 @@ The website was designed using a mobile first approach. In order to maintain a n
 **JAVASCRIPT**
 [jshint](https://jigsaw.w3.org/css-validator/) Used to test the validity of JavaScript – no errors found.
 
-[jasmine](https://jasmine.github.io/) Used to test the ?
+[Jasmine](https://jasmine.github.io/) Used to complete automated testing of 
 
 
 ### Manual Site Testing
@@ -269,15 +271,29 @@ N/A - Not Applicable
 
 ### Bug Log
 
-1. **Enter Key Reload Site** When tested
+1. **Enter Key Reload Site** During development on a desktop, pressing the enter key would reload the page sending the user back to the start. 
 
-2. **Radio Buttons on iOS** When tested 
+2. **Radio Buttons on iOS** During development 
 
 3. **Keyboard on Mobile Devices** During testing 
 
 4. **Tables on iOS** During testing 
 
 5. **Blob to Canvas on Edge** When test
+
+6. **Video Stop Playing on Hide** During testing
+
+7. **Background images first use not loading in iOS** During testing
+
+8. **Error message re jCanvas-to-Blob on iOS** During testing
+
+9. **Ipad double click** During testing
+
+10. **Keyboard access** During testing
+
+11. **Audio not consistently audible** During testing
+
+12. **mp3 Audio clip not loading in Firefox** During testing
 
 
 ### Deployment
@@ -331,6 +347,8 @@ The following instructions were taken from [GitHib Help]( https://help.github.co
 ### Code
 * JS stop reloading page with enter key from [stackoverflow](https://stackoverflow.com/questions/8866053/stop-reloading-page-with-enter-key).
 
+* JS audio set current time from [stackoverflow](https://stackoverflow.com/questions/9563887/setting-html5-audio-position).
+
 * JS random array sorting from [w3schools](https://www.w3schools.com/js/js_array_sort.asp).
 
 * JS timer based on code from [Codepad](https://codepad.co/snippet/javascript-stopwatch-using-javascript-and-css).
@@ -342,16 +360,21 @@ The following instructions were taken from [GitHib Help]( https://help.github.co
 * JS value from selected radio button from [stackoverflow](https://stackoverflow.com/questions/8622336/jquery-get-value-of-selected-radio-button).
 
 * JS refresh page from [stackoverflow](https://stackoverflow.com/questions/5404839/how-can-i-refresh-a-page-with-jquery).
+
+* JS stop YouTube video with jQuery [stackoverflow](https://stackoverflow.com/questions/2128535/stop-a-youtube-video-with-jquery).
+
+* JS check element does not have class with jQuery [stackoverflow](https://stackoverflow.com/questions/7841048/how-to-check-if-an-element-does-not-have-a-specific-class).
+
+* JS multiple values in data element [stackoverflow](https://stackoverflow.com/questions/34455085/can-i-have-multiple-values-in-one-html-data-element).
+* JS preload images [thonky](https://www.thonky.com/javascript-and-css-guide/javascript-image-preload).
+
 * CSS text shadow from [designshack](https://designshack.net/articles/css/12-fun-css-text-shadows-you-can-copy-and-paste/).
 * CSS box shadow from [codepen](https://codepen.io/sdthornton/pen/wBZdXq).
 * CSS colours from [color hex](https://www.color-hex.com/color/cfb4b2).
 * CSS button press formatting [stackoverflow](https://stackoverflow.com/questions/38377062/how-to-make-html-button-look-pressed-in-using-css).
 * CSS iOS styling input field fix from [daretothink](https://www.daretothink.co.uk/stop-ios-styling-your-input-fields-and-buttons).
 * CSS iOS styling radio buttons fix from [sitepoint](https://www.sitepoint.com/replacing-radio-buttons-without-replacing-radio-buttons/).
-*README embed YouTube video from [stackoverflow](https://stackoverflow.com/questions/11804820/embed-a-youtube-video).
+* HTML disable related videos on YouTube embed from [YouTube](https://www.youtube.com/watch?v=ZUTzJG212Vo).
 
 
 ### Acknowledgements
-  * This project has been brought to you by Slack. Thanks to all my fellow Slack students.  
-  * A special thanks to Jack for all his advice, enthusiasm and of course his voiceover. 
- 
