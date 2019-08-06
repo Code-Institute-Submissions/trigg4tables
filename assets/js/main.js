@@ -1,4 +1,8 @@
-$(document).ready(function() {
+const onReady = function() {
+  //WHY: Using variable to limit scope of internal variables and functions.
+  //jQuery document ready not used as doesn't allow jasmine testing.
+  //WHERE: https://stackoverflow.com/questions/29153733/how-to-unit-test-a-document-ready-function-using-jasmine
+
   //PRELOAD IMAGES
   const startImage = new Image();
   startImage.src = "assets/images/hi.svg";
@@ -185,15 +189,15 @@ $(document).ready(function() {
     return todo[0].count;
   }
 
-  //REMOVE SUM FROM START TODO
-  function todoRemove(todo) {
-    todo.shift();
-    return todo;
-  }
-
   //APPEND SUM TO END TODO
   function todoAdd(todo) {
     todo.push(todo[0]);
+    return todo;
+  }
+
+  //REMOVE SUM FROM START TODO
+  function todoRemove(todo) {
+    todo.shift();
     return todo;
   }
 
@@ -499,4 +503,20 @@ $(document).ready(function() {
 
   //CLICK DOWNLOAD REPORT
   $("[data-button=download]").click(save);
-}); // end of get document
+
+  return {
+    tablesArrayCreate: tablesArrayCreate,
+    todoFill: todoFill,
+    sumCorrect: sumCorrect,
+    countIncrement: countIncrement,
+    todoAdd: todoAdd,
+    todoRemove: todoRemove,
+    reviseAdd: reviseAdd,
+    noteFill: noteFill
+  };
+  //WHY: Creating object of function properties to allow access to inner functions in jasmine testing.
+  //WHERE: https://stackoverflow.com/questions/13218472/calling-a-function-defined-inside-another-function-in-javascript
+};
+
+$(document).ready(onReady);
+//WHY: Code runs after document loaded????
