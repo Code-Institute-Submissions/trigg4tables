@@ -32,7 +32,6 @@
     <!--WHERE:Favicon Image by <a href="https://pixabay.com/users/Elionas-2345468/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1314467">Elias Schäfer</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1314467">Pixabay</a>-->
     <main class="container-fluid">
       <div class="row">
-
         <!--COLUMN A: LG SCREENS-->
         <div class="col-1 d-none d-lg-block"></div>
         <!--WHAT: Bootstrap display classes used to ensure only applies to large screens.-->
@@ -87,7 +86,10 @@
             </div>
           </div>
           <div class="row bg-height--65">
-            <div class="col-12 d-flex align-items-end bg--trigg" data-bg="trigg">
+            <div
+              class="col-12 d-flex align-items-end bg--trigg"
+              data-bg="trigg"
+            >
               <a
                 href="https://github.com/coderbeez"
                 target="_blank"
@@ -114,7 +116,10 @@
         <div class="col-12 d-md-none">
           <div class="row">
             <!--XS & SM SCREENS - TRIGG always visible-->
-            <div class="col-6 bg-height--30 shade bg--trigg" data-bg="trigg"></div>
+            <div
+              class="col-6 bg-height--30 shade bg--trigg"
+              data-bg="trigg"
+            ></div>
             <div class="col-6">
               <!--XS & SM SCREENS - ICONS visible on go-->
               <div class="row hide-start" data-show="go">
@@ -146,8 +151,7 @@
                 >
                   <p class="message pt-2" data-message="all">try & check</p>
                   <!--WHY: Class message used to style. Data attribute message used to target in js.-->
-                  <!--WHY: P used instead of span???????????-->
-                  <!--WHY: hide-start class not required as p always visible from go.-->
+                                    <!--WHY: hide-start class not required as p always visible from go.-->
                   <span
                     class="message red"
                     data-message="incorrect"
@@ -219,7 +223,7 @@
         <!--COLUMN D: ALL SCREENS-->
         <div class="col-12 col-md-6 col-lg-5">
           <div class="row d-none d-md-block margin-top--15"></div>
-          <!--WHY: Row used to ensure where content start on md lg screens. IS THIS OK???-->
+          <!--WHY: Row used to ensure where content start on md lg screens.-->
           <!--ALL SCREENS - PROGRESS BAR ROW visible on go-->
           <div class="row hide-start" data-show="go" data-hide="done">
             <div class="col-12">
@@ -247,7 +251,6 @@
                 data-show="infoClose"
               >
                 <fieldset class="mt-3 mx-auto">
-                  <!--mx?-->
                   <i
                     class="fas fa-exclamation-triangle mr-3 red missing hide-start"
                     data-icon="missingNo"
@@ -315,7 +318,7 @@
                 </fieldset>
                 <fieldset class="mt-3 mt-md-5 mx-auto">
                   <span class="d-inline-block mt-3 message">lets</span>
-                  <!--WHY: Bootstrap display class used???-->
+                  <!--WHY: Bootstrap display class used to allow margin.-->
                   <!--WHY: Bootstrap mt class used to position lets in center of button.-->
                   <button type="button" class="button-style" data-button="go">
                     go
@@ -337,19 +340,13 @@
                       class="align-self-center"
                       data-sum="ask"
                     ></span>
-                    <label id="sum-try"
-                      data-sum="try"
-                      data-hide="sumCheck"
-                      data-show="sumNext"></label>
-                    <!--<input
+                    <label
                       id="sum-try"
-                      type="text"
-                      maxlength="3"
                       data-sum="try"
                       data-hide="sumCheck"
                       data-show="sumNext"
-                    />-->
-                    <button
+                    ></label>
+                                       <button
                       id="sum-check"
                       class="btn button-style align-self-center "
                       type="button"
@@ -514,7 +511,6 @@
               data-hide="infoClose"
               data-show="infoOpen"
             >
-            
               <div class="embed-responsive embed-responsive-16by9">
                 <iframe
                   class="embed-responsive-item"
@@ -530,25 +526,61 @@
               >
                 close
               </button>
-              <hr>
+              <hr />
               <dl class="text-left mt-3">
-                <dt>Number, Symbol & Go Buttons</dt><dd>Click to pick & start. Warns you if number or symbol missing.</dd>
-                <dt>Trigg Image</dt><dd>His expression changes as you answer.</dd>
-                <dt>Timer</dt><dd>Starts when you click go.</dd>
-                <dt>Sound Icon</dt><dd>Turns off & on when you click.</dd>
-                <dt>X Icon</dt><dd>Click if you want to restart.</dd>
-                <dt>Message Text</dt><dd>Tells you what to do.</dd>
-                <dt>Bar</dt><dd>Turns green as you progress.</dd>
-                <dt>Calculator</dt><dd>Click number buttons to answer a sum.</dd>
-                <dt>Check Button</dt><dd>Click to see if your answer is correct.</dd>
-                <dt>Blank Answer</dt><dd>Trigg looks unhappy & growls. Message shows blank answer & warning.</dd>
-                <dt>Correct Answer</dt><dd>Trigg looks happy & ding sounds. Message shows thumbs up & click next.</dd>
-                <dt>Incorrect Answer - 1st Try</dt><dd>Trigg looks unhappy & growls. Message shows thumbs down & try again.</dd>
-                <dt>Incorrect Answer - 2nd Try</dt><dd>Trigg looks unhappy & growls. Message shows correct answer & click next. Sum asked again later.</dd>
-                <dt>Incorrect Answer - 3rd Try</dt><dd>Trigg looks unhappy & growls. Message shows correct answer & try. Sum shows on report.</dd>
-                <dt>Done</dt><dd>Trigg holds done sign & tune plays. Report shows how you did & what to revise.</dd>
-                <dt>Download Button</dt><dd>To share your report click download & share the image.</dd>   
-                </dl>
+                <dt>Number, Symbol & Go Buttons</dt>
+                <dd>
+                  Click to pick & start. Warns you if number or symbol missing.
+                </dd>
+                <dt>Trigg Image</dt>
+                <dd>His expression changes as you answer.</dd>
+                <dt>Timer</dt>
+                <dd>Starts when you click go.</dd>
+                <dt>Sound Icon</dt>
+                <dd>Turns off & on when you click.</dd>
+                <dt>X Icon</dt>
+                <dd>Click if you want to restart.</dd>
+                <dt>Message Text</dt>
+                <dd>Tells you what to do.</dd>
+                <dt>Bar</dt>
+                <dd>Turns green as you progress.</dd>
+                <dt>Calculator</dt>
+                <dd>Click number buttons to answer a sum.</dd>
+                <dt>Check Button</dt>
+                <dd>Click to see if your answer is correct.</dd>
+                <dt>Blank Answer</dt>
+                <dd>
+                  Trigg looks unhappy & growls. Message shows blank answer &
+                  warning.
+                </dd>
+                <dt>Correct Answer</dt>
+                <dd>
+                  Trigg looks happy & ding sounds. Message shows thumbs up &
+                  click next.
+                </dd>
+                <dt>Incorrect Answer - 1st Try</dt>
+                <dd>
+                  Trigg looks unhappy & growls. Message shows thumbs down & try
+                  again.
+                </dd>
+                <dt>Incorrect Answer - 2nd Try</dt>
+                <dd>
+                  Trigg looks unhappy & growls. Message shows correct answer &
+                  click next. Sum asked again later.
+                </dd>
+                <dt>Incorrect Answer - 3rd Try</dt>
+                <dd>
+                  Trigg looks unhappy & growls. Message shows correct answer &
+                  try. Sum shows on report.
+                </dd>
+                <dt>Done</dt>
+                <dd>
+                  Trigg holds done sign & tune plays. Report shows how you did &
+                  what to revise.
+                </dd>
+                <dt>Download Button</dt>
+                <dd>To share your report click download & share the image.</dd>
+              </dl>
             </div>
           </div>
         </div>
@@ -558,24 +590,17 @@
       </div>
     </main>
 
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"
     ></script>
-    <!--<script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"
-    ></script>-->
     <script
       src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jcanvas/21.0.1/min/jcanvas.min.js"></script>
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/blob-polyfill/4.0.20190430/Blob.min.js" integrity="sha256-pT/i7b+F2/r7dBEwqPAAQPwko7UWujlHR9oWipUyvPU=" crossorigin="anonymous"></script>-->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/javascript-canvas-to-blob/3.15.0/js/canvas-to-blob.min.js"
       integrity="sha256-mekOUG47CC/ivpT5rpZNkhFKfV2l0w4O39tkHYCsZn8="
