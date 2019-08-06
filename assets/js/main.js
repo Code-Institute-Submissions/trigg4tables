@@ -70,11 +70,10 @@ $(document).ready(function() {
   }
   //WHY: Reset audio to start of clip to ensure consistent audio for next play.
   //WHERE: https://stackoverflow.com/questions/9563887/setting-html5-audio-position
-  
 
   //CREATE TABLES ARRAY
   function tablesArrayCreate(no, operator) {
-    let tablesArray = [];
+    const tablesArray = [];
     for (let i = 1; i < 13; i++) {
       if (operator === "+") {
         let answer = no + i;
@@ -124,7 +123,7 @@ $(document).ready(function() {
     }
     return tablesArray;
   }
-  //WHAT: Number and operator string for tableSet used in later report. 
+  //WHAT: Number and operator string for tableSet used in later report.
 
   //FILL TODO ARRAY
   function todoFill(no, operator) {
@@ -147,7 +146,7 @@ $(document).ready(function() {
   //CREATE TIMER
   let seconds = 0;
   let minutes = 0;
-  let t;
+  let time;
 
   function add() {
     seconds++;
@@ -163,11 +162,11 @@ $(document).ready(function() {
   }
 
   function timer() {
-    t = setTimeout(add, 1000);
+    time = setTimeout(add, 1000);
   }
 
   function stopTimer() {
-    clearTimeout(t);
+    clearTimeout(time);
   }
   //WHERE: Based on https://codepad.co/snippet/javascript-stopwatch-using-javascript-and-css
 
@@ -220,8 +219,8 @@ $(document).ready(function() {
 
   //CREATE DATE 4 CANVAS REPORT
   function dateShort() {
-    let d = new Date();
-    let strD = d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear();
+    const d = new Date();
+    const strD = d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear();
     return strD;
   }
   //WHERE: date short format https://stackoverflow.com/questions/8398897/how-to-get-current-date-in-jquery
@@ -297,18 +296,13 @@ $(document).ready(function() {
 
   //SOUND ON OFF
   $("[data-icon=sound]").click(function() {
+    const icon = $(this);
     if (sound === true) {
-      $(this)
-        .removeClass("fa-volume-up")
-        .addClass("fa-volume-mute"); 
+      icon.removeClass("fa-volume-up").addClass("fa-volume-mute");
       sound = false;
-      console.log(sound);
     } else {
-      $(this)
-        .removeClass("fa-volume-mute")
-        .addClass("fa-volume-up");
+      icon.removeClass("fa-volume-mute").addClass("fa-volume-up");
       sound = true;
-      console.log(sound);
     }
   });
 
@@ -330,26 +324,22 @@ $(document).ready(function() {
   });
   //WHY: Resetting src for video to stop audio playing after clicking close button.
   //WHERE: https://stackoverflow.com/questions/2128535/stop-a-youtube-video-with-jquery
-  
 
   //CLICK NUMBER OR OPERATOR
   $("fieldset")
     .children("label")
     .click(function() {
-      $(this)
-        .siblings()
-        .removeClass("button-style--selected");
-      $(this)
-        .siblings("i")
-        .hide();
-      $(this).addClass("button-style--selected");
+      const button = $(this);
+      button.siblings().removeClass("button-style--selected");
+      button.siblings("i").hide();
+      button.addClass("button-style--selected");
     });
-//WHAT: Apply select style & hide warn icon
+  //WHAT: Apply select style & hide warn icon
 
   //CLICK GO
   $("[data-button=go]").click(function() {
-    let no = parseInt($("input[name='pickNo']:checked").val());
-    let operator = $("input[name='pickOp']:checked").val();
+    const no = parseInt($("input[name='pickNo']:checked").val());
+    const operator = $("input[name='pickOp']:checked").val();
 
     if (!no) {
       $("[data-icon=missingNo]").show();
@@ -360,7 +350,7 @@ $(document).ready(function() {
     }
 
     if (no && operator) {
-      let todo = todoFill(no, operator);
+      const todo = todoFill(no, operator);
       $("[data-hide~=go]").hide();
       $("[data-show~=go]").show();
       sumSet(todo);
@@ -377,15 +367,15 @@ $(document).ready(function() {
   });
   //WHY: infoOpenIcon enabled on start, disabled on go and enabled on page reload.
   //WHERE: https://stackoverflow.com/questions/5404839/how-can-i-refresh-a-page-with-jquery
- 
+
   //CLICK NUMBER KEYPAD
   $("[data-keypad=number]").click(function() {
     if (sumTryElement.text().length < 3) {
-      let concat = sumTryElement.text() + $(this).val();
+      const concat = sumTryElement.text() + $(this).val();
       sumTryElement.text(concat);
     }
   });
-    //WHY:Text verses val as sumTry is label while data-keypad is an input.
+  //WHY:Text verses val as sumTry is label while data-keypad is an input.
 
   //CLICK CLEAR NUMBER KEYPAD
   $("[data-keypad=clear]").click(function() {
@@ -394,11 +384,11 @@ $(document).ready(function() {
 
   //CLICK CHECK
   $("[data-button=sumCheck]").click(function() {
-    let sumTry = sumTryElement.text();
-    let answer = todoArray[0].key4;
-    let count = todoArray[0].count;
-    let todo = todoArray;
-    let sumAskAnswer = `${todo[0].key1} ${todo[0].key2} ${todo[0].key3} = ${
+    const sumTry = sumTryElement.text();
+    const answer = todoArray[0].key4;
+    const count = todoArray[0].count;
+    const todo = todoArray;
+    const sumAskAnswer = `${todo[0].key1} ${todo[0].key2} ${todo[0].key3} = ${
       todo[0].key4
     }`;
     const warnIcon = $("[data-icon=warn]");
@@ -406,7 +396,7 @@ $(document).ready(function() {
     const incorrectMessageElement = $("[data-message=incorrect]");
     const incorrectShow = $("[data-show~=incorrect]");
 
-       //STEP0: CHECK ANSWER - ENTERED
+    //STEP0: CHECK ANSWER - ENTERED
     if (!sumTry) {
       playAudio(audioIncorrect);
       triggBackground.css("background-image", "url('assets/images/sour.svg')");
@@ -423,7 +413,7 @@ $(document).ready(function() {
       );
       messageElement.text(`click next`);
       sumAskElement.text(`${sumAskAnswer}`).css("color", "#83b186");
-      sumCheckHide.hide(); 
+      sumCheckHide.hide();
       $("[data-hide~=correct]").hide();
       $("[data-show~=correct]").show();
       sumNextButton.show();
@@ -435,7 +425,7 @@ $(document).ready(function() {
       triggBackground.css("background-image", "url('assets/images/hmm.svg')");
       incorrectMessageElement.text(`${sumTry}`);
       messageElement.text(`try again & check`);
-      incorrectShow.show(); 
+      incorrectShow.show();
       warnIcon.hide();
       sumTryElement.text("");
       countIncrement(todo);
@@ -451,8 +441,8 @@ $(document).ready(function() {
       incorrectMessageElement.text(`${sumTry}`);
       messageElement.text(`revise & click next`);
       sumAskElement.text(`${sumAskAnswer}`).css("color", "#3ea041");
-      sumCheckHide.hide(); 
-      incorrectShow.show(); 
+      sumCheckHide.hide();
+      incorrectShow.show();
       sumNextButton.show();
       countIncrement(todo);
       todoAdd(todo);
@@ -464,7 +454,7 @@ $(document).ready(function() {
       triggBackground.css("background-image", "url('assets/images/oops.svg')");
       incorrectMessageElement.text(`${sumTry}`);
       messageElement.text(`try ${answer} & check`);
-      incorrectShow.show(); 
+      incorrectShow.show();
       sumTryElement.text("");
       countIncrement(todo);
     }
@@ -472,9 +462,9 @@ $(document).ready(function() {
 
   // CLICK NEXT
   sumNextButton.click(function() {
-    let todo = todoArray;
-    let revise = reviseArray;
-    const progressBar = $("[role=progressbar]"); 
+    const todo = todoArray;
+    const revise = reviseArray;
+    const progressBar = $("[role=progressbar]");
 
     //last sum
     progressBar.attr(
