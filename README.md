@@ -284,7 +284,8 @@ N/A - Not Applicable
 
 3. **Radio Buttons on iOS** To limit the selection of just one item from a group, radio buttons were wrapped in label elements. Labels were then styled as buttons and radios hidden to provide a consistent look to keypads. Although no problem was encountered with android, radio buttons remained visible on iOS. The following CSS styling fixed. 
 
-```input[type="radio"] {
+```
+input[type="radio"] {
   -webkit-appearance: none;
 }
 
@@ -298,7 +299,8 @@ N/A - Not Applicable
   position: absolute;
   width: 1px;
 }
-/*WHERE: https://www.sitepoint.com/replacing-radio-buttons-without-replacing-radio-buttons/*/```
+/*WHERE: https://www.sitepoint.com/replacing-radio-buttons-without-replacing-radio-buttons/*/
+```
 
 
 4. **Enter Key Reload Site** During development it was noted pressing the enter key on a desktop would reload the page sending the user back to the start. 
