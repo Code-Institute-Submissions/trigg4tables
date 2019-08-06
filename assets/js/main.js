@@ -1,6 +1,4 @@
 $(document).ready(function() {
-  console.log("test");
-
   //PRELOAD IMAGES
   const startImage = new Image();
   startImage.src = "assets/images/hi.svg";
@@ -23,7 +21,7 @@ $(document).ready(function() {
   const doneImage = new Image();
   doneImage.src = "assets/images/score.svg";
 
-  //WHY: Images preloaded to fix bug on iOS where....
+  //WHY: Images preloaded to fix bug on iOS where image only visible on second use.
   //WHERE: https://www.thonky.com/javascript-and-css-guide/javascript-image-preload
 
   //PRELOAD AUDIO
@@ -35,20 +33,9 @@ $(document).ready(function() {
 
   const audioDone = new Audio();
   audioDone.src = "assets/audio/done.mp3";
-  //WHERE: https://freesound.org/people/adriann/sounds/191718/ incorrect not using
-  //https://bigsoundbank.com/detail-0494-little-meow-of-a-cat.html incorrect cat
-  //https://freesound.org/people/Wagna/sounds/242207/ done
-  //need correct sound source
-
-  //POINT TO DOM ELEMENTS
-  const sumAskElement = $("[data-sum=ask]");
-  const sumTryElement = $("[data-sum=try]");
-  const timeElement = $(".time");
-  const triggBackground = $("[data-bg=trigg]");
-  const sumNextButton = $("[data-button=sumNext]");
-  const messageElement = $("[data-message=all]");
-  const infoOpenIcon = $("[data-icon=infoOpen]");
-  //WHY: DOM elements used across functions.
+  //WHERE: Correct
+  //WHERE: Incorrect https://bigsoundbank.com/detail-0494-little-meow-of-a-cat.html
+  //WHERE: Done https://freesound.org/people/Wagna/sounds/242207/
 
   //GLOBAL VARIABLES
   let sound = true;
@@ -56,6 +43,15 @@ $(document).ready(function() {
   let todoArray = [];
   let reviseArray = [];
   let noteString;
+  const sumAskElement = $("[data-sum=ask]");
+  const sumTryElement = $("[data-sum=try]");
+  const timeElement = $(".time");
+  const triggBackground = $("[data-bg=trigg]");
+  const sumNextButton = $("[data-button=sumNext]");
+  const messageElement = $("[data-message=all]");
+  const infoOpenIcon = $("[data-icon=infoOpen]");
+  //WHY: DOM elements declared if used in multiple functions.
+  //WHY: Data attributes used in JS. Classes & IDs used in CSS.
 
   //STOP ENTER KEY FROM REFRESHING PAGE
   $(document).on("keypress", function(e) {
@@ -63,7 +59,7 @@ $(document).ready(function() {
       event.preventDefault();
     }
   });
-  //WHERE:https://stackoverflow.com/questions/8866053/stop-reloading-page-with-enter-key
+  /*WHERE:https://stackoverflow.com/questions/8866053/stop-reloading-page-with-enter-key*/
 
   //PLAY AUDIO
   function playAudio(audio) {
@@ -72,8 +68,9 @@ $(document).ready(function() {
       audio.currentTime = 0;
     }
   }
+  //WHY: Reset audio to start of clip to ensure consistent audio for next play.
   //WHERE: https://stackoverflow.com/questions/9563887/setting-html5-audio-position
-  //WHY: Set audio to 0 as audio not playing corectly if click too quickly between correct sums.
+  
 
   //CREATE TABLES ARRAY
   function tablesArrayCreate(no, operator) {
@@ -127,7 +124,7 @@ $(document).ready(function() {
     }
     return tablesArray;
   }
-  //tableSet used in report. operator not used /
+  //WHAT: Number and operator string for tableSet used in later report. 
 
   //FILL TODO ARRAY
   function todoFill(no, operator) {
@@ -136,7 +133,8 @@ $(document).ready(function() {
       return 0.5 - Math.random();
     });
     return todoArray;
-  } //WHERE: Random sorting code w3schools https://www.w3schools.com/js/js_array_sort.asp
+  }
+  //WHERE: Random sorting code https://www.w3schools.com/js/js_array_sort.asp
 
   //SET SUM
   function sumSet(todo) {
@@ -152,7 +150,7 @@ $(document).ready(function() {
   let t;
 
   function add() {
-    seconds++; //start at 0 and add 1
+    seconds++;
     if (seconds >= 60) {
       seconds = 0;
       minutes++;
@@ -160,12 +158,12 @@ $(document).ready(function() {
     if (seconds < 10) {
       seconds = "0" + seconds;
     }
-    timeElement.text(`${minutes}:${seconds}`); //update text every second
-    timer(); //run timer function - which runs the add function after 1 second - creates the loop
+    timeElement.text(`${minutes}:${seconds}`);
+    timer();
   }
 
   function timer() {
-    t = setTimeout(add, 1000); //setTimeout method
+    t = setTimeout(add, 1000);
   }
 
   function stopTimer() {
@@ -302,7 +300,7 @@ $(document).ready(function() {
     if (sound === true) {
       $(this)
         .removeClass("fa-volume-up")
-        .addClass("fa-volume-mute"); //can I use font awesome classes here?
+        .addClass("fa-volume-mute"); 
       sound = false;
       console.log(sound);
     } else {
@@ -330,10 +328,11 @@ $(document).ready(function() {
     $("[data-show~=infoClose]").show();
     $("iframe").attr("src", "https://www.youtube.com/embed/QnvT6_Fp1B4?rel=0");
   });
+  //WHY: Resetting src for video to stop audio playing after clicking close button.
   //WHERE: https://stackoverflow.com/questions/2128535/stop-a-youtube-video-with-jquery
-  //WHY: Resetting src for video to stop it playing when press close buton data-info=close click.
+  
 
-  //CLICK NUMBER OR OPERATOR - APPLY SELECT STYLE & HIDE WARN ICON
+  //CLICK NUMBER OR OPERATOR
   $("fieldset")
     .children("label")
     .click(function() {
@@ -345,6 +344,7 @@ $(document).ready(function() {
         .hide();
       $(this).addClass("button-style--selected");
     });
+//WHAT: Apply select style & hide warn icon
 
   //CLICK GO
   $("[data-button=go]").click(function() {
@@ -375,9 +375,9 @@ $(document).ready(function() {
     location.reload();
     infoOpenIcon.removeClass("disable");
   });
-  //WHERE: https://stackoverflow.com/questions/5404839/how-can-i-refresh-a-page-with-jquery
   //WHY: infoOpenIcon enabled on start, disabled on go and enabled on page reload.
-
+  //WHERE: https://stackoverflow.com/questions/5404839/how-can-i-refresh-a-page-with-jquery
+ 
   //CLICK NUMBER KEYPAD
   $("[data-keypad=number]").click(function() {
     if (sumTryElement.text().length < 3) {
@@ -385,8 +385,7 @@ $(document).ready(function() {
       sumTryElement.text(concat);
     }
   });
-  //WHY: maxLength in CSS not working if using keypad so need extra js.
-  //WHY:sumTry text as label while data-keypad input so val
+    //WHY:Text verses val as sumTry is label while data-keypad is an input.
 
   //CLICK CLEAR NUMBER KEYPAD
   $("[data-keypad=clear]").click(function() {
@@ -407,9 +406,7 @@ $(document).ready(function() {
     const incorrectMessageElement = $("[data-message=incorrect]");
     const incorrectShow = $("[data-show~=incorrect]");
 
-    console.log(todoArray[0].count + "start count");
-
-    //STEP0: CHECK ANSWER - ENTERED
+       //STEP0: CHECK ANSWER - ENTERED
     if (!sumTry) {
       playAudio(audioIncorrect);
       triggBackground.css("background-image", "url('assets/images/sour.svg')");
@@ -426,8 +423,8 @@ $(document).ready(function() {
       );
       messageElement.text(`click next`);
       sumAskElement.text(`${sumAskAnswer}`).css("color", "#83b186");
-      sumCheckHide.hide(); //sumTry input, sumCheck button & triangle(xs-s & m-l)
-      $("[data-hide~=correct]").hide(); //from attempt 4
+      sumCheckHide.hide(); 
+      $("[data-hide~=correct]").hide();
       $("[data-show~=correct]").show();
       sumNextButton.show();
     }
@@ -438,7 +435,7 @@ $(document).ready(function() {
       triggBackground.css("background-image", "url('assets/images/hmm.svg')");
       incorrectMessageElement.text(`${sumTry}`);
       messageElement.text(`try again & check`);
-      incorrectShow.show(); //thumbs down & incorrect span
+      incorrectShow.show(); 
       warnIcon.hide();
       sumTryElement.text("");
       countIncrement(todo);
@@ -454,8 +451,8 @@ $(document).ready(function() {
       incorrectMessageElement.text(`${sumTry}`);
       messageElement.text(`revise & click next`);
       sumAskElement.text(`${sumAskAnswer}`).css("color", "#3ea041");
-      sumCheckHide.hide(); //sumTRy input, sumCheck button & triangle(xs-s & m-l)
-      incorrectShow.show(); //thumbs down & incorrect span
+      sumCheckHide.hide(); 
+      incorrectShow.show(); 
       sumNextButton.show();
       countIncrement(todo);
       todoAdd(todo);
@@ -467,7 +464,7 @@ $(document).ready(function() {
       triggBackground.css("background-image", "url('assets/images/oops.svg')");
       incorrectMessageElement.text(`${sumTry}`);
       messageElement.text(`try ${answer} & check`);
-      incorrectShow.show(); //thumbs down & incorrect span
+      incorrectShow.show(); 
       sumTryElement.text("");
       countIncrement(todo);
     }
@@ -477,7 +474,7 @@ $(document).ready(function() {
   sumNextButton.click(function() {
     let todo = todoArray;
     let revise = reviseArray;
-    const progressBar = $("[role=progressbar]"); //only used in this function
+    const progressBar = $("[role=progressbar]"); 
 
     //last sum
     progressBar.attr(
