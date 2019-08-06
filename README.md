@@ -9,7 +9,8 @@
 
 ## UX
 
-Trigg 4 Tables is aimed at primary school children aged 9 to 12 years, who are often set times tables homework. The website allows children to select what they want to practice. Trigg the cat then guides them presenting sums, confirming answers and helping out when needed. Once complete, a detailed report is generated which can be downloaded as a png file to facilitate easy sharing via text, snapchat, WhatsApp etc. The report acts as confirmation that homework has been completed and highlights any sum the child struggled with.
+Trigg 4 Tables is aimed at primary school children aged 9 to 12 years, who are often set times tables homework. The website allows children to select tables to practice. Trigg the cat then guides them presenting sums, confirming answers and helping out when needed. Once complete, a detailed report is generated which can be downloaded as a png file to facilitate easy sharing via WhatsApp, Snapchat, text etc. The report acts as confirmation that homework has been completed and highlights any sum the child struggled with.
+
 Trigg 4 Tables has been designed to address some of the limitations of similar websites and apps:
 
 1. **Target Age** Graphics designed to appeal to an older child. 
@@ -41,7 +42,7 @@ I love maths, enjoy practising times tables and am ever so slightly competitive.
 
 4. **Teacher**
 
-Not every child in my class has someone that can help them with homework. Having canvased their parents, my students are now using Trigg 4 Tables each night to practice the assigned times tables. Students WhatsApp their reports to me. I have noticed a marked improvement in our Friday maths test scores especially amongst students who had been struggling. Other teachers have started to ask about Trigg.
+Not every child in my class has someone that can help with homework. Having canvased parents, my students are now using Trigg 4 Tables each night to practice the assigned times tables. Students WhatsApp their reports to our Trigg group. I have noticed a marked improvement in our Friday maths test scores, especially amongst students who had been struggling. Other teachers have started to ask about Trigg.
 
 
 ### Design
@@ -58,7 +59,7 @@ The look and feel of Trigg 4 Tables was designed to appeal to the target audienc
 
 5. **Fonts** The heading fonts were chosen to convey a sense of fun. Number and keypad fonts were chosen for legibility. Message fonts were chosen to reflect the handwriting of the target audience. 
 
-6. **Preparation** Balsamiq was used to generate [wireframes](https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/wireframes.pdf) for various device sizes. The [initial proposal](https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/proposal.pdf) document and [Bootstrap plan(https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/bootstrap.PNG) were completed using Microsoft Powerpoint. Testing during development resulted in several changes to the original design with a move away from device keypads, a reduction in text, and a focus on maintaining a scroll free site even on smaller mobiles. 
+6. **Preparation** Balsamiq was used to generate [wireframes](https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/wireframes.pdf) for various device sizes. The [initial proposal](https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/proposal.pdf) document and [Bootstrap plan](https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/bootstrap.PNG) were completed using Microsoft Powerpoint. Testing during development resulted in several changes to the original design with a move away from device keypads and a reduction in text.
 
 
 ## Features
@@ -66,39 +67,42 @@ The look and feel of Trigg 4 Tables was designed to appeal to the target audienc
 ### Existing Features *Components*
 
 ![Trig FlowChart](https://github.com/coderbeez/trigg4tables/blob/master/assets/images/features.png)
-*Components of this single page no-scroll website*
+*Website Components*
 
 
-1. **Trigg Images** Trigg character images from [VectorStock](https://www.vectorstock.com/royalty-free-vectors/vectors-by_Westamult) set the overall look of the website. jQuery is used to add and remove classes alternating Trigg’s expressions and providing feedback for the child.
+1. **Trigg Images** Trigg character images from [VectorStock](https://www.vectorstock.com/royalty-free-vectors/vectors-by_Westamult) set the overall look of the website. jQuery is used to change the image source, alternating Trigg’s expressions and providing feedback for the child.
 
 ![Trig FlowChart](https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/triggflow.png)
+*Question & Answer Flowchart*
 
-2. **Information Video** Although the website was designed to be as intuitive as possible, an instruction video was created using [Snagit](https://www.techsmith.com/screen-capture.html) with voiceover by an enthusiastic 12 year old. A dedicated YouTube channel was created to host Trigg’s video. Given the target audience, this was deemed to be the most appropriate medium. Text instructions were also included for improved accessibility.
 
-3. **Keypads** Touch screen keypad functionality and positioning was a serious problem so the initial design was amended to include dedicated static keypads to. jQuery on click functions and JavaScript concat method are used to retrieve values from HTML buttons, radio buttons and input fields. CSS styles including active simulates key pressing and indicates selection.
+2. **Information Video** Although the website was designed to be as intuitive as possible, an instruction video was created using [Snagit](https://www.techsmith.com/screen-capture.html) with voiceover by an enthusiastic 12 year old. A dedicated YouTube channel was setup to host Trigg’s video. Given the target audience, this was deemed the most appropriate medium. Text instructions were also included for improved accessibility.
 
-4. **Timer** JavaScript setTimeout and clearTimeout methods are used to start the timer on go and stop on complete. The time taken to complete is shown on the report canvas. 
+3. **Keypads** Touch screen keypad functionality and positioning was a serious problem, so the initial design was amended to include website keypads. jQuery click and JavaScript concat methods are used to enter and retrieve values from HTML buttons, radio buttons and labels. CSS styles, including active, simulate key pressing and indicate selection.
 
-5. **Sound** JavaScript play methods are used to provide audio feedback when an answer is missing, correct, incorrect or all complete. Sound can be turned on or off at any stage by clicking the sound icon. 
+4. **Timer** JavaScript setTimeout and clearTimeout methods are used to start the timer on go and stop on complete. Time taken to finish is shown on the report canvas.
+
+5. **Sound** JavaScript play methods are used to provide audio feedback when an answer is missing, correct, incorrect or all complete. Sound can be turned on or off at any stage by clicking the sound icon.
 
 6. **Clear** Using the JavaScript reload method, the website can be refreshed at any stage by clicking the x icon, taking the child back to the start.
 
 7. **Tables** Times tables lists are generated, randomised, marked as completed and highlighted as needing revision, using 3 JavaScript arrays, timesArray, todoArray and reviseArray.
 
-8. **Feedback** jQuery hide, show, add and remove class methods are used to provide text and visual instructions and feedback to the child.
+8. **Feedback** jQuery hide, show, add and remove class methods are used to provide instructions and feedback.
 
 9. **Progress** jQuery is used to set the attributes for a [Bootstrap](https://getbootstrap.com/docs/4.3/components/progress/) progress bar showing the child how they are progressing.
 
-10. **Report** [jCanvas](https://projects.calebevans.me/jcanvas/) is used to fill and format a HTML canvas element. This canvas acts as a detailed report showing the date, tables, time taken to complete and any tables that need to be revised. 
+10. **Report** [jCanvas](https://projects.calebevans.me/jcanvas/) is used to fill and format a HTML canvas element. This canvas acts as a detailed report showing the date, tables, time taken to complete and any sums that need to be revised. 
 
 11. **Download** Clicking the download button converts the canvas report first to a blob and then to a png file which can be shared. JavaScript libraries [Canvas-toBlob](https://github.com/eligrey/canvas-toBlob.js) and [FileSaver](https://github.com/eligrey/FileSaver.js/) facilitate this.
 
 
 ### Existing Features *Responsiveness*
 
-The website was designed using a mobile first approach. In order to maintain a non-scrolling site, the order, position and visibility of elements changes depending on screen size. CSS attributes and media queries, Bootstrap grid system and display classes, and jQuery methods are used to facilitate this responsiveness.
+This one page website was designed using a mobile first approach. In order to limit scrolling, the order, position and visibility of elements changes depending on screen size. CSS attributes and media queries, Bootstrap grid system and display classes, and jQuery methods are used to facilitate this responsiveness.
 
-![Trig FlowChart]( https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/bootstrap.PNG)
+![Bootstrap Plan]( https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/bootstrap.PNG)
+*Bootstrap Column & Row Plan*
 
 
 1. **Viewport Width** Using the [Bootstrap](https://getbootstrap.com/docs/4.3/layout/grid/) grid system, the percentage of viewport width used to display content varies from 100% on small and medium screens to 83% (10 Bootstrap columns) on large screens.
@@ -153,29 +157,32 @@ The website was designed using a mobile first approach. In order to maintain a n
 
 ## Testing
 
-### Validation
+### Validation & Automated Testing
 
-**HTML** 
+**HTML**
+
 [W3C Validation Service](https://validator.w3.org/) Used to test the validity of HTML – no errors found.
 
 **CSS**
+
 [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) Used to test the validity of CSS – no errors found.
 
 **JAVASCRIPT**
-[jshint](https://jigsaw.w3.org/css-validator/) Used to test the validity of JavaScript – no errors found.
 
-[Jasmine](https://jasmine.github.io/) Used to complete automated testing of 
+[jshint](https://jigsaw.w3.org/css-validator/) Used to test the validity of JavaScript functions – no errors found.
+
+[Jasmine](https://jasmine.github.io/) Used to complete automated testing of some JavaScript functions – 22 specs 0 errors.
 
 
-### Manual Site Testing
+### Manual Testing
 
 Throughout the development process, [Chrome Developer Tools]( https://developers.google.com/web/tools/chrome-devtools/) were used to test for responsiveness on various screen sizes, android and iOS mobiles to test for functionality and layout, and Chrome, Edge and Firefox browsers to identify bugs as early as possible.
 
 Following sign off, structured testing of the site was carried out using various browsers and screens sizes as follows:
 
-| **BROWSER** | **Android** | **iOS** | **iOS** | **Explorer** | **Edge** | **Chrome** | **Firefox** | **Safari** |
+| **BROWSER** | **Android** | **iOS** | **Android** | **iOS** | **Edge** | **Chrome** | **Firefox** | **Safari** |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| **SCREEN SIZE** | **Small** | **Small** | **Medium** | **Large** | **Large** | **Large** | **Large** | **Large** |
+| **SCREEN SIZE** | **Small** | **Small** | **Medium** | **Medium** | **Large** | **Large** | **Large** | **Large** |
 | **INFORMATION** | --- | --- | --- | --- | --- | --- | --- | --- |
 | Infor Icon Click | P | P | P | P | P | P | P | P |
 | YouTube Video Play | P | P | P | P | P | P | P | P |
@@ -271,29 +278,46 @@ N/A - Not Applicable
 
 ### Bug Log
 
-1. **Enter Key Reload Site** During development on a desktop, pressing the enter key would reload the page sending the user back to the start. 
+1. **Keyboard on Touch Screen Devices** During development it quickly became apparent that relying on inbuilt keyboards on touch screen devices provided poor UX. Keypads were built into the website to avoid using device keyboards.
 
-2. **Radio Buttons on iOS** During development 
+2. **Tables on iOS** Initial keypad designs relied on tables to position elements. Although no problem was encountered with android, tables did not render correctly on iOS. Keypads were redesigned using br elements and margins.
 
-3. **Keyboard on Mobile Devices** During testing 
+3. **Radio Buttons on iOS** To limit the selection of just one item from a group, radio buttons were wrapped in label elements. Labels were then styled as buttons and radios hidden to provide a consistent look to keypads. Although no problem was encountered with android, radio buttons remained visible on iOS. The following CSS styling fixed. 
 
-4. **Tables on iOS** During testing 
+```input[type="radio"] {
+  -webkit-appearance: none;
+}
 
-5. **Blob to Canvas on Edge** When test
+[type="radio"] {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+/*WHERE: https://www.sitepoint.com/replacing-radio-buttons-without-replacing-radio-buttons/*/```
 
-6. **Video Stop Playing on Hide** During testing
 
-7. **Background images first use not loading in iOS** During testing
+4. **Enter Key Reload Site** During development it was noted pressing the enter key on a desktop would reload the page sending the user back to the start. 
 
-8. **Error message re jCanvas-to-Blob on iOS** During testing
+5. **Video Stop Playing on Hide** During development
 
-9. **Ipad double click** During testing
+7. **Audio not consistently audible** During development
 
-10. **Keyboard access** During testing
+8. **Keyboard access** During development
 
-11. **Audio not consistently audible** During testing
+6. **Background images first use not loading in iOS** During development
 
-12. **mp3 Audio clip not loading in Firefox** During testing
+9. **Ipad double click** During development
+
+10. **mp3 Audio clip not loading in Firefox** During testing
+
+11. **Blob to Canvas on Edge** During testing 
+
+12. **Error message re jCanvas-to-Blob on iOS** During testing
 
 
 ### Deployment
@@ -378,3 +402,4 @@ The following instructions were taken from [GitHib Help]( https://help.github.co
 
 
 ### Acknowledgements
+
