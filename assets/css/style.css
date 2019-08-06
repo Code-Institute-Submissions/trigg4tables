@@ -4,8 +4,8 @@
 .hide-start {
   display: none;
 }
-/*WHY: Used to prevent flicker when first loaded when jQuery hide() used to hide elements at start.
-Bootstrap not working with */
+/*WHY: Used to prevent first load flicker experienced when jQuery hide() used to hide elements at start.
+Bootstrap display classes not working with jQuery hide() so own css written.*/
 
 /*----------MAIN FONTS----------*/
 body {
@@ -22,7 +22,7 @@ h1 {
   text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1),
     0px 18px 23px rgba(0, 0, 0, 0.1);
 }
-/*WHERE: https://designshack.net/articles/css/12-fun-css-text-shadows-you-can-copy-and-paste/*/
+/*WHERE: text shadow https://designshack.net/articles/css/12-fun-css-text-shadows-you-can-copy-and-paste/*/
 
 h2,
 #instruct--mdlg {
@@ -104,7 +104,7 @@ i {
 i.missing {
   font-size: 1.4rem;
 }
-/*WHY: Reduce i font size to span size when missing operator or number to stop buttons from moving.*/
+/*WHY: Reduce i font size to span size when i is used to highlight missing operator/number to stop keypad from moving.*/
 
 .bg-color--lightpink > .time {
   font-size: 1.6rem;
@@ -130,7 +130,7 @@ i {
 .bg-color--lightpink > i:hover {
   color: white;
 }
-/*WHY: Placed below other colour css to ensure overwrites. ??? took off active*/
+/*WHY: Placed below other colour css to ensure overwrites.*/
 
 .disable,
 .disable:hover {
