@@ -9,7 +9,7 @@
 
 ## UX
 
-Trigg 4 Tables is aimed at primary school children aged 9 to 12 years, who are often set times tables homework. The website allows children to select tables to practice. Trigg the cat then guides them presenting sums, confirming answers and helping out when needed. Once complete, a detailed report is generated which can be downloaded as a png file to facilitate easy sharing via WhatsApp, Snapchat, text etc. The report acts as confirmation that homework has been completed and highlights any sum the child struggled with.
+Trigg 4 Tables is aimed at primary school children aged 9 to 12 years, who are often set times tables homework. The website allows children to select tables to practice. Trigg the cat then guides them presenting sums, confirming answers and helping out when needed. Once complete, a detailed report is generated which can be downloaded as a png file to facilitate easy sharing via WhatsApp, Snapchat, text message etc. The report acts as confirmation that homework has been completed and highlights any sum the child struggled with.
 
 Trigg 4 Tables has been designed to address some of the limitations of similar websites and apps:
 
@@ -59,7 +59,7 @@ The look and feel of Trigg 4 Tables was designed to appeal to the target audienc
 
 5. **Fonts** The heading fonts were chosen to convey a sense of fun. Number and keypad fonts were chosen for legibility. Message fonts were chosen to reflect the handwriting of the target audience. 
 
-6. **Preparation** Balsamiq was used to generate [wireframes](https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/wireframes.pdf) for various device sizes. The [initial proposal](https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/proposal.pdf) document and [Bootstrap plan](https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/bootstrap.PNG) were completed using Microsoft Powerpoint. Testing during development resulted in several changes to the original design with a move away from device keyboards and a reduction in text.
+6. **Preparation** Balsamiq was used to generate [wireframes](https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/wireframes.pdf) for various device sizes. The [initial proposal](https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/proposal.pdf) document and [Bootstrap plan](https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/bootstrap.PNG) were completed using Microsoft Powerpoint and Publisher. Testing during development resulted in several changes to the original design with a move away from device keyboards and a reduction in text.
 
 
 ## Features
@@ -99,7 +99,7 @@ The look and feel of Trigg 4 Tables was designed to appeal to the target audienc
 
 ### Existing Features *Responsiveness*
 
-This one page website was designed using a mobile first approach. In order to limit scrolling, the order, position and visibility of elements changes depending on screen size. CSS attributes and media queries, Bootstrap grid system and display classes, and jQuery methods are used to facilitate this responsiveness.
+This one page website was designed using a mobile first approach. In order to limit scrolling, the order, position and visibility of elements changes depending on screen size. (1) CSS attributes and media queries, (2) Bootstrap grid system and display classes, and jQuery methods are used to facilitate this responsiveness.
 
 ![Bootstrap Plan]( https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/bootstrap.PNG)
 *Bootstrap Column & Row Plan*
@@ -107,15 +107,15 @@ This one page website was designed using a mobile first approach. In order to li
 
 1. **Viewport Width** Using the [Bootstrap](https://getbootstrap.com/docs/4.3/layout/grid/) grid system, the percentage of viewport width used to display content varies from 100% on small and medium screens to 83% (10 Bootstrap columns) on large screens.
 
-2. **Viewport Height** CSS percentage of viewport height classes are used to ensure site fills screen, regardless of screen size. 
+2. **Viewport Height** CSS percentage of viewport height classes are used to ensure site fills screen, regardless of screen size and limits scrolling.
 
-3. **Element Width & Position** The [Bootstrap](https://getbootstrap.com/docs/4.3/layout/grid/) grid system is also used to change the width and position of elements on small, medium and large screens to better display content. CSS backgrounds…
+3. **Element Width & Position** The [Bootstrap](https://getbootstrap.com/docs/4.3/layout/grid/) grid system is also used to change the width and position of elements on small, medium and large screens to better display content.
 
-4. **Display** Using [Bootstrap](https://getbootstrap.com/docs/4.3/utilities/display/) display classes together with [jQuery]( https://api.jquery.com/show/) hide and show methods:
+4. **Display** Using [Bootstrap](https://getbootstrap.com/docs/4.3/utilities/display/) display classes together with [jQuery]( https://api.jquery.com/show/) hide and show methods allow elements, rows and columns to appear and disappear on this single page website.
 
 5. **Video** [Bootstrap](https://getbootstrap.com/docs/4.3/utilities/embed/#about) utility of embed-responsive is used to make the embedded iframe responsive.
 
-6. **Margins & Padding** [Bootstrap](https://getbootstrap.com/docs/4.3/utilities/spacing/) spacing utilities are used throughout this website to vary margins and padding by breakpoints.
+6. **Margins & Padding** [Bootstrap](https://getbootstrap.com/docs/4.3/utilities/spacing/) spacing utilities are used to vary margins and padding by breakpoints.
 
 7. **Font Size** Media queries are used to change font sizes depending on screen size.
 
@@ -124,9 +124,11 @@ This one page website was designed using a mobile first approach. In order to li
 
 ### Future Features 
 
-1. **Score** Creating a separate projects page to document upcoming d.i.y. projects, e.g. building a child’s playhouse in the garden, would encourage repeat visits.
+1. **Practice History** Facility for a child to track practice performance.
 
-2. **Share Buttons** Creating more product reviews but using a single modal and varying content by button clicked requires jquery (referenced on Bootstrap).
+2. **Share Buttons** Buttons to share directly with WhatsApp Snapchat etc. 
+
+3. **Younger Audience** A sister site aimed at a younger audience with appropriate character images and the ability to practice a subset of selected times tables.
 
 
 ## Technologies Used
@@ -302,7 +304,7 @@ input[type="radio"] {
 /*WHERE: https://www.sitepoint.com/replacing-radio-buttons-without-replacing-radio-buttons/*/
 ```
 
-4. **Enter Key Reload Site** During development it was noted pressing the enter key on a desktop would reload the page sending the user back to the start. A prevent default method resolved the issue.
+4. **Enter Key Reload Site** Pressing the enter key on a desktop would reload the page sending the user back to the start. A prevent default method resolved the issue.
 
 ```
 $(document).on("keypress", function(e) {
@@ -317,10 +319,10 @@ $(document).on("keypress", function(e) {
 
 ```
 $("iframe").attr("src", "https://www.youtube.com/embed/QnvT6_Fp1B4?rel=0");
-  /*WHERE: https://stackoverflow.com/questions/2128535/stop-a-youtube-video-with-jquery*/
+/*WHERE: https://stackoverflow.com/questions/2128535/stop-a-youtube-video-with-jquery*/
 ```
 
-6. **Sound clips not consistently audible** During development the sound clip was not always audible even though the play method was running correctly. Using the current time property in the play audio function reset the audio clip back to the start giving consistent sound on play. 
+6. **Sound Clips Not Consistently Audible** Sound clip were not always audible even though the play method was running correctly. Using the current time property in the play audio function reset the audio clip back to the start giving consistent sound on each play. 
 
 ```
 function playAudio(audio) {
@@ -332,21 +334,21 @@ function playAudio(audio) {
   /*WHERE: https://stackoverflow.com/questions/9563887/setting-html5-audio-position*/
 ```
 
-7. **Keyboard access** During initial testing with the target audience, rather than using the keypad, children were using the device keyboard to input. An input field was changed to a label to prevent this from happening. 
+7. **Keyboard Access** During initial testing with the target audience, rather than using the keypad, children were using the device keyboard to input. An input field was changed to a label to prevent this from happening. 
 
-8. **Loading Trigg images** During initial testing on both android and iOS mobiles, Trigg images were slow to load. Initial png files were changed to svg which improved load times on android but images were only displayed on iOS the second time they were used. Preloading image sources in JS resolved this issue.
+8. **Loading Trigg Images** During initial testing on both android and iOS mobiles, Trigg images were slow to load. Initial png files were changed to svg which improved load times on android but images were only displayed on iOS the second time they were used. Preloading image sources in JS resolved this issue.
 
-9. **iPad double tap** When using the keypad for entering numbers eg 11, the double tapping on the 1 key can cause an iPad to zoom in. Although this action can be turned off in the device settings, no fix has been found to apply to the website.
+9. **iPad Double Tap** When using the keypad for entering numbers e.g. 11, double tapping on the 1 key can cause an iPad to zoom in. Although this action can be turned off in the device settings, no fix has been found to apply to the website.
 
-10. **mp3 Audio clip not loading in Firefox** During Firefox testing, although all audio clips were mp3 files, one clip would not load. Resaving the clip as a m4a file resolved the issue.
+10. **mp3 Audio Clips in Firefox** During Firefox testing, although all audio clips were mp3 files, one clip would not load. Resaving the clip as a m4a file resolved the issue.
 
-11. **Blob to Canvas on Edge** During Edge testing, the report would not download as Edge does not support the toBlob method. Using the [Canvas-toBlob](https://github.com/eligrey/canvas-toBlob.js) JS library resolved this issue.
+11. **Blob to Canvas in Edge** During Edge testing, the report would not download as Edge does not support the toBlob method. Using the [Canvas-toBlob](https://github.com/eligrey/canvas-toBlob.js) JS library resolved this issue.
 
 ![toBlob Compatiblity](https://github.com/coderbeez/trigg4tables/blob/master/assets/images/toblob.PNG)
 *toBlob Compatibility [Mozilla]( https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob)*
 
-12. **Error message re jCanvas-to-Blob on iOS** [StockOverflow]( https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob)
- revealed an error message on iOS was due to sourceMap flag set to false in tsconfig.json file of [Canvas-toBlob](https://github.com/eligrey/canvas-toBlob.js). This does not affect functionality.
+12. **Error Message re Canvas-toBlob on iOS** [StockOverflow]( https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob)
+ revealed an error message on iOS was due to the sourceMap flag being set to false instead of true in tsconfig.json file of [Canvas-toBlob](https://github.com/eligrey/canvas-toBlob.js). This does not affect functionality.
 
 
 ### Deployment
@@ -431,5 +433,6 @@ The following instructions were taken from [GitHib Help]( https://help.github.co
 
 
 ### Acknowledgements
+
 
 
