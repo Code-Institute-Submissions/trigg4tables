@@ -467,14 +467,14 @@ $(document).ready(function() {
     const progressBar = $("[role=progressbar]");
 
     //last sum
+    reviseAdd(todo, revise);
+    todoRemove(todo);
+    $("[data-hide~=sumNext]").hide();
     progressBar.attr(
       "style",
       `width: ${((12 - todoArray.length) / 12) * 100}%`
     );
     progressBar.attr("aria-valuenow", 12 - todo.length);
-    reviseAdd(todo, revise);
-    todoRemove(todo);
-    $("[data-hide~=sumNext]").hide();
 
     //next sum
     if (todo.length !== 0) {
