@@ -59,7 +59,7 @@ The look and feel of Trigg 4 Tables was designed to appeal to the target audienc
 
 5. **Fonts** The heading fonts were chosen to convey a sense of fun. Number and keypad fonts were chosen for legibility. Message fonts were chosen to reflect the handwriting of the target audience. 
 
-6. **Preparation** Balsamiq was used to generate [wireframes](https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/wireframes.pdf) for various device sizes. The [initial proposal](https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/proposal.pdf) document and [Bootstrap plan](https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/bootstrap.PNG) were completed using Microsoft Powerpoint. Testing during development resulted in several changes to the original design with a move away from device keypads and a reduction in text.
+6. **Preparation** Balsamiq was used to generate [wireframes](https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/wireframes.pdf) for various device sizes. The [initial proposal](https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/proposal.pdf) document and [Bootstrap plan](https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/bootstrap.PNG) were completed using Microsoft Powerpoint. Testing during development resulted in several changes to the original design with a move away from device keyboards and a reduction in text.
 
 
 ## Features
@@ -282,7 +282,7 @@ N/A - Not Applicable
 
 2. **Tables on iOS** Initial keypad designs relied on tables to position elements. Although no problem was encountered with android, tables did not render correctly on iOS. Keypads were redesigned using br elements and margins.
 
-3. **Radio Buttons on iOS** To limit the selection of just one item from a group, radio buttons were wrapped in label elements. Labels were then styled as buttons and radios hidden to provide a consistent look to keypads. Although no problem was encountered with android, radio buttons remained visible on iOS. The following CSS styling fixed. 
+3. **Radio Buttons on iOS** To limit selection to one item from a group, radio buttons were wrapped in label elements. Labels were then styled as buttons and radios hidden to provide a consistent look to keypads. Although no problem was encountered with android, radio buttons remained visible on iOS. The following CSS resolved the issue. 
 
 ```
 input[type="radio"] {
@@ -302,24 +302,51 @@ input[type="radio"] {
 /*WHERE: https://www.sitepoint.com/replacing-radio-buttons-without-replacing-radio-buttons/*/
 ```
 
+4. **Enter Key Reload Site** During development it was noted pressing the enter key on a desktop would reload the page sending the user back to the start. A prevent default method resolved the issue.
 
-4. **Enter Key Reload Site** During development it was noted pressing the enter key on a desktop would reload the page sending the user back to the start. 
+```
+$(document).on("keypress", function(e) {
+    if (e.which == 13) {
+      event.preventDefault();
+    }
+  });
+  /*WHERE: https://stackoverflow.com/questions/8866053/stop-reloading-page-with-enter-key*/
+```
 
-5. **Video Stop Playing on Hide** During development
+5. **Video Stop Playing on Hide** If the close button, used to hide the instruction video, was pressed before the video had ended the audio continued. Adding the following code to the close button click method set the video back to the start stopping the audio.
 
-7. **Audio not consistently audible** During development
+```
+$("iframe").attr("src", "https://www.youtube.com/embed/QnvT6_Fp1B4?rel=0");
+  /*WHERE: https://stackoverflow.com/questions/2128535/stop-a-youtube-video-with-jquery*/
+```
 
-8. **Keyboard access** During development
+6. **Sound clips not consistently audible** During development the sound clip was not always audible even though the play method was running correctly. Using the current time property in the play audio function reset the audio clip back to the start giving consistent sound on play. 
 
-6. **Background images first use not loading in iOS** During development
+```
+function playAudio(audio) {
+    if (sound === true) {
+      audio.play();
+      audio.currentTime = 0;
+    }
+  }
+  /*WHERE: https://stackoverflow.com/questions/9563887/setting-html5-audio-position*/
+```
 
-9. **Ipad double click** During development
+7. **Keyboard access** During initial testing with the target audience, rather than using the keypad, children were using the device keyboard to input. An input field was changed to a label to prevent this from happening. 
 
-10. **mp3 Audio clip not loading in Firefox** During testing
+8. **Loading Trigg images** During initial testing on both android and iOS mobiles, Trigg images were slow to load. Initial png files were changed to svg which improved load times on android but images were only displayed on iOS the second time they were used. Preloading image sources in JS resolved this issue.
 
-11. **Blob to Canvas on Edge** During testing 
+9. **iPad double tap** When using the keypad for entering numbers eg 11, the double tapping on the 1 key can cause an iPad to zoom in. Although this action can be turned off in the device settings, no fix has been found to apply to the website.
 
-12. **Error message re jCanvas-to-Blob on iOS** During testing
+10. **mp3 Audio clip not loading in Firefox** During Firefox testing, although all audio clips were mp3 files, one clip would not load. Resaving the clip as a m4a file resolved the issue.
+
+11. **Blob to Canvas on Edge** During Edge testing, the report would not download as Edge does not support the toBlob method. Using the [Canvas-toBlob](https://github.com/eligrey/canvas-toBlob.js) JS library resolved this issue.
+
+![toBlob Compatiblity](https://github.com/coderbeez/trigg4tables/blob/master/assets/images/toblob.PNG)
+*toBlob Compatibility [Mozilla]( https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob)*
+
+12. **Error message re jCanvas-to-Blob on iOS** [StockOverflow]( https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob)
+ revealed an error message on iOS was due to sourceMap flag set to false in tsconfig.json file of [Canvas-toBlob](https://github.com/eligrey/canvas-toBlob.js). This does not affect functionality.
 
 
 ### Deployment
@@ -404,4 +431,5 @@ The following instructions were taken from [GitHib Help]( https://help.github.co
 
 
 ### Acknowledgements
+
 
