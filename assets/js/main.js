@@ -31,7 +31,7 @@ $(document).ready(function() {
   audioCorrect.src = "assets/audio/correct.mp3";
 
   const audioIncorrect = new Audio();
-  audioIncorrect.src = "assets/audio/incorrectCat.mp3";
+  audioIncorrect.src = "assets/audio/incorrectCat.m4a";
 
   const audioDone = new Audio();
   audioDone.src = "assets/audio/done.mp3";
@@ -69,9 +69,11 @@ $(document).ready(function() {
   function playAudio(audio) {
     if (sound === true) {
       audio.play();
-      console.log("hear");
+      audio.currentTime = 0;
     }
   }
+  //WHERE: https://stackoverflow.com/questions/9563887/setting-html5-audio-position
+  //WHY: Set audio to 0 as audio not playing corectly if click too quickly between correct sums.
 
   //CREATE TABLES ARRAY
   function tablesArrayCreate(no, operator) {
@@ -195,7 +197,7 @@ $(document).ready(function() {
   //APPEND SUM TO END TODO
   function todoAdd(todo) {
     todo.push(todo[0]);
-    return todo; 
+    return todo;
   }
 
   //MOVE SUM TO REVISE ARRAY
@@ -215,7 +217,7 @@ $(document).ready(function() {
     } else {
       noteString = "Revise " + revise.sort().join(" ");
     }
-    return noteString; 
+    return noteString;
   }
 
   //CREATE DATE 4 CANVAS REPORT
@@ -299,14 +301,14 @@ $(document).ready(function() {
   $("[data-icon=sound]").click(function() {
     if (sound === true) {
       $(this)
-        .removeClass("fa-volume-mute")
-        .addClass("fa-volume-up"); //can I use font awesome classes here?
+        .removeClass("fa-volume-up")
+        .addClass("fa-volume-mute"); //can I use font awesome classes here?
       sound = false;
       console.log(sound);
     } else {
       $(this)
-        .removeClass("fa-volume-up")
-        .addClass("fa-volume-mute");
+        .removeClass("fa-volume-mute")
+        .addClass("fa-volume-up");
       sound = true;
       console.log(sound);
     }
