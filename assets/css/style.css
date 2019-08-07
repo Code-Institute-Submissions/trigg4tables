@@ -54,7 +54,7 @@ h2,
 /*WHY: Incorrect answer shown next to thumb image.*/
 
 dt,
-dd {
+dd, #report-text {
   font-family: "Special Elite", cursive;
   font-size: 0.9rem;
   font-weight: bold;
@@ -64,6 +64,7 @@ dd {
 dt {
   color: #b18683;
 }
+
 
 .green {
   color: #009816;

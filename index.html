@@ -88,8 +88,10 @@
           <div class="row bg-height--65">
             <div
               class="col-12 d-flex align-items-end bg--trigg"
+              aria-label="Trigg the cat says hi!"
               data-bg="trigg"
             >
+            <!--WHY: Aria Label used to introduce the cat character in background image.-->
               <a
                 href="https://github.com/coderbeez"
                 target="_blank"
@@ -118,6 +120,7 @@
             <!--XS & SM SCREENS - TRIGG always visible-->
             <div
               class="col-6 bg-height--30 shade bg--trigg"
+              aria-label="Trigg the cat says hi!"
               data-bg="trigg"
             ></div>
             <div class="col-6">
@@ -228,6 +231,7 @@
           <div class="row hide-start" data-show="go" data-hide="done">
             <div class="col-12">
               <div class="progress mt-3 mx-auto">
+                <!--WHY: Bootstrap mx auto class used to center div horizontally.-->
                 <div
                   id="progress"
                   class="progress-bar progress-bar-striped"
@@ -296,7 +300,7 @@
                     <input type="radio" name="pickNo" value="12" />12
                   </label>
                 </fieldset>
-                <fieldset class="mt-4 mt-md-5 mx-auto">
+                <fieldset class="mt-2 mt-md-5 mx-auto">
                   <i
                     class="fas fa-exclamation-triangle mr-3 red missing hide-start"
                     data-icon="missingOp"
@@ -316,7 +320,7 @@
                     <input type="radio" name="pickOp" value="/" />÷
                   </label>
                 </fieldset>
-                <fieldset class="mt-3 mt-md-5 mx-auto">
+                <fieldset class="mt-2 mt-md-5 mx-auto">
                   <span class="d-inline-block mt-3 message">lets</span>
                   <!--WHY: Bootstrap display class used to allow margin.-->
                   <!--WHY: Bootstrap mt class used to position lets in center of button.-->
@@ -462,6 +466,8 @@
                   >
                     <i class="fas fa-arrow-circle-down"></i>
                   </button>
+                  <p id="report-text" class="mt-3 mb-0" data-text="report"></p>
+                  <!--WHY: Report text shown as canvas content not accessible to screen readers.-->
                 </div>
               </div>
             </div>
@@ -504,7 +510,7 @@
               <!--WHY: Instruct viisble from GO.-->
             </div>
           </div>
-          <!--ROW: INFO-->
+          <!--ROW: INSTRUCTION-->
           <div class="row">
             <div
               class="col-12 text-center mt-4 hide-start"

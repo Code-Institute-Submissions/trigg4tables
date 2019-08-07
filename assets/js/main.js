@@ -496,9 +496,10 @@ const onReady = function() {
       playAudio(audioDone);
       triggBackground.css("background-image", "url('assets/images/score.svg')");
       messageElement.text(`well done`);
+      $("[data-text=report]").text(`Date ${dateShort()}, Time Taken ${timeElement.html()}, Tables ${tableSet}, ${noteString}`);
       $("[data-hide~=done]").hide();
       $("[data-show~=done]").show();
-    }
+          }
   });
 
   //CLICK DOWNLOAD REPORT
@@ -519,4 +520,4 @@ const onReady = function() {
 };
 
 $(document).ready(onReady);
-//WHY: Code runs after document loaded????
+//WHY: Code runs when DOM has been loaded.
