@@ -432,9 +432,8 @@ const onReady = function() {
       incorrectShow.show();
       warnIcon.hide();
       sumTryElement.text("");
-      countIncrement(todo);
-      console.log(count);
-    }
+      console.log(countIncrement(todo)); //just take off log
+          }
 
     //step 3: check answer - incorrect 2nd attempt
     else if (count === 1) {
@@ -449,10 +448,9 @@ const onReady = function() {
       sumCheckHide.hide();
       incorrectShow.show();
       sumNextButton.show();
-      countIncrement(todo);
+      console.log(countIncrement(todo));// just take off log
       todoAdd(todo);
-      console.log(count);
-    }
+          }
 
     //step 4: check answer - incorrect 3rd attempt
     else {
@@ -462,9 +460,8 @@ const onReady = function() {
       messageElement.text(`try ${answer} & check`);
       incorrectShow.show();
       sumTryElement.text("");
-      countIncrement(todo);
-      console.log(count);
-    }
+      console.log(countIncrement(todo));//just take off log
+          }
   });
 
   // CLICK NEXT
