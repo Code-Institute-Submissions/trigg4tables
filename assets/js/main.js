@@ -37,9 +37,7 @@ const onReady = function() {
 
   const audioDone = new Audio();
   audioDone.src = "assets/audio/done.mp3";
-  //WHERE: Correct
-  //WHERE: Incorrect https://bigsoundbank.com/detail-0494-little-meow-of-a-cat.html
-  //WHERE: Done https://freesound.org/people/Wagna/sounds/242207/
+  //WHERE: https://bigsoundbank.com & https://freesound.org
 
   //GLOBAL VARIABLES
   let sound = true;
@@ -496,10 +494,12 @@ const onReady = function() {
       playAudio(audioDone);
       triggBackground.css("background-image", "url('assets/images/score.svg')");
       messageElement.text(`well done`);
-      $("[data-text=report]").text(`Date ${dateShort()}, Time Taken ${timeElement.html()}, Tables ${tableSet}, ${noteString}`);
+      $("[data-text=report]").text(
+        `Date ${dateShort()}, Time Taken ${timeElement.html()}, Tables ${tableSet}, ${noteString}`
+      );
       $("[data-hide~=done]").hide();
       $("[data-show~=done]").show();
-          }
+    }
   });
 
   //CLICK DOWNLOAD REPORT
