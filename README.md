@@ -1,10 +1,10 @@
 # Trigg 4 Tables
 
 
-![IMAGE ALT TEXT](https://github.com/coderbeez/trigg4tables/blob/master/assets/images/header.png)
+![Header Image](https://github.com/coderbeez/trigg4tables/blob/master/assets/images/header.png)
 
 
-**[Trigg 4 Tables](https://coderbeez.github.io/trigg4tables/)** *, a times tables practice website aimed at older children developed for Code Institute Milestone 2: Interactive Frontend Developement.*
+**[Trigg 4 Tables](https://coderbeez.github.io/trigg4tables/)** *, a times tables practice website developed for Code Institute Milestone 2: Interactive Frontend Developement.*
 
 
 
@@ -154,7 +154,7 @@ This one page website was designed using a mobile first approach. In order to li
 
 
 
-## Technologies Used
+## Technologies & Programmes Used
 
 
 1. [Balsamiq](https://balsamiq.com/) A web based gui mock-up and website wireframe building application, Balsamiq was used to develop wireframes for the website.
@@ -228,6 +228,7 @@ This one page website was designed using a mobile first approach. In order to li
 * [Test Specs](https://github.com/coderbeez/trigg4tables/blob/master/testing/spec/fileSpecs.js)
 
 ![Trig FlowChart](https://github.com/coderbeez/trigg4tables/blob/master/assets/images/testing.PNG)
+
 ***Jasmine Tests***
 
 
@@ -405,10 +406,10 @@ function playAudio(audio) {
 10. **Firefox mp3** During Firefox testing, although all audio clips were mp3 files, one clip would not load. Resaving the clip as a m4a file resolved this issue.
 
 
-11. **Edge Blob to Canvas** During Edge testing, the report would not download as Edge does not support the toBlob method. Using the [Canvas-toBlob](https://github.com/eligrey/canvas-toBlob.js) JS library resolved this issue.
+11. **Edge toBlob** During Edge testing, the report would not download as Edge does not support the toBlob method. Using the [Canvas-toBlob](https://github.com/eligrey/canvas-toBlob.js) JS library resolved this issue.
 
 ![toBlob Compatiblity](https://github.com/coderbeez/trigg4tables/blob/master/assets/images/toblob.PNG)
-***toBlob\_Compatibility\_[Mozilla]( https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob)***
+***toBlob Compatibility [Mozilla]( https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob)***
 
 
 12. **iOS Canvas-toBlob Error Message** [Stock Overflow]( https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob)
@@ -510,9 +511,10 @@ The following instructions were taken from [GitHib Help]( https://help.github.co
 
 ### Acknowledgements
 
-  * Many thanks to all on Slack especially John Long, Sean Murphy, John Lynch, Simen Daehlin and Anna Greaves and my mentor Ali Ashik for guiding me through JavaScript and Jasmine.
+  * Many thanks to ***all*** on Slack especially John Long, Sean Murphy, John Lynch, Simen Daehlin and Anna Greaves and my mentor Ali Ashik for guiding me through JavaScript and Jasmine.
 
   * A special thanks to Jack for all his advice, enthusiasm and of course his voiceover. 
+
  
 
 
