@@ -398,15 +398,16 @@ const onReady = function() {
     const incorrectMessageElement = $("[data-message=incorrect]");
     const incorrectShow = $("[data-show~=incorrect]");
 
-    //STEP0: CHECK ANSWER - ENTERED
+    //Step 0: Check Answer - Blank
     if (!sumTry) {
       playAudio(audioIncorrect);
       triggBackground.css("background-image", "url('assets/images/sour.svg')");
       messageElement.text(`blank answer`);
       warnIcon.show();
+      console.log(count);
     }
 
-    //STEP1: CHECK ANSWER - CORRECT
+    //Step 1: Check Answer - Correct
     else if (sumCorrect(sumTry, answer) === true) {
       playAudio(audioCorrect);
       triggBackground.css(
@@ -419,6 +420,7 @@ const onReady = function() {
       $("[data-hide~=correct]").hide();
       $("[data-show~=correct]").show();
       sumNextButton.show();
+      console.log(count);
     }
 
     //STEP2: CHECK ANSWER - INCORRECT 1ST ATTEMPT
@@ -431,9 +433,10 @@ const onReady = function() {
       warnIcon.hide();
       sumTryElement.text("");
       countIncrement(todo);
+      console.log(count);
     }
 
-    //STEP3: CHECK ANSWER - INCORRECT 2ND ATTEMPT
+    //step 3: check answer - incorrect 2nd attempt
     else if (count === 1) {
       playAudio(audioIncorrect);
       triggBackground.css(
@@ -448,9 +451,10 @@ const onReady = function() {
       sumNextButton.show();
       countIncrement(todo);
       todoAdd(todo);
+      console.log(count);
     }
 
-    //STEP4: CHECK ANSWER - INCORRECT 3RD ATTEMPT
+    //step 4: check answer - incorrect 3rd attempt
     else {
       playAudio(audioIncorrect);
       triggBackground.css("background-image", "url('assets/images/oops.svg')");
@@ -459,6 +463,7 @@ const onReady = function() {
       incorrectShow.show();
       sumTryElement.text("");
       countIncrement(todo);
+      console.log(count);
     }
   });
 
@@ -468,7 +473,7 @@ const onReady = function() {
     const revise = reviseArray;
     const progressBar = $("[role=progressbar]");
 
-    //last sum
+    //previous sum
     reviseAdd(todo, revise);
     todoRemove(todo);
     $("[data-hide~=sumNext]").hide();
@@ -477,6 +482,8 @@ const onReady = function() {
       `width: ${((12 - todoArray.length) / 12) * 100}%`
     );
     progressBar.attr("aria-valuenow", 12 - todo.length);
+    console.log(todo);
+    console.log(revise);
 
     //next sum
     if (todo.length !== 0) {
