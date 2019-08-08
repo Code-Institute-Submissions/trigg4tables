@@ -30,7 +30,7 @@ User stories for potential visitors to the website include:
 
 1. **Independent Homework** 
 
-When I get home from school, I quickly complete my times tables homework using Trigg 4 Tables on my phone. I click the download button and WhatsApp the report to Dad to let him know I’ve started homework already. The first time I used the website I clicked the i icon to watch the YouTube video, but you only need to watch once, it’s pretty easy to use. My teacher says my tables are improving! I think I was too tired to learn before waiting until Dad finished work.
+When I get home from school, I quickly complete my times tables homework using Trigg 4 Tables on my phone. I click the download button and WhatsApp the report to Dad to let him know I’ve started homework already. The first time I used the website I clicked the i icon to watch the YouTube video, but you only need to watch once, it’s pretty easy to use. My teacher says my tables are improving! I think I was too tired to learn before waiting for Dad to finish work.
 
 
 2. **Homework On The Go**
@@ -64,14 +64,14 @@ The look and feel of Trigg 4 Tables was designed to appeal to the target audienc
 
 5. **Fonts** The heading fonts were chosen to convey a sense of fun. Number and keypad fonts were chosen for legibility. Message fonts were chosen to reflect the handwriting of the target audience. 
 
-6. **Preparation** Balsamiq was used to generate [wireframes](https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/wireframes.pdf) for various device sizes. The [initial proposal](https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/proposal.pdf) document and [Bootstrap plan](https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/bootstrap.PNG) were completed using Microsoft Powerpoint and Publisher. Testing during development resulted in several changes to the original design with a move away from device keyboards and reduced dependency on text.
+6. **Preparation** Balsamiq was used to generate [wireframes](https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/wireframes.pdf) for various device sizes. The [initial proposal](https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/proposal.pdf) document and [Bootstrap plan](https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/bootstrap.PNG) were completed using Microsoft Powerpoint and Publisher. Testing during development resulted in several changes to the original design with a move away from device keyboards and pop-up modals to improve UX, and reduced dependency on text.
 
 
 
 ## Features
 
 
-### Existing Features *Components*
+### Existing Features - *Components*
 
 
 ![Trig FlowChart](https://github.com/coderbeez/trigg4tables/blob/master/assets/images/features.png)
@@ -111,14 +111,14 @@ The look and feel of Trigg 4 Tables was designed to appeal to the target audienc
 10. **Report** [jCanvas](https://projects.calebevans.me/jcanvas/) is used to fill and format a HTML canvas element. This canvas acts as a detailed report showing the date, tables, time taken to complete and any sums that need to be revised. As canvas content is not accessible to screen readers, the report text is also shown in a paragraph element.
 
 
-11. **Download** Clicking the download button converts the canvas report first to a blob and then to a png file which can be shared. JavaScript libraries [Canvas-toBlob](https://github.com/eligrey/canvas-toBlob.js) and [FileSaver](https://github.com/eligrey/FileSaver.js/) facilitate this.
+11. **Download** Clicking the download button converts the canvas report first to a blob and then to a png file which can be shared. JavaScript libraries [Canvas-toBlob](https://github.com/eligrey/canvas-toBlob.js) and [FileSaver.js](https://github.com/eligrey/FileSaver.js/) facilitate this.
 
 
 
-### Existing Features *Responsiveness*
+### Existing Features - *Responsiveness*
 
 
-This one page website was designed using a mobile first approach. In order to limit scrolling, the order, position and visibility of elements changes depending on screen size. (1) CSS attributes and media queries, (2) Bootstrap grid system and display classes, and (3) jQuery hide and show methods are used to facilitate this responsiveness.
+This one page website was designed using a mobile first approach. In order to limit scrolling, the order, position and visibility of elements change depending on screen size. (1) CSS attributes and media queries, (2) Bootstrap grid system and display classes, and (3) jQuery hide and show methods are used to facilitate this responsiveness.
 
 
 ![Bootstrap Plan]( https://github.com/coderbeez/trigg4tables/blob/master/assets/wireframes/bootstrap.PNG)
@@ -188,9 +188,9 @@ This one page website was designed using a mobile first approach. In order to li
 
 16. [jCanvas](https://projects.calebevans.me/jcanvas/) A JavaScript library for jQuery that wraps around the HTML5 canvas API, jCanvas was used to format the canvas report.
 
-17. [FileSaver](https://github.com/eligrey/FileSaver.js/) A HTML5 saveAs() FileSaver implementation, FileSaver.js was used to allow the canvas report blob to be saved as a png file.
+17. [FileSaver.js](https://github.com/eligrey/FileSaver.js/) A HTML5 saveAs() FileSaver implementation, FileSaver.js was used to allow the canvas report blob to be saved as a png file.
 
-18. [Canvas-toBlob](https://github.com/eligrey/canvas-toBlob.js) A JavaScript library that implements the standard HTML5 canvas.toBlob() and canvas.toBlobHD() methods in browsers that do not natively support, Canvas-toBlob was used to overcome problems with some browsers e.g. Microsoft Edge.
+18. [Canvas-toBlob.js](https://github.com/eligrey/canvas-toBlob.js) A JavaScript library that implements the standard HTML5 canvas.toBlob() and canvas.toBlobHD() methods in browsers that do not natively support, Canvas-toBlob.js was used to overcome problems with some browsers e.g. Microsoft Edge.
 
 19. [Jasmine](https://jasmine.github.io/index.html) An open source testing framework for JavaScript, Jasmine was used to complete automated function testing.
 
@@ -223,7 +223,7 @@ This one page website was designed using a mobile first approach. In order to li
 
 [Jasmine](https://jasmine.github.io/) Used to complete automated testing of JavaScript that didn’t involve DOM manipulation, audio, date or time functions – 22 specs 0 errors. 
 
-Tests were developed after JavaScript code was refactored and signed off rather than during development. Being new to JavaScript meant code was heavily refactored twice during the project build. When code was stable, Jasmine tests were created and purposefully failed before passing again to ensure tests were running correctly.
+Tests were developed after JavaScript code was refactored and signed off rather than during development. Being new to JavaScript meant code was heavily refactored twice during the project build. When code was stable, Jasmine tests were created and purposefully failed before passing again to ensure tests were running correctly. To keep the jQuery document on ready method, while allowing Jasmine testing, the functions to test were exposed as properties of a returned object.
 
 An output file and the required testing files are available at links below. To run the tests after the site has been cloned, open the test html file and view in any browser.
 
@@ -260,9 +260,9 @@ After sign-off, structured manual testing of the site was carried out in various
 | **Restart X ICON** | --- | --- | --- | --- | --- | --- | --- |
 | X Icon Click | P | P | P | P | P | P | P |
 | **GO** | --- | --- | --- | --- | --- | --- | --- |
-| I Icon Fades | N/A | N/A | P | P | P | P | P |
+| Instruct Icon Fades | N/A | N/A | P | P | P | P | P |
 | Timer Start | P | P | P | P | P | P | P |
-| Numbers & Clear Click | ***11*** | P | **11** | P | P | P | P |
+| Numbers & Clear Click | ***11*** | P | ***11*** | P | P | P | P |
 | Sum Ask | P | P | P | P | P | P | P |
 | Enter Key Press | N/A | N/A | N/A | P | P | P | P |
 | **ANSWER MISSING** | --- | --- | --- | --- | --- | --- | --- |
@@ -399,7 +399,7 @@ WHERE: https://stackoverflow.com/questions/9563887/setting-html5-audio-position
 9. **Firefox Audio** During development testing although all audio clips were mp3 files, in Firefox one clip would not load. Resaving the clip as a m4a file resolved this issue.
 
 
-10. **Edge toBlob** During development testing the report would not download as Edge does not support the toBlob method. Using the [Canvas-toBlob](https://github.com/eligrey/canvas-toBlob.js) JS library resolved this issue.
+10. **Edge toBlob** During development testing the report would not download in Edge as the browser does not support the toBlob method. Using the [Canvas-toBlob.js](https://github.com/eligrey/canvas-toBlob.js) JS library resolved this issue.
 
 ![toBlob Compatiblity](https://github.com/coderbeez/trigg4tables/blob/master/assets/images/toblob.PNG)
 ***toBlob Compatibility [Mozilla]( https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob)***
@@ -408,14 +408,14 @@ WHERE: https://stackoverflow.com/questions/9563887/setting-html5-audio-position
 11. **iOS Double Tap** When using the keypad for entering numbers e.g. 11, double tapping on the 1 key can cause an iPhone or iPad to zoom in. Although this action can be turned off in device settings, no fix has been found to apply to the website.
 
 
-12. **Firefox Video** In Firefox, as you move the cursor over the YouTube video the following warning message appears in the console; ‘MouseEvent.mozPressure is deprecated. Use PointerEvent.pressure instead’. The video plays without an issue. 
+12. **Firefox Video** In Firefox, as you move the cursor over the YouTube video the following warning message appears in the console; “MouseEvent.mozPressure is deprecated. Use PointerEvent.pressure instead”. The video plays without an issue. 
 
 
-13. **Firefox AbortError** Rewinding audio elements by setting audio.currentTime. results in an abort error message in the console in Firefox as noted in [Bugzilla]( https://bugzilla.mozilla.org/show_bug.cgi?id=1507193). This error does not affect website function.
+13. **Firefox Audio** Rewinding audio elements by setting audio.currentTime results in an abort error message in the console in Firefox as noted in [Bugzilla]( https://bugzilla.mozilla.org/show_bug.cgi?id=1507193). This error does not affect website function.
 
 
-14. **Safari Canvas-toBlob** [Stock Overflow]( https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob)
- revealed an error message on iOS was due to the sourceMap flag being set to false instead of true in the tsconfig.json file of [Canvas-toBlob](https://github.com/eligrey/canvas-toBlob.js). This does not affect functionality.
+14. **Safari Canvas-toBlob.js** [Stock Overflow]( https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob)
+ revealed an error message on iOS was due to the sourceMap flag being set to false instead of true in the tsconfig.json file of [Canvas-toBlob.js](https://github.com/eligrey/canvas-toBlob.js). This does not affect functionality.
 
 
 ### Deployment
@@ -512,9 +512,10 @@ The following instructions were taken from [GitHib Help]( https://help.github.co
 
 ### Acknowledgements
 
-  * Many thanks to ***all*** on Slack especially John Long, Sean Murphy, John Lynch, Anthony O’Brien, Simen Daehlin and Anna Greaves and my mentor Ali Ashik for guiding me through JavaScript and Jasmine.
+  * Many thanks to my mentor Ali Ashik and ***all*** on Slack especially John Long, Sean Murphy, John Lynch, Anthony O’Brien, Simen Daehlin and Anna Greaves, for guiding me through JavaScript and Jasmine.
 
   * A special thanks to Jack for all his advice, enthusiasm and of course his voiceover. 
+
 
 
 
