@@ -111,7 +111,7 @@ The look and feel of Trigg 4 Tables was designed to appeal to the target audienc
 10. **Report** [jCanvas](https://projects.calebevans.me/jcanvas/) is used to fill and format a HTML canvas element. This canvas acts as a detailed report showing the date, tables, time taken to complete and any sums that need to be revised. As canvas content is not accessible to screen readers, the report text is also shown in a paragraph element.
 
 
-11. **Download** Clicking the download button converts the canvas report first to a blob and then to a png file which can be shared. JavaScript libraries [Canvas-toBlob](https://github.com/eligrey/canvas-toBlob.js) and [FileSaver.js](https://github.com/eligrey/FileSaver.js/) facilitate this.
+11. **Download** Clicking the download button converts the canvas report first to a blob and then to a png file which can be shared. JavaScript libraries [Canvas-toBlob.js](https://github.com/eligrey/canvas-toBlob.js) and [FileSaver.js](https://github.com/eligrey/FileSaver.js/) facilitate this.
 
 
 
@@ -323,7 +323,7 @@ P - Passed
 
 N/A - Not Applicable
 
-***11 12 13 14*** - Please see **Bugs**
+***11 12 13 14*** - Please see **Bug Log**
 
 
 
@@ -512,7 +512,7 @@ The following instructions were taken from [GitHib Help]( https://help.github.co
 
 ### Acknowledgements
 
-  * Many thanks to my mentor Ali Ashik and ***all*** on Slack especially John Long, Sean Murphy, John Lynch, Anthony O’Brien, Simen Daehlin and Anna Greaves, for guiding me through JavaScript and Jasmine.
+  * Many thanks to my mentor Ali Ashik and ***all*** on Slack especially John Long, Sean Murphy, John Lynch, Simen Daehlin and Anna Greaves, for guiding me through JavaScript and Jasmine.
 
   * A special thanks to Jack for all his advice, enthusiasm and of course his voiceover. 
 
