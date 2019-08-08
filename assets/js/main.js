@@ -1,6 +1,6 @@
 const onReady = function() {
   //WHY: Using variable to limit scope of internal variables and functions.
-  //jQuery document ready not used as doesn't allow jasmine testing.
+  //jQuery document ready not used here as doesn't allow jasmine testing (used at end of code).
   //WHERE: https://stackoverflow.com/questions/29153733/how-to-unit-test-a-document-ready-function-using-jasmine
 
   //PRELOAD IMAGES
