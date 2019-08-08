@@ -223,14 +223,14 @@ This one page website was designed using a mobile first approach. In order to li
 
 [Jasmine](https://jasmine.github.io/) Used to complete automated testing of JavaScript that didn’t involve DOM manipulation, audio, date or time functions – 22 specs 0 errors. 
 
-Tests were developed after JavaScript code was refactored and signed off rather than during development. Being new to JavaScript meant code was heavily refactored twice during the project build. When code was stable, Jasmine tests were created and purposefully failed before passing again to ensure test were running correctly.
+Tests were developed after JavaScript code was refactored and signed off rather than during development. Being new to JavaScript meant code was heavily refactored twice during the project build. When code was stable, Jasmine tests were created and purposefully failed before passing again to ensure tests were running correctly.
 
 An output file and the required testing files are available at links below. To run the tests after the site has been cloned, open the test html file and view in any browser.
 
-* [Test HTML (run tests)](https://github.com/coderbeez/trigg4tables/blob/master/testing/test.html)
+* [Test HTML (needed to run tests)](https://github.com/coderbeez/trigg4tables/blob/master/testing/test.html)
 * [Test Scripts (code to be tested)](https://github.com/coderbeez/trigg4tables/blob/master/assets/js/main.js)
-* [Test Specs(tests)](https://github.com/coderbeez/trigg4tables/blob/master/testing/spec/fileSpecs.js)
-* [Test Output](https://github.com/coderbeez/trigg4tables/blob/master/testing/jasmine-testing-output.pdf
+* [Test Specs (tests)](https://github.com/coderbeez/trigg4tables/blob/master/testing/spec/fileSpecs.js)
+* [Test Output (result of test run)](https://github.com/coderbeez/trigg4tables/blob/master/testing/jasmine-testing-output.pdf
 )
 
 
@@ -244,13 +244,15 @@ Throughout the development process, (1) Chrome developer tools were used to test
 After sign-off, structured manual testing of the site was carried out in various browsers and screens sizes following a user path from start to finish. This single user path approach was adopted as users progress through the site in a very prescribed way. The detailed plan allowed for code not covered by Jasmine, e.g. DOM manipulation, to be fully tested.
 
 
+
 | **BROWSER** | **iOS** | **Android** | **iOS** | **Edge** | **Chrome** | **Firefox** | **Safari** |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | **SCREEN SIZE** | **Small** | **Small** | **Medium** | **Large** | **Large** | **Large** | **Large** |
-| **TABLES** | 3- | 1+ | 8÷ | 5x | 2- | 6x | 9÷ |
+| TABLES | 3- | 1+ | 8÷ | 5x | 2- | 6x | 9÷ |
+| Site Load | P | P | P | P | P | P | **14** |
 | **INSTRUCTIONS** | --- | --- | --- | --- | --- | --- | --- |
 | Instruct Icon Click | P | P | P | P | P | P | P |
-| YouTube Video Play | P | P | P | P | P | P | P |
+| YouTube Video Play | P | P | P | P | P | **12** | P |
 | Close Click | P | P | P | P | P | P | P |
 | **SELECTION** | --- | --- | --- | --- | --- | --- | --- |
 | Go Click- Warn | P | P | P | P | P | P | P |
@@ -261,53 +263,53 @@ After sign-off, structured manual testing of the site was carried out in various
 | **GO** | --- | --- | --- | --- | --- | --- | --- |
 | I Icon Fades | N/A | N/A | P | P | P | P | P |
 | Timer Start | P | P | P | P | P | P | P |
-| Numbers & Clear Click | P | P | P | P | P | P | P |
+| Numbers & Clear Click | **11** | P | **11** | P | P | P | P |
 | Sum Ask | P | P | P | P | P | P | P |
-| Enter Key Press | P | P | P | P | P | P | P |
+| Enter Key Press | N/A | N/A | N/A | P | P | P | P |
 | **ANSWER MISSING** | --- | --- | --- | --- | --- | --- | --- |
-| Audio | P | P | P | P | P | P | P |
+| Audio | P | P | P | P | P | **13** | P |
 | Trigg Image | P | P | P | P | P | P | P |
 | Message | P | P | P | P | P | P | P |
-| Audio On/Off Toggle | P | P | P | P | P | P | P |
+| Audio On/Off Toggle | P | P | P | P | P | **13** | P |
 | **CHECK - CORRECT** | --- | --- | --- | --- | --- | --- | --- |
-| *Count 0* | P | P | P | P | P | P | P |
-| Audio | P | P | P | P | P | P | P |
+| *Count 0* | N/A | N/A | N/a | P | P | P | P |
+| Audio | P | P | P | P | P | **13** | P |
 | Trigg Image | P | P | P | P | P | P | P |
 | Message | P | P | P | P | P | P | P |
 | Sum Answer | P | P | P | P | P | P | P |
 | **NEXT** | --- | --- | --- | --- | --- | --- | --- |
-| *Todo Array* | P | P | P | P | P | P | P |
-| *Revise Array* | P | P | P | P | P | P | P |
+| *Todo Array* | N/A | N/A | N/A | P | P | P | P |
+| *Revise Array* | N/A | N/A | N/A | P | P | P | P |
 | Progress Bar | P | P | P | P | P | P | P |
 | Trigg Image| P | P | P | P | P | P | P |
 | Message | P | P | P | P | P | P | P |
 | Sum Answer | P | P | P | P | P | P | P |
 | **CHECK - INCORRECT 1** | --- | --- | --- | --- | --- | --- | --- |
-| *Count* | P | P | P | P | P | P | P |
-| Audio | P | P | P | P | P | P | P |
+| *Count 1* | N/A | N/A | N/A | P | P | P | P |
+| Audio | P | P | P | P | P | **13** | P |
 | Trigg Image | P | P | P | P | P | P | P |
 | Message | P | P | P | P | P | P | P |
 | Sum Try Blank | P | P | P | P | P | P | P |
 | **CHECK - INCORRECT 2** | --- | --- | --- | --- | --- | --- | --- |
-| *Count* | P | P | P | P | P | P | P |
-| Audio | P | P | P | P | P | P | P |
+| *Count 2* | N/A | N/A | N/A | P | P | P | P |
+| Audio | P | P | P | P | P | **13** | P |
 | Trigg Image | P | P | P | P | P | P | P |
 | Message | P | P | P | P | P | P | P |
 | Sum Answer | P | P | P | P | P | P | P |
 | **NEXT** | --- | --- | --- | --- | --- | --- | --- |
-| *Todo Array* | P | P | P | P | P | P | P |
-| *Revise Array* | P | P | P | P | P | P | P |
+| *Todo Array* | N/A | N/A | N/A | P | P | P | P |
+| *Revise Array* | N/A | N/A | N/A | P | P | P | P |
 | Progress Bar | P | P | P | P | P | P | P |
 | **CHECK - INCORRECT 3** | --- | --- | --- | --- | --- | --- | --- |
-| *Count* | P | P | P | P | P | P | P |
-| Audio | P | P | P | P | P | P | P |
+| *Count 3* | N/A | N/A | N/A | P | P | P | P |
+| Audio | P | P | P | P | P | **13** | P |
 | Trigg Image | P | P | P | P | P | P | P |
 | Message | P | P | P | P | P | P | P |
 | Sum Try Blank | P | P | P | P | P | P | P |
 | **NEXT - DONE** | --- | --- | --- | --- | --- | --- | --- |
-| *Todo Array* | P | P | P | P | P | P | P |
-| *Revise Array* | P | P | P | P | P | P | P |
-| Audio | P | P | P | P | P | P | P |
+| *Todo Array* | N/A | N/A | N/A | P | P | P | P |
+| *Revise Array* | N/A | N/A | N/A | P | P | P | P |
+| Audio | P | P | P | P | P | **13** | P |
 | Trigg Image | P | P | P | P | P | P | P |
 | Message | P | P | P | P | P | P | P |
 | Timer Stop | P | P | P | P | P | P | P |
@@ -322,20 +324,20 @@ P - Passed
 
 N/A - Not Applicable
 
-1 2 3 4 5 - Please see **Bugs**
+11 12 13 14 - Please see **Bugs**
 
 
 
 ### Bug Log
 
 
-1. **Keyboard Touch Screen Devices** During development it quickly became apparent that relying on inbuilt keyboards on touch screen devices provided poor UX. Keypads were built into the website to avoid using device keyboards.
+1. **Touch Screen Keyboards** During development it quickly became apparent that relying on inbuilt keyboards on touch screen devices provided poor UX. Keypads were built into the website to avoid using device keyboards.
 
 
-2. **Tables iOS** Initial keypad designs relied on tables to position elements. Although no problem was encountered with android, tables did not render correctly on iOS. Keypads were redesigned using br elements and margins.
+2. **iOS Tables** Initial keypad designs relied on tables to position elements. Although no problem was encountered with android, tables did not render correctly on iOS. Keypads were redesigned using br elements and margins.
 
 
-3. **Radio Buttons iOS** To limit selection to one item from a group, radio buttons were wrapped in label elements. Labels were then styled as buttons and radios hidden to provide a consistent look to keypads. Although no problem was encountered with android, radio buttons remained visible on iOS. The following CSS resolved the issue. 
+3. **iOS Radio Buttons** To limit selection to one item from a group, radio buttons were wrapped in label elements. Labels were then styled as buttons and radios hidden to provide a consistent look to keypads. Although no problem was encountered with android, radio buttons remained visible on iOS. The following CSS resolved the issue. 
 
 ```
 input[type="radio"] {
@@ -356,7 +358,10 @@ input[type="radio"] {
 ```
 
 
-4. **Enter Key Reloads Site** Pressing the enter key on a desktop would reload the page sending the user back to the start. A prevent default method resolved the issue.
+4. **Keyboard Verses Keypad** During initial testing with the target audience, rather than using the keypad, children were using the device keyboard to input. Changing an input field to a label prevented this from happening again. 
+
+
+5. **Enter Reloading Site** Pressing the enter key on a desktop would reload the page sending the user back to the start. A prevent default method resolved the issue.
 
 ```
 $(document).on("keypress", function(e) {
@@ -368,7 +373,10 @@ $(document).on("keypress", function(e) {
 ```
 
 
-5. **Hidden Video Playing** If the close button, used to hide the instruction video, was pressed before the video had ended the audio continued. Adding the following code to the close button click method resets the video and stops the audio.
+6. **Loading Images** During initial testing on both android and iOS mobiles, Trigg images were slow to load. Changing png to svg files improved load times on android, however images were only displayed on iOS on second use. Preloading image sources in JS resolved this issue.
+
+
+7. **Closing Video** If the close button, used to hide the instruction video, was pressed before the video had ended the audio continued. Adding the following code to the close button click method resets the video and stops the audio.
 
 ```
 $("iframe").attr("src", "https://www.youtube.com/embed/QnvT6_Fp1B4?rel=0");
@@ -376,7 +384,7 @@ $("iframe").attr("src", "https://www.youtube.com/embed/QnvT6_Fp1B4?rel=0");
 ```
 
 
-6. **Consistent Sound Clips** Sound clips were not always audible even though the play method was running correctly. Using the current time property in the play audio function, reset the audio clip back to the start giving consistent sound on each play. 
+8. **Playing Audio** Sound clips were not always audible even though the play method was running correctly. Using the current time property in the play audio function, reset the audio clip back to the start giving consistent sound on each play. 
 
 ```
 function playAudio(audio) {
@@ -389,34 +397,27 @@ function playAudio(audio) {
 ```
 
 
-7. **Keyboard Verses Keypad** During initial testing with the target audience, rather than using the keypad, children were using the device keyboard to input. Changing an input field to a label prevented this from happening again. 
+9. **Firefox Audio** During Firefox testing, although all audio clips were mp3 files, one clip would not load. Resaving the clip as a m4a file resolved this issue.
 
 
-8. **Loading Trigg Images** During initial testing on both android and iOS mobiles, Trigg images were slow to load. Changing png to svg files improved load times on android, however images were only displayed on iOS on second use. Preloading image sources in JS resolved this issue.
-
-
-9. **iPad Double Tap** When using the keypad for entering numbers e.g. 11, double tapping on the 1 key can cause an iPad to zoom in. Although this action can be turned off in the device settings, no fix has been found to apply to the website.
-
-
-10. **Firefox mp3** During Firefox testing, although all audio clips were mp3 files, one clip would not load. Resaving the clip as a m4a file resolved this issue.
-
-
-11. **Edge toBlob** During Edge testing, the report would not download as Edge does not support the toBlob method. Using the [Canvas-toBlob](https://github.com/eligrey/canvas-toBlob.js) JS library resolved this issue.
+10. **Edge toBlob** During Edge testing, the report would not download as Edge does not support the toBlob method. Using the [Canvas-toBlob](https://github.com/eligrey/canvas-toBlob.js) JS library resolved this issue.
 
 ![toBlob Compatiblity](https://github.com/coderbeez/trigg4tables/blob/master/assets/images/toblob.PNG)
 ***toBlob Compatibility [Mozilla]( https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob)***
 
 
-CONSOLE LOG ERRORS--- TO BE FINISHED
-12. **iOS Canvas-toBlob Error Message** [Stock Overflow]( https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob)
+11. **iOS Double Tap** When using the keypad for entering numbers e.g. 11, double tapping on the 1 key can cause an iPhone or iPad to zoom in. Although this action can be turned off in device settings, no fix has been found to apply to the website.
+
+
+12. **Firefox Video** As you move the coursor over the YouTube video the following error message appears in console ‘MouseEvent.mozPressure is deprecated. Use PointerEvent.pressure instead’. Video plays without an issue. A google search ???
+
+
+13. **Firefox AbortError** Rewinding audio elements by setting audio.currentTime. results in an abort error message in the console in Firefox as noted in [Bugzilla]( https://bugzilla.mozilla.org/show_bug.cgi?id=1507193). This error does not affect website functionality.
+
+
+14. **Safari Canvas-toBlob Error Message** [Stock Overflow]( https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob)
  revealed an error message on iOS was due to the sourceMap flag being set to false instead of true in the tsconfig.json file of [Canvas-toBlob](https://github.com/eligrey/canvas-toBlob.js). This does not affect functionality.
 
-
-13. **Firefox AbortError** [Bugzilla]( https://bugzilla.mozilla.org/show_bug.cgi?id=1507193)
- revealed an error message This also happens when rewinding audio elements by setting audio.currentTime. AbortError
-
-
-14. **Firefox Video** MouseEvent.mozPressure is deprecated. Use PointerEvent.pressure instead. As you move the mouse over the video to play arrow changes from arrow to hand and error appears in console.
 
 ### Deployment
 
