@@ -34,18 +34,16 @@
       <div class="row">
         <!--COLUMN A: LG SCREENS-->
         <div class="col-1 d-none d-lg-block"></div>
-        <!--WHAT: Bootstrap display classes used to ensure only applies to large screens.-->
-        <!--WHY: Bootstrap col used as a spacer for large screens.-->
+        <!--WHY: COLUMN A used as a spacer for large screens.-->
+        <!--WHY: Bootstrap display classes used to ensure only applies to large screens.-->
 
         <!--COLUMN B: MD & LG SCREENS-->
         <div class="col-md-6 col-lg-5 d-none d-md-block shade">
           <div class="row bg-height--15">
             <!--WHAT: Number in bg-height class is % of viewport height.-->
-            <!--WHY: Viewport height used to allow site to fit screen.-->
-            <div
-              class="col-12 d-flex justify-content-center bg-color--darkpink"
-            >
-              <!--WHY: Bootstrp flex class used to make div a flex box and allow content be centered vertically.-->
+            <!--WHY: Viewport height used to allow site to fill screen.-->
+            <div class="col-12 d-flex justify-content-center bg-color--darkpink">
+              <!--WHY: Bootstrap flex class used to make div a flex box and allow content be centered vertically.-->
               <h1 class="align-self-center">
                 Trigg 4 <br class="d-block d-lg-none" />Tables
               </h1>
@@ -55,18 +53,14 @@
           </div>
           <div class="row bg-height--10">
             <div class="col-6 d-md-none d-lg-block bg-color--darkblue">
-              <div
-                class="d-flex justify-content-center text-center bg-height--10"
-              >
+              <div class="d-flex justify-content-center text-center bg-height--10">
                 <h2 class="align-self-center">cool cats do maths</h2>
               </div>
               <!--WHY: Wrapping div used to position h2.-->
               <!--WHY: Bootstrap justify-content-center class used to center h2 on screens where h2 doesn't wrap.-->
-              <!--WHY: Bootstrap text-center class used to center h2 on screens where wraps.-->
+              <!--WHY: Bootstrap text-center class used to center h2 on screens where h2 wraps.-->
             </div>
-            <div
-              class="col-md-12 col-lg-6 d-flex justify-content-around bg-color--lightpink"
-            >
+            <div class="col-md-12 col-lg-6 d-flex justify-content-around bg-color--lightpink">
               <!--WHY: Bootstrap justify-content-around class used to space icons and timer equally horizontally.-->
               <span class="time align-self-center">0:00</span>
               <!--WHY: Span used verses time element to allow 0:00 verses 00:00 time format.-->
@@ -91,7 +85,10 @@
               aria-label="Trigg the cat says hi!"
               data-bg="trigg"
             >
+              <!--WHY: Image inserted as background to ensure responsive sizing on all screens.-->
               <!--WHY: Aria Label used to introduce the cat character in background image.-->
+              <!--WHY: Class verses ID used for css styles as duplicate styles applied later for sm and md screens.
+              Approach taken throughtout page.-->
               <a
                 href="https://github.com/coderbeez"
                 target="_blank"
@@ -100,16 +97,15 @@
                 >site by coderbeez</a
               >
             </div>
-            <!--WHY: Image inserted as background to ensure responsive sizing on all screens. -->
-            <!--WHY: Class verses ID used for css styles as duplicate styles applied later for sm and md screens.-->
+            <!--WHY: Target blank used to open link in new page.-->
+            <!--WHY: Rel noopener used for security.-->
           </div>
           <div class="row">
-            <div
-              class="col-12 d-flex justify-content-center text-center bg-height--10 bg-color--darkblue"
-            >
+            <div class="col-12 d-flex justify-content-center text-center bg-height--10 bg-color--darkblue">
               <p id="instruct--mdlg" class="align-self-center mb-0 ">
                 Practice times tables with Trigg. Press i for instructions.
               </p>
+              <!--WHY: ID verses class used for styling as not repeated elsewhere. Approach taken throughout page.-->
             </div>
           </div>
         </div>
@@ -117,21 +113,19 @@
         <!--COLUMN C: XS & SM SCREENS-->
         <div class="col-12 d-md-none">
           <div class="row">
-            <!--XS & SM SCREENS - TRIGG always visible-->
+            <!--TRIGG always visible-->
             <div
               class="col-6 bg-height--30 shade bg--trigg"
               aria-label="Trigg the cat says hi!"
               data-bg="trigg"
             ></div>
             <div class="col-6">
-              <!--XS & SM SCREENS - ICONS visible on go-->
+              <!--ICONS visible on go-->
               <div class="row hide-start" data-show="go">
-                <!--WHY: hide-start class used to apply display none to elements on load.
-                Own class used verses Bootstrap to work with jQuery show method.
-                Display css used verses jQuery hide method to avoid flicker on load.-->
-                <div
-                  class="col-12 d-flex justify-content-between bg-height--10 bg-color--darkpink shade "
-                >
+                <!--WHY: A hide-start class used to apply display of none to elements on load.
+                Own class used verses Bootstrap to work with the jQuery show method.
+                Display CSS verses the jQuery hide method used to avoid page flickering on load.-->
+                <div class="col-12 d-flex justify-content-between bg-height--10 bg-color--darkpink shade">
                   <span class="time align-self-center">0:00</span>
                   <i
                     class="fas fa-volume-up align-self-center"
@@ -149,19 +143,16 @@
               <div class="row hide-start" data-show="go">
                 <!--WHY: Both row and contained elemenets given hide-start class as most elements are not visible
                   on go but containing row is.-->
-                <div
-                  class="col-12 text-center bg-height--20 bg-color--lightpink shade"
-                >
+                <div class="col-12 text-center bg-height--20 bg-color--lightpink shade">
                   <p class="message pt-2" data-message="all">try & check</p>
-                  <!--WHY: Class message used to style. Data attribute message used to target in js.-->
-                  <!--WHY: hide-start class not required as p always visible from go.-->
+                  <!--WHY: Class hide-start not required as paragraph element always visible from go.-->
                   <span
                     class="message red"
                     data-message="incorrect"
                     data-hide="sumNext correct"
                     data-show="incorrect"
                   ></span>
-                  <!--WHY: hide-start class not required as span is empty until incorrect.-->
+                  <!--WHY: Data attribute hide-start not required as span is empty until jQuery fills.-->
                   <img
                     src="assets/images/down.svg"
                     alt="thumbs down"
@@ -189,30 +180,24 @@
               </div>
               <!--TITLE visible on load-->
               <div class="row" data-hide="go">
-                <div
-                  class="col-12 text-center d-flex justify-content-center bg-height--20 bg-color--darkpink shade"
-                >
+                <div class="col-12 text-center d-flex justify-content-center bg-height--20 bg-color--darkpink shade">
                   <div class="align-self-center">
                     <h1 class="mb-0">Trigg 4<br />Tables</h1>
                     <a
                       href="https://github.com/coderbeez"
                       target="_blank"
                       rel="noopener"
-                      >by coderbeez</a
-                    >
+                      >by coderbeez</a>
                   </div>
-                  <!--WHY: Wrapping div used to center h1 & a vertically.-->
+                  <!--WHY: Wrapping div used to center h1 & anchor element vertically.-->
                 </div>
               </div>
-              <!--INFO visible on load-->
+              <!--INSTRUCT visible on load-->
               <div class="row" data-hide="go">
-                <div
-                  class="col-12 d-flex justify-content-center text-center bg-height--10 bg-color--darkblue shade"
-                >
+                <div class="col-12 d-flex justify-content-center text-center bg-height--10 bg-color--darkblue shade">
                   <p id="instruct--xssm" class="align-self-center m-0 mr-2">
                     instructions
                   </p>
-                  <!--WHY: Used id verses class for styling as not repeated.-->
                   <i
                     class="fas fa-info-circle align-self-center"
                     data-icon="infoOpen"
@@ -225,9 +210,11 @@
 
         <!--COLUMN D: ALL SCREENS-->
         <div class="col-12 col-md-6 col-lg-5">
+          <!--WHAT: COLUMN D visible on all screen sizes but some contained rows are size specific (detailed in ROW comments). -->
+          <!--ROW: MD & LG SPACER-->
           <div class="row d-none d-md-block margin-top--15"></div>
-          <!--WHY: Row used to ensure where content start on md lg screens.-->
-          <!--ALL SCREENS - PROGRESS BAR ROW visible on go-->
+          <!--WHY: Row used to position content start on md lg screens.-->
+          <!--ROW: ALL SCREENS PROGRESS BAR visible on go-->
           <div class="row hide-start" data-show="go" data-hide="done">
             <div class="col-12">
               <div class="progress mt-3 mx-auto">
@@ -241,13 +228,14 @@
                   aria-valuemin="0"
                   aria-valuemax="12"
                 ></div>
+                <!--WHY: Aria value max set at 12 as 1 added for each sum done.-->
               </div>
             </div>
           </div>
-          <!--ROW: PICK PAD REPORT-->
+          <!--ROW: ALL SCREENS PICK, PAD & REPORT-->
           <div class="row">
             <div class="col-12 ">
-              <!--PICK NUMBER & OPERATOR-->
+              <!--WHAT: Pick number & operator-->
               <form
                 id="pick"
                 class="text-center"
@@ -299,8 +287,11 @@
                   <label class="button-style">
                     <input type="radio" name="pickNo" value="12" />12
                   </label>
+                  <!--WHY: Radio wrapped in label to give a consistent look to keypads.-->
+                  <!--WHY: Name of pickNo applied to all radio input elements to create a group ensuring just 1 can be selected.-->
                 </fieldset>
                 <fieldset class="mt-2 mt-md-5 mx-auto">
+                  <!--WHY: Bootstrap mt-md class used to apply margin only to md & lg screens.-->
                   <i
                     class="fas fa-exclamation-triangle mr-3 red missing hide-start"
                     data-icon="missingOp"
@@ -319,18 +310,18 @@
                   <label class="button-style">
                     <input type="radio" name="pickOp" value="/" />÷
                   </label>
+                  <!--WHY: Value of / instead of ÷ to ensure data retrieved properly by jQuery from all browsers.-->
                 </fieldset>
                 <fieldset class="mt-2 mt-md-5 mx-auto">
                   <span class="d-inline-block mt-3 message">lets</span>
-                  <!--WHY: Bootstrap display class used to allow margin.-->
-                  <!--WHY: Bootstrap mt class used to position lets in center of button.-->
+                  <!--WHY: Bootstrap display inline block class used to allow margin to be set for span.-->
+                  <!--WHY: Bootstrap mt class used to lower span to middle of go button.-->
                   <button type="button" class="button-style" data-button="go">
                     go
                   </button>
                 </fieldset>
               </form>
-              <!--WHERE: input type number from Mozilla https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number-->
-              <!--NUMBER KEYPAD-->
+              <!--WHAT: Number keypad-->
               <div class="d-flex justify-content-center">
                 <form
                   id="pad"
@@ -370,7 +361,6 @@
                       next
                     </button>
                   </div>
-
                   <hr />
                   <div>
                     <input
@@ -454,7 +444,7 @@
                     />
                   </div>
                 </form>
-                <!--REPORT-->
+                <!--WHAT: Report-->
                 <div class="text-center mt-3 hide-start" data-show="done">
                   <canvas width="250" height="250" class="shade"></canvas>
                   <p class="message mt-1 mb-1">download to share</p>
@@ -467,12 +457,12 @@
                     <i class="fas fa-arrow-circle-down"></i>
                   </button>
                   <p id="report-text" class="mt-3 mb-0" data-text="report"></p>
-                  <!--WHY: Report text shown as canvas content not accessible to screen readers.-->
+                  <!--WHY: Report text shown in addition to canvas as canvas content not accessible to screen readers.-->
                 </div>
               </div>
             </div>
           </div>
-          <!--ROW MD & LG SCREENS: MESSAGE-->
+          <!--ROW: MD & LG MESSAGE-->
           <div class="row d-none d-md-block">
             <div class="col-12 text-center mt-3">
               <span
@@ -496,7 +486,7 @@
                 data-show="correct"
               />
               <i
-                class="fas fa-exclamation-triangle red hide-start "
+                class="fas fa-exclamation-triangle red hide-start"
                 data-hide="sumNext sumCheck"
                 data-icon="warn"
               ></i>
@@ -505,12 +495,10 @@
                 class="message align-self-baseline hide-start"
                 data-message="all"
                 data-show="go"
-                >try & check</span
-              >
-              <!--WHY: Instruct viisble from GO.-->
+                >try & check</span>
             </div>
           </div>
-          <!--ROW: INSTRUCTION-->
+          <!--ROW: ALL INSTRUCT-->
           <div class="row">
             <div
               class="col-12 text-center mt-4 hide-start"
@@ -523,6 +511,8 @@
                   aria-label="instruction video"
                   src="https://www.youtube.com/embed/83L5Y7Vi15w?rel=0"
                 ></iframe>
+                <!--WHY: Bootstrap embed utility to make responsive on all screens.-->
+                <!--WHY: ?rel=0 used to src to disable related YouTube videos.-->
               </div>
               <span class="d-inline-block message mt-4">watch or read</span>
               <button
@@ -534,11 +524,10 @@
                 close
               </button>
               <hr />
+              <!--WHAT: Text instructions-->
               <dl class="text-left mt-3">
                 <dt>Number, Symbol & Go Buttons</dt>
-                <dd>
-                  Click to pick & start. Warns you if number or symbol missing.
-                </dd>
+                <dd>Click to pick & start. Warns you if number or symbol missing.</dd>
                 <dt>Trigg Image</dt>
                 <dd>His expression changes as you answer.</dd>
                 <dt>Timer</dt>
@@ -556,35 +545,19 @@
                 <dt>Check Button</dt>
                 <dd>Click to see if your answer is correct.</dd>
                 <dt>Blank Answer</dt>
-                <dd>
-                  Trigg looks unhappy & growls. Message shows blank answer &
-                  warning.
-                </dd>
+                <dd>Trigg looks unhappy & growls. Message shows blank answer & warning.</dd>
                 <dt>Correct Answer</dt>
-                <dd>
-                  Trigg looks happy & ding sounds. Message shows thumbs up &
-                  click next.
-                </dd>
+                <dd>Trigg looks happy & ding sounds. Message shows thumbs up & click next.</dd>
                 <dt>Incorrect Answer - 1st Try</dt>
-                <dd>
-                  Trigg looks unhappy & growls. Message shows thumbs down & try
-                  again.
-                </dd>
+                <dd>Trigg looks unhappy & growls. Message shows thumbs down & try again.</dd>
                 <dt>Incorrect Answer - 2nd Try</dt>
-                <dd>
-                  Trigg looks unhappy & growls. Message shows correct answer &
-                  click next. Sum asked again later.
-                </dd>
+                <dd>Trigg looks unhappy & growls. Message shows correct answer & click next. 
+                  Sum asked again later.</dd>
                 <dt>Incorrect Answer - 3rd Try</dt>
-                <dd>
-                  Trigg looks unhappy & growls. Message shows correct answer &
-                  try. Sum shows on report.
-                </dd>
+                <dd>Trigg looks unhappy & growls. Message shows correct answer & try. 
+                  Sum shows on report.</dd>
                 <dt>Done</dt>
-                <dd>
-                  Trigg holds done sign & tune plays. Report shows how you did &
-                  what to revise.
-                </dd>
+                <dd>Trigg holds done sign & tune plays. Report shows how you did & what to revise.</dd>
                 <dt>Download Button</dt>
                 <dd>To share your report click download & share the image.</dd>
               </dl>
@@ -618,7 +591,6 @@
       integrity="sha256-FPJJt8nA+xL4RU6/gsriA8p8xAeLGatoyTjldvQKGdE="
       crossorigin="anonymous"
     ></script>
-
     <script src="assets/js/main.js"></script>
   </body>
 </html>
