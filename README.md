@@ -223,13 +223,13 @@ This one page website was designed using a mobile first approach. In order to li
 
 [Jasmine](https://jasmine.github.io/) Used to complete automated testing of JavaScript that didn’t involve DOM manipulation, audio, date or time functions – 22 specs 0 errors. 
 
-Tests were developed after JavaScript code was refactored and signed off rather than during development. Being new to JavaScript meant code was heavily refactored twice during the project build. When code was stable, Jasmine was implemented with a red green refactor approach. 
+Tests were developed after JavaScript code was refactored and signed off rather than during development. Being new to JavaScript meant code was heavily refactored twice during the project build. When code was stable, Jasmine tests were created and purposefully failed before passing again to ensure test were running correctly.
 
 An output file and the required testing files are available at links below. To run the tests after the site has been cloned, open the test html file and view in any browser.
 
-* [Test HTML](https://github.com/coderbeez/trigg4tables/blob/master/testing/test.html)
+* [Test HTML (run tests)](https://github.com/coderbeez/trigg4tables/blob/master/testing/test.html)
 * [Test Scripts (code to be tested)](https://github.com/coderbeez/trigg4tables/blob/master/assets/js/main.js)
-* [Test Specs(tests](https://github.com/coderbeez/trigg4tables/blob/master/testing/spec/fileSpecs.js)
+* [Test Specs(tests)](https://github.com/coderbeez/trigg4tables/blob/master/testing/spec/fileSpecs.js)
 * [Test Output](https://github.com/coderbeez/trigg4tables/blob/master/testing/jasmine-testing-output.pdf
 )
 
@@ -241,7 +241,7 @@ An output file and the required testing files are available at links below. To r
 Throughout the development process, (1) Chrome developer tools were used to test for responsiveness on various screen sizes, (2) android and iOS mobiles to test for functionality and layout, and (3) Chrome, Edge and Firefox browsers to identify bugs as early as possible.
 
 
-After sign-off, structured manual testing of the site was carried out in various browsers and screens sizes following a user path from start to finish. This single user path approach was adopted as users progress through the site in a very prescribed way.
+After sign-off, structured manual testing of the site was carried out in various browsers and screens sizes following a user path from start to finish. This single user path approach was adopted as users progress through the site in a very prescribed way. The detailed plan allowed for code not covered by Jasmine, e.g. DOM manipulation, to be fully tested.
 
 
 | **BROWSER** | **iOS** | **Android** | **iOS** | **Edge** | **Chrome** | **Firefox** | **Safari** |
@@ -515,6 +515,7 @@ The following instructions were taken from [GitHib Help]( https://help.github.co
   * Many thanks to ***all*** on Slack especially John Long, Sean Murphy, John Lynch, Anthony O’Brien, Simen Daehlin and Anna Greaves and my mentor Ali Ashik for guiding me through JavaScript and Jasmine.
 
   * A special thanks to Jack for all his advice, enthusiasm and of course his voiceover. 
+
 
  
 
