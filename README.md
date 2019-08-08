@@ -230,7 +230,7 @@ An output file and the required testing files are available at links below. To r
 * [Test HTML (needed to run tests)](https://github.com/coderbeez/trigg4tables/blob/master/testing/test.html)
 * [Test Scripts (code to be tested)](https://github.com/coderbeez/trigg4tables/blob/master/assets/js/main.js)
 * [Test Specs (tests)](https://github.com/coderbeez/trigg4tables/blob/master/testing/spec/fileSpecs.js)
-* [Test Output (result of test run)](https://github.com/coderbeez/trigg4tables/blob/master/testing/jasmine-testing-output.pdf
+* [Test Output (results of tests run)](https://github.com/coderbeez/trigg4tables/blob/master/testing/jasmine-testing-output.pdf
 )
 
 
@@ -244,15 +244,14 @@ Throughout the development process, (1) Chrome developer tools were used to test
 After sign-off, structured manual testing of the site was carried out in various browsers and screens sizes following a user path from start to finish. This single user path approach was adopted as users progress through the site in a very prescribed way. The detailed plan allowed for code not covered by Jasmine, e.g. DOM manipulation, to be fully tested.
 
 
-
 | **BROWSER** | **iOS** | **Android** | **iOS** | **Edge** | **Chrome** | **Firefox** | **Safari** |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | **SCREEN SIZE** | **Small** | **Small** | **Medium** | **Large** | **Large** | **Large** | **Large** |
 | TABLES | 3- | 1+ | 8÷ | 5x | 2- | 6x | 9÷ |
-| Site Load | P | P | P | P | P | P | **14** |
+| Site Load | P | P | P | P | P | P | ***14*** |
 | **INSTRUCTIONS** | --- | --- | --- | --- | --- | --- | --- |
 | Instruct Icon Click | P | P | P | P | P | P | P |
-| YouTube Video Play | P | P | P | P | P | **12** | P |
+| YouTube Video Play | P | P | P | P | P | ***12*** | P |
 | Close Click | P | P | P | P | P | P | P |
 | **SELECTION** | --- | --- | --- | --- | --- | --- | --- |
 | Go Click- Warn | P | P | P | P | P | P | P |
@@ -267,13 +266,13 @@ After sign-off, structured manual testing of the site was carried out in various
 | Sum Ask | P | P | P | P | P | P | P |
 | Enter Key Press | N/A | N/A | N/A | P | P | P | P |
 | **ANSWER MISSING** | --- | --- | --- | --- | --- | --- | --- |
-| Audio | P | P | P | P | P | **13** | P |
+| Audio | P | P | P | P | P | ***13*** | P |
 | Trigg Image | P | P | P | P | P | P | P |
 | Message | P | P | P | P | P | P | P |
-| Audio On/Off Toggle | P | P | P | P | P | **13** | P |
+| Audio On/Off Toggle | P | P | P | P | P | ***13*** | P |
 | **CHECK - CORRECT** | --- | --- | --- | --- | --- | --- | --- |
-| *Count 0* | N/A | N/A | N/a | P | P | P | P |
-| Audio | P | P | P | P | P | **13** | P |
+| *Count 0* | N/A | N/A | N/A | P | P | P | P |
+| Audio | P | P | P | P | P | ***13*** | P |
 | Trigg Image | P | P | P | P | P | P | P |
 | Message | P | P | P | P | P | P | P |
 | Sum Answer | P | P | P | P | P | P | P |
@@ -286,13 +285,13 @@ After sign-off, structured manual testing of the site was carried out in various
 | Sum Answer | P | P | P | P | P | P | P |
 | **CHECK - INCORRECT 1** | --- | --- | --- | --- | --- | --- | --- |
 | *Count 1* | N/A | N/A | N/A | P | P | P | P |
-| Audio | P | P | P | P | P | **13** | P |
+| Audio | P | P | P | P | P | ***13*** | P |
 | Trigg Image | P | P | P | P | P | P | P |
 | Message | P | P | P | P | P | P | P |
 | Sum Try Blank | P | P | P | P | P | P | P |
 | **CHECK - INCORRECT 2** | --- | --- | --- | --- | --- | --- | --- |
 | *Count 2* | N/A | N/A | N/A | P | P | P | P |
-| Audio | P | P | P | P | P | **13** | P |
+| Audio | P | P | P | P | P | ***13*** | P |
 | Trigg Image | P | P | P | P | P | P | P |
 | Message | P | P | P | P | P | P | P |
 | Sum Answer | P | P | P | P | P | P | P |
@@ -302,14 +301,14 @@ After sign-off, structured manual testing of the site was carried out in various
 | Progress Bar | P | P | P | P | P | P | P |
 | **CHECK - INCORRECT 3** | --- | --- | --- | --- | --- | --- | --- |
 | *Count 3* | N/A | N/A | N/A | P | P | P | P |
-| Audio | P | P | P | P | P | **13** | P |
+| Audio | P | P | P | P | P | ***13*** | P |
 | Trigg Image | P | P | P | P | P | P | P |
 | Message | P | P | P | P | P | P | P |
 | Sum Try Blank | P | P | P | P | P | P | P |
 | **NEXT - DONE** | --- | --- | --- | --- | --- | --- | --- |
 | *Todo Array* | N/A | N/A | N/A | P | P | P | P |
 | *Revise Array* | N/A | N/A | N/A | P | P | P | P |
-| Audio | P | P | P | P | P | **13** | P |
+| Audio | P | P | P | P | P | ***13*** | P |
 | Trigg Image | P | P | P | P | P | P | P |
 | Message | P | P | P | P | P | P | P |
 | Timer Stop | P | P | P | P | P | P | P |
@@ -324,7 +323,7 @@ P - Passed
 
 N/A - Not Applicable
 
-11 12 13 14 - Please see **Bugs**
+***11 12 13 14*** - Please see **Bugs**
 
 
 
@@ -354,7 +353,7 @@ input[type="radio"] {
   position: absolute;
   width: 1px;
 }
-/*WHERE: https://www.sitepoint.com/replacing-radio-buttons-without-replacing-radio-buttons/*/
+WHERE: https://www.sitepoint.com/replacing-radio-buttons-without-replacing-radio-buttons/
 ```
 
 
@@ -369,7 +368,7 @@ $(document).on("keypress", function(e) {
       event.preventDefault();
     }
   });
-  /*WHERE: https://stackoverflow.com/questions/8866053/stop-reloading-page-with-enter-key*/
+WHERE: https://stackoverflow.com/questions/8866053/stop-reloading-page-with-enter-key
 ```
 
 
@@ -380,7 +379,7 @@ $(document).on("keypress", function(e) {
 
 ```
 $("iframe").attr("src", "https://www.youtube.com/embed/QnvT6_Fp1B4?rel=0");
-/*WHERE: https://stackoverflow.com/questions/2128535/stop-a-youtube-video-with-jquery*/
+WHERE: https://stackoverflow.com/questions/2128535/stop-a-youtube-video-with-jquery
 ```
 
 
@@ -393,7 +392,7 @@ function playAudio(audio) {
       audio.currentTime = 0;
     }
   }
-  /*WHERE: https://stackoverflow.com/questions/9563887/setting-html5-audio-position*/
+WHERE: https://stackoverflow.com/questions/9563887/setting-html5-audio-position
 ```
 
 
@@ -516,6 +515,7 @@ The following instructions were taken from [GitHib Help]( https://help.github.co
   * Many thanks to ***all*** on Slack especially John Long, Sean Murphy, John Lynch, Anthony O’Brien, Simen Daehlin and Anna Greaves and my mentor Ali Ashik for guiding me through JavaScript and Jasmine.
 
   * A special thanks to Jack for all his advice, enthusiasm and of course his voiceover. 
+
 
 
  
