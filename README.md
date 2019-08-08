@@ -241,7 +241,7 @@ An output file and the required testing files are available at links below. To r
 Throughout the development process, (1) Chrome developer tools were used to test for responsiveness on various screen sizes, (2) android and iOS mobiles to test for functionality and layout, and (3) Chrome, Edge and Firefox browsers to identify bugs as early as possible.
 
 
-After sign-off, structured manual testing of the site was carried out in various browsers and screens sizes following a user path from start to finish. This single user path approach was adopted as users progress through the site in a very prescribed way. The detailed plan allowed for code not covered by Jasmine, e.g. DOM manipulation, to be fully tested.
+After sign-off, structured manual testing of the site was carried out in various browsers and screens sizes following a user from start to finish. This single user path approach was adopted as users progress through the site in a very prescribed way. The detailed plan allowed for code not covered by Jasmine, e.g. DOM manipulation, to be fully tested.
 
 
 | **BROWSER** | **iOS** | **Android** | **iOS** | **Edge** | **Chrome** | **Firefox** | **Safari** |
@@ -262,7 +262,7 @@ After sign-off, structured manual testing of the site was carried out in various
 | **GO** | --- | --- | --- | --- | --- | --- | --- |
 | I Icon Fades | N/A | N/A | P | P | P | P | P |
 | Timer Start | P | P | P | P | P | P | P |
-| Numbers & Clear Click | **11** | P | **11** | P | P | P | P |
+| Numbers & Clear Click | ***11*** | P | **11** | P | P | P | P |
 | Sum Ask | P | P | P | P | P | P | P |
 | Enter Key Press | N/A | N/A | N/A | P | P | P | P |
 | **ANSWER MISSING** | --- | --- | --- | --- | --- | --- | --- |
@@ -333,10 +333,10 @@ N/A - Not Applicable
 1. **Touch Screen Keyboards** During development it quickly became apparent that relying on inbuilt keyboards on touch screen devices provided poor UX. Keypads were built into the website to avoid using device keyboards.
 
 
-2. **iOS Tables** Initial keypad designs relied on tables to position elements. Although no problem was encountered with android, tables did not render correctly on iOS. Keypads were redesigned using br elements and margins.
+2. **iOS Tables** Initial keypad designs relied on tables to position elements. Although no problem was encountered with android, tables did not render correctly on iOS. Keypads were redesigned using break elements and margins.
 
 
-3. **iOS Radio Buttons** To limit selection to one item from a group, radio buttons were wrapped in label elements. Labels were then styled as buttons and radios hidden to provide a consistent look to keypads. Although no problem was encountered with android, radio buttons remained visible on iOS. The following CSS resolved the issue. 
+3. **iOS Radio Buttons** To limit selection to one item from a group, radio buttons were wrapped in label elements. Labels were then styled as buttons to provide a consistent look to keypads. Although no problem was encountered with android, radio buttons remained visible on iOS. The following CSS resolved the issue. 
 
 ```
 input[type="radio"] {
@@ -357,10 +357,10 @@ WHERE: https://www.sitepoint.com/replacing-radio-buttons-without-replacing-radio
 ```
 
 
-4. **Keyboard Verses Keypad** During initial testing with the target audience, rather than using the keypad, children were using the device keyboard to input. Changing an input field to a label prevented this from happening again. 
+4. **Keyboard Verses Keypad** During initial testing children were using the device keyboard to input letters rather than numbers. Changing an input field to a label forced the use of the keypad, preventing device keyboard use. 
 
 
-5. **Enter Reloading Site** Pressing the enter key on a desktop would reload the page sending the user back to the start. A prevent default method resolved the issue.
+5. **Enter Reloading Site** During development it was noted that pressing the enter key on a desktop would reload the page sending the user back to the start. A prevent default method resolved the issue.
 
 ```
 $(document).on("keypress", function(e) {
@@ -375,7 +375,7 @@ WHERE: https://stackoverflow.com/questions/8866053/stop-reloading-page-with-ente
 6. **Loading Images** During initial testing on both android and iOS mobiles, Trigg images were slow to load. Changing png to svg files improved load times on android, however images were only displayed on iOS on second use. Preloading image sources in JS resolved this issue.
 
 
-7. **Closing Video** If the close button, used to hide the instruction video, was pressed before the video had ended the audio continued. Adding the following code to the close button click method resets the video and stops the audio.
+7. **Closing Video** Once the instruction video was embedded it became apparent that if clicked before the video had ended, the close button used to hide did not stop play. Adding the following code to the close button click method reset the video and stopped the audio.
 
 ```
 $("iframe").attr("src", "https://www.youtube.com/embed/QnvT6_Fp1B4?rel=0");
@@ -383,7 +383,7 @@ WHERE: https://stackoverflow.com/questions/2128535/stop-a-youtube-video-with-jqu
 ```
 
 
-8. **Playing Audio** Sound clips were not always audible even though the play method was running correctly. Using the current time property in the play audio function, reset the audio clip back to the start giving consistent sound on each play. 
+8. **Playing Audio** During development sound clips were not always audible even though the play method was running correctly. Using the current time property in the play audio function, reset the audio clip back to the start giving consistent sound on each play. 
 
 ```
 function playAudio(audio) {
@@ -396,10 +396,10 @@ WHERE: https://stackoverflow.com/questions/9563887/setting-html5-audio-position
 ```
 
 
-9. **Firefox Audio** During Firefox testing, although all audio clips were mp3 files, one clip would not load. Resaving the clip as a m4a file resolved this issue.
+9. **Firefox Audio** During development testing although all audio clips were mp3 files, in Firefox one clip would not load. Resaving the clip as a m4a file resolved this issue.
 
 
-10. **Edge toBlob** During Edge testing, the report would not download as Edge does not support the toBlob method. Using the [Canvas-toBlob](https://github.com/eligrey/canvas-toBlob.js) JS library resolved this issue.
+10. **Edge toBlob** During development testing the report would not download as Edge does not support the toBlob method. Using the [Canvas-toBlob](https://github.com/eligrey/canvas-toBlob.js) JS library resolved this issue.
 
 ![toBlob Compatiblity](https://github.com/coderbeez/trigg4tables/blob/master/assets/images/toblob.PNG)
 ***toBlob Compatibility [Mozilla]( https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob)***
@@ -408,13 +408,13 @@ WHERE: https://stackoverflow.com/questions/9563887/setting-html5-audio-position
 11. **iOS Double Tap** When using the keypad for entering numbers e.g. 11, double tapping on the 1 key can cause an iPhone or iPad to zoom in. Although this action can be turned off in device settings, no fix has been found to apply to the website.
 
 
-12. **Firefox Video** As you move the coursor over the YouTube video the following error message appears in console ‘MouseEvent.mozPressure is deprecated. Use PointerEvent.pressure instead’. Video plays without an issue. A google search ???
+12. **Firefox Video** In Firefox, as you move the cursor over the YouTube video the following warning message appears in the console; ‘MouseEvent.mozPressure is deprecated. Use PointerEvent.pressure instead’. The video plays without an issue. 
 
 
-13. **Firefox AbortError** Rewinding audio elements by setting audio.currentTime. results in an abort error message in the console in Firefox as noted in [Bugzilla]( https://bugzilla.mozilla.org/show_bug.cgi?id=1507193). This error does not affect website functionality.
+13. **Firefox AbortError** Rewinding audio elements by setting audio.currentTime. results in an abort error message in the console in Firefox as noted in [Bugzilla]( https://bugzilla.mozilla.org/show_bug.cgi?id=1507193). This error does not affect website function.
 
 
-14. **Safari Canvas-toBlob Error Message** [Stock Overflow]( https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob)
+14. **Safari Canvas-toBlob** [Stock Overflow]( https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob)
  revealed an error message on iOS was due to the sourceMap flag being set to false instead of true in the tsconfig.json file of [Canvas-toBlob](https://github.com/eligrey/canvas-toBlob.js). This does not affect functionality.
 
 
@@ -515,6 +515,7 @@ The following instructions were taken from [GitHib Help]( https://help.github.co
   * Many thanks to ***all*** on Slack especially John Long, Sean Murphy, John Lynch, Anthony O’Brien, Simen Daehlin and Anna Greaves and my mentor Ali Ashik for guiding me through JavaScript and Jasmine.
 
   * A special thanks to Jack for all his advice, enthusiasm and of course his voiceover. 
+
 
 
 
