@@ -221,15 +221,17 @@ This one page website was designed using a mobile first approach. In order to li
 
 [JSHint](https://jshint.com/) Used to test the validity of JavaScript functions – no errors found.
 
-[Jasmine](https://jasmine.github.io/) Used to complete automated testing of JavaScript that didn’t involve DOM manipulation, audio, date or time functions – 22 specs 0 errors. A red green refactor approach was taken to testing. 
+[Jasmine](https://jasmine.github.io/) Used to complete automated testing of JavaScript that didn’t involve DOM manipulation, audio, date or time functions – 22 specs 0 errors. 
+
+Tests were developed after JavaScript code was refactored and signed off rather than during development. Being new to JavaScript meant code was heavily refactored twice during the project build. When code was stable, Jasmine was implemented with a red green refactor approach. 
+
+An output file and the required testing files are available at links below. To run the tests after the site has been cloned, open the test html file and view in any browser.
 
 * [Test HTML](https://github.com/coderbeez/trigg4tables/blob/master/testing/test.html)
-* [Test Scripts](https://github.com/coderbeez/trigg4tables/blob/master/assets/js/main.js)
-* [Test Specs](https://github.com/coderbeez/trigg4tables/blob/master/testing/spec/fileSpecs.js)
-
-![Trig FlowChart](https://github.com/coderbeez/trigg4tables/blob/master/assets/images/testing.PNG)
-
-***Jasmine Tests***
+* [Test Scripts (code to be tested)](https://github.com/coderbeez/trigg4tables/blob/master/assets/js/main.js)
+* [Test Specs(tests](https://github.com/coderbeez/trigg4tables/blob/master/testing/spec/fileSpecs.js)
+* [Test Output](https://github.com/coderbeez/trigg4tables/blob/master/testing/jasmine-testing-output.pdf
+)
 
 
 
@@ -239,7 +241,7 @@ This one page website was designed using a mobile first approach. In order to li
 Throughout the development process, [Chrome Developer Tools]( https://developers.google.com/web/tools/chrome-devtools/) were used to test for responsiveness on various screen sizes, android and iOS mobiles to test for functionality and layout, and Chrome, Edge and Firefox browsers to identify bugs as early as possible.
 
 
-Following sign off, structured testing of the site was carried out using various browsers and screens sizes as follows:
+After sign-off, structured manual testing of the site was carried out in various browsers and screens sizes following a user path from start to finish. This single user path approach was adopted as users progress through the site in a very prescribed way.
 
 
 | **BROWSER** | **Android** | **iOS** | **Android** | **iOS** | **Edge** | **Chrome** | **Firefox** | **Safari** |
@@ -412,10 +414,16 @@ function playAudio(audio) {
 ***toBlob Compatibility [Mozilla]( https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob)***
 
 
+CONSOLE LOG ERRORS--- TO BE FINISHED
 12. **iOS Canvas-toBlob Error Message** [Stock Overflow]( https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob)
  revealed an error message on iOS was due to the sourceMap flag being set to false instead of true in the tsconfig.json file of [Canvas-toBlob](https://github.com/eligrey/canvas-toBlob.js). This does not affect functionality.
 
 
+13. **Firefox AbortError** [Bugzilla]( https://bugzilla.mozilla.org/show_bug.cgi?id=1507193)
+ revealed an error message This also happens when rewinding audio elements by setting audio.currentTime. AbortError
+
+
+14. **Firefox Video** MouseEvent.mozPressure is deprecated. Use PointerEvent.pressure instead. As you move the mouse over the video to play arrow changes from arrow to hand and error appears in console.
 
 ### Deployment
 
@@ -511,9 +519,10 @@ The following instructions were taken from [GitHib Help]( https://help.github.co
 
 ### Acknowledgements
 
-  * Many thanks to ***all*** on Slack especially John Long, Sean Murphy, John Lynch, Simen Daehlin and Anna Greaves and my mentor Ali Ashik for guiding me through JavaScript and Jasmine.
+  * Many thanks to ***all*** on Slack especially John Long, Sean Murphy, John Lynch, Anthony O’Brien, Simen Daehlin and Anna Greaves and my mentor Ali Ashik for guiding me through JavaScript and Jasmine.
 
   * A special thanks to Jack for all his advice, enthusiasm and of course his voiceover. 
+
 
  
 
