@@ -238,90 +238,83 @@ An output file and the required testing files are available at links below. To r
 ### Manual Testing
 
 
-Throughout the development process, [Chrome Developer Tools]( https://developers.google.com/web/tools/chrome-devtools/) were used to test for responsiveness on various screen sizes, android and iOS mobiles to test for functionality and layout, and Chrome, Edge and Firefox browsers to identify bugs as early as possible.
+Throughout the development process, (1) Chrome developer tools were used to test for responsiveness on various screen sizes, (2) android and iOS mobiles to test for functionality and layout, and (3) Chrome, Edge and Firefox browsers to identify bugs as early as possible.
 
 
 After sign-off, structured manual testing of the site was carried out in various browsers and screens sizes following a user path from start to finish. This single user path approach was adopted as users progress through the site in a very prescribed way.
 
 
-| **BROWSER** | **Android** | **iOS** | **Android** | **iOS** | **Edge** | **Chrome** | **Firefox** | **Safari** |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| **SCREEN SIZE** | **Small** | **Small** | **Medium** | **Medium** | **Large** | **Large** | **Large** | **Large** |
-| **TABLES** | 1+ | 3- | 5x | 8/ | 10+ | 2- | 6x | 9/ |
-| **INSTRUCTION** | --- | --- | --- | --- | --- | --- | --- | --- |
-| Instruct Icon Click | P | P | P | P | P | P | P | P |
-| YouTube Video Play | P | P | P | P | P | P | P | P |
-| Close Button Click | P | P | P | P | P | P | P | P |
-| **SELECTION** | --- | --- | --- | --- | --- | --- | --- | --- |
-| Both Warns Show | P | P | P | P | P | P | P | P |
-| Operator Button Click | P | P | P | P | P | P | P | P |
-| Number Warn Shows | P | P | P | P | P | P | P | P |
-| Number Button Click | P | P | P | P | P | P | P | P |
-| Go Button Click | P | P | P | P | P | P | P | P |
-| **Restart X ICON** | --- | --- | --- | --- | --- | --- | --- | --- |
-| X Icon Click | P | P | P | P | P | P | P | P |
-| Operator Warn Shows | P | P | P | P | P | P | P | P |
-| All Buttons Click | P | P | P | P | P | P | P | P |
-| **GO** | --- | --- | --- | --- | --- | --- | --- | --- |
-| Timer Start | P | P | P | P | P | P | P | P |
-| 1234567890 Buttons Click | P | P | P | P | P | P | P | P |
-| Clear Button Click | P | P | P | P | P | P | P | P |
-| Sum Ask | P | P | P | P | P | P | P | P |
-| Enter Key Press | P | P | P | P | P | P | P | P |
-| *Count* | P | P | P | P | P | P | P | P |
-| *Todo Array* | P | P | P | P | P | P | P | P |
-| **ANSWER MISSING** | --- | --- | --- | --- | --- | --- | --- | --- |
-| Audio | P | P | P | P | P | P | P | P |
-| Trigg Image | P | P | P | P | P | P | P | P |
-| Message | P | P | P | P | P | P | P | P |
-| Audio On/Off Toggle | P | P | P | P | P | P | P | P |
-| **CHECK - CORRECT** | --- | --- | --- | --- | --- | --- | --- | --- |
-| Sum Try | P | P | P | P | P | P | P | P |
-| Check Button Click | P | P | P | P | P | P | P | P |
-| Audio | P | P | P | P | P | P | P | P |
-| Trigg Image | P | P | P | P | P | P | P | P |
-| Message | P | P | P | P | P | P | P | P |
-| Sum Answer | P | P | P | P | P | P | P | P |
-| Next Button Click| P | P | P | P | P | P | P | P |
-| **NEXT** | --- | --- | --- | --- | --- | --- | --- | --- |
-| *Count* | P | P | P | P | P | P | P | P |
-| *Todo Array* | P | P | P | P | P | P | P | P |
-| Progress Bar | P | P | P | P | P | P | P | P |
-| Trigg Image| P | P | P | P | P | P | P | P |
-| Message | P | P | P | P | P | P | P | P |
-| Sum Ask | P | P | P | P | P | P | P | P |
-| Check Button Show | P | P | P | P | P | P | P | P |
-| **CHECK - INCORRECT 1** | --- | --- | --- | --- | --- | --- | --- | --- |
-| *Count* | P | P | P | P | P | P | P | P |
-| Audio | P | P | P | P | P | P | P | P |
-| Trigg Image | P | P | P | P | P | P | P | P |
-| Message | P | P | P | P | P | P | P | P |
-| Sum Try Blank | P | P | P | P | P | P | P | P |
-| **CHECK - INCORRECT 2** | --- | --- | --- | --- | --- | --- | --- | --- |
-| *Count* | P | P | P | P | P | P | P | P |
-| Audio | P | P | P | P | P | P | P | P |
-| Trigg Image | P | P | P | P | P | P | P | P |
-| Message | P | P | P | P | P | P | P | P |
-| Sum Answer | P | P | P | P | P | P | P | P |
-| Next Button Show | P | P | P | P | P | P | P | P |
-| *Todo Array* | P | P | P | P | P | P | P | P |
-| **CHECK - INCORRECT 3** | --- | --- | --- | --- | --- | --- | --- | --- |
-| *Count* | P | P | P | P | P | P | P | P |
-| Audio | P | P | P | P | P | P | P | P |
-| Trigg Image | P | P | P | P | P | P | P | P |
-| Message | P | P | P | P | P | P | P | P |
-| Sum Try Blank | P | P | P | P | P | P | P | P |
-| **NEXT - DONE** | --- | --- | --- | --- | --- | --- | --- | --- |
-| Audio | P | P | P | P | P | P | P | P |
-| Trigg Image | P | P | P | P | P | P | P | P |
-| Message | P | P | P | P | P | P | P | P |
-| Timer Stop | P | P | P | P | P | P | P | P |
-| Report Time | P | P | P | P | P | P | P | P |
-| Report Date | P | P | P | P | P | P | P | P |
-| Report Tables| P | P | P | P | P | P | P | P |
-| *Revise Array* | P | P | P | P | P | P | P | P |
-| Report Revise | P | P | P | P | P | P | P | P |
-| Download Button Click | P | P | P | P | P | P | P | P |
+| **BROWSER** | **iOS** | **Android** | **iOS** | **Edge** | **Chrome** | **Firefox** | **Safari** |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| **SCREEN SIZE** | **Small** | **Small** | **Medium** | **Large** | **Large** | **Large** | **Large** |
+| **TABLES** | 3- | 1+ | 8÷ | 5x | 2- | 6x | 9÷ |
+| **INSTRUCTIONS** | --- | --- | --- | --- | --- | --- | --- |
+| Instruct Icon Click | P | P | P | P | P | P | P |
+| YouTube Video Play | P | P | P | P | P | P | P |
+| Close Click | P | P | P | P | P | P | P |
+| **SELECTION** | --- | --- | --- | --- | --- | --- | --- |
+| Go Click- Warn | P | P | P | P | P | P | P |
+| Picks Click | P | P | P | P | P | P | P |
+| Go Click | P | P | P | P | P | P | P |
+| **Restart X ICON** | --- | --- | --- | --- | --- | --- | --- |
+| X Icon Click | P | P | P | P | P | P | P |
+| **GO** | --- | --- | --- | --- | --- | --- | --- |
+| I Icon Fades | N/A | N/A | P | P | P | P | P |
+| Timer Start | P | P | P | P | P | P | P |
+| Numbers & Clear Click | P | P | P | P | P | P | P |
+| Sum Ask | P | P | P | P | P | P | P |
+| Enter Key Press | P | P | P | P | P | P | P |
+| **ANSWER MISSING** | --- | --- | --- | --- | --- | --- | --- |
+| Audio | P | P | P | P | P | P | P |
+| Trigg Image | P | P | P | P | P | P | P |
+| Message | P | P | P | P | P | P | P |
+| Audio On/Off Toggle | P | P | P | P | P | P | P |
+| **CHECK - CORRECT** | --- | --- | --- | --- | --- | --- | --- |
+| *Count 0* | P | P | P | P | P | P | P |
+| Audio | P | P | P | P | P | P | P |
+| Trigg Image | P | P | P | P | P | P | P |
+| Message | P | P | P | P | P | P | P |
+| Sum Answer | P | P | P | P | P | P | P |
+| **NEXT** | --- | --- | --- | --- | --- | --- | --- |
+| *Todo Array* | P | P | P | P | P | P | P |
+| *Revise Array* | P | P | P | P | P | P | P |
+| Progress Bar | P | P | P | P | P | P | P |
+| Trigg Image| P | P | P | P | P | P | P |
+| Message | P | P | P | P | P | P | P |
+| Sum Answer | P | P | P | P | P | P | P |
+| **CHECK - INCORRECT 1** | --- | --- | --- | --- | --- | --- | --- |
+| *Count* | P | P | P | P | P | P | P |
+| Audio | P | P | P | P | P | P | P |
+| Trigg Image | P | P | P | P | P | P | P |
+| Message | P | P | P | P | P | P | P |
+| Sum Try Blank | P | P | P | P | P | P | P |
+| **CHECK - INCORRECT 2** | --- | --- | --- | --- | --- | --- | --- |
+| *Count* | P | P | P | P | P | P | P |
+| Audio | P | P | P | P | P | P | P |
+| Trigg Image | P | P | P | P | P | P | P |
+| Message | P | P | P | P | P | P | P |
+| Sum Answer | P | P | P | P | P | P | P |
+| **NEXT** | --- | --- | --- | --- | --- | --- | --- |
+| *Todo Array* | P | P | P | P | P | P | P |
+| *Revise Array* | P | P | P | P | P | P | P |
+| Progress Bar | P | P | P | P | P | P | P |
+| **CHECK - INCORRECT 3** | --- | --- | --- | --- | --- | --- | --- |
+| *Count* | P | P | P | P | P | P | P |
+| Audio | P | P | P | P | P | P | P |
+| Trigg Image | P | P | P | P | P | P | P |
+| Message | P | P | P | P | P | P | P |
+| Sum Try Blank | P | P | P | P | P | P | P |
+| **NEXT - DONE** | --- | --- | --- | --- | --- | --- | --- |
+| *Todo Array* | P | P | P | P | P | P | P |
+| *Revise Array* | P | P | P | P | P | P | P |
+| Audio | P | P | P | P | P | P | P |
+| Trigg Image | P | P | P | P | P | P | P |
+| Message | P | P | P | P | P | P | P |
+| Timer Stop | P | P | P | P | P | P | P |
+| Report | P | P | P | P | P | P | P |
+| Download Click | P | P | P | P | P | P | P |
+| Report Text String | P | P | P | P | P | P | P |
+
 
 *Italics* - Console Log 
 
@@ -522,7 +515,6 @@ The following instructions were taken from [GitHib Help]( https://help.github.co
   * Many thanks to ***all*** on Slack especially John Long, Sean Murphy, John Lynch, Anthony O’Brien, Simen Daehlin and Anna Greaves and my mentor Ali Ashik for guiding me through JavaScript and Jasmine.
 
   * A special thanks to Jack for all his advice, enthusiasm and of course his voiceover. 
-
 
  
 
