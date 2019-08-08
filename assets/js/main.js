@@ -377,7 +377,7 @@ const onReady = function() {
       sumTryElement.text(concat);
     }
   });
-  //WHY:Text verses val as sumTry is label while data-keypad is an input.
+  //WHY:Text verses val as sumTry is label while data-keypad is input.
 
   //CLICK CLEAR NUMBER KEYPAD
   $("[data-keypad=clear]").click(function() {
@@ -398,16 +398,15 @@ const onReady = function() {
     const incorrectMessageElement = $("[data-message=incorrect]");
     const incorrectShow = $("[data-show~=incorrect]");
 
-    //Step 0: Check Answer - Blank
+    //step 0: check answer - blank
     if (!sumTry) {
       playAudio(audioIncorrect);
       triggBackground.css("background-image", "url('assets/images/sour.svg')");
       messageElement.text(`blank answer`);
       warnIcon.show();
-      console.log(count);
     }
 
-    //Step 1: Check Answer - Correct
+    //step 1: check answer - correct
     else if (sumCorrect(sumTry, answer) === true) {
       playAudio(audioCorrect);
       triggBackground.css(
@@ -420,10 +419,9 @@ const onReady = function() {
       $("[data-hide~=correct]").hide();
       $("[data-show~=correct]").show();
       sumNextButton.show();
-      console.log(count);
     }
 
-    //STEP2: CHECK ANSWER - INCORRECT 1ST ATTEMPT
+    //step 2: check answer - incorrect 1st attempt
     else if (count === 0) {
       playAudio(audioIncorrect);
       triggBackground.css("background-image", "url('assets/images/hmm.svg')");
@@ -432,8 +430,8 @@ const onReady = function() {
       incorrectShow.show();
       warnIcon.hide();
       sumTryElement.text("");
-      console.log(countIncrement(todo)); //just take off log
-          }
+      countIncrement(todo);
+    }
 
     //step 3: check answer - incorrect 2nd attempt
     else if (count === 1) {
@@ -448,9 +446,9 @@ const onReady = function() {
       sumCheckHide.hide();
       incorrectShow.show();
       sumNextButton.show();
-      console.log(countIncrement(todo));// just take off log
+      countIncrement(todo);
       todoAdd(todo);
-          }
+    }
 
     //step 4: check answer - incorrect 3rd attempt
     else {
@@ -460,8 +458,8 @@ const onReady = function() {
       messageElement.text(`try ${answer} & check`);
       incorrectShow.show();
       sumTryElement.text("");
-      console.log(countIncrement(todo));//just take off log
-          }
+      countIncrement(todo);
+    }
   });
 
   // CLICK NEXT
@@ -479,8 +477,6 @@ const onReady = function() {
       `width: ${((12 - todoArray.length) / 12) * 100}%`
     );
     progressBar.attr("aria-valuenow", 12 - todo.length);
-    console.log(todo);
-    console.log(revise);
 
     //next sum
     if (todo.length !== 0) {
