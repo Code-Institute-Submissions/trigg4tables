@@ -366,3 +366,4 @@ input[type="radio"] {
   width: 1px;
 }
 /*WHERE: https://www.sitepoint.com/replacing-radio-buttons-without-replacing-radio-buttons/*/
+/*WHY: Used to stop iOS styling labels and radios.*/
